@@ -1,0 +1,704 @@
+body {
+  font-family: Montserrat, sans-serif;
+  color: #333;
+  font-size: 12px;
+  line-height: 20px;
+}
+h1 {
+  display: block;
+  margin: 0px 0px 10px;
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 700;
+}
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Roboto, sans-serif;
+  color: #00a1f2;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 300;
+  text-align: center;
+}
+h3 {
+  margin: 10px 0px 23px;
+  font-family: Montserrat;
+  color: #745785;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+}
+h4 {
+  margin: 10px 0px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+h5 {
+  margin: 10px 0px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+h6 {
+  margin: 10px 0px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+}
+p {
+  display: block;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-family: Roboto, sans-serif;
+  color: #999;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 300;
+  text-align: center;
+}
+.button {
+  display: inline-block;
+  padding: 18px 21px;
+  border-radius: 5px;
+  background-color: #489fd9;
+  box-shadow: rgba(255, 255, 255, 0.29) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.27) 0px 2px 11px 0px;
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+  font-family: Roboto, sans-serif;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #8e5ebf;
+  -webkit-transition-delay: initial;
+  transition-delay: initial;
+}
+.button.app-button {
+  padding: 8px 17px;
+}
+.button.main {
+  border: 1px solid white;
+  background-color: #005b8a;
+  box-shadow: rgba(255, 255, 255, 0.29) 0px 1px 0px 0px inset;
+}
+.button.main:hover {
+  border: 1px solid white;
+  background-color: #005b8a;
+  box-shadow: white 0px 0px 6px 2px, rgba(0, 0, 0, 0.27) 0px 2px 11px 0px;
+}
+.section {
+  padding-top: 65px;
+  padding-bottom: 65px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  background-color: transparent;
+}
+.section.hero {
+  height: 650px;
+  padding-top: 30px;
+  padding-bottom: 0px;
+  background-image: url('../images/Background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+.section.white.subfooter {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+.section.grey {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #f5f6f7;
+}
+.section.grey.footer {
+  padding-top: 49px;
+  padding-bottom: 49px;
+  text-align: center;
+}
+.section.purple {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #745785;
+  background-image: url('../images/Background-Footer.png'), url('../images/example-bg.png');
+  background-position: 0px 0px, 0px 0px;
+  background-size: cover, 125px;
+}
+.section.result {
+  padding-top: 20px;
+}
+.hero-iphone {
+  display: block;
+  margin-right: auto;
+  margin-bottom: -73px;
+  margin-left: auto;
+  text-shadow: black 0px 0px 0px;
+}
+.app-name {
+  margin-top: 3px;
+  font-family: Montserrat, sans-serif;
+  color: #5c5c5c;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+.nav-link {
+  display: inline-block;
+  margin-right: 12px;
+  margin-left: 12px;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border 300ms ease;
+  transition: border 300ms ease;
+  font-family: Montserrat, sans-serif;
+  color: #5c5c5c;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-link:hover {
+  border-bottom-color: #f02e4e;
+}
+.nav-column {
+  text-align: right;
+}
+.hero-header {
+  margin-top: 90px;
+  margin-bottom: 19px;
+  font-family: Roboto, sans-serif;
+  color: white;
+  font-size: 42px;
+  font-weight: 400;
+  text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
+}
+.hero-subtitle {
+  margin-bottom: 20px;
+  font-family: Roboto, sans-serif;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: left;
+  text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
+}
+.icon-title {
+  margin-top: 22px;
+  margin-bottom: 12px;
+  font-family: Bitter;
+  color: #c1adcc;
+  font-size: 17px;
+  font-weight: 400;
+}
+.price-text {
+  margin-top: 11px;
+  background-image: none;
+  box-shadow: none;
+  color: white;
+  font-size: 25px;
+  line-height: 28px;
+  font-weight: 400;
+  text-shadow: none;
+}
+.logo-in-footer {
+  display: block;
+  margin-top: 22px;
+  margin-right: auto;
+  margin-left: auto;
+  text-shadow: black 0px 0px 0px;
+}
+.left-column {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  border-left: 1px solid rgba(0, 0, 0, 0.09);
+}
+.subfooter-right {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  border-right: 1px solid rgba(0, 0, 0, 0.09);
+  border-left: 1px solid rgba(0, 0, 0, 0.09);
+}
+.social-button {
+  width: 36px;
+  height: 36px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-top: 7px;
+  border-radius: 60px;
+  background-color: #745785;
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+}
+.social-button:hover {
+  background-color: #f02e4e;
+}
+.blog-link {
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-family: Bitter, serif;
+  color: #fa875b;
+  font-size: 18px;
+  font-style: italic;
+  text-decoration: none;
+}
+.blog-link:hover {
+  color: #ff5917;
+}
+.footer-link {
+  margin-left: 8px;
+  border-bottom: 1px solid rgba(131, 125, 153, 0.34);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-family: Bitter, serif;
+  color: #837d99;
+  text-decoration: none;
+}
+.footer-link:hover {
+  border-bottom: 1px solid rgba(131, 125, 153, 0.86);
+}
+.footer-text {
+  display: inline;
+}
+.center {
+  text-align: center;
+}
+.navbar {
+  padding-top: 39px;
+  padding-bottom: 39px;
+}
+.social-widget {
+  display: inline-block;
+  margin-top: 17px;
+  margin-right: 14px;
+}
+.text-link {
+  color: #745785;
+  text-decoration: none;
+}
+.text-link:hover {
+  text-decoration: underline;
+}
+.button-block {
+  margin-top: 17px;
+}
+.logo {
+  display: block;
+  width: 80px;
+  margin-right: auto;
+  margin-left: auto;
+  float: left;
+  text-align: center;
+}
+.logos {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.apssvillage-logo {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  display: block;
+  width: 80px;
+  margin-left: 20px;
+  float: none;
+}
+.stores {
+  position: static;
+  top: 0px;
+  right: 0px;
+  width: 130px;
+  margin-left: 15px;
+  float: right;
+  clear: left;
+}
+.stores.result {
+  display: inline-block;
+  margin-left: 0px;
+  float: left;
+  clear: none;
+}
+.appstore {
+  position: static;
+  top: 0px;
+  right: 0px;
+  height: 40px;
+  float: right;
+}
+.appstore:hover {
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: white 0px 0px 6px 2px;
+}
+.store-logos {
+  position: static;
+  padding-right: 30px;
+}
+.google-play {
+  height: 40px;
+  float: right;
+}
+.google-play:hover {
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: white 0px 0px 6px 2px;
+}
+.icon {
+  display: block;
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.features {
+  margin-bottom: 20px;
+  font-family: Roboto, sans-serif;
+  color: #00a1f2;
+  font-size: 40px;
+  font-weight: 300;
+  text-align: center;
+}
+.features.subtitles {
+  font-size: 30px;
+}
+.subtitle-features {
+  margin-bottom: 30px;
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  text-align: center;
+}
+.printscreen {
+  position: static;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: auto;
+  margin-top: 10px;
+}
+.column-business-owner {
+  padding: 10px 5px 5px;
+}
+.column-business-owner.down {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.handwrite {
+  margin-top: 20px;
+  padding-right: 40px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+.feature-block {
+  height: 130px;
+}
+.features-subtitles {
+  font-size: 30px;
+}
+.buttons-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.stores-strip-in-results {
+  height: 45px;
+}
+.help {
+  margin-top: 8px;
+  margin-left: 60px;
+  float: left;
+  color: white;
+  font-size: 22px;
+  text-align: left;
+}
+.ghost-button {
+  margin-top: 0px;
+  margin-left: 20px;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  font-family: Roboto, sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+.ghost-button:hover {
+  background-color: white;
+  color: #00a1f2;
+}
+.pick-fb-page {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.pick-popup {
+  display: block;
+  width: 400px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid #b2b2b2;
+  border-radius: 10px;
+  background-color: white;
+}
+.header-pick {
+  display: block;
+  width: 400px;
+  height: 60px;
+  border-top: 1px solid #b2b2b2;
+  border-bottom: 1px none #b2b2b2;
+}
+.header-pick:hover {
+  background-color: #e5e5e5;
+}
+.header-pick.last {
+  border-bottom: 1px solid #b2b2b2;
+}
+.pick-title {
+  position: static;
+  left: 0px;
+  top: 51px;
+  right: 0px;
+  padding-top: 38px;
+  color: #666;
+}
+.fb-logo {
+  width: 40px;
+  margin-top: 10px;
+  margin-left: 15px;
+  float: left;
+  border-bottom: 1px none black;
+}
+.fb-page-name {
+  margin-top: 14px;
+  margin-left: 16px;
+  float: left;
+  color: #666;
+  font-size: 18px;
+  text-align: left;
+}
+.space {
+  height: 20px;
+}
+@media (max-width: 991px) {
+  p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .section.hero {
+    padding-top: 34px;
+    padding-bottom: 1px;
+  }
+  .hero-iphone {
+    text-shadow: black 0px 0px 0px;
+  }
+  .hero-header {
+    font-size: 38px;
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
+  }
+  .hero-subtitle {
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
+  }
+}
+@media (max-width: 767px) {
+  h2 {
+    margin-top: 0px;
+  }
+  .section {
+    padding-top: 33px;
+    padding-bottom: 33px;
+    text-align: center;
+  }
+  .section.hero {
+    padding-right: 38px;
+    padding-bottom: 52px;
+    padding-left: 38px;
+    text-align: center;
+  }
+  .hero-iphone {
+    margin-bottom: 1px;
+    text-shadow: black 0px 0px 0px;
+  }
+  .app-name {
+    display: inline-block;
+    margin-bottom: 0px;
+  }
+  .nav-column {
+    padding-top: 22px;
+    text-align: center;
+  }
+  .hero-header {
+    margin-top: 30px;
+    text-align: left;
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
+  }
+  .price-text {
+    margin-bottom: 31px;
+    box-shadow: none;
+    text-shadow: none;
+  }
+  .subfooter-right {
+    border-top: 1px solid rgba(0, 0, 0, 0.09);
+  }
+  .center {
+    padding-top: 23px;
+    padding-bottom: 23px;
+  }
+  .navbar {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
+  }
+  .social-widget {
+    margin-right: 11px;
+    margin-left: 11px;
+  }
+  .logo {
+    display: inline-block;
+    margin-top: -6px;
+    margin-bottom: 20px;
+    float: none;
+  }
+  .stores {
+    display: block;
+    float: right;
+    clear: left;
+  }
+  .appstore {
+    height: 30px;
+  }
+  .google-play {
+    height: 30px;
+  }
+}
+@media (max-width: 479px) {
+  h3 {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .button.main {
+    padding: 10px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .section {
+    text-align: center;
+  }
+  .section.hero {
+    height: 700px;
+    padding-top: 20px;
+  }
+  .section.white {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .hero-iphone {
+    text-shadow: black 0px 0px 0px;
+  }
+  .hero-header {
+    font-size: 26px;
+    line-height: 30px;
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
+  }
+  .hero-header.mobile {
+    text-align: center;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+  }
+  .hero-subtitle.mobile {
+    text-align: center;
+  }
+  .price-text {
+    font-size: 23px;
+  }
+  .apssvillage-logo {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-left: auto;
+    float: left;
+  }
+  .stores {
+    float: none;
+  }
+  .stores.in-mobile {
+    padding-right: 20px;
+    float: none;
+    clear: none;
+  }
+  .appstore {
+    display: block;
+    float: none;
+  }
+  .store-logos {
+    padding-right: 0px;
+  }
+  .google-play {
+    display: block;
+    float: right;
+  }
+  .google-play:hover {
+    height: 30px;
+  }
+  .features {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .subtitle-features {
+    display: block;
+  }
+  .handwrite {
+    padding-right: 5px;
+  }
+  .feature-block {
+    height: 100px;
+  }
+  .features-subtitles {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+  .mobile-container {
+    width: 100%;
+  }
+  .section-mobile {
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-image: url('../images/Background.png');
+    background-position: 0px 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .help.in-mobile {
+    display: block;
+    margin-top: 18px;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+    text-align: center;
+  }
+  .ghost-button.in-mobile {
+    margin-top: 11px;
+    margin-left: 0px;
+  }
+  .pick-fb-page {
+    display: none;
+  }
+  .pick-popup.mobile {
+    display: block;
+    width: 95%;
+  }
+  .fb-page-name.mobile {
+    font-size: 16px;
+  }
+}
+
