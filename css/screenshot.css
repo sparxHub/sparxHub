@@ -53,7 +53,7 @@ bottom: 0px;
 height: auto;
 margin-top: 10px;
 
-  background-image: url("http://uploads.webflow.com/55f0774dab21fd960e647dbf/55f1a689844a232661abcbbc_Chat-Phone.jpg");
+  background-image: url("../images/screenshot/phone_bg.png");
   background-size: 100% 100%;
 }
 
@@ -85,7 +85,7 @@ margin-top: 10px;
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url("http://gdurl.com/ecHS"), url("http://gdurl.com/U4t1");
+  background-image: url("../images/screenshot/sample_content_bg.png"), url("../images/screenshot/content_bg_darker.png");
   background-size: cover;
   background-blend-mode: darken;
   -webkit-filter: blur(1px);
@@ -122,8 +122,8 @@ margin-top: 10px;
 .screenShotContainer .backgroundLayer .topLayer .topLayerLogo img {
   width: 100%;
   height: 100%;
-  -webkit-mask: url("http://gdurl.com/ssJI") 0 0/100% 100%;
-          mask: url("http://gdurl.com/ssJI") 0 0/100% 100%;
+  -webkit-mask: url("../images/screenshot/content_logo_mask.png") 0 0/100% 100%;
+          mask: url("../images/screenshot/content_logo_mask.png") 0 0/100% 100%;
 }
 .screenShotContainer .backgroundLayer .topLayer .headerTitle {
   -webkit-align-self: center;
@@ -153,7 +153,7 @@ margin-top: 10px;
   width: 100%;
   height: 100%;
   z-index: 20;
-  background-image: url("http://gdurl.com/wUg4");
+  background-image: url("../images/screenshot/sample_content_chat.png");
   background-size: cover;
 }
 
@@ -317,7 +317,7 @@ text-align: left;
   width: 100%;
   height: 100%;
   z-index: 20;
-  background-image: url("http://gdurl.com/v57C");
+  background-image: url("../images/screenshot/sample_content_newsfeed.png");
   background-size: cover;
 }
 
@@ -424,7 +424,7 @@ text-align: left;
   width: 100%;
   height: 100%;
   z-index: 20;
-  background-image: url("http://gdurl.com/v57C");
+  background-image: url("../images/screenshot/sample_content_about.png");
   background-size: cover;
 }
 
