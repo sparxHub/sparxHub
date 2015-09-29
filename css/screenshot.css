@@ -1,0 +1,492 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+.roboto {
+  font-family: "Roboto";
+}
+
+.roboto-c {
+  font-family: "Roboto Condensed";
+}
+
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.body {
+  line-height: 20px;
+}
+
+.container {
+  background-color: green;
+}
+
+.screenShotContainer {
+/*  width: 33%;
+  position: relative;
+*/
+position: relative;
+line-height: normal;
+/*position: static;*/
+left: 0px;
+right: 0px;
+bottom: 0px;
+height: auto;
+margin-top: 10px;
+
+  background-image: url("http://uploads.webflow.com/55f0774dab21fd960e647dbf/55f1a689844a232661abcbbc_Chat-Phone.jpg");
+  background-size: 100% 100%;
+}
+
+.screenShotContainer:before {
+  content: "";
+  display: block;
+  padding-top: 187.5%;
+  /* keep original ratio of 1:1.875*/
+}
+
+.screenShotContainer .backgroundLayer {
+  position: absolute;
+  left: 12.5%;
+  top: 13.6%;
+  width: 75.5%;
+  height: 71.15%;
+  border-radius: 3px;
+  overflow: hidden;
+  z-index: 1;
+}
+.screenShotContainer .backgroundLayer:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("http://gdurl.com/ecHS"), url("http://gdurl.com/U4t1");
+  background-size: cover;
+  background-blend-mode: darken;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.screenShotContainer .backgroundLayer .topLayer {
+  position: relative;
+  left: 0;
+  top: 4%;
+  width: 100%;
+  height: 24%;
+  overflow: hidden;
+  background-color: transperent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.screenShotContainer .backgroundLayer .topLayer .topLayerLogo {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  width: 20%;
+  height: 47.12%;
+}
+.screenShotContainer .backgroundLayer .topLayer .topLayerLogo img {
+  width: 100%;
+  height: 100%;
+  -webkit-mask: url("http://gdurl.com/ssJI") 0 0/100% 100%;
+          mask: url("http://gdurl.com/ssJI") 0 0/100% 100%;
+}
+.screenShotContainer .backgroundLayer .topLayer .headerTitle {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 10px;
+  font-size: 19.1808px;
+  color: white;
+}
+
+.chatLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transperent;
+  overflow: hidden;
+  z-index: 21;
+}
+.chatLayer:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-image: url("http://gdurl.com/wUg4");
+  background-size: cover;
+}
+
+.newsLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transperent;
+  overflow: hidden;
+  z-index: 21;
+}
+.newsLayer .newsContainer {
+  position: relative;
+  top: 30%;
+  width: 100%;
+  height: 70%;
+  z-index: 22;
+  background-color: transperent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.newsLayer .newsContainer .flyer {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  width: 90%;
+  min-height: 55%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-size: cover;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.newsLayer .newsContainer .flyer .spacer {
+  -webkit-box-flex: 8;
+  -webkit-flex-grow: 8;
+      -ms-flex-positive: 8;
+          flex-grow: 8;
+}
+.newsLayer .newsContainer .flyer .details {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  top: 50%;
+  width: 100%;
+text-align: left;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+.newsLayer .newsContainer .flyer .details .flayerTitle {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+  font-size: 10px;
+  font-size: 14.3856px;
+  margin: 1.92px 3.84px 0 3.84px;
+  color: white;
+}
+.newsLayer .newsContainer .flyer .details .meta-details {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  width: auto;
+  margin: 0 3.83616px 0 3.83616px;
+}
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .time {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  position: relative;
+}
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .time .text {
+  float: left;
+  color: white;
+  font-size: 6px;
+  font-size: 9.5904px;
+  min-height: auto;
+  text-align: left;
+  margin-left: 3.83616px;
+}
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .time .icon {
+  float: left;
+  width: 11.50848px;
+  height: 9.5904px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAgCAYAAAB6kdqOAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAACq0lEQVRYw8WXXYhNURTH17m+xqQRxg0jjEvkgWf5SGNS0nQphFGSUpRHTzPGR9KMB5RS86SpqUGJ8uDB+GhGCGHKR6ZhaoySKUOTK5nm5+GubVanc93vc/fLOnut9d/rd84+Z5+9RQIaEAPOAp8JbjeAuhTaauAMMJBCewvYJpk24JhvgLfAdaADeAiMmdh9YInRNvm07xW+A+gC/pjYA2BhOpirRtAIzA/ImQLEgRcmdyvQZvongEUB2giwBXiueb+AValgWjWpz951mhs47nsiL4GYLycO1AOVPn+zahLATP/AmzQ4DFRkPL9J7WE3PSneJ9dGgYtAmYmf11i3X/hFA2uzgTH608CKAP804BLQb8A+AlUmp1f9Nf6n050FQy7Qe4ARrfUJiKh/o/oeucR2ddTlVTEzqJi+MwDnjH9YfYsF+K6d8mIDafG9ZvrK1ec+qAMREZkuIoOe5yXCAPI8r11Evmm3Vu0ztcsievEhDBjTnqh1H8KQ2qgDGg0ZyK07bgkYUzvBAc0JGeiH2i61bu0bnigiiMjykIF2iki153k92l+qtl/0JwewMmSofw14pQyrBTiineYSwVRq/a+AJ0BUHSMlAmrR+iet84o6m0KGqTCL5AwbiJpARluPAgF1as1TQcFDGhwAvBBgGrRe7/+SrmnSvSLD7DYzsiBdstte3iwSzHYDU5uJoAx4o4I7wKQCwhw0MLuyEU4FnqrwXSFedMb30AA7ch3EnkLqcxyjCrirY/wE1ud7Zw0G6nI2Gzndtrqz2GNgXl4wZuAaxk+xQ0A8Tf5ss9gW57dE8oDYaoq0AbMC8vYDvzWnD9hQcBhfwc3AoBZMAPvUPxe4bYBbwlhgHdRk4IIp3knyWAzQA6wJBSQAbB3w2oA1lgQkAOwoOZ56/e0v+VIjhU3vI+8AAAAASUVORK5CYII=);
+}
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .like {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .like .text {
+  float: right;
+  color: white;
+  font-size: 6px;
+  font-size: 9.5904px;
+  min-height: auto;
+  text-align: right;
+  margin-right: 3.83616px;
+}
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .like .icon {
+  float: right;
+  width: 11.50848px;
+  height: 9.5904px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAgCAYAAAB6kdqOAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAACq0lEQVRYw8WXXYhNURTH17m+xqQRxg0jjEvkgWf5SGNS0nQphFGSUpRHTzPGR9KMB5RS86SpqUGJ8uDB+GhGCGHKR6ZhaoySKUOTK5nm5+GubVanc93vc/fLOnut9d/rd84+Z5+9RQIaEAPOAp8JbjeAuhTaauAMMJBCewvYJpk24JhvgLfAdaADeAiMmdh9YInRNvm07xW+A+gC/pjYA2BhOpirRtAIzA/ImQLEgRcmdyvQZvongEUB2giwBXiueb+AValgWjWpz951mhs47nsiL4GYLycO1AOVPn+zahLATP/AmzQ4DFRkPL9J7WE3PSneJ9dGgYtAmYmf11i3X/hFA2uzgTH608CKAP804BLQb8A+AlUmp1f9Nf6n050FQy7Qe4ARrfUJiKh/o/oeucR2ddTlVTEzqJi+MwDnjH9YfYsF+K6d8mIDafG9ZvrK1ec+qAMREZkuIoOe5yXCAPI8r11Evmm3Vu0ztcsievEhDBjTnqh1H8KQ2qgDGg0ZyK07bgkYUzvBAc0JGeiH2i61bu0bnigiiMjykIF2iki153k92l+qtl/0JwewMmSofw14pQyrBTiineYSwVRq/a+AJ0BUHSMlAmrR+iet84o6m0KGqTCL5AwbiJpARluPAgF1as1TQcFDGhwAvBBgGrRe7/+SrmnSvSLD7DYzsiBdstte3iwSzHYDU5uJoAx4o4I7wKQCwhw0MLuyEU4FnqrwXSFedMb30AA7ch3EnkLqcxyjCrirY/wE1ud7Zw0G6nI2Gzndtrqz2GNgXl4wZuAaxk+xQ0A8Tf5ss9gW57dE8oDYaoq0AbMC8vYDvzWnD9hQcBhfwc3AoBZMAPvUPxe4bYBbwlhgHdRk4IIp3knyWAzQA6wJBSQAbB3w2oA1lgQkAOwoOZ56/e0v+VIjhU3vI+8AAAAASUVORK5CYII=);
+}
+.newsLayer:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-image: url("http://gdurl.com/v57C");
+  background-size: cover;
+}
+
+.aboutLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transperent;
+  overflow: hidden;
+  z-index: 21;
+}
+.aboutLayer .aboutContainer {
+  position: relative;
+  top: 30%;
+  width: auto;
+  height: 70%;
+  margin: 9.5904px;
+  z-index: 22;
+  background-color: transperent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.aboutLayer .aboutContainer .aboutDescription {
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+}
+.aboutLayer .aboutContainer .aboutDescription .aboutDescTitle {
+  font-size: 10px;
+  font-size: 19.1808px;
+  color: white;
+}
+.aboutLayer .aboutContainer .aboutDescription .aboutDescText {
+  font-size: 8px;
+  font-size: 14.3856px;
+  color: white;
+}
+.aboutLayer .aboutContainer .aboutBullets {
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.aboutLayer .aboutContainer .aboutBullets .aboutItem {
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+  margin: 9.5904px 0 9.5904px 0;
+}
+.aboutLayer .aboutContainer .aboutBullets .aboutItem .aboutIcon {
+  float: left;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+}
+.aboutLayer .aboutContainer .aboutBullets .aboutItem .aboutText {
+  margin-left: 9.5904px;
+  margin-right: 9.5904px;
+  float: left;
+  width: auto;
+  height: 10px;
+  font-size: 6px;
+  font-size: 11.50848px;
+  color: white;
+}
+.aboutLayer .aboutContainer .aboutMap {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: white;
+}
+.aboutLayer:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-image: url("http://gdurl.com/v57C");
+  background-size: cover;
+}
+
+.dark {
+  background: rgba(0, 0, 0, 0.349);
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+.screenShotContainer .backgroundLayer .topLayer .headerTitle {
+  	font-size: 13.464px;
+}
+
+.newsLayer .newsContainer .flyer .details .flayerTitle {
+	font-size: 10.098px;
+}
+
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box {
+	margin: 0 2.6928px 0 2.6928px;
+}
+
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .time .text {
+	font-size: 6.732px;
+	margin-left: 2.6928px;
+}
+
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .time .icon {
+  width: 8.0784px;
+  height: 6.732px;
+}
+
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .like .text {
+  font-size: 6.732px;
+  margin-right: 2.6928px;
+}
+
+.newsLayer .newsContainer .flyer .details .meta-details .meta-box .like .icon {
+  width: 8.0784px;
+  height: 6.732px;
+}
+
+.aboutLayer .aboutContainer {
+  margin: 6.732px;
+}
+
+.aboutLayer .aboutContainer .aboutDescription .aboutDescTitle {
+  font-size: 13.464px;
+}
+
+.aboutLayer .aboutContainer .aboutDescription .aboutDescText {
+  font-size: 10.098px;
+}
+
+.aboutLayer .aboutContainer .aboutBullets .aboutItem {
+  margin: 6.732px 0 6.732px 0;
+}
+
+.aboutLayer .aboutContainer .aboutBullets .aboutItem .aboutText {
+  margin-left: 6.732px;
+  margin-right: 6.732px;
+  font-size: 8.0784px;
+}	
+}
+
+

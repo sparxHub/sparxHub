@@ -758,7 +758,7 @@
 	    window.WebflowEditor = true;
 	    $win.off(hashchange, checkHash);
 	    $.ajax({
-	      url: cleanSlashes(("https://webflow.com") + '/api/editor/view'),
+	      url: cleanSlashes(("https://editor-api.webflow.com") + '/api/editor/view'),
 	      xhrFields: { withCredentials: true },
 	      dataType: 'json',
 	      crossDomain: true,
@@ -786,7 +786,7 @@
 	  }
 
 	  function prefix(url) {
-	    return (url.indexOf('//') >= 0) ? url : cleanSlashes(("https://webflow.com") + url);
+	    return (url.indexOf('//') >= 0) ? url : cleanSlashes(("https://editor-api.webflow.com") + url);
 	  }
 
 	  function cleanSlashes(url) {
@@ -4301,5 +4301,13 @@
  */
 Webflow.require('ix').init([
   {"slug":"hover-store-logo","name":"Hover Store Logo","value":{"style":{},"triggers":[{"type":"hover","stepsA":[{"transition":"transform 500ms ease 0ms","scale":1.1}],"stepsB":[{"transition":"transform 500ms ease 0ms","scale":1}]}]}},
-  {"slug":"pick-a-page","name":"Pick a Page","value":{"style":{},"triggers":[{"type":"click","selector":".pick-fb-page","stepsA":[{"display":"block"}],"stepsB":[]}]}}
+  {"slug":"pick-a-page","name":"Pick a Page","value":{"style":{},"triggers":[{"type":"click","selector":".pick-fb-page","stepsA":[{"display":"block"}],"stepsB":[]}]}},
+  {"slug":"hover-picture","name":"Hover Picture","value":{"style":{},"triggers":[{"type":"hover","stepsA":[{"transition":"transform 300ms ease 0ms","scale":1.2}],"stepsB":[{"transition":"transform 300ms ease 0ms","scale":1}]}]}},
+  {"slug":"load","name":"Load","value":{"style":{"display":"block","opacity":0,"x":"0px","y":"-50px"},"triggers":[{"type":"scroll","stepsA":[{"opacity":1,"transition":"transform 800ms ease 0ms, opacity 800ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[]}]}},
+  {"slug":"move-left","name":"Move left","value":{"style":{"display":"block","opacity":0,"x":"50px","y":"0px"},"triggers":[{"type":"scroll","stepsA":[{"opacity":1,"transition":"transform 800ms ease 0ms, opacity 800ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[]}]}},
+  {"slug":"move-right","name":"Move Right","value":{"style":{"display":"block","opacity":0,"x":"-50px","y":"0px"},"triggers":[{"type":"scroll","stepsA":[{"opacity":1,"transition":"transform 800ms ease 0ms, opacity 800ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[]}]}},
+  {"slug":"move-left-load","name":"Move left Load","value":{"style":{"display":"block","opacity":0,"x":"50px","y":"0px"},"triggers":[{"type":"load","preload":true,"stepsA":[{"opacity":1,"transition":"transform 800ms ease 0ms, opacity 800ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[]}]}},
+  {"slug":"move-right-load","name":"Move Right Load","value":{"style":{"display":"block","opacity":0,"x":"-50px","y":"0px"},"triggers":[{"type":"load","preload":true,"stepsA":[{"opacity":1,"transition":"transform 800ms ease 0ms, opacity 800ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[]}]}},
+  {"slug":"load-2","name":"Load 2","value":{"style":{"display":"block","opacity":0,"x":"0px","y":"-50px"},"triggers":[{"type":"scroll","stepsA":[{"wait":800},{"opacity":1,"transition":"transform 800ms ease 0ms, opacity 800ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[]}]}},
+  {"slug":"load-3","name":"Load 3","value":{"style":{"display":"block","opacity":0,"x":"0px","y":"-50px"},"triggers":[{"type":"scroll","stepsA":[{"wait":1600},{"opacity":1,"transition":"transform 800ms ease 0ms, opacity 800ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[]}]}}
 ]);

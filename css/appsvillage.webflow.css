@@ -105,6 +105,10 @@ p {
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
+.section.hero.white {
+  background-image: url('../images/Background.jpg');
+  background-size: cover;
+}
 .section.white.subfooter {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -124,9 +128,9 @@ p {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #745785;
-  background-image: url('../images/Background-Footer.png'), url('../images/example-bg.png');
-  background-position: 0px 0px, 0px 0px;
-  background-size: cover, 125px;
+  background-image: url('../images/Footer-Tight.jpg');
+  background-position: 0px 0px;
+  background-size: cover;
 }
 .section.result {
   padding-top: 20px;
@@ -376,6 +380,10 @@ p {
   height: auto;
   margin-top: 10px;
 }
+.business-photo {
+  overflow-x: visible;
+  overflow-y: visible;
+}
 .column-business-owner {
   padding: 10px 5px 5px;
 }
@@ -485,6 +493,70 @@ p {
 .space {
   height: 20px;
 }
+.small-business-title {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -8px;
+  font-family: Roboto, sans-serif;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+}
+.sm-photo {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+html.w-mod-js *[data-ix="load"] {
+  display: block;
+  opacity: 0;
+  -webkit-transform: translate(0px, -50px);
+  -ms-transform: translate(0px, -50px);
+  transform: translate(0px, -50px);
+}
+html.w-mod-js *[data-ix="move-left"] {
+  display: block;
+  opacity: 0;
+  -webkit-transform: translate(50px, 0px);
+  -ms-transform: translate(50px, 0px);
+  transform: translate(50px, 0px);
+}
+html.w-mod-js *[data-ix="move-right"] {
+  display: block;
+  opacity: 0;
+  -webkit-transform: translate(-50px, 0px);
+  -ms-transform: translate(-50px, 0px);
+  transform: translate(-50px, 0px);
+}
+html.w-mod-js *[data-ix="move-left-load"] {
+  display: block;
+  opacity: 0;
+  -webkit-transform: translate(50px, 0px);
+  -ms-transform: translate(50px, 0px);
+  transform: translate(50px, 0px);
+}
+html.w-mod-js *[data-ix="move-right-load"] {
+  display: block;
+  opacity: 0;
+  -webkit-transform: translate(-50px, 0px);
+  -ms-transform: translate(-50px, 0px);
+  transform: translate(-50px, 0px);
+}
+html.w-mod-js *[data-ix="load-2"] {
+  display: block;
+  opacity: 0;
+  -webkit-transform: translate(0px, -50px);
+  -ms-transform: translate(0px, -50px);
+  transform: translate(0px, -50px);
+}
+html.w-mod-js *[data-ix="load-3"] {
+  display: block;
+  opacity: 0;
+  -webkit-transform: translate(0px, -50px);
+  -ms-transform: translate(0px, -50px);
+  transform: translate(0px, -50px);
+}
 @media (max-width: 991px) {
   p {
     font-size: 14px;
@@ -586,6 +658,12 @@ p {
     font-size: 18px;
     line-height: 22px;
   }
+  .button.main.phone {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-left: auto;
+  }
   .section {
     text-align: center;
   }
@@ -597,6 +675,9 @@ p {
     padding-top: 0px;
     padding-bottom: 0px;
   }
+  .section.purple {
+    background-image: url('../images/Footer-Tight.jpg');
+  }
   .hero-iphone {
     text-shadow: black 0px 0px 0px;
   }
@@ -606,13 +687,22 @@ p {
     text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
   }
   .hero-header.mobile {
+    font-size: 34px;
+    line-height: 36px;
     text-align: center;
   }
   .hero-subtitle {
     font-size: 20px;
   }
   .hero-subtitle.mobile {
+    margin-top: 26px;
+    font-size: 18px;
+    line-height: 26px;
     text-align: center;
+  }
+  .hero-subtitle.mobile.small {
+    margin-bottom: 5px;
+    font-size: 14px;
   }
   .price-text {
     font-size: 23px;
@@ -658,6 +748,9 @@ p {
   .handwrite {
     padding-right: 5px;
   }
+  .handwrite.mobile {
+    display: none;
+  }
   .feature-block {
     height: 100px;
   }
@@ -670,12 +763,11 @@ p {
     width: 100%;
   }
   .section-mobile {
-    padding-top: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
-    background-image: url('../images/Background.png');
-    background-position: 0px 0px;
-    background-size: cover;
+    display: block;
+    padding: 20px 10px 10px;
+    background-image: url('../images/Background.jpg');
+    background-position: 0px 1px;
+    background-size: 900px;
     background-repeat: no-repeat;
   }
   .help.in-mobile {
