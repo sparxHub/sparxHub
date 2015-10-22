@@ -180,12 +180,14 @@ p {
   text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
 }
 .hero-subtitle {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding-left: 28px;
   font-family: Roboto, sans-serif;
   color: white;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 28px;
   text-align: left;
+  list-style-type: square;
   text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
 }
 .icon-title {
@@ -392,7 +394,7 @@ p {
   padding-bottom: 10px;
 }
 .handwrite {
-  margin-top: 20px;
+  margin-top: 10px;
   padding-right: 40px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -647,6 +649,9 @@ html.w-mod-js *[data-ix="load-3"] {
   .google-play {
     height: 30px;
   }
+  .handwrite {
+    padding-left: 37px;
+  }
 }
 @media (max-width: 479px) {
   h3 {
@@ -701,8 +706,15 @@ html.w-mod-js *[data-ix="load-3"] {
     text-align: center;
   }
   .hero-subtitle.mobile.small {
+    margin-top: 14px;
     margin-bottom: 5px;
+    padding-left: 0px;
     font-size: 14px;
+  }
+  .hero-subtitle.small-bullets {
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 20px;
   }
   .price-text {
     font-size: 23px;
@@ -718,13 +730,17 @@ html.w-mod-js *[data-ix="load-3"] {
     float: none;
   }
   .stores.in-mobile {
+    margin-top: 8px;
     padding-right: 20px;
     float: none;
     clear: none;
   }
   .appstore {
     display: block;
-    float: none;
+    float: right;
+  }
+  .appstore:hover {
+    height: 30px;
   }
   .store-logos {
     padding-right: 0px;
@@ -744,6 +760,7 @@ html.w-mod-js *[data-ix="load-3"] {
   }
   .subtitle-features {
     display: block;
+    line-height: 30px;
   }
   .handwrite {
     padding-right: 5px;
