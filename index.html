@@ -88,7 +88,7 @@ Maintain loyalty">
             <li>Send your customers coupons</li>
             <li>Notify your customers of discounts, new offerings, etc.</li>
             <li>Get feedback and chat with your app users</li>
-          </ul><img class="handwrite" src="images/Hand-Writing-fixed.png"><a class="button main" href="tel:">TRY A FREE DEMO WITH YOUR OWN BRAND</a>
+          </ul><img class="handwrite" src="images/Hand-Writing-fixed.png"><a class="button main" href="#" onclick="login('facebook');">TRY A FREE DEMO WITH YOUR OWN BRAND</a>
         </div>
         <div class="w-col w-col-6 call-to-action"><img class="hero-iphone" width="500" src="images/Phones-Susan.png">
         </div>
@@ -197,6 +197,30 @@ Maintain loyalty">
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/webflow.js"></script>
+  <script type="text/javascript" src="js/bundle.js"></script>
+	<script src="js/hello.js/src/hello.polyfill.js"></script>
+	<script src="js/hello.js/src/hello.js"></script>
+	<script src="js/hello.js/src/modules/facebook.js"></script>
+	<script class="pre">
+	function login(network) {
+		var facebook = hello(network);
+		facebook.login().then(function() {
+			// get user profile data
+			return facebook.api('me');
+		}).then(function(p) {
+			console.log("hello api success");
+			console.log(p);
+		});
+	}
+	</script>
+	<script class="pre">
+	hello.init({
+		facebook: 1636360896607051
+	}, {
+		redirect_uri: 'www.appsvillage.mobi/result.html',
+		oauth_proxy: 'https://auth-server.herokuapp.com/proxy'
+	});
+	</script>	
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
