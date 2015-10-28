@@ -510,6 +510,14 @@ p {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+.errordemo {
+  display: none;
+  margin-top: 6px;
+  background-color: rgba(248, 0, 41, 0.64);
+  font-family: Roboto, sans-serif;
+  color: #fc0000;
+  text-align: center;
+}
 html.w-mod-js *[data-ix="load"] {
   display: block;
   opacity: 0;

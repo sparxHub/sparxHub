@@ -84,7 +84,8 @@
 				'me/photos': 'me/photos',
 				'me/photo': '@{id}',
 				'friend/albums': '@{id}/albums',
-				'friend/photos': '@{id}/photos'
+				'friend/photos': '@{id}/photos',
+				'me/accounts': 'me/accounts?fields=id,picture.height(200),name,access_token'
 
 				// Pagination
 				// Https://developers.facebook.com/docs/reference/api/pagination/
@@ -103,6 +104,7 @@
 				'me/friends': formatFriends,
 				'me/following': formatFriends,
 				'me/followers': formatFriends,
+				'me/accounts': formatPages,
 				'me/albums': format,
 				'me/photos': format,
 				'me/files': format,
@@ -149,6 +151,10 @@
 
 	var base = 'https://graph.facebook.com/';
 
+	function formatPages(o) {
+		return o;
+	}
+	
 	function formatUser(o) {
 		if (o.id) {
 			o.thumbnail = o.picture = 'https://graph.facebook.com/' + o.id + '/picture';

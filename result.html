@@ -50,7 +50,7 @@ Maintain loyalty">
         </div>
       </div>
     </div>
-    <div class="w-container">
+    <div class="w-container roboto fw-100">
       <div class="w-row">
         <div class="w-col w-col-4">
 	
@@ -59,8 +59,8 @@ Maintain loyalty">
 		        <div class='aboutLayer'>
 		          <div class='aboutContainer roboto fw-100'>
 		            <div class='aboutDescription'>
-		              <div class='aboutDescTitle roboto-c fw-700'>About us</div>
-		              <div class='aboutDescText'>
+		              <div class='aboutDescTitle roboto-c fw-400'>About us</div>
+		              <div id='aboutDescText' class='aboutDescText'>
 		                Amy's cafe is a small coffee shop run by Amy and some friends. Always happy to help you make the day perfect.
 		              </div>
 		            </div>
@@ -92,7 +92,7 @@ Maintain loyalty">
 		          <div class='topLayerLogo'>
 		            <img src='http://gdurl.com/J8RE'>
 		          </div>
-		          <div class='headerTitle roboto-c fw-700'>
+		          <div class='headerTitle roboto-c fw-400'>
 		            Title here new
 		          </div>
 		        </div>
@@ -134,7 +134,7 @@ Maintain loyalty">
 		          <div class='topLayerLogo'>
 		            <img src='http://gdurl.com/J8RE'>
 		          </div>
-		          <div class='headerTitle roboto-c fw-700'>
+		          <div class='headerTitle roboto-c fw-400'>
 		            Title here new
 		          </div>
 		        </div>
@@ -153,7 +153,7 @@ Maintain loyalty">
 		          <div class='topLayerLogo'>
 		            <img src='http://gdurl.com/J8RE'>
 		          </div>
-		          <div class='headerTitle roboto-c fw-700'>
+		          <div class='headerTitle roboto-c fw-400'>
 		            Title here new
 		          </div>
 		        </div>
@@ -175,6 +175,78 @@ Maintain loyalty">
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/webflow.js"></script>
+	<script src="js/hello.js/src/hello.polyfill.js"></script>
+	<script src="js/hello.js/src/hello.js"></script>
+	<script src="js/hello.js/src/modules/facebook.js"></script>
+	<script class="pre">
+		// Parse query string. ref: http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+		debugger;
+		var qs = (function(a) {
+		    if (a == "") return {};
+		    var b = {};
+		    for (var i = 0; i < a.length; ++i)
+		    {
+		        var p=a[i].split('=', 2);
+		        if (p.length == 1)
+		            b[p[0]] = "";
+		        else
+		            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+		    }
+		    return b;
+		})(window.location.search.substr(1).split('&'));
+	
+		var replaceCover = function(url) {
+			$('<style>.screenShotContainer .backgroundLayer::before { background-image: url("'+url+'"), url("../images/screenshot/content_bg_darker.png");</style>').appendTo('head');
+		};
+		
+		var replaceAboutText = function(aboutText) {
+			$("aboutDescText").text = aboutText;
+		};
+	
+		var replaceTitles = function(titleText) {
+			$( ".headerTitle" ).each(function( index ) {
+			  $(this).text(titleText);
+			});			
+		};
+		
+	
+		var facebook = hello('facebook');
+		var page_id = qs["id"];
+		if (facebook && page_id)
+		{
+			facebook.api(page_id+'?fields=id, name, picture.height(961), cover.height(961), location, about, hours, description, phone').then(function(details){
+				
+				debugger;
+				// Cover image
+				if (details && details.cover)
+				{
+					replaceCover(details.cover.source);
+				}
+				
+				// About description
+				if (details.description != undefined)
+	            {
+	                replaceAboutText(details.description);
+	            }
+	            else if (details.about != undefined)
+	            {
+	                replaceAboutText(details.about);
+	            }
+	
+				// Title
+				if (details.name != undefined)
+				{
+					replaceTitles(details.name);
+				}
+				
+				
+				// facebook.api(qs["id"] + '/posts?fields=id,picture,full_picture,created_time,name,message,attachments,likes.limit(1).summary(true)').then(function(feed){
+				// 	debugger;
+				// });
+			});
+			
+		}
+	</script>	
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>

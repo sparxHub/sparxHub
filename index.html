@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Thu Oct 22 2015 17:51:41 GMT+0000 (UTC) -->
+<!-- Last Published: Tue Oct 27 2015 03:24:50 GMT+0000 (UTC) -->
 <html data-wf-site="55f0774dab21fd960e647dbf" data-wf-page="55f0774dab21fd960e647dc1">
 <head>
   <meta charset="utf-8">
@@ -27,21 +27,39 @@ Maintain loyalty">
   <link rel="apple-touch-icon" href="images/webclip-slate.png">
 </head>
 <body>
-  <div class="pick-fb-page">
-    <div class="pick-popup mobile">
-      <h2 class="pick-title">Pick your business page</h2>
-      <a class="w-clearfix w-inline-block header-pick" href="result.html"><img class="fb-logo" src="images/Imperial.png">
-        <h2 class="fb-page-name mobile">Imperial</h2>
-      </a>
-      <a class="w-clearfix w-inline-block header-pick" href="result.html"><img class="fb-logo" src="images/San-Diego.png">
-        <h2 class="fb-page-name mobile">San Diego</h2>
-      </a>
-      <a class="w-clearfix w-inline-block header-pick last" href="result.html"><img class="fb-logo" src="images/None.png">
-        <h2 class="fb-page-name mobile">Don’t have a page</h2>
-      </a>
-      <div class="space"></div>
-    </div>
-  </div>
+  	<div id="pick-fb-page" class="pick-fb-page"></div>
+  <!-- START HERE -->
+	<script class="pre">
+		function loadScript(url, callback)
+		{
+		    // Adding the script tag to the head as suggested before
+		    var head = document.getElementsByTagName('head')[0];
+		    var script = document.createElement('script');
+		    script.type = 'text/javascript';
+		    script.src = url;
+
+		    // Then bind the event to the callback function.
+		    // There are several events for cross browser compatibility.
+		    script.onreadystatechange = callback;
+		    script.onload = callback;
+
+		    // Fire the loading
+		    head.appendChild(script);
+		};
+			
+		var runCode = function() {
+			var data = [
+			  {access_token: "at223", name: "test 1", picture:{data: {url:"images/Imperial.png"}}},
+			  {access_token: "at333", name: "test 2", picture:{data: {url:"images/San-Diego.png"}}}
+			];
+
+			var pickupPopup = window.reactBridge(data, document.getElementById('pick-fb-page'));
+			pickupPopup.render();	
+		};
+		
+		loadScript("./js/bundle.js", runCode);
+	</script>
+  <!-- END HERE -->
   <div class="w-section w-hidden-main w-hidden-medium w-hidden-small section-mobile">
     <div class="w-row">
       <div class="w-col w-col-6 w-col-tiny-6 w-clearfix"><img class="apssvillage-logo" src="images/Logo-Negative.png">
@@ -89,6 +107,7 @@ Maintain loyalty">
             <li>Notify your customers of discounts, new offerings, etc.</li>
             <li>Get feedback and chat with your app users</li>
           </ul><img class="handwrite" src="images/Hand-Writing-fixed.png"><a class="button main" href="#" onclick="login('facebook');">TRY A FREE DEMO WITH YOUR OWN BRAND</a>
+          <div id="error-permissions" class="errordemo">Try demo is requiring your permissions</div>
         </div>
         <div class="w-col w-col-6 call-to-action"><img class="hero-iphone" width="500" src="images/Phones-Susan.png">
         </div>
@@ -201,14 +220,67 @@ Maintain loyalty">
 	<script src="js/hello.js/src/hello.js"></script>
 	<script src="js/hello.js/src/modules/facebook.js"></script>
 	<script class="pre">
+	
+	function permissionsVerified(permissions) {
+		try {
+			if (!permissions || permissions[0].status != 'granted' || permissions[1].status != 'granted') {
+				return false;
+			}
+		}
+		catch (e){
+			return false;
+		}
+		return true;
+	}
+	
 	function login(network) {
 		var facebook = hello(network);
-		facebook.login().then(function() {
-			// get user profile data
-			return facebook.api('me');
+
+		// Hide error  
+		document.getElementById('pick-fb-page').style.display = 'none';
+		
+		// Login flow
+		facebook.login({scope: 'manage_pages'}).then(function() {
+			
+			// Get user permissions
+			return facebook.api('me/permissions'); //  'me/accounts'
 		}).then(function(p) {
-			console.log("hello api success");
-			console.log(p);
+
+			// Check if user verify permissions
+			if (p && permissionsVerified(p.data)) {
+				// Get user managed pages
+				facebook.api('me/accounts').then(function(pages){
+					
+					debugger;
+					// Check if pages data is empty
+					if(!pages || !pages.data || pages.data.length < 1)
+					{
+						// TODO: we may need to add text to let the user know he not have managed page
+						//Put default page
+						pages.data = [
+						  {id: "", access_token: "", name: "Sample theme - Imperial", picture:{data: {url:"images/Imperial.png"}}}
+						];
+					}
+					
+					// Prepare user's pages list
+					var pickupPopup = window.reactBridge(pages.data, document.getElementById('pick-fb-page'));
+					pickupPopup.render();
+					
+					// Show pick FB dialog
+					document.getElementById('pick-fb-page').style.display = 'block';
+
+					// //test
+					// facebook.api(pages.data[0].id+'/posts?fields=id,picture,full_picture,created_time,name,message,attachments,likes.limit(1).summary(true)').then(function(feed){
+					// 	debugger;
+					// });
+				});
+				// // Redirect to results
+				// window.location = "result.html";
+			}
+			else {
+				// Show error
+				document.getElementById('error-permissions').style.display = 'block';
+			}
 		});
 	}
 	</script>
@@ -216,7 +288,7 @@ Maintain loyalty">
 	hello.init({
 		facebook: 1636360896607051
 	}, {
-		redirect_uri: '../redirect.html',
+		redirect_uri: 'redirect.html',
 		oauth_proxy: 'https://auth-server.herokuapp.com/proxy'
 	});
 	</script>	
