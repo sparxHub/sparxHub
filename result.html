@@ -209,6 +209,12 @@ Maintain loyalty">
 			});			
 		};
 		
+		var replaceAppPicture = function(picUrl) {
+			$("div.topLayerLogo > img").each(function(index) {
+				$(this).attr("src",picUrl);
+			});
+		}
+		
 	
 		var facebook = hello('facebook');
 		var page_id = qs["id"];
@@ -217,6 +223,12 @@ Maintain loyalty">
 			facebook.api(page_id+'?fields=id, name, picture.height(961), cover.height(961), location, about, hours, description, phone').then(function(details){
 				
 				debugger;
+				
+				if (details.picture && details.picture.data && details.picture.data.url)
+	            {
+	                replaceAppPicture(details.picture.data.url);
+	            }
+				
 				// Cover image
 				if (details && details.cover)
 				{
