@@ -222,6 +222,15 @@ Maintain loyalty">
 			});
 		}
 		
+		var replacePhone = function(phoneStr) {
+			$("#phone > .aboutText").each(function(index) {
+				var obj = $(this).text(phoneStr);
+				if (phoneStr.length>0) {
+					obj.html($(this).html().replace(/\s/g,"<span style=\"display:none\">_</span>&nbsp;"));
+				}
+			});
+		}
+		
 		var replacePost1 = function(url, text, likes){
 			$("#post1").css("background-image", 'url(' + url +')'); 
 			$(".flayerTitle").text(text);
@@ -359,6 +368,10 @@ Maintain loyalty">
 	            {
 	                replaceAboutText(details.about);
 	            }
+				else
+				{
+					replaceAboutText("Write something about your business");
+				}
 	
 				// Title
 				if (details.name != undefined)
@@ -371,6 +384,21 @@ Maintain loyalty">
 				{
 					replaceAddress(createAddressFromLocation(details.location));
 				}
+				else
+				{
+					replaceAddress("[ Add your business address ]");
+				}
+				
+				// Phone
+				if (details.phone != undefined)
+				{
+					replacePhone(details.phone);
+				}
+				else
+				{
+					replacePhone("[ Add your business phone number]");
+				}
+				
 				
 				debugger;
 				// Get two flyers  ... for demo

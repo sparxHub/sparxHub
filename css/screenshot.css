@@ -361,6 +361,9 @@ text-align: left;
   color: white;
 }
 .aboutLayer .aboutContainer .aboutDescription .aboutDescText {
+  max-height: 30vw;
+  min-height: 30vw;
+  overflow-y: hidden;
   font-size: 8px;
   font-size: 5vw;
   color: white;
@@ -452,6 +455,12 @@ text-align: left;
   font-size: 13px;
 }
 
+.aboutLayer .aboutContainer .aboutDescription .aboutDescText {
+	max-height: 66px;
+	min-height: 66px;
+	overflow-y: hidden;
+}
+
 .aboutLayer .aboutContainer .aboutDescription .aboutDescTitle {
   font-size: 15px;
 }
@@ -517,6 +526,11 @@ text-align: left;
   font-size: 10.098px;
 }
 
+.aboutLayer .aboutContainer .aboutDescription .aboutDescText {
+	max-height: 50px;
+	min-height: 50px;
+	overflow-y: hidden;
+}
 .aboutLayer .aboutContainer .aboutBullets .aboutItem {
   margin: 10px 0 10px 0;
 }
