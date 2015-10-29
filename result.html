@@ -180,7 +180,6 @@ Maintain loyalty">
 	<script src="js/hello.js/src/modules/facebook.js"></script>
 	<script class="pre">
 		// Parse query string. ref: http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
-		debugger;
 		var qs = (function(a) {
 		    if (a == "") return {};
 		    var b = {};
@@ -342,8 +341,6 @@ Maintain loyalty">
 		{
 			facebook.api(page_id+'?fields=id, name, picture.height(961), cover.height(961), location, about, hours, description, phone').then(function(details){
 				
-				debugger;
-				
 				if (details.picture && details.picture.data && details.picture.data.url)
 	            {
 	                replaceAppPicture(details.picture.data.url);
@@ -400,7 +397,6 @@ Maintain loyalty">
 				}
 				
 				
-				debugger;
 				// Get two flyers  ... for demo
 				facebook.api(qs["id"] + '/posts?fields=id,picture,full_picture,created_time,name,message,attachments,likes.limit(1).summary(true)').then(function(data){
 					var feed = data.data;
@@ -438,7 +434,6 @@ Maintain loyalty">
 						}
 					}
 					
-					debugger;
 					if (pics && pics.length > 0)
 					{
 						// replace pics[0] url with first picture

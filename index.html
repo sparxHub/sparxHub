@@ -251,7 +251,6 @@ Maintain loyalty">
 				// Get user managed pages
 				facebook.api('me/accounts').then(function(pages){
 					
-					debugger;
 					// Check if pages data is empty
 					if(!pages || !pages.data || pages.data.length < 1)
 					{
@@ -268,11 +267,6 @@ Maintain loyalty">
 					
 					// Show pick FB dialog
 					document.getElementById('pick-fb-page').style.display = 'block';
-
-					// //test
-					// facebook.api(pages.data[0].id+'/posts?fields=id,picture,full_picture,created_time,name,message,attachments,likes.limit(1).summary(true)').then(function(feed){
-					// 	debugger;
-					// });
 				});
 				// // Redirect to results
 				// window.location = "result.html";
