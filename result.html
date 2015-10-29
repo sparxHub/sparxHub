@@ -200,7 +200,7 @@ Maintain loyalty">
 		};
 		
 		var replaceAboutText = function(aboutText) {
-			$("aboutDescText").text = aboutText;
+			$("#aboutDescText").text(aboutText);
 		};
 	
 		var replaceTitles = function(titleText) {
@@ -213,6 +213,117 @@ Maintain loyalty">
 			$("div.topLayerLogo > img").each(function(index) {
 				$(this).attr("src",picUrl);
 			});
+		}
+		
+		var replaceAddress = function(locationStr) {
+			$("#addr > .aboutText").each(function(index) {
+				var obj = $(this).text(locationStr);
+				obj.html(obj.html().replace(/\n/g,'<br/>'));
+			});
+		}
+		
+		var replacePost1 = function(url, text, likes){
+			$("#post1").css("background-image", 'url(' + url +')'); 
+			$(".flayerTitle").text(text);
+			$(".md-like > .md-text").text(likes + ' likes');
+		}
+
+		var replacePost2Pic = function(url){
+			$("#post2").css("background-image", 'url(' + url +')'); 
+		}
+		
+		var createAddressFromLocation = function(location)
+		{
+			var address = '';
+			if (location)
+			{
+				var branch = {};
+
+                // TBD: localization
+				address = '';
+				if (location.street)
+				{
+					address += location.street;
+					address += '\n';
+				}
+                
+				var addSpace = false;
+				var addComma = false;
+
+				if (location.city)
+				{
+					address += location.city;
+					addSpace = true;
+					addComma = true;
+				}
+      
+				if (location.region)
+				{
+					if (addComma)
+					{
+						address += ',';
+					}
+                    
+					if (addSpace)
+					{
+						address += ' ';
+					}
+
+					address += location.region;
+					addSpace = true;
+					addComma = true;
+				}
+                
+                if (location.state)
+                {
+                    if (addComma)
+                    {
+                        address += ',';
+                    }
+                    
+                    if (addSpace)
+                    {
+                        address += ' ';
+                    }
+
+                    address += location.state;
+                    addSpace = true;
+                    addComma = false;
+                }
+                
+                if (location.state && location.zip) // omit zip unless US-style
+                {
+                    if (addComma)
+                    {
+                        address += ',';
+                    }
+                    
+                    if (addSpace)
+                    {
+                        address += ' ';
+                    }
+                    address += location.zip;
+                    addSpace = true;
+                    addComma = true;
+                }
+
+                if (location.country)
+                {
+                    if (addComma)
+                    {
+                        address += ',';
+                    }
+                    
+                    if (addSpace)
+                    {
+                        address += ' ';
+                    }
+                    address += location.country;
+                    addSpace = true;
+                    addComma = true;
+                }
+			}
+			return address;
 		}
 		
 	
@@ -234,6 +345,10 @@ Maintain loyalty">
 				{
 					replaceCover(details.cover.source);
 				}
+				else
+				{
+					replaceCover("../images/screenshot/content_bg_darker.png");
+				}
 				
 				// About description
 				if (details.description != undefined)
@@ -251,10 +366,66 @@ Maintain loyalty">
 					replaceTitles(details.name);
 				}
 				
+				// Address
+				if (details.location != undefined)
+				{
+					replaceAddress(createAddressFromLocation(details.location));
+				}
 				
-				// facebook.api(qs["id"] + '/posts?fields=id,picture,full_picture,created_time,name,message,attachments,likes.limit(1).summary(true)').then(function(feed){
-				// 	debugger;
-				// });
+				debugger;
+				// Get two flyers  ... for demo
+				facebook.api(qs["id"] + '/posts?fields=id,picture,full_picture,created_time,name,message,attachments,likes.limit(1).summary(true)').then(function(data){
+					var feed = data.data;
+					var count = 0;
+					var pics = [];
+					var post1Text = "";
+					var post1Likes = "";
+					for (var i = 0; i < feed.length && count < 2; i++)
+					{
+						var picsUrl = undefined;
+						if (feed[i].full_picture)
+						{
+							picsUrl = feed[i].full_picture;
+						}
+						else if (feed[i].attachments && feed[i].attachments.data && feed[i].attachments.data[0] &&
+							feed[i].attachments.data[0].media && feed[i].attachments.data[0].media.image &&
+							feed[i].attachments.data[0].media.image.src)
+							{
+								picsUrl.pic = feed[i].attachments.data[0].media.image.src;
+							}
+							else
+							{    
+								picsUrl = data[i].picture;
+							}
+							
+						if (picsUrl != undefined)
+						{
+							if (count == 0)
+							{
+								post1Text = feed[i].message || feed[i].name;
+								post1Likes = (feed[i].likes && feed[i].likes.summary) ? feed[i].likes.summary.total_count : 0;
+							}
+							pics.push(picsUrl);
+							count++;
+						}
+					}
+					
+					debugger;
+					if (pics && pics.length > 0)
+					{
+						// replace pics[0] url with first picture
+						replacePost1(pics[0], post1Text, post1Likes);
+						
+						if (pics && pics.length > 1)
+						{
+							// replace pics[1] url with second picture
+							replacePost2Pic(pics[1]);
+						}
+						
+					}
+					
+					
+				});
 			});
 			
 		}

@@ -189,7 +189,8 @@ var PickUpComponent = _react2["default"].createClass({
 			"div",
 			{ className: "pick-popup mobile" },
 			_react2["default"].createElement(PickUpTitle, null),
-			_react2["default"].createElement(PickUpList, { data: this.props.data ? this.props.data : this.state.data })
+			_react2["default"].createElement(PickUpList, { data: this.props.data ? this.props.data : this.state.data }),
+			_react2["default"].createElement("div", { className: "space" })
 		);
 	}
 });
