@@ -241,6 +241,8 @@ text-align: left;
   font-size: 10px;
   font-size: 14.3856px;
   margin: 1.92px 3.84px 0 3.84px;
+  max-height: 50px;
+  overflow-y: hidden;  
   color: white;
 }
 .newsLayer .newsContainer .flyer .details .meta-details {
