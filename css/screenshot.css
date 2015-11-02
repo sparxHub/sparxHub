@@ -238,8 +238,7 @@ text-align: left;
       -ms-flex-positive: 1;
           flex-grow: 1;
   width: 100%;
-  font-size: 10px;
-  font-size: 14.3856px;
+  font-size: 2.5vw;
   margin: 1.92px 3.84px 0 3.84px;
   max-height: 50px;
   overflow-y: hidden;  
@@ -483,6 +482,10 @@ text-align: left;
   height: 12px;
 }	
 
+.newsLayer .newsContainer .flyer .details .flayerTitle {
+	font-size: 10px;
+}
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -492,7 +495,7 @@ text-align: left;
 }
 
 .newsLayer .newsContainer .flyer .details .flayerTitle {
-	font-size: 10.098px;
+	font-size: 8px;
 }
 
 .newsLayer .newsContainer .flyer .details .meta-details .meta-box {
