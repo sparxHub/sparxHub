@@ -81,10 +81,29 @@ p {
   padding: 8px 17px;
 }
 .button.main {
+	color:gray;
   border: 1px solid white;
   background-color: #005b8a;
   box-shadow: rgba(255, 255, 255, 0.29) 0px 1px 0px 0px inset;
 }
+
+.buttoncontainer-main {
+  position: relative;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+.coming-soon {
+	position: absolute;
+	left: -7%;
+	top: -18%;
+	display: inline-block;
+	width: auto;
+	height: 116%;
+	min-width: auto;
+}
+
+
 .button.main:hover {
   border: 1px solid white;
   background-color: #005b8a;
@@ -568,6 +587,8 @@ html.w-mod-js *[data-ix="load-3"] {
   transform: translate(0px, -50px);
 }
 @media (max-width: 991px) {
+
+	
   p {
     font-size: 14px;
     line-height: 21px;
@@ -588,6 +609,15 @@ html.w-mod-js *[data-ix="load-3"] {
   }
 }
 @media (max-width: 767px) {
+	.coming-soon {
+		position: absolute;
+		left: 9vw;
+		display: inline-block;
+		width: auto;
+		height: 116%;
+		min-width: auto;
+		top: -2vw;
+	}
   h2 {
     margin-top: 0px;
   }
@@ -662,6 +692,18 @@ html.w-mod-js *[data-ix="load-3"] {
   }
 }
 @media (max-width: 479px) {
+	
+	
+	.coming-soon {
+		position: absolute;
+		left: -7%;
+		top: -18%;
+		display: inline-block;
+		width: auto;
+		height: 116%;
+		min-width: auto;
+	}
+	
   h3 {
     font-size: 18px;
     line-height: 23px;
