@@ -1,4 +1,4 @@
-<html>
+<html xmlns:ns0="http://macVmlSchemaUri">
 
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
@@ -16,34 +16,28 @@
 	{font-family:"MS Mincho";
 	panose-1:2 2 6 9 4 2 5 8 3 4;}
 @font-face
-	{font-family:"MS Gothic";
-	panose-1:2 11 6 9 7 2 5 8 2 4;}
-@font-face
 	{font-family:"Cambria Math";
 	panose-1:2 4 5 3 5 4 6 3 2 4;}
 @font-face
 	{font-family:Calibri;
 	panose-1:2 15 5 2 2 2 4 3 2 4;}
 @font-face
-	{font-family:David;
-	panose-1:2 14 5 2 6 4 1 1 1 1;}
-@font-face
 	{font-family:"Arial Narrow";
 	panose-1:2 11 6 6 2 2 2 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:David;
+	panose-1:2 14 5 2 6 4 1 1 1 1;}
 @font-face
 	{font-family:EitanNewLogo;}
 @font-face
 	{font-family:Miriam;
 	panose-1:2 11 5 2 5 1 1 1 1 1;}
 @font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
 	{font-family:"\@MS Mincho";
 	panose-1:2 2 6 9 4 2 5 8 3 4;}
-@font-face
-	{font-family:"\@MS Gothic";
-	panose-1:2 11 6 9 7 2 5 8 2 4;}
  /* Style Definitions */
  p.MsoNormal, li.MsoNormal, div.MsoNormal
 	{margin:0in;
@@ -77,7 +71,8 @@ h2
 	font-family:"Times New Roman",serif;
 	font-weight:normal;}
 h3
-	{margin-top:0in;
+	{mso-style-link:"Heading 3 Char";
+	margin-top:0in;
 	margin-right:0in;
 	margin-bottom:6.0pt;
 	margin-left:92.7pt;
@@ -88,7 +83,8 @@ h3
 	font-family:"Times New Roman",serif;
 	font-weight:normal;}
 h4
-	{margin-top:0in;
+	{mso-style-link:"Heading 4 Char";
+	margin-top:0in;
 	margin-right:0in;
 	margin-bottom:6.0pt;
 	margin-left:121.05pt;
@@ -124,21 +120,20 @@ p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
 	{mso-style-link:"Comment Text Char";
 	margin:0in;
 	margin-bottom:.0001pt;
-	text-align:right;
 	line-height:normal;
-	direction:rtl;
-	unicode-bidi:embed;
 	font-size:10.0pt;
 	font-family:"Times New Roman",serif;}
 p.MsoHeader, li.MsoHeader, div.MsoHeader
-	{margin:0in;
+	{mso-style-link:"Header Char";
+	margin:0in;
 	margin-bottom:.0001pt;
 	text-align:justify;
 	line-height:normal;
 	font-size:12.0pt;
 	font-family:"Times New Roman",serif;}
 p.MsoFooter, li.MsoFooter, div.MsoFooter
-	{margin:0in;
+	{mso-style-link:"Footer Char";
+	margin:0in;
 	margin-bottom:.0001pt;
 	text-align:justify;
 	line-height:normal;
@@ -226,6 +221,72 @@ p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
 	line-height:normal;
 	font-size:11.0pt;
 	font-family:"Calibri",sans-serif;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Times New Roman",serif;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Times New Roman",serif;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Times New Roman",serif;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:"Times New Roman",serif;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-link:"Heading 5";
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;
+	font-style:italic;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	margin-right:0in;
+	margin-left:0in;
+	line-height:18.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"David",sans-serif;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"David",sans-serif;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"David",sans-serif;}
+span.BodyTextChar
+	{mso-style-name:"Body Text Char";
+	mso-style-link:"Body Text";
+	font-family:"David",sans-serif;}
+span.BodyTextIndentChar
+	{mso-style-name:"Body Text Indent Char";
+	mso-style-link:"Body Text Indent";
+	font-family:"David",sans-serif;}
+span.BodyText2Char
+	{mso-style-name:"Body Text 2 Char";
+	mso-style-link:"Body Text 2";
+	font-family:"David",sans-serif;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:"Courier New";}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"David",sans-serif;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
 p.indent1, li.indent1, div.indent1
 	{mso-style-name:"indent 1";
 	margin-top:0in;
@@ -318,13 +379,10 @@ p.corpnamesseparator, li.corpnamesseparator, div.corpnamesseparator
 p.CorporateFooter, li.CorporateFooter, div.CorporateFooter
 	{mso-style-name:"Corporate Footer";
 	margin-top:0in;
-	margin-right:18.75pt;
+	margin-right:0in;
 	margin-bottom:3.0pt;
-	margin-left:0in;
-	text-align:right;
+	margin-left:18.75pt;
 	line-height:normal;
-	direction:rtl;
-	unicode-bidi:embed;
 	font-size:7.0pt;
 	font-family:"Times New Roman",serif;
 	font-weight:bold;}
@@ -338,18 +396,6 @@ p.CorporateFooter0, li.CorporateFooter0, div.CorporateFooter0
 	line-height:normal;
 	font-size:7.5pt;
 	font-family:"Arial",sans-serif;}
-span.BodyTextIndentChar
-	{mso-style-name:"Body Text Indent Char";
-	mso-style-link:"Body Text Indent";
-	font-family:"David",sans-serif;}
-span.BodyTextChar
-	{mso-style-name:"Body Text Char";
-	mso-style-link:"Body Text";
-	font-family:"David",sans-serif;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
-	font-family:"David",sans-serif;}
 p.Style1, li.Style1, div.Style1
 	{mso-style-name:Style1;
 	margin-top:0in;
@@ -362,10 +408,6 @@ p.Style1, li.Style1, div.Style1
 	line-height:16.0pt;
 	font-size:13.0pt;
 	font-family:"Arial",sans-serif;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-link:"Heading 2";
-	font-family:"David",sans-serif;}
 p.ColorfulList-Accent11, li.ColorfulList-Accent11, div.ColorfulList-Accent11
 	{mso-style-name:"Colorful List - Accent 11";
 	margin-top:0in;
@@ -410,24 +452,6 @@ p.ColorfulList-Accent11CxSpLast, li.ColorfulList-Accent11CxSpLast, div.ColorfulL
 	line-height:normal;
 	font-size:12.0pt;
 	font-family:"Times New Roman",serif;}
-span.BodyText2Char
-	{mso-style-name:"Body Text 2 Char";
-	mso-style-link:"Body Text 2";
-	font-family:"David",sans-serif;}
-span.BalloonTextChar
-	{mso-style-name:"Balloon Text Char";
-	mso-style-link:"Balloon Text";
-	font-family:"Tahoma",sans-serif;}
-span.Heading5Char
-	{mso-style-name:"Heading 5 Char";
-	mso-style-link:"Heading 5";
-	font-family:"Calibri",sans-serif;
-	font-weight:bold;
-	font-style:italic;}
-span.PlainTextChar
-	{mso-style-name:"Plain Text Char";
-	mso-style-link:"Plain Text";
-	font-family:"Courier New";}
 p.1, li.1, div.1
 	{mso-style-name:1;
 	margin-top:0in;
@@ -437,19 +461,9 @@ p.1, li.1, div.1
 	line-height:12.0pt;
 	font-size:10.0pt;
 	font-family:"Tahoma",sans-serif;}
-span.CommentTextChar
-	{mso-style-name:"Comment Text Char";
-	mso-style-link:"Comment Text";
-	font-family:"David",sans-serif;}
-span.CommentSubjectChar
-	{mso-style-name:"Comment Subject Char";
-	mso-style-link:"Comment Subject";
-	font-family:"David",sans-serif;
-	font-weight:bold;}
 .MsoChpDefault
 	{font-size:10.0pt;}
- /* Page Definitions */
- @page WordSection1
+@page WordSection1
 	{size:595.3pt 841.9pt;
 	margin:56.7pt 70.9pt 56.7pt 70.9pt;}
 div.WordSection1
@@ -466,211 +480,160 @@ ul
 
 <body lang=EN-US link=blue vlink=purple>
 
-<div class=WordSection1 dir=RTL>
+<div class=WordSection1>
 
-<p class=MsoNormal align=center dir=LTR style='margin-top:6.0pt;text-align:
-center;line-height:115%'><b><u><span style='font-family:"Calibri",sans-serif'>AppsVillage
+<p class=MsoNormal align=center style='margin-top:6.0pt;text-align:center;
+line-height:115%'><b><u><span style='font-family:"Calibri",sans-serif'>AppsVillage
 Terms of Use</span></u></b></p>
 
-<p class=MsoNormal align=left dir=LTR style='margin-top:6.0pt;text-align:left;
+<p class=MsoNormal align=left style='margin-top:6.0pt;text-align:left;
 line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-"Calibri",sans-serif'>The following key points of the Terms of Use are only brought
-for your convenience</span><span style='font-size:11.0pt;line-height:115%;
-font-family:"Calibri",sans-serif'>. These key points do not substitute the full
-Terms.</span></p>
+"Calibri",sans-serif'>The following key points of the Terms of Use are only
+brought for your convenience</span><span style='font-size:11.0pt;line-height:
+115%;font-family:"Calibri",sans-serif'>. These key points do not substitute the
+full Terms.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Welcome
+     to AppsVillage (the “<b>App</b>”). The </span><span style='font-size:11.0pt;
+     line-height:115%;font-family:"Calibri",sans-serif'>App </span><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>allows
+     business entities to communicate and interact with customers and
+     prospected customers like you. </span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>These
+     Terms govern your legal relationship with us, not with business whose name
+     and contact information you can find in the ‘About’ menu of the App (the “<b>Business</b>”).
+     </span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
+     may not use the </span><span style='font-size:11.0pt;line-height:115%;
+     font-family:"Calibri",sans-serif'>App </span><span style='font-size:11.0pt;
+     line-height:115%;font-family:"Calibri",sans-serif'>at all if you are </span><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>under
+     </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>13
+     years of age. If you are under 18 years of age, you need to obtain
+     permission from your parent or legal guardian. </span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
+     may only use the </span><span style='font-size:11.0pt;line-height:115%;
+     font-family:"Calibri",sans-serif'>App </span><span style='font-size:11.0pt;
+     line-height:115%;font-family:"Calibri",sans-serif'>for your own <b>private
+     and personal purposes</b>.</span></li>
+ <li class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>To
+     use the </span></b><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>App</span></b><b><span
+     style='font-size:11.0pt;font-family:"Calibri",sans-serif'>, you’ll need to
+     register</span></b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>
+     <b>using your Facebook login</b>. </span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
+     may only use the App in accordance with the Terms and applicable law.</span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Content
+     </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>that</span><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>
+     you post on the </span><span style='font-size:11.0pt;line-height:115%;
+     font-family:"Calibri",sans-serif'>App </span><b><span style='font-size:
+     11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>is not treated
+     as private or confidential and you should not have any expectation of
+     privacy with respect to it. </span></b><span style='font-size:11.0pt;
+     line-height:115%;font-family:"Calibri",sans-serif'>Our</span><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>
+     <u><a href="http://www.appsvillage.mobi/privacy/">Privacy Policy</a></u>,
+     which is incorporated to these Terms by reference, explains the privacy
+     practices on the App. </span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You</span><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>
+     may post only lawful, non-infringing content on the App. By posting
+     Content, you give us certain rights to use it.</span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Content
+     presented on the App may originate from the Business or third parties.<b>
+     We do not guarantee and make no representation or judgment as to the
+     Business’s services or products, the Business’s marketing methods, the
+     Business’s or the Content’s legality, appropriateness, authenticity,
+     validity, accuracy, truthfulness, morality, adequacy to your age or needs</b>.
+     </span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Any
+     and all communications and interactions between you and the Business or
+     third parties, and all consequences resulting from the above, are strictly
+     between you and such parties, and you assume full and exclusive
+     responsibility for them. </span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
+     App may contain various forms of ads or commercial information or content.
+     Their inclusion in the App does not constitute our recommendation or
+     encouragement to procure the goods or services advertised. </span></li>
+ <li class=MsoNormalCxSpMiddle style='margin-top:6.0pt;line-height:115%'><span
+     style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>THE
+     TERMS INCLUDE ADDITIONAL PROVISIONS THAT YOU SHOULD CAREFULLY READ, SUCH
+     AS PROVISIONS REGARDING WARRANTY, LIMITED LIABILITY, INDEMNIFICATION AND
+     ASSIGNMENT. </span></li>
+</ul>
+
+<p class=MsoNormal align=center style='margin-top:6.0pt;text-align:center;
 line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>Welcome to AppsVillage (the &quot;<b>App</b>&quot;).
-The </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>App
-</span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>allows
-business entities to communicate and interact with customers and prospected
-customers like you. </span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>These Terms govern your legal
-relationship with us, not with business whose name and contact information you
-can find in the &quot;About&quot; menu of the App (the &quot;<b>Business</b>&quot;). </span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>You may not use the </span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>App </span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>at
-all if you are </span><span style='font-size:11.0pt;line-height:115%;
-font-family:"Calibri",sans-serif'>under </span><span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif'>13 years of age. If you are
-under 18 years of age, you need to obtain permission from your parent or legal
-guardian. </span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>You may only use the </span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>App </span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>for
-your own <b>private and personal purposes</b>.</span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><b><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>To use the </span></b><b><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>App</span></b><b><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>,
-you&quot;ll need to register</span></b><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'> <b>using your Facebook login</b>. </span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>You may only use the App in accordance
-with the Terms and applicable law.</span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>Content </span><span style='font-size:
-11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>that</span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> you
-post on the </span><span style='font-size:11.0pt;line-height:115%;font-family:
-"Calibri",sans-serif'>App </span><b><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>is not treated as private or
-confidential and you should not have any expectation of privacy with respect to
-it. </span></b><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Our</span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> <u><a
-href="http://www.appsvillage.mobi/privacy/">Privacy Policy</a></u>, which is
-incorporated to these Terms by reference, explains the privacy practices on the
-App. </span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>You</span><span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif'> may post only lawful,
-non-infringing content on the App. By posting Content, you give us certain
-rights to use it.</span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>Content presented on the App may
-originate from the Business or third parties.<b> We do not guarantee and make
-no representation or judgment as to the Business&quot;s services or products, the
-Business&quot;s marketing methods, the Business&quot;s or the Content&quot;s legality,
-appropriateness, authenticity, validity, accuracy, truthfulness, morality,
-adequacy to your age or needs</b>. </span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>Any and all communications and
-interactions between you and the Business or third parties, and all
-consequences resulting from the above, are strictly between you and such
-parties, and you assume full and exclusive responsibility for them. </span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>The App may contain various forms of ads
-or commercial information or content. Their inclusion in the App does not
-constitute our recommendation or encouragement to procure the goods or services
-advertised. </span></p>
-
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>THE TERMS INCLUDE ADDITIONAL PROVISIONS
-THAT YOU SHOULD CAREFULLY READ, SUCH AS PROVISIONS REGARDING WARRANTY, LIMITED
-LIABILITY, INDEMNIFICATION AND ASSIGNMENT. </span></p>
-
-<p class=MsoNormal align=center dir=LTR style='margin-top:6.0pt;text-align:
-center;line-height:115%'><span style='font-size:11.0pt;line-height:115%;
-font-family:"Calibri",sans-serif'>THE APP FUNCTIONS MERELY AS MEANS FOR
-COMMUNICATION AND MARKETING. </span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>ANY AND ALL COMMUNICATIONS AND
-INTERACTIONS BETWEEN YOU AND THE BUSINESS OR THIRD PARTIES, AND ALL
-CONSEQUENCES RESULTING FROM THE ABOVE, ARE STRICTLY BETWEEN YOU AND THE
-BUSINESS OR SUCH THIRD PARTIES, AND YOU ASSUME FULL AND EXCLUSIVE
-RESPONSIBILITY FOR THEM. WE ARE NOT A PARTY TO THOSE COMMUNICATIONS,
-INTERACTIONS, DEALINGS, ENGAGEMENTS AND TRANSACTIONS. </span><span
+"Calibri",sans-serif'>THE APP FUNCTIONS MERELY AS MEANS FOR COMMUNICATION AND
+MARKETING. </span><span style='font-size:11.0pt;line-height:115%;font-family:
+"Calibri",sans-serif'>ANY AND ALL COMMUNICATIONS AND INTERACTIONS BETWEEN YOU
+AND THE BUSINESS OR THIRD PARTIES, AND ALL CONSEQUENCES RESULTING FROM THE
+ABOVE, ARE STRICTLY BETWEEN YOU AND THE BUSINESS OR SUCH THIRD PARTIES, AND YOU
+ASSUME FULL AND EXCLUSIVE RESPONSIBILITY FOR THEM. WE ARE NOT A PARTY TO THOSE
+COMMUNICATIONS, INTERACTIONS, DEALINGS, ENGAGEMENTS AND TRANSACTIONS. </span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>TO
 THE MAXIMUM EXTENT PERMITTED BY LAW, YOUR USE OF THE APP IS AT YOUR OWN SOLE
 RESPONSIBILITY.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><a
-name=About></a><a name=Welcome><b><u><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>Welcome </span></u></b></a></p>
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><a name=About></a><a
+name=Welcome><b><u><span style='font-size:11.0pt;line-height:115%;font-family:
+"Calibri",sans-serif'>Welcome </span></u></b></a></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Welcome
 to </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>AppsVillage</span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>, a-
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>, a
 mobile </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>platform</span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> that
-allows </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>businesses
-</span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>to
-communicate and interact with their customers and prospected customers through
-customized </span><span style='font-size:11.0pt;line-height:115%;font-family:
-"Calibri",sans-serif'>applications for mobile devices. The AppsVillage
-platform, its related services and the mobile app customized to a particular
-business&quot;s needs, will collectively be referred to as the &quot;<b>App</b>&quot;. Your
-access and use of the App is made through a smartphone device</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>
-(the &quot;</span><b><span style='font-size:11.0pt;line-height:115%;font-family:
-"Calibri",sans-serif'>Device</span></b><span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif'>&quot;)</span><span
+that allows </span><span style='font-size:11.0pt;line-height:115%;font-family:
+"Calibri",sans-serif'>businesses </span><span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif'>to communicate and interact
+with their customers and prospected customers through customized </span><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>applications
+for mobile devices. The AppsVillage platform, its related services and the
+mobile app customized to a particular business’s needs, will collectively be
+referred to as the “<b>App</b>”. Your access and use of the App is made through
+a smartphone device</span><span style='font-size:11.0pt;line-height:115%;
+font-family:"Calibri",sans-serif'> (the “</span><b><span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif'>Device</span></b><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>”)</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
-App&quot;s technology is owned and operated by AppsVillage Ltd. (&quot;<b>we</b>&quot;, &quot;<b>our</b>&quot;,
-&quot;<b>us</b>&quot;), while its content and consumer interactions are monitored and
-managed by the business whose name and contact information you can find at the top
-of the App screen and in the &quot;About&quot; menu of the App (the &quot;<b>Business</b>&quot;). </span></p>
+App’s technology is owned and operated by AppsVillage Ltd. (“<b>we</b>”, “<b>our</b>”,
+“<b>us</b>”), while its content and consumer interactions are monitored and
+managed by the business whose name and contact information you can find at the
+top of the App screen and in the ‘About’ menu of the App (the “<b>Business</b>”).
+</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Please
 carefully read the following Terms of Use (the &quot;<b>Terms</b>&quot;). These
 Terms govern your legal relationship with us, not with the Business. By using
 or accessing the App, you agree to be bound by the Terms. If you do not agree
 to the Terms, you may not use the App. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Through
 the App, you may view and post content related to the Business in textual or
-visual form (or any combination thereof (collectively, the &quot;<b>Content</b>&quot;). </span></p>
+visual form (or any combination thereof (collectively, the “<b>Content</b>”). </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>If
 you are under the legal age of majority in your jurisdiction (normally 18
 years), then you must obtain permission from your parent or legal guardian to
@@ -679,17 +642,17 @@ any way. We reserve the right to terminate your account, if we find that you
 are younger than the minimum age specified above. We may request additional
 information to confirm your age, at any time. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>THE
 APP FUNCTIONS MERELY AS MEANS FOR COMMUNICATION AND MARKETING.</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> </span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
-do not provide any safeguards to ensure that the Business&quot;s use of the App is
+do not provide any safeguards to ensure that the Business’s use of the App is
 made in compliance with all laws and regulations that may apply to you, the
 Business or your interaction.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><a
-name=License><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>ANY
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><a name=License><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>ANY
 AND ALL COMMUNICATIONS AND INTERACTIONS BETWEEN YOU AND THE BUSINESS OR THIRD
 PARTIES, AND ALL CONSEQUENCES RESULTING FROM THE ABOVE, ARE STRICTLY BETWEEN
 YOU AND THE BUSINESS OR SUCH THIRD PARTIES, AND YOU ASSUME FULL AND EXCLUSIVE
@@ -699,16 +662,16 @@ style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>TO
 THE MAXIMUM EXTENT PERMITTED BY LAW, YOUR USE OF THE APP IS AT YOUR OWN SOLE
 RESPONSIBILITY.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Note
 that use of the App may involve the use of third party platforms, such as
 Facebook and Twitter. Your use of such third party platforms is governed by
 their respective terms of service, not these Terms. You bear the sole and
 exclusive responsibility for complying with those other terms of service.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
 App may be subject to additional terms and conditions that govern the use of </span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Apple
@@ -716,24 +679,24 @@ or Android</span><span style='font-size:11.0pt;line-height:115%;font-family:
 "Calibri",sans-serif'> apps. You bear the sole and exclusive responsibility for
 complying with any such additionally applicable terms and conditions.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><b><u><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Use</span></u></b></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Subject
-to these Terms, you may download and install the Apps on a Device, and use the App,
-exclusively for your private and personal purposes.</span></p>
+to these Terms, you may download and install the Apps on a Device, and use the
+App, exclusively for your private and personal purposes.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The App
-is only available to Facebook or Twitter users. </span></p>
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
+App is only available to Facebook or Twitter users. </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><a
-name=Account><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><a name=Account><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
 are solely responsible </span></a><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>for all acts or omissions associated
 with your access and use of the App</span><span style='font-size:11.0pt;
@@ -744,79 +707,79 @@ style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>. To
 prevent unauthorized use, keep your password confidential and do not share it
 with any third party. </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>In
-addition to any remedies that may be available to us under any applicable law, we
-may at any time, </span><span style='font-size:11.0pt;line-height:115%;
+addition to any remedies that may be available to us under any applicable law,
+we may at any time, </span><span style='font-size:11.0pt;line-height:115%;
 font-family:"Calibri",sans-serif'>in our sole discretion and without prior
 notice, temporarily or permanently, deny, limit, suspend or terminate your
 access to and use of the App, remove Content that you posted on the App, and
-take technical and legal measures to keep you off the App, if we believe that you
-misused the App or breached these Terms.</span></p>
+take technical and legal measures to keep you off the App, if we believe that
+you misused the App or breached these Terms.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><b><u><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Use
 of the App and <a name=restrictions>restrictions</a></span></u></b></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Use
 of the App requires an online (Wi-Fi or cellular data) connection between your
 Device and the Internet. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Posting
-Content such as images or videos on the App requires the App&quot;s access to your
-Device&quot;s camera, microphone and local storage. </span></p>
+Content such as images or videos on the App requires the App’s access to your
+Device’s camera, microphone and local storage. </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>While
-using the App, you agree to refrain from  </span></p>
+using the App, you agree to refrain from – </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Breaching the Terms or any other
 applicable rules and instructions that we may convey with respect to the use of
 the App; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Engaging in any activity that
 constitutes or encourages conduct that would constitute a criminal offense,
 give rise to civil liability or otherwise violate any applicable law, including
 laws governing privacy, defamation, spam and copyright;</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Interfering with, burdening or
 disrupting the functionality of the </span><span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif'>App</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Breaching the security of the </span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>App </span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>or
 identifying any security vulnerabilities in it;</span></p>
 
-<p dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
-margin-left:28.1pt;margin-bottom:.0001pt;text-align:justify;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;margin-left:28.1pt;
+margin-bottom:.0001pt;text-align:justify;text-indent:-28.1pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Circumventing or manipulating the
 operation or functionality of the </span><span style='font-size:11.0pt;
@@ -827,10 +790,10 @@ attempting</span><span style='font-size:11.0pt;line-height:115%;font-family:
 disabled, inaccessible or undocumented in the App</span><span style='font-size:
 11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>;</span></p>
 
-<p dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
-margin-left:28.1pt;margin-bottom:.0001pt;text-align:justify;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;margin-left:28.1pt;
+margin-bottom:.0001pt;text-align:justify;text-indent:-28.1pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Using </span><span style='font-size:
 11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>or</span><span
@@ -844,10 +807,10 @@ font-family:"Calibri",sans-serif'>App</span><span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif'>;</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Displaying the </span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>App </span><span
@@ -857,13 +820,13 @@ portions of the </span><span style='font-size:11.0pt;line-height:115%;
 font-family:"Calibri",sans-serif'>App</span><span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif'>, independently from</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> the</span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> manner
-on which they originally appear or are made available through the App;</span></p>
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>
+manner on which they originally appear or are made available through the App;</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Impersonating any person or entity, or
 making any false statement pertaining to your identity, </span><span
@@ -871,191 +834,189 @@ style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>emplo
 agency or affiliation with any person or entity</span><span style='font-size:
 11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Collecting, harvesting, obtaining or
 processing personal information of or about other users of the </span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>App</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Without
 derogating from any of the above, you may not post, disseminate, transmit or
 otherwise communicate through the App any Content that: </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>May infringe rights of others, including
 patents, copyrights, trade secrets, trademarks, a person's right to privacy or
 right of publicity; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>May depict or identify minors, their
 personal details, their address or ways to contact them; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>May include software viruses, spyware or
 any other malicious applications; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>May encourage, support, assist, or
 advise in the commission of a criminal offense or carry an elevated risk of
 psychological or physiological stress or injury or damage to property; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>May, through posting, publication,
 dissemination, or making available to the public, be prohibited by any
 applicable law, including court orders; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>May be threatening, abusive, harassing,
 defamatory, libelous, vulgar, violent, obscene or racially, ethnically or
 otherwise objectionable; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:28.1pt;margin-bottom:.0001pt;text-indent:-28.1pt;line-height:
+115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>May include unsolicited commercial
 communications ('spam'), chain letters, or pyramid schemes.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
 may not use the App to send invitations or notifications to anyone who has not
 expressed their consent to receive such invitations or notifications from you. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><a
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><a
 name="Your_Videos"><b><u><span style='font-size:11.0pt;line-height:115%;
 font-family:"Calibri",sans-serif'>Content and dealings</span></u></b></a></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Content
 presented through the App may originate from the Business, from you, from other
-users or from third parties. You may find that the Content is not compatible
-with your requirements, objectionable, annoying, improper, or immoral.</span></p>
+users or from third parties. You may find that the Content is not compatible with
+your requirements, objectionable, annoying, improper, or immoral.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
 encourage you to treat any Content posted on or through the App with caution
 and discretion. We do not guarantee and make no representation or judgment as
-to the Business&quot;s services or products, the Business&quot;s marketing methods, the Business&quot;s
-or the Content&quot;s legality, appropriateness, authenticity, validity, accuracy,
-truthfulness, morality, adequacy to your age or needs, uses thereof that third
-parties may make, or as to any offerings, dealings, transactions or
+to the Business’s services or products, the Business’s marketing methods, the
+Business’s or the Content’s legality, appropriateness, authenticity, validity,
+accuracy, truthfulness, morality, adequacy to your age or needs, uses thereof
+that third parties may make, or as to any offerings, dealings, transactions or
 interactions made by or between you and the Business or third parties in
 connection with the App. </span></b></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The App
-merely provides the Business with a customized platform. The inclusion of any Content
-on or through the App does not constitute our endorsement, sponsorship,
-recommendation or encouragement to suggest, or agree to perform, any service or
-provide any product, engage in any interaction, activity, transaction or dealings
-with any you or any third party, or an authorization or representation of
-affiliation with the Business or any other third party. </span></p>
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
+App merely provides the Business with a customized platform. The inclusion of
+any Content on or through the App does not constitute our endorsement,
+sponsorship, recommendation or encouragement to suggest, or agree to perform,
+any service or provide any product, engage in any interaction, activity,
+transaction or dealings with any you or any third party, or an authorization or
+representation of affiliation with the Business or any other third party. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Any
 and all communications and interactions between you and the Business or third
 parties, and all consequences resulting from the above, are strictly between
-you and such parties, and you assume full and exclusive responsibility for them.
-We are not a party to those communications, interactions, dealings, engagements
-and transactions.</span></p>
+you and such parties, and you assume full and exclusive responsibility for
+them. We are not a party to those communications, interactions, dealings,
+engagements and transactions.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
 do not normally examine, approve or disqualify Content that the Business, you
 or others have uploaded or posted, but we reserve the right to do so.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
-do not claim ownership over the Content that you create, upload to or post to the
-App. WHEN YOU USE THE APP TO DO THIS, YOU REPRESENT AND WARRANT TO US THAT:</span></p>
+do not claim ownership over the Content that you create, upload to or post to
+the App. WHEN YOU USE THE APP TO DO THIS, YOU REPRESENT AND WARRANT TO US THAT:</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>You are the rightful owner of all rights
-to such Content, or are lawfully licensed by all the rightful owners to upload
-to, and post such Content on, the App;</span></p>
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+dir=LTR></span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
+are the rightful owner of all rights to such Content, or are lawfully licensed
+by all the rightful owners to upload to, and post such Content on, the App;</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>You are lawfully entitled to grant us
-the licenses in and to such Content, as contemplated by these terms;</span></p>
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+dir=LTR></span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
+are lawfully entitled to grant us the licenses in and to such Content, as
+contemplated by these terms;</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>You lawfully obtained the consent of all
-individuals depicted, shown or referred to in the Content, to include them in
-the Content and to use that Content for the purposes and in the manner
-contemplated by these terms. With respect to minors depicted, shown or referred
-to in the Content, you lawfully obtained the consent of their parents or legal
-guardians, as well as such minors&quot; approval; </span></p>
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+dir=LTR></span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
+lawfully obtained the consent of all individuals depicted, shown or referred to
+in the Content, to include them in the Content and to use that Content for the
+purposes and in the manner contemplated by these terms. With respect to minors
+depicted, shown or referred to in the Content, you lawfully obtained the
+consent of their parents or legal guardians, as well as such minors’ approval; </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;
-line-height:115%'><span style='font-size:11.0pt;line-height:115%;font-family:
-Symbol'>&bull;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span dir=LTR></span><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'>Creating the content, uploading it to
-and posting it on the App, does not infringe any rights of third parties,
-including intellectual property rights, privacy rights and publicity rights.</span></p>
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+dir=LTR></span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Creating
+the content, uploading it to and posting it on the App, does not infringe any
+rights of third parties, including intellectual property rights, privacy rights
+and publicity rights.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Subject
-to our <u><a href="http://www.appsvillage.mobi/privacy/">Privacy Policy</a></u>,
-by posting or uploading Content on or to the App, you grant us a royalty-free,
-free-of-charge, worldwide, non-exclusive, sub-licenseable license to use such Content,
-on or through the App and on any other online or offline platform or media (the
-&quot;<b>License</b>&quot;)</span><span style='font-size:11.0pt;line-height:115%;
-font-family:"Calibri",sans-serif'>. You further waive all moral rights and
+to our <a href="http://www.appsvillage.mobi/privacy/">Privacy Policy</a>, by
+posting or uploading Content on or to the App, you grant us a royalty-free,
+free-of-charge, worldwide, non-exclusive, sub-licenseable license to use such
+Content, on or through the App and on any other online or offline platform or
+media (the “<b>License</b>”)</span><span style='font-size:11.0pt;line-height:
+115%;font-family:"Calibri",sans-serif'>. You further waive all moral rights and
 rights of attribution with respect to your Content. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
 above License shall expire when you delete the Content from the App, except
 that where your Content is posted on a third party platform (such as Facebook)
@@ -1063,45 +1024,153 @@ prior to its deletion from the App, the above license shall survive your
 deletion of the Content, and shall continue to be effective, with respect to
 such posting on third party platform. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
 may, at any time, at our sole discretion and without prior notice to you,
 remove or modify any Content you have created, uploaded, streamed or posted on
 or through the App, without any liability to you. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><b><u><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><b><u><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Purchases</span></u></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
+Business may offer vouchers for sale through the App, which are redeemable for
+a particular product or service that the Business offers, or for a discount on
+a particular product or service that the Business offers (the “Voucher” and the
+“Redeemable Product/Service”, respectively). The specifics of the Voucher and
+the Redeemable Product/Service, including their price, are determined and
+specified by the Business, and are presented on the App.</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
+may purchase a Voucher using one or more of our then-current supported payment
+methods, as presented to you on the App. We may, from time to time, and without
+specific notice to you, add additional payments methods, or cease to use
+previously supported payment methods. We also reserve the right to limit the
+number of Vouchers that you may purchase.</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Payments
+are processed and handled through relevant third party payment processing
+providers. Payments are therefore subject not only to these Terms, but also the
+terms and conditions of such third parties, pursuant to your contractual
+relations with them. </span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>By
+providing payment information when purchasing Vouchers, you:</span></p>
+
+<p class=MsoListParagraph style='margin-top:6.0pt;text-indent:-.25in;
+line-height:115%'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span dir=LTR></span>Represent and warrant that you are lawfully
+permitted to use the payment method; and </p>
+
+<p class=MsoListParagraph style='margin-top:6.0pt;text-indent:-.25in;
+line-height:115%'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span dir=LTR></span>Give your consent to charge your payment
+method for the amount specified as the Voucher’s price.   </p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
+may require additional information from you before completing payment transactions.</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
+Voucher and the Redeemable Product/Service </span><span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif'>are transactions between you
+and the Business, and all consequences resulting from the above, are strictly
+between you and such parties. The offering of Vouchers and </span><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Redeemable
+Product/Service on the App </span><span style='font-size:11.0pt;line-height:
+115%;font-family:"Calibri",sans-serif'>do not constitute our recommendation of
+the Business, Vouchers or </span><span style='font-size:11.0pt;line-height:
+115%;font-family:"Calibri",sans-serif'>Redeemable Product/Service</span><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>, or
+our encouragement to purchase any Vouchers or </span><span style='font-size:
+11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Redeemable
+Product/Service.</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Except
+as provided herein, and to the greatest extent possible under applicable law:
+(i) we assume no responsibility or liability with respect the Voucher or the
+Redeemable Product/Service, including without limitation in respect of product
+liability or consumer protection claims regarding the Voucher or the Redeemable
+Product/Service; and (ii) you hereby release and agree to hold harmless us and
+our Staff, from any and all causes of action and claims of any nature in
+connection with a Voucher or a Redeemable Product/Service.</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Any
+complaints, claims or demands, including refunds, in connection with the
+Redeemable Product/Service, must be addressed to the Business. You are not
+entitled to any refund from us in connection with any Redeemable
+Product/Service.</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><u><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Refunds
+for Vouchers not yet redeemed</span></u></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>If
+you are a consumer who purchased a Voucher for a personal use as an individual,
+then </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>subject
+to applicable law</span><span style='font-size:11.0pt;line-height:115%;
+font-family:"Calibri",sans-serif'>, you are entitled to cancel your purchase of
+the Voucher and obtain a refund, within 14 days of purchasing the voucher, and
+provided that have not yet redeemed it for the Redeemable Product/Service. To
+cancel the Voucher and </span><span style='font-size:11.0pt;line-height:115%;
+font-family:"Calibri",sans-serif'>request a refund, contact us by email: </span><a
+href="mailto:support@appv.io"><span style='font-size:11.0pt;line-height:115%;
+font-family:"Calibri",sans-serif'>support@appv.io</span></a><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>,
+providing the details of the Voucher purchased. We will then process your
+request and refund you, subject to applicable law. </span><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
+may require additional information from you in order to process your refund
+request. </span><span style='font-size:11.0pt;line-height:115%;font-family:
+"Calibri",sans-serif'>Subject to applicable law, we may charge you a
+cancellation and refund fee, which we will deduct from the refunded amount.</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>To
+the extent that applicable law provides you extended refund rights beyond those
+indicate above, such rights shall apply and govern.</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Your
 <a name=privacy>privacy</a></span></u></b></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
 respect your privacy. Our <u><a href="http://www.appsvillage.mobi/privacy/">Privacy
 Policy</a></u>, which is incorporated to these Terms by reference, explains the
 privacy practices on App.</span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><a
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><a
 name=intellectual><b><u><span style='font-size:11.0pt;line-height:115%;
 font-family:"Calibri",sans-serif'>Third Party Software</span></u></b></a></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
-app may contain or rely upon third party software necessary for its execution, including
-open source software (&quot;<b>Third Party Software</b>&quot;). The license granted to
-you under these terms does not cover your use of third party software. You
-acknowledge and agree that any access to and use of such third party software
-is separately licensed to you pursuant to the terms and conditions of their
-respective third party software licenses.</span></p>
+app may contain or rely upon third party software necessary for its execution,
+including open source software (“<b>Third Party Software</b>”). The license
+granted to you under these terms does not cover your use of third party
+software. You acknowledge and agree that any access to and use of such third
+party software is separately licensed to you pursuant to the terms and
+conditions of their respective third party software licenses.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><a
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><a
 name=Links><b><u><span style='font-size:11.0pt;line-height:115%;font-family:
 "Calibri",sans-serif'>Links </span></u></b></a><b><u><span style='font-size:
 11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>and Commercial
 Information in the App</span></u></b></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
 Business may incorporate ads or information of commercial nature in the App. In
 addition, Content you view through the App may contain various forms of ads, or
@@ -1113,33 +1182,33 @@ goods or services advertised. We assume no responsibility or liability for any
 goods or services advertised or marketed though the App, as well as with regard
 to any information provided regarding them, including their availability. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The App
-may contain links to content published on websites or external sources,
-provided by third parties. We do not operate, or monitor these websites and content.
-You may find them or the information and content posted therein not compatible
-with your requirements, or you may object to their content, or find such
-content to be annoying, improper, unlawful or immoral. By linking to a certain
-website, we do not endorse, or sponsor its content, or confirm its accuracy,
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
+App may contain links to content published on websites or external sources,
+provided by third parties. We do not operate, or monitor these websites and
+content. You may find them or the information and content posted therein not
+compatible with your requirements, or you may object to their content, or find
+such content to be annoying, improper, unlawful or immoral. By linking to a
+certain website, we do not endorse, or sponsor its content, or confirm its accuracy,
 credibility, authenticity, reliability, validity, integrity, or legality. We
 assume no responsibility or liability for such third party websites or content,
 or their availability. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><b><u><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Intellectual
 property</span></u></b></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Except
-for the Content posted on the App by you, the Business or other third parties, We
-and our licensors own all rights, title and interest in and to the App,
+for the Content posted on the App by you, the Business or other third parties,
+We and our licensors own all rights, title and interest in and to the App,
 including patents, copyrights, trademarks, trade names, service marks, trade
 secrets and other intellectual property rights, and any goodwill associated
 therewith. </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Other
 than as expressly permitted in the Terms, you may not copy, distribute, display
 or perform publicly, sublicense, decompile, disassemble, reduce to human
@@ -1157,20 +1226,19 @@ for your own Content), either by yourself or by a third party on your behalf,
 in any way or by any means, including, but not limited to electronic,
 mechanical or optical means. </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
 may not adapt or otherwise use, including in any Internet domain name, any
 name, mark or logo that is similar to our marks and logos. You must refrain
 from any action or omission which may dilute, or tarnish our goodwill. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><a
-name=Changes></a><a name=removal><b><u><span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif'>Requests to remove Content
-from the App</span></u></b></a><b><u><span style='font-size:11.0pt;line-height:
-115%;font-family:"Calibri",sans-serif'> </span></u></b></p>
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><a name=Changes></a><a
+name=removal><b><u><span style='font-size:11.0pt;line-height:115%;font-family:
+"Calibri",sans-serif'>Requests to remove Content from the App</span></u></b></a><b><u><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> </span></u></b></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Any
 requests to remove Content from the App that purportedly infringes or violates
 third party rights, such as copyright, privacy or publicity, must be made in
@@ -1178,32 +1246,30 @@ accordance with our </span><a
 href="http://www.appsvillage.mobi/content_takedown/"><span style='font-size:
 11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Content Takedown
 Policy</span></a><span style='font-size:11.0pt;line-height:115%;font-family:
-"Calibri",sans-serif'>, which is incorporated to these Terms by reference.</span></p>
+"Calibri",sans-serif'> , which is incorporated to these Terms by reference.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Note
 that requests you submit to remove Content from the App, will be evaluated,
 among other things, in light of the privacy-related consents you have given
 through our </span><a href="http://www.appsvillage.mobi/privacy/"><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Privacy
 Policy</span></a><span style='font-size:11.0pt;line-height:115%;font-family:
-"Calibri",sans-serif'>.</span></p>
+"Calibri",sans-serif'> </span><b><u><span style='font-size:11.0pt;line-height:
+115%;font-family:"Calibri",sans-serif'>Changes </span></u></b><b><u><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>in
+the App; discontinuation</span></u></b></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><b><u><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Changes
-</span></u></b><b><u><span style='font-size:11.0pt;line-height:115%;font-family:
-"Calibri",sans-serif'>in the App; discontinuation</span></u></b></p>
-
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
 may, but are not obligated to, maintain the App with periodic releases of bug
 fixes, code updates or upgrades. We will determine, in our discretion, the
 frequency and scope of such releases and you will have no plea, claim or demand
 against us or our directors, officers, employees, agents, advisors,
-consultants, subcontractors and assignees (collectively, our &quot;<b>Staff</b>&quot;), for
-any of these releases or the lack thereof. </span></p>
+consultants, subcontractors and assignees (collectively, our “<b>Staff</b>”),
+for any of these releases or the lack thereof. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
 grant us your express consent to remotely send and automatically install on
 your Device, without any prior or additional notice, updates, upgrades, code
@@ -1211,82 +1277,82 @@ modifications, enhancements, bug fixes, improvements and any other form of code
 or settings changes in or to the App, which, among other things, may change the
 App's settings, layout, design or display.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
 may also, at any time and without prior notice, change the layout, design,
 scope, features or availability of the App or the Content. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Such
 changes, by their nature, may cause inconvenience or even malfunctions. YOU
 AGREE AND ACKNOWLEDGE THAT WE DO NOT ASSUME ANY RESPONSIBILITY WITH RESPECT TO,
 OR IN CONNECTION WITH THE INTRODUCTION OF SUCH CHANGES OR FROM ANY MALFUNCTIONS
 OR FAILURES THAT MAY RESULT THEREFROM.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
 may, at any time, at our sole discretion, discontinue, terminate or suspend the
 operation of the App, or any part or aspects thereof, temporarily or
 permanently, without any liability to you.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><b><u><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>App <a
 name=support>support</a>, availability and quality</span></u></b></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
 availability, quality and functionality of the App depends on various factors,
 including software, hardware, communication networks, and the quality of
 cellular network connectivity, which are provided by third parties, at their
 responsibility. These factors are not fault-free. </span></p>
 
-<p class=MsoBodyText dir=LTR style='margin-top:6.0pt;margin-right:0in;
-margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
+<p class=MsoBodyText style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Also,
 we may, from time to time and as we shall deem fit in our sole discretion, need
 to interrupt the App for maintenance and other operational reasons. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>WE DO
-NOT WARRANT THAT THE APP WILL OPERATE WITHOUT DISRUPTION, ERRORS OR
-INTERRUPTIONS, OR THAT IT WILL BE ACCESSIBLE, OR AVAILABLE AT ALL TIMES OR IMMUNE
-FROM ERRORS, GLITCHES OR UNAUTHORIZED ACCESS. You shall not receive any
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>WE
+DO NOT WARRANT THAT THE APP WILL OPERATE WITHOUT DISRUPTION, ERRORS OR
+INTERRUPTIONS, OR THAT IT WILL BE ACCESSIBLE, OR AVAILABLE AT ALL TIMES OR
+IMMUNE FROM ERRORS, GLITCHES OR UNAUTHORIZED ACCESS. You shall not receive any
 compensation for such interruptions.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
-acknowledge that the App DOES NOT provide any data back-up services, including with
-respect to any Content or any other data that you or third parties upload, post
-or use. </span></p>
+acknowledge that the App DOES NOT provide any data back-up services, including
+with respect to any Content or any other data that you or third parties upload,
+post or use. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><a
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><a
 name="Changes_to_the_Terms"><b><u><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>Changes to the Terms</span></u></b></a></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><a
-name=Warranty><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><a name=Warranty><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
 may amend the Terms from time to time. In such case, we will notify you of the
 amended Terms, through e-mail or through a pop-up when you access the App. If
-you do not accept the amended Terms, these Terms will be terminated (see &quot;Termination&quot;
-section below). Your continued use of the App after the effective date of the
-amended Terms constitutes your consent to the amended Terms. The latest version
-of the Terms will be accessible through the App. </span></a></p>
+you do not accept the amended Terms, these Terms will be terminated (see
+“Termination” section below). Your continued use of the App after the effective
+date of the amended Terms constitutes your consent to the amended Terms. The
+latest version of the Terms will be accessible through the App. </span></a></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><b><u><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>DISCLAIMER</span></u></b><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> OF
 WARRANTY</span></u></b></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>THE APP
-IS PROVIDED FOR USE &quot;AS IS&quot; AND &quot;WITH ALL FAULTS&quot;. WE AND OUR STAFF DISCLAIM
-ALL WARRANTIES AND REPRESENTATIONS, EITHER EXPRESS OR IMPLIED, WITH RESPECT TO THE
-</span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>APP,
-THE BUSINESS,</span><span style='font-size:11.0pt;line-height:115%;font-family:
-"Calibri",sans-serif'> THE CONTENT AVAILABLE THROUGH THE APP, ANY INTERACTION
-RELATED TO THE APP OR TO THE BUSINESS</span><span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif'>, </span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>ANY
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>THE
+APP IS PROVIDED FOR USE “AS IS” AND “WITH ALL FAULTS”. WE AND OUR STAFF
+DISCLAIM ALL WARRANTIES AND REPRESENTATIONS, EITHER EXPRESS OR IMPLIED, WITH
+RESPECT TO THE </span><span style='font-size:11.0pt;line-height:115%;
+font-family:"Calibri",sans-serif'>APP, THE BUSINESS,</span><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> THE
+CONTENT AVAILABLE THROUGH THE APP, ANY INTERACTION RELATED TO THE APP OR TO THE
+BUSINESS</span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>,
+</span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>ANY
 THIRD PARTY SOFTWARE,</span><span style='font-size:11.0pt;line-height:115%;
 font-family:"Calibri",sans-serif'> HARDWARE OR PLATFORM</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>,
@@ -1299,15 +1365,15 @@ line-height:115%;font-family:"Calibri",sans-serif'>SAFETY, </span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>SECURITY
 OR ACCURACY.</span><a name=Liability></a></p>
 
-<h1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
-margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><u><span
+<h1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>LIMITATION</span></u></b><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> OF
 LIABILITY</span></u></b><b><u><span style='font-size:11.0pt;line-height:115%;
 font-family:"Calibri",sans-serif'> </span></u></b></h1>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>WE,
 INCLUDING</span><span style='font-size:11.0pt;line-height:115%;font-family:
 "Calibri",sans-serif'> OUR STAFF</span><span style='font-size:11.0pt;
@@ -1317,16 +1383,16 @@ SHALL NOT BE LIABLE TO THE MAXIMUM EXTENT PERMITTED BY THE APPLICABLE LAW, FOR
 ANY DIRECT, INDIRECT, SPECIAL, PUNITIVE, EXEMPLARY, STATUTORY, INCIDENTAL OR
 CONSEQUENTIAL DAMAGE, OR ANY SIMILAR DAMAGE OR LOSS (INCLUDING LOSS OF PROFIT
 AND LOSS OF DATA), COSTS, EXPENSES AND PAYMENTS, EITHER IN TORT, CONTRACT, OR
-IN ANY OTHER FORM OR THEORY OF LIABILITY, ARISING FROM, OR IN CONNECTION WITH THE
-APP, CONTENT, THE BUSINESS, ITS MARKETHING STRATEGICS, PRODUCS AND SERVICS, THE
-USE OF, OR THE INABILITY TO USE THE APP,</span><span style='font-size:11.0pt;
+IN ANY OTHER FORM OR THEORY OF LIABILITY, ARISING FROM, OR IN CONNECTION WITH
+THE APP, CONTENT, THE BUSINESS, ITS MARKETHING STRATEGICS, PRODUCS AND SERVICS,
+THE USE OF, OR THE INABILITY TO USE THE APP,</span><span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif'> OR ANY COMMUNICATION OR
 INTERACTIONS WITH THE APP</span><span style='font-size:11.0pt;line-height:115%;
 font-family:"Calibri",sans-serif'>, </span><span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif'>OR ANY COMMUNICATIONS,
-INTERACTIONS, DEALINGS, ENGAGEMENTS AND TRANSACTIONS WITH THE BUSINESS OR OTHERS
-ON OR THROUGH THE APP, </span><span style='font-size:11.0pt;line-height:115%;
-font-family:"Calibri",sans-serif'>OR </span><span style='font-size:11.0pt;
+INTERACTIONS, DEALINGS, ENGAGEMENTS AND TRANSACTIONS WITH THE BUSINESS OR
+OTHERS ON OR THROUGH THE APP, </span><span style='font-size:11.0pt;line-height:
+115%;font-family:"Calibri",sans-serif'>OR </span><span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif'>YOUR RELIANCE UPON ANY
 CONTENT POSTED OR AVAILABLE ON THE APP, OR</span><span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif'> ANY FAILURE, ERROR, OR
@@ -1337,25 +1403,25 @@ style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>FAULT
 OR ERROR MADE BY OUR STAFF, OR RETENTION, DELETION, DISCLOSURE AND ANY OTHER
 USE OR LOSS OF CONTENT ON THE APP. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>YOU
 ACKNOWLEDGE AND AGREE THAT THE USE OF THE APP AND SPECIFICALLY THE APP IS
 ENTIRELY, OR AT THE MAXIMUM EXTENT PERMITTED BY THE APPLICABLE LAW, AT YOUR OWN
 RISK</span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>.
 </span></p>
 
-<h1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
-margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>YOU ARE
-SOLELY RESPONSIBLE FOR ANY CONTENT PROVIDED BY YOU AND COMMUNICATED THROUGH THE
-APP, AND FOR ALL CONSEQUENCES ASSOCIATED WITH IT. </span></h1>
+<h1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>YOU
+ARE SOLELY RESPONSIBLE FOR ANY CONTENT PROVIDED BY YOU AND COMMUNICATED THROUGH
+THE APP, AND FOR ALL CONSEQUENCES ASSOCIATED WITH IT. </span></h1>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><u><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Indemnification</span></u></b></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>To
 the </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>maximum</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>
@@ -1364,45 +1430,45 @@ and </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>
 Staff, at your own expense and immediately after receiving a written notice
 thereof, from and against any damages, loss, costs and expenses, including
-attorney&quot;s fees and legal expenses, resulting from any plea, claim, allegation or
-demand, arising from, or in connection with your use of </span><span
+attorney’s fees and legal expenses, resulting from any plea, claim, allegation
+or demand, arising from, or in connection with your use of </span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>the
 App, any Content, your interaction with the Business or other users</span><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>, your
-breach of the Terms, any other terms, rules or regulations applicable to the App,
-your violation, or infringement of any other person&quot;s rights.</span></p>
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>,
+your breach of the Terms, any other terms, rules or regulations applicable to
+the App, your violation, or infringement of any other person’s rights.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><a
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><a
 name=Apple><b><u><span style='font-size:11.0pt;line-height:115%;font-family:
 "Calibri",sans-serif'>Application Marketplace</span></u></b></a></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Your
 use of the App may be subject to additional third party terms and conditions
 that govern that application marketplace from which you downloaded the App,
-such as Google Play or Apple&quot;s App Store. Those other third parties may be
-beneficiaries of these Terms, pursuant to those marketplace&quot;s terms. Such other
-third parties are not responsible for providing maintenance and support
-services with respect to the App.</span></p>
+such as Google Play or Apple’s App Store. Those other third parties may be
+beneficiaries of these Terms, pursuant to those marketplace’s terms. Such other
+third parties are not responsible for providing maintenance and support services
+with respect to the App.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
 following terms apply if you downloaded an App from Apple's App Store. You and
 us agree and acknowledge as follows:</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>These
 Terms are concluded between yourself and us, and not with Apple Inc. (&quot;<b>Apple</b>&quot;).
 Apple is not responsible for the App. In the event of a conflict between these
 Terms and the App Store Terms of Service then the App Store Terms of Service
 will prevail, solely with respect to the conflicting provisions. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
 license granted to you for the App is limited to a non-transferrable license to
 use the App on any iOS Products that you own or control, and as permitted by
@@ -1410,92 +1476,92 @@ the Usage Rules set forth in the App Store Terms of Service, except that such
 App may be accessed, acquired, and sued by other accounts associated with the
 purchaser via Family Sharing.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>In
 the event of a failure to conform to any applicable warranty (if any warranty
 is applicable), you may notify Apple, and Apple will refund the purchase price
 for the App to you (if you paid any). Apple has no other warranty obligation
 whatsoever with respect to the App, and any other claims, losses, liabilities,
-damages, costs or expenses attributable to any failure to conform to any warranty,
-will not be at Apple&quot;s responsibility.</span></p>
+damages, costs or expenses attributable to any failure to conform to any
+warranty, will not be at Apple’s responsibility.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-6.0pt;margin-left:0in;line-height:14.0pt'><span style='font-size:11.0pt;
-font-family:"Calibri",sans-serif'>Apple is not responsible for addressing any
-claims by you or any third party relating to the App or your possession and/or
-use of the App, including (i) product liability claims, (ii) any claim that the
-App fails to conform to any applicable legal or regulatory requirement, and
-(iii) claims arising under consumer protection or similar legislation.</span></p>
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:14.0pt'><span style='font-size:11.0pt;font-family:
+"Calibri",sans-serif'>Apple is not responsible for addressing any claims by you
+or any third party relating to the App or your possession and/or use of the
+App, including (i) product liability claims, (ii) any claim that the App fails
+to conform to any applicable legal or regulatory requirement, and (iii) claims
+arising under consumer protection or similar legislation.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-6.0pt;margin-left:0in;line-height:14.0pt'><span style='font-size:11.0pt;
-font-family:"Calibri",sans-serif'>In the event of any third party claim that
-the App or your possession and use of the App infringes that third party&quot;s IP
-Rights, Apple will not be responsible for the investigation, defense,
-settlement and discharge of any such infringement claim.</span></p>
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:14.0pt'><span style='font-size:11.0pt;font-family:
+"Calibri",sans-serif'>In the event of any third party claim that the App or
+your possession and use of the App infringes that third party’s IP Rights,
+Apple will not be responsible for the investigation, defense, settlement and
+discharge of any such infringement claim.</span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-6.0pt;margin-left:0in;line-height:14.0pt'><span style='font-size:11.0pt;
-font-family:"Calibri",sans-serif'>You must comply with applicable third party
-terms of agreement when using the App (e.g. you must not be in violation of
-your wireless data services agreement when you use the App).</span></p>
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:14.0pt'><span style='font-size:11.0pt;font-family:
+"Calibri",sans-serif'>You must comply with applicable third party terms of
+agreement when using the App (e.g. you must not be in violation of your
+wireless data services agreement when you use the App).</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Apple
-and Apple&quot;s subsidiaries are third party beneficiaries of these Terms. Upon
+and Apple’s subsidiaries are third party beneficiaries of these Terms. Upon
 Your acceptance of these Terms, Apple will have the right (and will be deemed
 to have accepted the right) to enforce these Terms against you as a third party
 beneficiary thereof. You represent and warrant that (i) you are not located in
 a country that is subject to a U.S. Government embargo, or that has been
-designated by the U.S. Government as a &quot;terrorist supporting&quot; country; and (ii)
+designated by the U.S. Government as a “terrorist supporting” country; and (ii)
 You are not listed on any U.S. Government list of prohibited or restricted
 parties. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><a
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><a
 name=Termination><span style='font-size:11.0pt;line-height:115%;font-family:
 "Calibri",sans-serif'>For avoidance of any doubt, it is hereby clarified that
 your use of any of the Apps may be subject to terms and conditions that govern
 your Device. You bear the sole and exclusive responsibility for complying with
 any terms and conditions that may additionally apply.</span></a></p>
 
-<p class=MsoNormal align=left dir=LTR style='margin-top:6.0pt;text-align:left;
+<p class=MsoNormal align=left style='margin-top:6.0pt;text-align:left;
 line-height:115%'><b><u><span style='font-size:11.0pt;line-height:115%;
 font-family:"Calibri",sans-serif'>Termination</span></u></b></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
 may, at any time terminate these Terms by </span><span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif'>doing all the following:</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;text-indent:-.25in;line-height:
-115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>&bull;<span
+<p class=Style1 style='margin-top:6.0pt;text-indent:-.25in;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
 dir=LTR></span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Completely
 removing the App from all of your Devices; and</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;text-indent:-.25in;line-height:
-115%'><span style='font-size:11.0pt;line-height:115%;font-family:Symbol'>&bull;<span
+<p class=Style1 style='margin-top:6.0pt;text-indent:-.25in;line-height:115%'><span
+style='font-size:11.0pt;line-height:115%;font-family:Symbol'>·<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
 dir=LTR></span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Providing</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> us
 written notice of termination.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Termination
 of these Terms will not preclude our continued use of Content you have provided
 us with a License to, and the Public Profile Information we have obtained while
 you used the App, prior to </span><span style='font-size:11.0pt;line-height:
 115%;font-family:"Calibri",sans-serif'>termination</span><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'> In
-any event, our continued use of such materials will be in accordance with our <u><a
-href="http://www.appsvillage.mobi/privacy/">Privacy Policy</a></u>.</span></p>
+any event, our continued use of such materials will be in accordance with our <a
+href="http://www.appsvillage.mobi/privacy/">Privacy Policy</a> </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>We
 may terminate these Terms and your license to use the App, at any time by
 issuing you a notice of such termination, terminate and block your access to
@@ -1503,37 +1569,37 @@ and use of the App, or in any other manner contemplated by these Terms. Upon
 termination by us, you must discontinue any and all use of the App and uninstall
 the App or Apps from all of your Devices.</span></p>
 
-<h2 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
-margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><u><span
+<h2 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Consequences
 of termination</span></u></b></h2>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>See
 our privacy policy for details regarding retention and deletion of your
 personal information. </span></p>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
-following sections shall survive any termination, or expiration of the Terms: Content
-and dealings, Your privacy, Intellectual property, Requests to remove Content
-from the App, Limitation of Liability, Indemnification, Consequences of
+following sections shall survive any termination, or expiration of the Terms:
+Content and dealings, Your privacy, Intellectual property, Requests to remove
+Content from the App, Limitation of Liability, Indemnification, Consequences of
 termination, Governing Law &amp; Jurisdiction, General.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><a
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><a
 name=Governing><b><u><span style='font-size:11.0pt;line-height:115%;font-family:
 "Calibri",sans-serif'>Governing </span></u></b></a><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Law
 &amp; Jurisdiction </span></u></b></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>These
 Terms govern your legal relationship with us, not with the Business. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Regardless
 of your place of residence, where you access or use the App from, the place in
 which the Business provide you with a service or product, or any interaction
@@ -1543,21 +1609,21 @@ excluding any otherwise applicable rules of conflict of laws, which would
 result in the application of the laws of a jurisdiction other than the State of
 Israel. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Before
-submitting any dispute, claim, or controversy arising out of, in connection with
-or relating to these Terms, to adjudication in court, you and us will dedicate
-at least two weeks to attempt to amicably resolve such matter in an informal
-dispute resolution process. However, nothing herein shall, in any way, affect
-either party&quot;s right to seek interim or emergency relief in the court of
+submitting any dispute, claim, or controversy arising out of, in connection
+with or relating to these Terms, to adjudication in court, you and us will
+dedicate at least two weeks to attempt to amicably resolve such matter in an
+informal dispute resolution process. However, nothing herein shall, in any way,
+affect either party’s right to seek interim or emergency relief in the court of
 competent jurisdiction, or our right to lodge a claim against you pursuant to
 the indemnity clause above, in any court adjudicating a third party claim
-against us  all, without referring the matter to amicable resolution pursuant
+against us – all, without referring the matter to amicable resolution pursuant
 to the foregoing.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
 competent courts located in the Tel-Aviv-Jaffa district will have exclusive and
 sole jurisdiction over any dispute, claim or controversy arising from, or in
@@ -1567,27 +1633,27 @@ Terms. You and us, each, hereby expressly consent to personal jurisdiction in
 Israel and expressly waive any right to object to such personal jurisdiction or
 the non-convenience of such forum.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><u><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><b><u><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>General</span></u></b></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Whenever
 used in these Terms, the term &quot;Including&quot;, whether capitalized or
 not, means without limitation to the preceding phrase. All examples and e.g.
 notations are illustrative, not exhaustive.</span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>These
 Terms constitute the entire agreement between you and us concerning the subject
 matter herein, and </span><span style='font-size:11.0pt;line-height:115%;
 font-family:"Calibri",sans-serif'>supersede all prior and contemporaneous
 negotiations and oral representations, agreements and statements. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>These
 Terms</span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>
 may only be modified by written amendment duly executed by us. </span><span
@@ -1599,18 +1665,18 @@ line-height:115%;font-family:"Calibri",sans-serif'>, or pursuant to the Terms,
 will be effective unless consented to explicitly and executed in writing by our
 authorized representative. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Failure
 on our part to demand performance of any provision in the Terms shall not
 constitute a waiver of any of our rights under the Terms. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>You
 may not assign or transfer your rights and obligations under the Terms without
-our prior written consent, which consent shall not be unreasonably withheld. Any
-a</span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>ttempted
+our prior written consent, which consent shall not be unreasonably withheld.
+Any a</span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>ttempted
 or actual assignment by you, without our prior consent, shall be null and void.
 </span><span style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Notwithstanding
 the provisions of the Assignment of Obligations Law</span><span
@@ -1623,14 +1689,14 @@ change of control or the sale of all or substantially all of its equity or
 assets relating to the Agreement. By virtue of such assignment, the assignee
 assumes our stead, including all right, duties, liabilities and obligations. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>The
 section headings in the Terms are included for convenience only and shall take
 no part in the interpretation or construing of the Terms. </span></p>
 
-<p class=Style1 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:
-0in;margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<p class=Style1 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>If
 any provision of the Terms is held to be illegal, invalid, or unenforceable by
 a competent court, then the provision shall be performed and enforced to the
@@ -1638,23 +1704,21 @@ maximum extent permitted by law to reflect as closely as possible, the original
 intention of that provision, and the remaining provisions of the Terms shall
 continue to remain in full force and effect. </span></p>
 
-<h2 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
-margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><a
-name=Contact><b><u><span style='font-size:11.0pt;line-height:115%;font-family:
-"Calibri",sans-serif'>Contact </span></u></b></a><b><u><span style='font-size:
-11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Us</span></u></b></h2>
+<h2 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><a name=Contact><b><u><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Contact
+</span></u></b></a><b><u><span style='font-size:11.0pt;line-height:115%;
+font-family:"Calibri",sans-serif'>Us</span></u></b></h2>
 
-<h2 dir=LTR style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
-margin-left:0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
+<h2 style='margin-top:6.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+0in;margin-bottom:.0001pt;text-indent:0in;line-height:115%'><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>At
 any time, you may contact us with any question that you may have with respect
-to the App, at: </span><a href="mailto:info@appv.io"><span style='font-size:
-11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>info@appv.io</span></a><span
-style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>.</span></h2>
+to the App, at: support@appv.io</span></h2>
 
-<p class=MsoNormal dir=LTR style='margin-top:6.0pt;line-height:115%'><b><span
+<p class=MsoNormal style='margin-top:6.0pt;line-height:115%'><b><span
 style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif'>Last
-updated: November 30<sup>th</sup>, 2015.</span></b></p>
+updated: January 21, 2016.</span></b></p>
 
 </div>
 
