@@ -107,10 +107,10 @@ p {
 }
 
 .button.download-store.google-play {
-  width: 150px;
+  width: 121px;
   height: 0px;
   margin-right: 0px;
-  padding: 50px 0px 0px;
+  padding: 33px 0px 0px;
   float: left;
   background-image: url('../images/google_play_badge.jpg');
   background-position: 50% 50%;
@@ -119,7 +119,7 @@ p {
 }
 
 .button.download-store.google-play.apple-store {
-  margin-left: 20px;
+  margin-left: 5px;
   background-image: url('../images/app_store_badge.jpg');
   background-size: contain;
 }
@@ -148,7 +148,7 @@ p {
 }
 
 .nav-link {
-  padding: 26px 17px;
+  padding: 49px 17px 8px;
   box-shadow: inset 0 3px 0 0 transparent;
   -webkit-transition: box-shadow 500ms ease, color 300ms ease;
   transition: box-shadow 500ms ease, color 300ms ease;
@@ -173,7 +173,7 @@ p {
 .section.main {
   margin-top: 30px;
   padding-top: 81px;
-  padding-bottom: 26px;
+  padding-bottom: 33px;
   background-image: url('../images/gradient_fill_1.png'), url('../images/gradient_fill_2.png'), url('../images/main_section_banner_background.jpg');
   background-position: 50% 50%, 50% 50%, 100% 0px;
   background-size: cover, cover, cover;
@@ -562,7 +562,9 @@ p {
 .main-steps {
   position: relative;
   width: 100%;
-  margin-top: 74px;
+  margin-top: 182px;
+  margin-right: 0px;
+  margin-left: 0px;
   float: left;
 }
 
@@ -570,6 +572,8 @@ p {
   padding-right: 0px;
   padding-left: 0px;
   border-right: 1px solid #489fd9;
+  -webkit-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in;
 }
 
 .steps.last-steps {
@@ -579,8 +583,8 @@ p {
 .step-image {
   position: relative;
   height: 0px;
-  margin-bottom: 10px;
-  padding-top: 50px;
+  margin-bottom: 0px;
+  padding-top: 85px;
 }
 
 .step-image.step-image-1 {
@@ -606,22 +610,23 @@ p {
 
 .step-title {
   color: #000;
-  font-size: 45px;
+  font-size: 38px;
   font-weight: 500;
 }
 
 .step-sub-title {
+  margin-bottom: 0px;
   color: #00aeef;
-  font-size: 26px;
-  line-height: 49px;
+  font-size: 25px;
+  line-height: 30px;
   text-align: center;
 }
 
 .step-description {
   width: 100%;
   color: #000;
-  font-size: 21px;
-  line-height: 30px;
+  font-size: 17px;
+  line-height: 25px;
   font-weight: 300;
   text-align: center;
 }
@@ -799,6 +804,17 @@ p {
   text-align: center;
 }
 
+.much-more-link {
+  color: #3c5b9a;
+}
+
+.cents {
+  height: 50px;
+  font-size: 25px;
+  line-height: 56px;
+  text-decoration: underline;
+}
+
 html.w-mod-js *[data-ix="fade-in-on-load"] {
   opacity: 0;
   -webkit-transform: translate(0px, 24px);
@@ -819,11 +835,7 @@ html.w-mod-js *[data-ix="fade-in-on-scroll"] {
     line-height: 18px;
   }
   .button.download-store.google-play {
-    margin-right: 25%;
-    float: right;
-  }
-  .button.download-store.google-play.apple-store {
-    margin-right: 20px;
+    float: left;
   }
   .logo-text.footer {
     font-size: 20px;
@@ -1103,6 +1115,12 @@ html.w-mod-js *[data-ix="fade-in-on-scroll"] {
   .section.main {
     margin-top: 0px;
   }
+  .section.developer {
+    padding-bottom: 19px;
+  }
+  .section.pay-later {
+    padding-bottom: 14px;
+  }
   .main-subtitle {
     font-size: 12px;
     line-height: 20px;
@@ -1129,12 +1147,19 @@ html.w-mod-js *[data-ix="fade-in-on-scroll"] {
   .coupon-image {
     margin-top: 0px;
   }
+  .developer-image {
+    margin-top: -33px;
+  }
+  .developer-description {
+    padding-top: 18px;
+    padding-bottom: 11px;
+  }
   .pay-later-image {
     margin-top: 0px;
   }
   .pricing-image {
     height: 200px;
-    margin-top: 47px;
+    margin-top: 75px;
   }
 }
 

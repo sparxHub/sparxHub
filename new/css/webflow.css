@@ -1096,6 +1096,27 @@ textarea.w-select {
 .w-widget-gplus {
   overflow: hidden;
 }
+.w-background-video {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.w-background-video video {
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/bgvideo-placeholder.svg');
+  background-size: cover;
+  background-position: 50% 50%;
+  position: absolute;
+  right: -100%;
+  bottom: -100%;
+  top: -100%;
+  left: -100%;
+  margin: auto;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+}
 .w-slider {
   position: relative;
   height: 300px;
