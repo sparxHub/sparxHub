@@ -532,7 +532,7 @@ p {
   height: 11px;
   margin-left: 6px;
   padding: 7px 15px 7px 16px;
-  float: left;
+  float: right;
   border-style: none;
   text-decoration: none;
 }
@@ -868,7 +868,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     font-size: 30px;
   }
   .nav-link.menu.w--open {
-    background-color: #30383d;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: #3c5b9a;
     color: #fff;
   }
   .main-subtitle {
@@ -877,7 +879,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .nav-menu {
     padding-top: 13px;
     padding-bottom: 13px;
-    background-color: #30383d;
+    background-color: #3c5b9a;
   }
   .footer-slogan {
     font-size: 13px;
@@ -923,6 +925,18 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .nav-menu-icon {
     color: #fff;
+  }
+  .nav-social-menu {
+    background-color: #b0c4d1;
+  }
+  .social-item.linkedin-icon {
+    padding-bottom: 15px;
+  }
+  .social-item.facebook {
+    padding-bottom: 15px;
+  }
+  .social-item.twitter {
+    padding-bottom: 15px;
   }
   .steps {
     border-right-style: none;
@@ -1004,6 +1018,10 @@ html.w-mod-js *[data-ix="come-from-left"] {
     padding-top: 11px;
     padding-bottom: 11px;
   }
+  .nav-link.menu.w--open {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
   .section {
     padding-top: 43px;
     padding-bottom: 43px;
@@ -1053,6 +1071,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .main-feature-group {
     margin-top: 0px;
     margin-bottom: 34px;
+  }
+  .nav-menu-icon {
+    padding-top: 11px;
   }
   .step-title {
     font-size: 30px;
@@ -1124,6 +1145,10 @@ html.w-mod-js *[data-ix="come-from-left"] {
     margin-right: 0px;
     margin-left: 0px;
   }
+  .nav-link.menu.w--open {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
   .section.main {
     margin-top: 51px;
     margin-bottom: 7px;
@@ -1156,6 +1181,12 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .nav-logo {
     max-height: 42px;
+  }
+  .nav-menu-icon {
+    padding-top: 3px;
+  }
+  .nav-social-menu {
+    padding-bottom: 8px;
   }
   .main-steps {
     margin-top: 0px;
