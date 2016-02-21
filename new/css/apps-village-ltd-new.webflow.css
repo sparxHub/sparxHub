@@ -829,6 +829,18 @@ html.w-mod-js *[data-ix="fade-in-on-scroll"] {
   transform: translate(0px, 24px);
 }
 
+html.w-mod-js *[data-ix="come-from-right"] {
+  -webkit-transform: translate(1500px, 0px);
+  -ms-transform: translate(1500px, 0px);
+  transform: translate(1500px, 0px);
+}
+
+html.w-mod-js *[data-ix="come-from-left"] {
+  -webkit-transform: translate(-1500px, 0px);
+  -ms-transform: translate(-1500px, 0px);
+  transform: translate(-1500px, 0px);
+}
+
 @media (max-width: 991px) {
   .button.in-pricing {
     font-size: 14px;
@@ -1113,7 +1125,10 @@ html.w-mod-js *[data-ix="fade-in-on-scroll"] {
     margin-left: 0px;
   }
   .section.main {
-    margin-top: 0px;
+    margin-top: 51px;
+    margin-bottom: 7px;
+    padding-top: 13px;
+    background-position: 0px 50%, 50% 50%, 79% 0px;
   }
   .section.developer {
     padding-bottom: 19px;
@@ -1122,6 +1137,7 @@ html.w-mod-js *[data-ix="fade-in-on-scroll"] {
     padding-bottom: 14px;
   }
   .main-subtitle {
+    margin-top: 230px;
     font-size: 12px;
     line-height: 20px;
     text-align: center;
@@ -1160,6 +1176,9 @@ html.w-mod-js *[data-ix="fade-in-on-scroll"] {
   .pricing-image {
     height: 200px;
     margin-top: 75px;
+  }
+  .mobile-main-spacer {
+    padding-bottom: 75px;
   }
 }
 
