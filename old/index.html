@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Tue Oct 27 2015 03:24:50 GMT+0000 (UTC) -->
+<html data-wf-site="55f0774dab21fd960e647dbf" data-wf-page="55f0774dab21fd960e647dc1">
+<head>
+  <meta charset="utf-8">
+  <title>AppsVillage Make a business app in one click</title>
+  <meta name="description" content="Your business app is only a click away
+Get new customers
+Increase sales
+Maintain loyalty">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/appsvillage.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Montserrat:400,700","Bitter:400,700,400italic","Roboto:100,300,regular,500"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="images/32x32.png">
+  <link rel="apple-touch-icon" href="images/webclip-slate.png">
+</head>
+<body>
+  	<div id="pick-fb-page" class="pick-fb-page"></div>
+  <!-- START HERE -->
+	<script class="pre">
+		function loadScript(url, callback)
+		{
+		    // Adding the script tag to the head as suggested before
+		    var head = document.getElementsByTagName('head')[0];
+		    var script = document.createElement('script');
+		    script.type = 'text/javascript';
+		    script.src = url;
+
+		    // Then bind the event to the callback function.
+		    // There are several events for cross browser compatibility.
+		    script.onreadystatechange = callback;
+		    script.onload = callback;
+
+		    // Fire the loading
+		    head.appendChild(script);
+		};
+			
+		var runCode = function() {
+			var data = [
+			  {access_token: "1", name: "test 1", picture:{data: {url:"images/Imperial.png"}}},
+			  {access_token: "2", name: "test 2", picture:{data: {url:"images/San-Diego.png"}}}
+			];
+
+			var pickupPopup = window.reactBridge(data, document.getElementById('pick-fb-page'));
+			pickupPopup.render();	
+		};
+		
+		loadScript("./js/bundle.js", runCode);
+	</script>
+  <!-- END HERE -->
+  <div class="w-section w-hidden-main w-hidden-medium w-hidden-small section-mobile">
+    <div class="w-row">
+      <div class="w-col w-col-6 w-col-tiny-6 w-clearfix"><a href="/"><img class="apssvillage-logo" src="images/Logo-Negative.png"></a>
+      </div>
+      <div class="w-col w-col-6 w-col-tiny-6 store-logos">
+        <a class="w-clearfix w-inline-block stores in-mobile" href="#"><img class="google-play" src="images/Google-Play.png">
+        </a>
+        <a class="w-clearfix w-inline-block stores in-mobile" href="#"><img class="appstore" src="images/App-Store.png">
+        </a>
+      </div>
+    </div>
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-6">
+          <h1 class="hero-header mobile">Creating an App for your business is only a click away</h1>
+          <ul class="w-list-unstyled hero-subtitle small-bullets">
+            <li>Send push notification news</li>
+            <li>Give on spot buy coupons</li>
+            <li>Maintain club membership</li>
+			<li>Stay in touch with your  customers</li>
+          </ul>
+		  	<div class="buttoncontainer-main"><a class="button main phone" href="#" onclick="">Lets see how your App will look</a><img src="images/coming-soon.png" class="coming-soon">
+			          </div>	
+        </div>
+        <div class="w-col w-col-6 call-to-action"><img class="hero-iphone" width="500" src="images/Phones-Susan.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section w-hidden-tiny section hero white">
+    <div class="w-row">
+      <div class="w-col w-col-6 w-col-tiny-6 w-clearfix"><a href="/"><img class="apssvillage-logo" src="images/Logo-Negative.png"></a>
+      </div>
+      <div class="w-col w-col-6 w-col-tiny-6 w-clearfix store-logos">
+        <a class="w-clearfix w-inline-block stores" href="#"><img class="google-play" src="images/Google-Play.png">
+        </a>
+        <a class="w-clearfix w-inline-block stores" href="#"><img class="w-hidden-tiny appstore" src="images/App-Store.png">
+        </a>
+      </div>
+    </div>
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-6">
+          <h1 class="hero-header">Creating an App for your business is only a click away</h1>
+          <ul class="w-list-unstyled hero-subtitle">
+            <li>Send push notification news</li>
+            <li>Give on spot buy coupons</li>
+            <li>Maintain club membership</li>
+			<li>Stay in touch with your  customers</li>
+          </ul>
+
+			<div class="buttoncontainer-main"><a class="button main" href="#" onclick="">Click to see how your App will look</a><img src="images/coming-soon.png" class="coming-soon">
+			          </div>
+
+          <div id="error-permissions" class="errordemo">Try demo is requiring your permissions</div>
+        </div>
+        <div class="w-col w-col-6 call-to-action"><img class="hero-iphone" width="500" src="images/Phones-Susan.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section w-clearfix section" id="features">
+    <div class="w-container">
+      <h1 class="features">Just The Features You Need</h1>
+    </div>
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-4">
+          <div class="feature-block">
+            <h2 class="features-subtitles">About us</h2>
+            <p>Your brand details are copied from your Facebook page along with the location\s of your business.</p>
+          </div><img class="printscreen" src="images/About-Phone.png">
+        </div>
+        <div class="w-col w-col-4 center">
+          <div class="feature-block">
+            <h2 class="features-subtitles">Updates</h2>
+            <p>Post updates and Coupons letting your clients know what’s new and hot in your business.</p>
+          </div><img class="printscreen" src="images/Newsfeed-Phone.png">
+        </div>
+        <div class="w-col w-col-4">
+          <div class="feature-block">
+            <h2 class="features-subtitles">Consumers’ chat</h2>
+            <p>Give your consumer a place to express themselves. Here they can contact you privately or engage the conversation with everyone.</p>
+          </div><img class="printscreen" src="images/Chat-Phone.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section w-clearfix section" id="features">
+    <div class="w-container">
+      <h1 class="features">Everyone Can Do It</h1>
+      <h1 class="subtitle-features">No need for any prior knowledge. No designers. No coders.</h1>
+    </div>
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-4"><img class="icon" src="images/Icon-Phone.png" data-ix="load">
+          <h2 data-ix="load">Create it in one click</h2>
+          <p data-ix="load">How does it work? We connect to your business Facebook page, and - Bang - a few seconds later you have your app ready with the essential features to promote your business.</p>
+        </div>
+        <div class="w-col w-col-4 center"><img class="icon" src="images/Icon-Simple.png" data-ix="load-2">
+          <h2 data-ix="load-2">As simple as ABC</h2>
+          <p data-ix="load-2">You’re not a techie? Don’t worry. The app is so simple, everyone can use it. We’ve put in a lot of thought, so you don’t have to. We believe every business should have an app, no matter how big or small it is.</p>
+        </div>
+        <div class="w-col w-col-4"><img class="icon" src="images/Icon-Wallet.png" data-ix="load-3">
+          <h2 data-ix="load-3">See your app first. Pay later.</h2>
+          <p data-ix="load-3">You can try your app right now. It’s free! You start paying a minimum subscription only after you’ve seen and liked your app. What are you waiting for?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section section purple">
+    <div class="w-container"><img class="logo" src="images/Logo-Negative.png">
+      <p class="help in-mobile">Need our help?&nbsp;</p><a class="w-button ghost-button in-mobile" href="mailto:info@appv.io" id="Ghost-Button">CONTACT US</a>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
+	<script src="js/hello.js/src/hello.polyfill.js"></script>
+	<script src="js/hello.js/src/hello.js"></script>
+	<script src="js/hello.js/src/modules/facebook.js"></script>
+	<script class="pre">
+	
+	function permissionsVerified(permissions) {
+		try {
+			if (!permissions || permissions[0].status != 'granted' || permissions[1].status != 'granted') {
+				return false;
+			}
+		}
+		catch (e){
+			return false;
+		}
+		return true;
+	}
+	
+	function login(network) {
+		var facebook = hello(network);
+
+		// Hide error  
+		document.getElementById('pick-fb-page').style.display = 'none';
+		
+		// Login flow
+		facebook.login({scope: 'manage_pages'}).then(function() {
+			
+			// Get user permissions
+			return facebook.api('me/permissions'); //  'me/accounts'
+		}).then(function(p) {
+
+			// Check if user verify permissions
+			if (p && permissionsVerified(p.data)) {
+				// Get user managed pages
+				facebook.api('me/accounts').then(function(pages){
+					
+					// Check if pages data is empty
+					if(!pages || !pages.data || pages.data.length < 1)
+					{
+						// TODO: we may need to add text to let the user know he not have managed page
+						//Put default page
+						pages.data = [
+						  {id: "", access_token: "", name: "Sample theme - Imperial", picture:{data: {url:"images/Imperial.png"}}}
+						];
+					}
+					
+					// Prepare user's pages list
+					var pickupPopup = window.reactBridge(pages.data, document.getElementById('pick-fb-page'));
+					pickupPopup.render();
+					
+					// Show pick FB dialog
+					document.getElementById('pick-fb-page').style.display = 'block';
+				});
+				// // Redirect to results
+				// window.location = "result.html";
+			}
+			else {
+				// Show error
+				document.getElementById('error-permissions').style.display = 'block';
+			}
+		});
+	}
+	</script>
+	<script class="pre">
+	hello.init({
+		facebook: 972709799437970
+	}, {
+		redirect_uri: 'redirect.html',
+		oauth_proxy: 'https://auth-server.herokuapp.com/proxy'
+	});
+	</script>	
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</body>
+</html>
