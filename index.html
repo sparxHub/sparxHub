@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Fri Mar 04 2016 04:34:55 GMT+0000 (UTC) -->
+<!-- Last Published: Fri Mar 04 2016 05:12:30 GMT+0000 (UTC) -->
 <html data-wf-site="56c01b9f08edd158413374be" data-wf-page="56c01ba008edd158413374c1">
 <head>
   <meta charset="utf-8">
@@ -106,7 +106,7 @@
           </div>
         </div>
       </div>
-      <div data-ix="fade-in-on-scroll" class="w-row main-steps">
+      <div class="w-row main-steps">
         <div class="w-col w-col-4 w-col-small-4 steps step1">
           <div class="step-image step-image-1"></div>
           <h2 class="step-title">Step 1:</h2>
@@ -132,13 +132,19 @@
       </div>
     </div>
   </div>
-  <div class="w-section section video-section">
+  <div class="w-section w-hidden-medium w-hidden-small w-hidden-tiny section video-section">
     <div class="w-container main-video-container">
       <h2 class="video-heading">Click here to see how it works</h2>
       <div class="video-place-holder"></div>
     </div>
   </div>
-  <div class="w-section section press">
+  <div class="w-section w-hidden-main section video-section">
+    <div class="w-container main-video-container">
+      <h2 class="video-heading">Click here to see how it works</h2>
+      <div class="video-place-holder"></div>
+    </div>
+  </div>
+  <div class="w-section w-hidden-medium w-hidden-small w-hidden-tiny section press">
     <div data-ix="come-from-right" class="w-container coupon-container">
       <div class="w-row coupon-row">
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
@@ -153,7 +159,22 @@
       </div>
     </div>
   </div>
-  <div class="w-section section developer">
+  <div class="w-section w-hidden-main section press">
+    <div class="w-container coupon-container">
+      <div class="w-row coupon-row">
+        <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
+          <h1 class="coupon-heading">Generate immediate <br>revenues with <br>"buy now" coupons</h1>
+          <p class="coupon-description">Let your customers buy the
+            <br>coupons from their couch using
+            <br>the in-app payment</p>
+        </div>
+        <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
+          <div class="coupon-image"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section w-hidden-medium w-hidden-small w-hidden-tiny section developer">
     <div data-ix="come-from-left" class="w-container">
       <div class="w-row">
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
@@ -170,7 +191,24 @@
       </div>
     </div>
   </div>
-  <div class="w-section section pay-later">
+  <div class="w-section w-hidden-main section developer">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
+          <div class="developer-image"></div>
+        </div>
+        <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6 developer-description">
+          <h1 class="coupon-heading">No developer or <br>designer needed</h1>
+          <p class="coupon-description">You don’t need to have any
+            <br>development skills.
+            <br>You don’t need to know
+            <br>how to design. Our platform is
+            <br>so simple anyone can master it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section w-hidden-medium w-hidden-small w-hidden-tiny section pay-later">
     <div data-ix="come-from-right" class="w-container pay-later-container">
       <div class="w-row">
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6 pay-later-text-column">
@@ -187,8 +225,44 @@
       </div>
     </div>
   </div>
-  <div class="w-section section pricing">
+  <div class="w-section w-hidden-main section pay-later">
+    <div class="w-container pay-later-container">
+      <div class="w-row">
+        <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6 pay-later-text-column">
+          <h1 class="coupon-heading">Get your app now. <br>Pay later.</h1>
+          <p class="coupon-description">Try your app right now.
+            <br>It’s absolutely free!
+            <br>You start paying the small
+            <br>subscription fee only after
+            <br>you’ve seen and liked your app</p>
+        </div>
+        <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6 pay-later-image-column">
+          <div class="pay-later-image"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section w-hidden-medium w-hidden-small w-hidden-tiny section pricing">
     <div data-ix="come-from-left" class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6 price-image-column">
+          <div class="pricing-image"></div>
+        </div>
+        <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6 pricing-text-column">
+          <ul class="w-list-unstyled pricing-text-place-holder-list">
+            <li class="price-holder"></li>
+            <li>
+              <h1 class="pricing-header">Pricing: $9.<span>99</span> <span class="small-pricing-text">per month</span><br>First Month Free!</h1>
+              <h1 class="coupon-description pricing-decription">Accepting all credit cards and paypal</h1>
+              <div class="credit-cards-images"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section w-hidden-main section pricing">
+    <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6 price-image-column">
           <div class="pricing-image"></div>
