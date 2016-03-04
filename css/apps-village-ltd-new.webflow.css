@@ -846,63 +846,11 @@ p {
 
 .credit-cards-images {
   margin-right: 127px;
+  padding-top: 74px;
   background-image: url('../images/CreditCards.jpg');
   background-position: 0px 50%;
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.bannerslide:nth-child(1),.bannerslide:nth-child(2),.bannerslide:nth-child(3),.bannerslide:nth-child(4) {
--ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
-filter: alpha(opacity=1);
-opacity: 1;
-}
-
-.bannerslide:nth-child(1) {
-  	-webkit-animation: xfade 24s 18s  infinite;
-	-moz-animation: xfade 24s 18s  infinite;
-	-ms-animation: xfade 24s 18s infinite;
-	-o-animation: xfade 24s 18s infinite;
-	animation: xfade 24s 18s infinite;
-}
-.bannerslide:nth-child(2) {
-	-webkit-animation: xfade 24s 12s  infinite;
-	-moz-animation: xfade 24s 12s  infinite;
-	-ms-animation: xfade 24s 12s infinite;
-	-o-animation: xfade 24s 12s infinite;
-	animation: xfade 24s 12s infinite;
-}
-.bannerslide:nth-child(3) {
-	-webkit-animation: xfade 24s 6s  infinite;
-	-moz-animation: xfade 24s 6s  infinite;
-	-ms-animation: xfade 24s 6s infinite;
-	-o-animation: xfade 24s 6s infinite;
-	animation: xfade 24s 6s infinite;
-}
-.bannerslide:nth-child(4) {
-	-webkit-animation: xfade 24s 0s  infinite;
-	-moz-animation: xfade 24s 0s  infinite;
-	-ms-animation: xfade 24s 0s infinite;
-	-o-animation: xfade 24s 0s infinite;
-	animation: xfade 24s 0s infinite;
-}
-
-@keyframes xfade{
-  0%{
-    opacity: 1;
-  }
-  22.0% {
-    opacity: 1;
-  }
-  28.0%{
-    opacity: 0;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .bannerslide {
@@ -1132,6 +1080,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .features-2-image {
     margin-top: 45px;
+  }
+  .credit-cards-images {
+    padding-top: 50px;
   }
   .bannerslide {
     position: absolute;
