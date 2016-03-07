@@ -593,21 +593,21 @@ p {
 }
 
 .step-image.step-image-1 {
-  background-image: url('../images/step1_image.png');
+  background-image: url('../images/install-step-1.gif');
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .step-image.step-image-2 {
-  background-image: url('../images/step2_image.png');
+  background-image: url('../images/step1_image.png');
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .step-image.step-image-3 {
-  background-image: url('../images/android_apple_icons.jpg');
+  background-image: url('../images/android_apple_icons_2.png');
   background-position: 50% 50%;
   background-size: auto;
   background-repeat: no-repeat;
@@ -629,7 +629,7 @@ p {
 
 .step-description {
   width: 100%;
-  color: #000;
+  color: #00aeef;
   font-size: 17px;
   line-height: 25px;
   font-weight: 300;
@@ -709,7 +709,7 @@ p {
 .pricing-image {
   height: 500px;
   margin-top: -46px;
-  background-image: url('../images/pricing_image.png');
+  background-image: url('../images/money.png');
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -815,7 +815,7 @@ p {
 }
 
 .much-more-link {
-  color: #3c5b9a;
+  color: #254ea2;
 }
 
 .cents {
@@ -847,7 +847,7 @@ p {
 .credit-cards-images {
   margin-right: 127px;
   padding-top: 74px;
-  background-image: url('../images/CreditCards.jpg');
+  background-image: url('../images/credit-01.png');
   background-position: 0px 50%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -1083,6 +1083,10 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .credit-cards-images {
     padding-top: 50px;
+    background-image: url('../images/credit-01.png');
+    background-position: 0px 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   .bannerslide {
     position: absolute;
