@@ -581,6 +581,10 @@
 	  function createVideoNode (nativeNode) {
 	    var nodeData = nativeNode.dataset;
 
+	    if (!nodeData.videoUrls) {
+	      return $('<video />');
+	    }
+
 	    // Prevent loading the videos on mobile browsers as its likely that they
 	    // are on low-bandwidth connections.
 	    if (Webflow.isMobile()) {
@@ -3988,8 +3992,15 @@
 
 	    // Fade in the new target
 	    function intro() {
-	      // Clear previous active class + inline style
-	      $previous.removeClass(tabActive).removeAttr('style');
+	      // Clear previous active class + styles touched by tram
+	      // We cannot remove the whole inline style because it could be dynamically bound
+	      $previous.removeClass(tabActive).css({
+	        opacity: '',
+	        transition: '',
+	        transform: '',
+	        width: '',
+	        height: ''
+	      });
 
 	      // Add active class to new target
 	      $targets.addClass(tabActive).each(ix.intro);
