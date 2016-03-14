@@ -1160,19 +1160,25 @@
 
 	      if (typeof value === 'string') value = $.trim(value);
 	      result[name] = value;
-	      status = status || getStatus(field, name, value);
+	      status = status || getStatus(field, type, name, value);
 	    });
 
 	    return status;
 	  }
 
-	  function getStatus(field, name, value) {
+	  function getStatus(field, type, name, value) {
 	    var status = null;
-	    if (!field.attr('required')) return null;
-	    if (!value) status = 'Please fill out the required field: ' + name;
-	    else if (emailField.test(name) || emailField.test(field.attr('type'))) {
-	      if (!emailValue.test(value)) status = 'Please enter a valid email address for: ' + name;
+
+	    if (type === 'password') {
+	      status = 'Passwords cannot be submitted.';
+	    } else if (field.attr('required')) {
+	      if (!value) {
+	        status = 'Please fill out the required field: ' + name;
+	      } else if (emailField.test(name) || emailField.test(field.attr('type'))) {
+	        if (!emailValue.test(value)) status = 'Please enter a valid email address for: ' + name;
+	      }
 	    }
+
 	    return status;
 	  }
 
@@ -1185,7 +1191,8 @@
 	      name: form.attr('data-name') || form.attr('name') || 'Untitled Form',
 	      source: loc.href,
 	      test: Webflow.env(),
-	      fields: {}
+	      fields: {},
+	      dolphin: /pass[\s-_]?(word|code)|secret|login|credentials/i.test(form.html())
 	    };
 
 	    preventDefault(data);
