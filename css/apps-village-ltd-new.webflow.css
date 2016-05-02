@@ -174,7 +174,6 @@ p {
 .section.main {
   margin-top: 122px;
   padding-top: 81px;
-  padding-bottom: 197px;
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .23);
 }
@@ -207,27 +206,26 @@ p {
 .section.press {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #fff;
+  background-color: #eee;
 }
 
 .section.developer {
   padding-bottom: 0px;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .section.pay-later {
   padding-top: 0px;
   padding-bottom: 0px;
-  background-color: #fff;
+  background-color: #eee;
 }
 
 .section.pricing {
   padding-bottom: 0px;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .section.features-1 {
-  padding-top: 107px;
   background-color: #eee;
 }
 
@@ -269,6 +267,7 @@ p {
   font-size: 21px;
   line-height: 31px;
   font-weight: 100;
+  text-align: justify;
 }
 
 .nav-menu {
@@ -767,6 +766,7 @@ p {
 }
 
 .feature-1-heading {
+  margin-top: 35px;
   color: #00aeef;
   font-size: 45px;
   font-weight: 400;
@@ -860,6 +860,65 @@ p {
   opacity: 1;
 }
 
+.builder_phone {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  float: left;
+}
+
+.builder_container {
+  position: relative;
+  width: 380px;
+  height: 800px;
+  margin-top: 32px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.flat_phone_layer {
+  position: relative;
+  padding-top: 830px;
+  background-image: url('../images/flat_phone_hole.png');
+  background-position: 50% 50%;
+  background-size: 350px;
+  background-repeat: no-repeat;
+}
+
+.screen_container {
+  position: absolute;
+  width: 81%;
+  height: 70%;
+  margin-top: 36%;
+  margin-left: 10%;
+  background-image: -webkit-linear-gradient(270deg, #000, #000);
+  background-image: linear-gradient(180deg, #000, #000);
+}
+
+.btnbuilder {
+  display: block;
+  width: 250px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid #9bdcf5;
+  border-radius: 8px;
+  background-color: #00aeef;
+  font-size: 23px;
+  text-align: center;
+}
+
+.pricing-builder-header {
+  margin-top: 20px;
+  color: #000;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.small-pricing-header {
+  font-size: 27px;
+}
+
 html.w-mod-js *[data-ix="fade-in-on-load"] {
   opacity: 0;
   -webkit-transform: translate(0px, 24px);
@@ -926,6 +985,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
     padding-top: 20px;
   }
   .main-subtitle {
+    padding-right: 20px;
     font-size: 20px;
     line-height: 25px;
   }
@@ -1099,6 +1159,10 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .main-banner-image {
     height: 400px;
   }
+  .pricing-builder-header {
+    font-size: 30px;
+    line-height: 38px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1144,8 +1208,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
     padding-bottom: 20px;
   }
   .main-subtitle {
-    font-size: 15px;
-    line-height: 17px;
+    font-size: 18px;
+    line-height: 21px;
     text-align: left;
   }
   .nav-menu {
@@ -1161,8 +1225,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
     margin-left: auto;
   }
   .main-heading {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 25px;
+    line-height: 28px;
     text-align: left;
   }
   .section-subtitle {
@@ -1219,8 +1283,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
     text-align: left;
   }
   .coupon-description {
-    font-size: 13px;
-    line-height: 15px;
+    font-size: 15px;
+    line-height: 17px;
     text-align: left;
   }
   .coupon-description.pricing-decription {
@@ -1286,6 +1350,10 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .main-banner-image {
     height: 300px;
   }
+  .pricing-builder-header {
+    font-size: 28px;
+    line-height: 32px;
+  }
 }
 
 @media (max-width: 479px) {
@@ -1334,15 +1402,15 @@ html.w-mod-js *[data-ix="come-from-left"] {
     margin-top: 20px;
     padding-right: 5px;
     padding-left: 5px;
-    font-size: 10px;
-    line-height: 14px;
+    font-size: 16px;
+    line-height: 20px;
     text-align: center;
     text-transform: none;
   }
   .main-heading {
     margin-bottom: 0px;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 24px;
+    line-height: 28px;
     text-align: center;
     text-transform: none;
   }
@@ -1447,6 +1515,28 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .bannerslide {
     left: 0px;
+  }
+  .builder_container {
+    width: 320px;
+    height: 650px;
+  }
+  .flat_phone_layer {
+    padding-top: 650px;
+    background-size: 300px;
+  }
+  .screen_container {
+    width: 84%;
+    height: 74%;
+    margin-top: 27%;
+    margin-left: 8%;
+  }
+  .pricing-builder-header {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .small-pricing-header {
+    font-size: 15px;
+    line-height: 15px;
   }
 }
 
