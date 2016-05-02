@@ -898,12 +898,14 @@ p {
 .btnbuilder {
   display: block;
   width: 250px;
+  height: 83px;
   margin-right: auto;
   margin-left: auto;
   border: 2px solid #9bdcf5;
   border-radius: 8px;
   background-color: #00aeef;
   font-size: 23px;
+  line-height: 55px;
   text-align: center;
 }
 
@@ -1457,8 +1459,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
     text-align: left;
   }
   .coupon-description {
-    font-size: 10px;
-    line-height: 13px;
+    font-size: 13px;
+    line-height: 15px;
     text-align: left;
   }
   .coupon-description.pricing-decription {
