@@ -1002,6 +1002,10 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .nav-link.first {
     margin-top: 62px;
   }
+  .section.main {
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
   .section.developer {
     padding-top: 20px;
   }
@@ -1184,11 +1188,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     font-size: 30px;
     line-height: 38px;
   }
-  .main_header_banner.ipad_banner {
-    margin-top: 32px;
-  }
-  .builder_button_slogan.ipad_slogan {
-    font-size: 20px;
+  .builder_button_slogan.slogan_ipad {
+    font-size: 22px;
+    line-height: 47px;
   }
 }
 
@@ -1235,6 +1237,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
     padding-bottom: 20px;
   }
   .main-subtitle {
+    margin-bottom: 16px;
     font-size: 18px;
     line-height: 21px;
     text-align: center;
@@ -1381,7 +1384,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
     font-size: 28px;
     line-height: 32px;
   }
-  .main_header_banner.ipad_banner {
+  .main_header_banner {
     margin-top: 0px;
   }
 }
@@ -1514,7 +1517,6 @@ html.w-mod-js *[data-ix="come-from-left"] {
     background-image: url('../images/Image-FINAL-2.jpg');
     background-position: 50% 50%;
     background-size: cover;
-    background-repeat: no-repeat;
   }
   .pay-later-image {
     height: 110px;
