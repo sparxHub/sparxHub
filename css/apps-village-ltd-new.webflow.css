@@ -172,8 +172,11 @@ p {
 }
 
 .section.main {
-  margin-top: 122px;
+  margin-top: 56px;
   padding-top: 81px;
+  background-image: url('../images/Image-FINAL-2.jpg'), url('../images/example-bg.png');
+  background-position: 50% 50%, 0px 0px;
+  background-size: cover, 125px;
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .23);
 }
@@ -262,12 +265,11 @@ p {
 
 .main-subtitle {
   margin-bottom: 26px;
-  padding-right: 56px;
   color: #000;
   font-size: 21px;
   line-height: 31px;
   font-weight: 100;
-  text-align: justify;
+  text-align: center;
 }
 
 .nav-menu {
@@ -373,6 +375,7 @@ p {
   color: #000;
   font-size: 45px;
   line-height: 55px;
+  text-align: center;
 }
 
 .section-subtitle {
@@ -898,18 +901,17 @@ p {
 .btnbuilder {
   display: block;
   width: 250px;
-  height: 83px;
+  height: 53px;
   margin-right: auto;
   margin-left: auto;
-  border: 2px solid #9bdcf5;
-  border-radius: 8px;
   background-color: #00aeef;
   font-size: 23px;
-  line-height: 55px;
+  line-height: 36px;
   text-align: center;
 }
 
 .pricing-builder-header {
+  display: none;
   margin-top: 20px;
   color: #000;
   font-size: 32px;
@@ -919,6 +921,23 @@ p {
 
 .small-pricing-header {
   font-size: 27px;
+}
+
+.main_header_banner {
+  display: block;
+  margin-top: 48px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: hsla(0, 0%, 100%, .61);
+  color: #fff;
+}
+
+.builder_button_slogan {
+  color: #000;
+  font-size: 26px;
+  line-height: 44px;
+  font-weight: 400;
+  text-align: center;
 }
 
 html.w-mod-js *[data-ix="fade-in-on-load"] {
@@ -1165,6 +1184,12 @@ html.w-mod-js *[data-ix="come-from-left"] {
     font-size: 30px;
     line-height: 38px;
   }
+  .main_header_banner.ipad_banner {
+    margin-top: 32px;
+  }
+  .builder_button_slogan.ipad_slogan {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1212,7 +1237,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .main-subtitle {
     font-size: 18px;
     line-height: 21px;
-    text-align: left;
+    text-align: center;
   }
   .nav-menu {
     padding-right: 12px;
@@ -1229,7 +1254,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .main-heading {
     font-size: 25px;
     line-height: 28px;
-    text-align: left;
+    text-align: center;
   }
   .section-subtitle {
     margin-bottom: 44px;
@@ -1356,6 +1381,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     font-size: 28px;
     line-height: 32px;
   }
+  .main_header_banner.ipad_banner {
+    margin-top: 0px;
+  }
 }
 
 @media (max-width: 479px) {
@@ -1481,6 +1509,12 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .developer-description {
     padding: 0px 5px 0px 10px;
+  }
+  .main-banner-container {
+    background-image: url('../images/Image-FINAL-2.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .pay-later-image {
     height: 110px;
