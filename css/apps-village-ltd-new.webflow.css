@@ -174,9 +174,10 @@ p {
 .section.main {
   margin-top: 56px;
   padding-top: 81px;
-  background-image: url('../images/Image-FINAL-2.jpg'), url('../images/example-bg.png');
-  background-position: 50% 50%, 0px 0px;
-  background-size: cover, 125px;
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .34), rgba(0, 0, 0, .34)), url('../images/Image-FINAL-2.jpg'), url('../images/example-bg.png');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .34), rgba(0, 0, 0, .34)), url('../images/Image-FINAL-2.jpg'), url('../images/example-bg.png');
+  background-position: 0px 0px, 50% 50%, 0px 0px;
+  background-size: auto, cover, 125px;
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .23);
 }
@@ -265,7 +266,7 @@ p {
 
 .main-subtitle {
   margin-bottom: 26px;
-  color: #000;
+  color: #fff;
   font-size: 21px;
   line-height: 31px;
   font-weight: 100;
@@ -372,7 +373,7 @@ p {
 .main-heading {
   margin-top: 0px;
   margin-bottom: 20px;
-  color: #000;
+  color: #fff;
   font-size: 45px;
   line-height: 55px;
   text-align: center;
@@ -928,12 +929,12 @@ p {
   margin-top: 48px;
   margin-right: auto;
   margin-left: auto;
-  background-color: hsla(0, 0%, 100%, .61);
+  background-color: transparent;
   color: #fff;
 }
 
 .builder_button_slogan {
-  color: #000;
+  color: #fff;
   font-size: 26px;
   line-height: 44px;
   font-weight: 400;
@@ -996,7 +997,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .nav-link.menu.w--open {
     padding-top: 24px;
     padding-bottom: 24px;
-    background-color: #3c5b9a;
+    background-color: #30383d;
     color: #fff;
   }
   .nav-link.first {
@@ -1017,7 +1018,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .nav-menu {
     padding-top: 13px;
     padding-bottom: 13px;
-    background-color: #3c5b9a;
+    background-color: #30383d;
   }
   .footer-slogan {
     font-size: 13px;
@@ -1065,7 +1066,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
     color: #fff;
   }
   .nav-social-menu {
-    background-color: #b0c4d1;
+    background-color: #30383d;
   }
   .social-item.linkedin-icon {
     padding-bottom: 15px;
@@ -1216,6 +1217,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .nav-link.menu.w--open {
     padding-top: 24px;
     padding-bottom: 24px;
+    background-color: #30383d;
   }
   .section {
     padding-top: 43px;
@@ -1245,6 +1247,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .nav-menu {
     padding-right: 12px;
     padding-left: 12px;
+    background-color: #30383d;
   }
   .footer-title {
     margin-top: 35px;
@@ -1283,6 +1286,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .nav-menu-icon {
     padding-top: 11px;
+  }
+  .nav-social-menu {
+    background-color: #30383d;
   }
   .step-image.step-image-1 {
     padding-top: 40px;
@@ -1440,6 +1446,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     text-align: center;
     text-transform: none;
   }
+  .nav-menu {
+    background-color: #30383d;
+  }
   .main-heading {
     margin-bottom: 0px;
     font-size: 24px;
@@ -1461,6 +1470,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .nav-social-menu {
     padding-bottom: 0px;
+    background-color: #30383d;
   }
   .main-steps {
     margin-top: 24px;
@@ -1514,9 +1524,12 @@ html.w-mod-js *[data-ix="come-from-left"] {
     padding: 0px 5px 0px 10px;
   }
   .main-banner-container {
-    background-image: url('../images/Image-FINAL-2.jpg');
-    background-position: 50% 50%;
-    background-size: cover;
+    margin-top: -5px;
+    background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/Image-FINAL-2.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/Image-FINAL-2.jpg');
+    background-position: 0px 0px, 50% 50%;
+    background-size: auto, cover;
+    text-shadow: none;
   }
   .pay-later-image {
     height: 110px;
@@ -1554,6 +1567,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .bannerslide {
     left: 0px;
   }
+  .main-banner-image {
+    padding-bottom: 10px;
+  }
   .builder_container {
     width: 320px;
     height: 650px;
@@ -1575,6 +1591,12 @@ html.w-mod-js *[data-ix="come-from-left"] {
   .small-pricing-header {
     font-size: 15px;
     line-height: 15px;
+  }
+  .main_header_banner {
+    margin-top: 14px;
+  }
+  .builder_button_slogan.slogan_ipad {
+    font-size: 20px;
   }
 }
 
