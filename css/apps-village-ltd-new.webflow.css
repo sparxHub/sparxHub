@@ -1287,6 +1287,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     line-height: 21px;
     text-align: center;
   }
+  .main-subtitle.mobile_thin {
+    font-weight: 300;
+  }
   .nav-menu {
     padding-right: 12px;
     padding-left: 12px;
@@ -1497,6 +1500,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     line-height: 20px;
     text-align: center;
     text-transform: none;
+  }
+  .main-subtitle.mobile_thin {
+    font-weight: 300;
   }
   .nav-menu {
     background-color: #30383d;
