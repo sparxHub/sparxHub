@@ -166,6 +166,14 @@ p {
   color: #dfe8e4;
 }
 
+.nav-link.first {
+  margin-top: 45px;
+  padding-top: 6px;
+  border-radius: 8px;
+  background-color: #80bc42;
+  line-height: 16px;
+}
+
 .section {
   padding-top: 70px;
   padding-bottom: 70px;
@@ -174,8 +182,8 @@ p {
 .section.main {
   margin-top: 56px;
   padding-top: 81px;
-  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .34), rgba(0, 0, 0, .34)), url('../images/Image-FINAL-2.jpg');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, .34), rgba(0, 0, 0, .34)), url('../images/Image-FINAL-2.jpg');
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/Image-FINAL-2.jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/Image-FINAL-2.jpg');
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-attachment: scroll, fixed;
@@ -909,7 +917,7 @@ p {
   height: 53px;
   margin-right: auto;
   margin-left: auto;
-  background-color: #00aeef;
+  background-color: #80bc42;
   font-size: 23px;
   line-height: 36px;
   text-align: center;
@@ -1042,6 +1050,10 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .nav-link.first {
     margin-top: 62px;
+  }
+  .nav-link.first.link_mobile_create_app {
+    background-color: transparent;
+    color: #80bc42;
   }
   .section.main {
     padding-top: 40px;
@@ -1502,6 +1514,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
     text-transform: none;
   }
   .main-subtitle.mobile_thin {
+    display: none;
     font-weight: 300;
   }
   .nav-menu {
@@ -1643,6 +1656,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     margin-top: 27%;
     margin-left: 8%;
   }
+  .btnbuilder.mobile_button_padding {
+    margin-top: 41px;
+  }
   .pricing-builder-header {
     font-size: 20px;
     line-height: 25px;
@@ -1656,6 +1672,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .builder_button_slogan.slogan_ipad {
     font-size: 20px;
+  }
+  .centered_price.mobile_price_padding {
+    margin-top: 40px;
   }
   .per_month_text {
     padding-left: 18px;
