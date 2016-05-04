@@ -824,10 +824,13 @@ p {
 }
 
 .cents {
-  height: 50px;
-  font-size: 25px;
-  line-height: 56px;
+  position: absolute;
+  height: 30px;
+  padding-left: 3px;
+  font-size: 17px;
+  line-height: 25px;
   text-decoration: underline;
+  text-transform: none;
 }
 
 .main-banner-animated-gif-container {
@@ -938,6 +941,42 @@ p {
   font-size: 26px;
   line-height: 44px;
   font-weight: 400;
+  text-align: center;
+}
+
+.per_month {
+  line-height: 21px;
+  text-decoration: none;
+}
+
+.centered_price {
+  font-weight: 500;
+  text-align: center;
+}
+
+.price_text {
+  position: relative;
+}
+
+.currency_sign {
+  font-size: 22px;
+  line-height: 25px;
+}
+
+.per_month_text {
+  padding-left: 22px;
+  font-size: 20px;
+  line-height: 13px;
+}
+
+.pricing_second_line {
+  line-height: 20px;
+}
+
+.second_line_text {
+  margin-top: -20px;
+  font-size: 23px;
+  line-height: 20px;
   text-align: center;
 }
 
@@ -1189,6 +1228,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     font-size: 30px;
     line-height: 38px;
   }
+  .main_header_banner {
+    margin-top: 10px;
+  }
   .builder_button_slogan.slogan_ipad {
     font-size: 22px;
     line-height: 47px;
@@ -1258,8 +1300,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
     margin-left: auto;
   }
   .main-heading {
-    font-size: 25px;
-    line-height: 28px;
+    font-size: 21px;
+    line-height: 24px;
     text-align: center;
   }
   .section-subtitle {
@@ -1384,7 +1426,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
     height: 330px;
   }
   .main-banner-image {
-    height: 300px;
+    height: 340px;
   }
   .pricing-builder-header {
     font-size: 28px;
@@ -1392,6 +1434,15 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .main_header_banner {
     margin-top: 0px;
+  }
+  .builder_button_slogan.slogan_ipad {
+    font-size: 20px;
+  }
+  .per_month_text {
+    font-size: 17px;
+  }
+  .second_line_text {
+    font-size: 20px;
   }
 }
 
@@ -1418,7 +1469,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
     background-image: none;
   }
   .section.press {
-    margin-top: 10px;
+    margin-top: -11px;
     margin-bottom: 10px;
   }
   .section.developer {
@@ -1597,6 +1648,12 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .builder_button_slogan.slogan_ipad {
     font-size: 20px;
+  }
+  .per_month_text {
+    padding-left: 18px;
+  }
+  .phone_row {
+    padding-bottom: 61px;
   }
 }
 
