@@ -1562,14 +1562,14 @@ html.w-mod-js *[data-ix="come-from-left"] {
     line-height: 12px;
   }
   .coupon-image {
-    height: 120px;
+    height: 150px;
     margin-top: 0px;
   }
   .coupon-row {
     margin-top: 5px;
   }
   .developer-image {
-    height: 110px;
+    height: 150px;
     margin-top: 0px;
   }
   .developer-description {
@@ -1585,14 +1585,14 @@ html.w-mod-js *[data-ix="come-from-left"] {
     text-shadow: none;
   }
   .pay-later-image {
-    height: 110px;
+    height: 150px;
     margin-top: 0px;
   }
   .pay-later-text-column {
     margin-top: 0px;
   }
   .pricing-image {
-    height: 110px;
+    height: 150px;
     margin-top: 0px;
   }
   .pricing-header {
