@@ -218,23 +218,23 @@ p {
 
 .section.press {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
   background-color: #eee;
 }
 
 .section.developer {
-  padding-bottom: 0px;
+  padding-bottom: 72px;
   background-color: #fff;
 }
 
 .section.pay-later {
   padding-top: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 72px;
   background-color: #eee;
 }
 
 .section.pricing {
-  padding-bottom: 0px;
+  padding-bottom: 72px;
   background-color: #fff;
 }
 
@@ -923,6 +923,14 @@ p {
   text-align: center;
 }
 
+.btnbuilder.btnsection {
+  width: 150px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: transparent;
+}
+
 .pricing-builder-header {
   display: none;
   margin-top: 20px;
@@ -987,6 +995,29 @@ p {
   font-size: 23px;
   line-height: 20px;
   text-align: center;
+}
+
+.action_link {
+  position: absolute;
+  width: 100%;
+  color: #80bc42;
+  font-size: 19px;
+  line-height: 35px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.action_link_container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.buttonlinkaction {
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #80bc42;
+  color: #fff;
+  text-decoration: none;
 }
 
 html.w-mod-js *[data-ix="fade-in-on-load"] {
@@ -1059,8 +1090,18 @@ html.w-mod-js *[data-ix="come-from-left"] {
     padding-top: 40px;
     padding-bottom: 10px;
   }
+  .section.press {
+    padding-bottom: 63px;
+  }
   .section.developer {
     padding-top: 20px;
+    padding-bottom: 60px;
+  }
+  .section.pay-later {
+    padding-bottom: 66px;
+  }
+  .section.pricing {
+    padding-bottom: 55px;
   }
   .main-subtitle {
     padding-right: 20px;
@@ -1248,6 +1289,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     font-size: 22px;
     line-height: 47px;
   }
+  .action_link {
+    line-height: 32px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1284,10 +1328,23 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .section.press {
     padding-top: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 22px;
+  }
+  .section.developer {
+    padding-bottom: 29px;
+  }
+  .section.pay-later {
+    padding-bottom: 29px;
   }
   .section.pricing {
     padding-top: 16px;
+    padding-bottom: 3px;
+  }
+  .section.features-1 {
+    padding-bottom: 14px;
+  }
+  .section.features-2 {
+    padding-bottom: 9px;
   }
   .section.video-section {
     padding-top: 20px;
@@ -1459,6 +1516,16 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .second_line_text {
     font-size: 20px;
+  }
+  .action_link {
+    position: relative;
+    line-height: 34px;
+  }
+  .action_link_container {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
   }
 }
 
@@ -1681,6 +1748,14 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .phone_row {
     padding-bottom: 61px;
+  }
+  .action_link {
+    font-size: 17px;
+    line-height: 31px;
+  }
+  .buttonlinkaction {
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 }
 
