@@ -383,8 +383,8 @@ p {
   margin-top: 0px;
   margin-bottom: 20px;
   color: #fff;
-  font-size: 45px;
-  line-height: 55px;
+  font-size: 39px;
+  line-height: 50px;
   text-align: center;
 }
 
@@ -1137,8 +1137,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
     line-height: 13px;
   }
   .main-heading {
-    font-size: 30px;
-    line-height: 37px;
+    font-size: 24px;
+    line-height: 31px;
   }
   .main-feature-group {
     margin-top: 0px;
@@ -1373,8 +1373,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
     margin-left: auto;
   }
   .main-heading {
-    font-size: 21px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 21px;
     text-align: center;
   }
   .section-subtitle {
@@ -1589,8 +1589,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .main-heading {
     margin-bottom: 0px;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 22px;
     text-align: center;
     text-transform: none;
   }
