@@ -106,7 +106,7 @@
     <div class="w-container">
       <a href="index.html" class="w-nav-brand brand-link"><img src="images/appv_logo.gif" class="nav-logo">
       </a>
-      <nav role="navigation" class="w-nav-menu nav-menu"><a data-event-category="admin" data-event-action="open builder nav features" href="https://appv.co/public/appsetup/?site=appv" target="_blank" class="w-nav-link nav-link first link_mobile_create_app">Create my app</a><a href="features.html" class="w-nav-link nav-link">Features</a><a href="mailto:info@appv.io" class="w-nav-link nav-link">Contact Us</a>
+      <nav role="navigation" class="w-nav-menu nav-menu"><a data-event-category="admin" data-event-action="open builder nav features" href="https://appv.co/public/appsetup/?site=appv" target="_blank" class="w-nav-link nav-link first link_mobile_create_app custom_href">Create my app</a><a href="features.html" class="w-nav-link nav-link">Features</a><a href="mailto:info@appv.io" class="w-nav-link nav-link">Contact Us</a>
       </nav>
       <div role="navigation" class="w-nav-menu w-clearfix nav-social-menu"><a href="https://twitter.com/ApplicsVillage" target="_blank" class="social-item twitter">&nbsp;</a><a href="https://www.facebook.com/AppsVillage-1502043186788548" target="_blank" class="social-item facebook">&nbsp;</a>
       </div>
@@ -141,7 +141,7 @@
           </div>
         </div>
       </div>
-      <div class="action_link_container"><a data-event-category="admin" data-event-action="open builder section 1 link features" href="https://appv.co/public/appsetup/?site=appv" class="action_link"><span class="buttonlinkaction">Create my app</span>&nbsp;<br>Its free and it will take only few seconds&nbsp;</a>
+      <div class="action_link_container"><a data-event-category="admin" data-event-action="open builder section 1 link features" href="https://appv.co/public/appsetup/?site=appv" class="action_link custom_href"><span class="buttonlinkaction">Create my app</span>&nbsp;<br>Its free and it will take only few seconds&nbsp;</a>
       </div>
     </div>
   </div>
@@ -173,7 +173,7 @@
           </div>
         </div>
       </div>
-      <div class="action_link_container"><a data-event-category="admin" data-event-action="open builder section 2 link features" href="https://appv.co/public/appsetup/?site=appv" class="action_link"><span class="buttonlinkaction">Create my app</span>&nbsp;<br>Its free and it will take only few seconds&nbsp;</a>
+      <div class="action_link_container"><a data-event-category="admin" data-event-action="open builder section 2 link features" href="https://appv.co/public/appsetup/?site=appv" class="action_link custom_href"><span class="buttonlinkaction">Create my app</span>&nbsp;<br>Its free and it will take only few seconds&nbsp;</a>
       </div>
     </div>
   </div>
@@ -229,5 +229,119 @@
   <script async src='https://www.google-analytics.com/analytics.js'></script>
   <script async src='js/autotrack.js'></script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+
+<!-- BEGIN OLARK TAB-->   
+<div id="olark-box-wrapper">
+  <!-- Olark click-to-chat tab -->
+  <div id="olark_tab">
+      <a href="javascript:void(0);" onclick="changeClass()">
+          <img src="https://static.olark.com/images/livehelp-tab-icon.png" />
+      </a>
+  </div>
+  <!-- Empty container for Olark chat box  -->
+  <div id="olark-box-container"></div>
+</div>
+<!-- END OLARK TAB-->
+  <!-- begin olark code -->
+  <script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+  f[z]=function(){
+  (a.s=a.s||[]).push(arguments)};var a=f[z]._={
+  },q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+  f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+  0:+new Date};a.P=function(u){
+  a.p[u]=new Date-a.p[0]};function s(){
+  a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+  hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+  return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+  b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+  b.contentWindow[g].open()}catch(w){
+  c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+  var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+  b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+  loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+
+  /* custom configuration goes here (www.olark.com/documentation) */ 
+  // Set the Olark chatbox to appear inline
+  olark.configure('box.inline', true);
+
+  olark('api.chat.updateVisitorStatus', {
+        snippet: 'on WEBSITE features.html page'
+  });
+
+  olark.identify('4413-525-10-6360');/*]]>*/</script><noscript><a href="https://www.olark.com/site/4413-525-10-6360/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+  
+  <script type='text/javascript'>
+  // Keep things from polluting the global namespace, except changeClass, which we want accessible
+    var changeClass;
+
+    (function (d, olk) {
+        // These functions are helpers for the below
+        function getOlarkWrapper() {
+            return d.getElementById("olark-box-wrapper");
+        }
+
+        function setOlarkVisible(olark_wrapper) {
+            olark_wrapper.className = "chatbox-open";
+        }
+
+        function setOlarkHidden(olark_wrapper) {
+            olark_wrapper.className = "chatbox-closed";
+        }
+
+        function olarkIsVisible(olark_wrapper) {
+            return olark_wrapper.className.match(/(?:^|\s)chatbox-open(?!\S)/);
+        }
+
+        // This is used by the link to show/hide the inline page element
+        changeClass = function() {
+            var olark_wrapper = getOlarkWrapper();
+            // Get the HTML object containing the Olark chat box
+            // If the chat box is already open, close id
+            if (olarkIsVisible(olark_wrapper)) {
+                setOlarkHidden(olark_wrapper);
+            } else {
+                setOlarkVisible(olark_wrapper);
+            }
+        }
+
+        // This is used to cause the box to auto-open if a visitor is already in conversation
+        olk('api.visitor.getDetails', function (details) {
+            if (details.isConversing) {
+                setOlarkVisible(getOlarkWrapper());
+            }
+        });
+    }(document, olark));
+  </script>
+
+  <!-- end olark code -->
+  <!-- redirect query string params -->
+  <script type='text/javascript'>
+  var URL_PARAMS;
+  var FLOW_PARAMS = "";
+  (window.onpopstate = function () {
+      var match,
+          pl     = /\+/g,  // Regex for replacing addition symbol with a space
+          search = /([^&=]+)=?([^&]*)/g,
+          decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+          query  = window.location.search.substring(1);
+
+      URL_PARAMS = {};
+      while (match = search.exec(query))
+         URL_PARAMS[decode(match[1])] = decode(match[2]);
+      
+      FLOW_PARAMS += 'utm_medium=' + URL_PARAMS['utm_medium'];
+      FLOW_PARAMS += '&utm_campaign=' + URL_PARAMS['utm_campaign'];
+      FLOW_PARAMS += '&utm_source=' + URL_PARAMS['utm_source'];
+
+      ;
+      var a = document.getElementsByClassName('custom_href'),
+          length = a.length;
+
+      for(var i=0; i< length; i++){
+          a[i].href += '?' + encodeURI(FLOW_PARAMS);
+      }      
+  })();
+  </script>
+  <!-- end redirect query string params -->
 </body>
 </html>

@@ -1759,3 +1759,53 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
 }
 
+div#olark_tab{
+/*  position: fixed;
+  left: 0;
+  bottom:0%;
+*/  z-index:5000;
+
+    position: absolute;
+    left: 100%;
+    top: 10vh;
+    color: #fff;
+    text-decoration: none;
+    width: 38px;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;   
+
+}
+
+#olark_tab a {
+  display:block;
+  /*Edit these to change the look of your tab*/
+  margin-top:0px;
+}
+
+#olark_tab a:hover{
+  border-color: orange;
+}
+
+#olark-box-wrapper {
+    position: fixed;
+    width: 253px;
+    top: 45vh;
+    left: -253px;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+#olark-box-wrapper.chatbox-open {
+    left: 0;
+}
+
+#olark-box-wrapper.chatbox-closed {
+    left: -253px;
+}
+
+#habla_window_div {
+    margin: 0 !important;
+}
