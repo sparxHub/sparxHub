@@ -1790,7 +1790,7 @@ div#olark_tab{
 #olark-box-wrapper {
     position: fixed;
     width: 253px;
-    top: 45vh;
+    top: 31vh;
     left: -253px;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
