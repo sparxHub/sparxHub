@@ -142,7 +142,7 @@
     <div class="w-container">
       <a itemprop="brand" itemscope itemtype="http://schema.org/Brand" href="index.html" class="w-nav-brand brand-link"><img itemprop="logo" src="images/appv_logo.gif" class="nav-logo">
       </a>
-      <nav role="navigation" class="w-nav-menu nav-menu"><a data-event-category="admin" data-event-action="open builder nav index" href="https://appv.co/public/appsetup/" target="_blank" class="w-nav-link nav-link first link_mobile_create_app custom_href">Create my app</a><a href="features.html" class="w-nav-link nav-link">Features</a><a href="mailto:info@appv.io" class="w-nav-link nav-link">Contact Us</a>
+      <nav role="navigation" class="w-nav-menu nav-menu"><a data-event-category="admin" data-event-action="open builder nav index" href="https://appv.co/public/appsetup/" class="w-nav-link nav-link first link_mobile_create_app custom_href">Create my app</a><a href="features.html" class="w-nav-link nav-link">Features</a><a href="mailto:info@appv.io" class="w-nav-link nav-link">Contact Us</a>
       </nav>
       <div role="navigation" class="w-nav-menu w-clearfix nav-social-menu"><a href="https://twitter.com/ApplicsVillage" target="_blank" class="social-item twitter">&nbsp;</a><a href="https://www.facebook.com/AppsVillage-1502043186788548" target="_blank" class="social-item facebook">&nbsp;</a>
       </div>
@@ -157,7 +157,7 @@
         <div itemprop="description" class="w-col w-col-9 w-col-medium-6 main_header_banner">
           <h1 class="main-heading">Turn your Facebook business page<br/>into your own branded App</br>for iPhone and Android</h1>
           <p class="main-subtitle">Every business should have a mobile App to increase customer loyalty and revenues. Finally, it is available, affordable and incredibly easy!</p>
-          <div><a data-event-category="admin" data-event-action="open builder start now btn index" href="https://appv.co/public/appsetup/" target="_blank" class="w-button btnbuilder custom_href">Start Now - It's FREE!</a>
+          <div><a data-event-category="admin" data-event-action="open builder start now btn index" href="https://appv.co/public/appsetup/" class="w-button btnbuilder custom_href">Start Now - It's FREE!</a>
             <div>
               <div class="builder_button_slogan">It takes less than a minute</div>
             </div>
@@ -210,7 +210,7 @@
              <h1 class="second_line_text">First 30 Days FREE!</h1>
 
 <!--           <p class="main-subtitle mobile_thin">Every business should have a mobile App to increase customer loyalty. Finally, it is available, affordable and incredibly easy!</p> -->
-          <div><a data-event-category="admin" data-event-action="open builder start now btn index" href="https://appv.co/public/appsetup/" target="_blank" class="w-button btnbuilder mobile_button_padding custom_href">Start Now - It's FREE!</a>
+          <div><a data-event-category="admin" data-event-action="open builder start now btn index" href="https://appv.co/public/appsetup/" class="w-button btnbuilder mobile_button_padding custom_href">Start Now - It's FREE!</a>
             <div>
               <div class="builder_button_slogan w-hidden-main w-hidden-medium w-hidden-small">
                 <ul class="slogan_list">
@@ -681,17 +681,19 @@
       while (match = search.exec(query))
          URL_PARAMS[decode(match[1])] = decode(match[2]);
       
-      FLOW_PARAMS += 'utm_medium=' + URL_PARAMS['utm_medium'];
-      FLOW_PARAMS += '&utm_campaign=' + URL_PARAMS['utm_campaign'];
-      FLOW_PARAMS += '&utm_source=' + URL_PARAMS['utm_source'];
+      if (URL_PARAMS['utm_campaign'] != undefined && URL_PARAMS['utm_source'] != undefined && URL_PARAMS['utm_medium'] != undefined) {
+        
+        FLOW_PARAMS += 'utm_medium=' + URL_PARAMS['utm_medium'];
+        FLOW_PARAMS += '&utm_campaign=' + URL_PARAMS['utm_campaign'];
+        FLOW_PARAMS += '&utm_source=' + URL_PARAMS['utm_source'];
+        
+        var a = document.getElementsByClassName('custom_href'),
+            length = a.length;
 
-      ;
-      var a = document.getElementsByClassName('custom_href'),
-          length = a.length;
-
-      for(var i=0; i< length; i++){
-          a[i].href += '?' + encodeURI(FLOW_PARAMS);
-      }      
+        for(var i=0; i< length; i++){
+            a[i].href += '?' + encodeURI(FLOW_PARAMS);
+        }
+      }
   })();
   </script>
   <!-- end redirect query string params -->
