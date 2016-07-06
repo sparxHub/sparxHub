@@ -1208,8 +1208,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
     line-height: 13px;
   }
   .main-heading {
-    font-size: 24px;
-    line-height: 31px;
+    font-size: 4.4vw;
+    line-height: 5vw;
   }
   .main-feature-group {
     margin-top: 0px;
@@ -1605,6 +1605,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
 }
 
 @media (max-width: 479px) {
+  .main_heading_os {
+    font-size: 5.5vw;
+  }  
   .vm_video_player {
     height: 56vw;
     width: 100vw;
@@ -1675,8 +1678,12 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .main-heading {
     margin-bottom: 0px;
+    font-size: 9.8vw;
+    line-height: 9.8vw;
+/*    
     font-size: 5.8vw;
     line-height: 8vw;    
+*/    
     text-align: center;
     text-transform: none;
   }
