@@ -973,6 +973,7 @@ p {
 }
 
 .centered_price {
+  margin-top: 2vh;
   font-weight: 500;
   text-align: center;
   text-shadow: 2px 2px rgba(0,0,0,.8);
@@ -1025,16 +1026,18 @@ p {
     /*background: #ddd;*/
     text-decoration: none;
     border-radius: .3em;
-    transition: all .3s ease-out;
+    /*transition: all .3s ease-out;*/
     text-align: left;
 }
 
 .slogan_list li:before {
     font-family: FontAwesome;
     content: "\f00c";
-/*    content: counter(li);
+/*    
+    content: counter(li);
     counter-increment: li;
-*/    position: absolute;
+*/    
+    position: absolute;
     top: 50%;
     margin: -1.2em;
     height: 1.5em;
@@ -1052,7 +1055,7 @@ p {
     border-radius: 1.5em;
     position: absolute;
     left: 0;
-    transition: all .3s ease-out; 
+    /*transition: all .3s ease-out; */
 }
 
 .slogan_list_text {
@@ -1756,8 +1759,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .main-banner-container {
     margin-top: -5px;
-    background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/Image-FINAL-2.jpg');
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/Image-FINAL-2.jpg');
+    background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, .5)), url('../images/Image-FINAL-2.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, .5)), url('../images/Image-FINAL-2.jpg');
     background-position: 0px 0px, 50% 50%;
     background-size: auto, cover;
     background-attachment: scroll, fixed;
