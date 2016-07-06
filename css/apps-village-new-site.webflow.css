@@ -221,6 +221,11 @@ p {
   padding-bottom: 70px;
   background-color: #eee;
 }
+.section.video {
+  padding-top: 50px;
+  padding-bottom: 70px;
+  background-color: white;
+}
 
 .section.developer {
   padding-bottom: 72px;
@@ -386,6 +391,7 @@ p {
   font-size: 39px;
   line-height: 50px;
   text-align: center;
+  text-shadow: 2px 2px rgba(0,0,0,.8);
 }
 
 .section-subtitle {
@@ -969,6 +975,7 @@ p {
 .centered_price {
   font-weight: 500;
   text-align: center;
+  text-shadow: 2px 2px rgba(0,0,0,.8);
 }
 
 .price_text {
@@ -995,8 +1002,63 @@ p {
   font-size: 23px;
   line-height: 20px;
   text-align: center;
+  margin-bottom: 35px;
+  text-shadow: 2px 2px rgba(0,0,0,.8);
 }
 
+.slogan_list {
+  list-style: none;
+  counter-reset: li;
+  margin-bottom: 0px;
+  margin-top: 10px;    
+  padding-left: 23vw;
+  font-size: 3vh;
+  line-height: 5vh;
+}
+
+.slogan_list li {
+    /*background: #eee;*/
+    position: relative;
+    display: block;
+    padding: 0 .2em .4em 0;
+    /*margin: .5em 0;*/
+    /*background: #ddd;*/
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;
+    text-align: left;
+}
+
+.slogan_list li:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+/*    content: counter(li);
+    counter-increment: li;
+*/    position: absolute;
+    top: 50%;
+    margin: -1.2em;
+    height: 1.5em;
+    width: 1.5em;
+    line-height: 1.5em;
+    font-size: 16px;
+    color: #fff;
+    background: #FB8835; 
+    border: .2em solid #fff;
+    -webkit-box-shadow: 0 8px 5px -7px #888;
+    -moz-box-shadow: 0 8px 5px -7px #888;
+    box-shadow: 0 8px 5px -7px #888;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 1.5em;
+    position: absolute;
+    left: 0;
+    transition: all .3s ease-out; 
+}
+
+.slogan_list_text {
+  padding-left: 7vw;
+  font-weight: 400
+}
 .action_link {
   position: absolute;
   width: 100%;
@@ -1046,6 +1108,12 @@ html.w-mod-js *[data-ix="come-from-left"] {
   transform: translate(-1500px, 0px);
 }
 
+.vm_video_player {
+  height: 338px; 
+  width: 600px; 
+  margin: auto;
+}
+
 @media (max-width: 991px) {
   .button.in-pricing {
     font-size: 14px;
@@ -1091,6 +1159,9 @@ html.w-mod-js *[data-ix="come-from-left"] {
     padding-bottom: 10px;
   }
   .section.press {
+    padding-bottom: 63px;
+  }
+  .section.video {
     padding-bottom: 63px;
   }
   .section.developer {
@@ -1330,6 +1401,10 @@ html.w-mod-js *[data-ix="come-from-left"] {
     padding-top: 0px;
     padding-bottom: 22px;
   }
+  .section.video {
+    padding-top: 0px;
+    padding-bottom: 22px;
+  }
   .section.developer {
     padding-bottom: 29px;
   }
@@ -1515,7 +1590,7 @@ html.w-mod-js *[data-ix="come-from-left"] {
     font-size: 17px;
   }
   .second_line_text {
-    font-size: 20px;
+    font-size: 17px;
   }
   .action_link {
     position: relative;
@@ -1530,6 +1605,13 @@ html.w-mod-js *[data-ix="come-from-left"] {
 }
 
 @media (max-width: 479px) {
+  .vm_video_player {
+    height: 56vw;
+    width: 100vw;
+  }
+  .video_header {
+    font-size: 9vw;
+  }
   .button.download-store.google-play {
     width: 49%;
     margin-right: 0%;
@@ -1552,6 +1634,10 @@ html.w-mod-js *[data-ix="come-from-left"] {
     background-image: none;
   }
   .section.press {
+    margin-top: -11px;
+    margin-bottom: 10px;
+  }
+  .section.video {
     margin-top: -11px;
     margin-bottom: 10px;
   }
@@ -1589,8 +1675,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
   }
   .main-heading {
     margin-bottom: 0px;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 5.8vw;
+    line-height: 8vw;    
     text-align: center;
     text-transform: none;
   }
@@ -1724,7 +1810,8 @@ html.w-mod-js *[data-ix="come-from-left"] {
     margin-left: 8%;
   }
   .btnbuilder.mobile_button_padding {
-    margin-top: 41px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .pricing-builder-header {
     font-size: 20px;
@@ -1764,6 +1851,7 @@ div#olark_tab{
   left: 0;
   bottom:0%;
 */  z-index:5000;
+    display: none;
 
     position: absolute;
     left: 100%;

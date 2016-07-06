@@ -22,6 +22,7 @@
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/webflow.css">
   <link rel="stylesheet" type="text/css" href="css/apps-village-new-site.webflow.css">
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
   <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -154,7 +155,7 @@
     <div class="w-container main-banner-container">
       <div class="w-row">
         <div itemprop="description" class="w-col w-col-9 w-col-medium-6 main_header_banner">
-          <h1 class="main-heading">Create your own mobile App for FREE!<br/>for iPhone and Android</h1>
+          <h1 class="main-heading">Turn your Facebook business page<br/>into your own branded App</br>for iPhone and Android</h1>
           <p class="main-subtitle">Every business should have a mobile App to increase customer loyalty and revenues. Finally, it is available, affordable and incredibly easy!</p>
           <div><a data-event-category="admin" data-event-action="open builder start now btn index" href="https://appv.co/public/appsetup/" target="_blank" class="w-button btnbuilder custom_href">Start Now - It's FREE!</a>
             <div>
@@ -204,11 +205,21 @@
     <div class="w-container main-banner-container">
       <div class="w-row phone_row">
         <div class="w-col w-col-7 w-col-medium-7 w-col-small-7 main_header_banner">
-          <h1 class="main-heading">Create your own mobile App for FREE!<br/>Both for iPhone and Android</h1>
-          <p class="main-subtitle mobile_thin">Every business should have a mobile App to increase customer loyalty. Finally, it is available, affordable and incredibly easy!</p>
+          <h1 class="main-heading">Turn your Facebook business page<br/>into your own branded App</br>for iPhone and Android</h1>
+          </br>
+          <h1 class="centered_price"><span class="currency_sign">$</span>9<span class="cents">99</span> <span class="per_month_text"> &nbsp;Per Month<br></span></h1>   
+             <h1 class="second_line_text">First 30 Days FREE!</h1>
+
+<!--           <p class="main-subtitle mobile_thin">Every business should have a mobile App to increase customer loyalty. Finally, it is available, affordable and incredibly easy!</p> -->
           <div><a data-event-category="admin" data-event-action="open builder start now btn index" href="https://appv.co/public/appsetup/" target="_blank" class="w-button btnbuilder mobile_button_padding custom_href">Start Now - It's FREE!</a>
             <div>
-              <div class="builder_button_slogan slogan_ipad">It takes less than a minute</div>
+              <div class="builder_button_slogan w-hidden-main w-hidden-medium w-hidden-small">
+                <ul class="slogan_list">
+                  <li><span class="slogan_list_text">Make sales</span></li>
+                  <li><span class="slogan_list_text">Send notifications</span></li>
+                  <li><span class="slogan_list_text">Chat with customers</span></li>
+                </ul>
+              </div>
             </div>
           </div>
           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
@@ -256,6 +267,68 @@
       </div>
     </div>
   </div>
+
+  <div class="w-section section video">
+    <div class="w-container coupon-container">
+      <div class="w-row coupon-row">
+              <h1 class="video_header" style="text-align: center;">It's Really That Easy</h1>
+              <div class="vm_video_player" id="vm-video-player"><div id="appv_player"></div></div>
+
+              <script>
+                window._appv_player = undefined;
+              var tag = document.createElement('script');
+              tag.src = "http://www.youtube.com/iframe_api";
+              var firstScriptTag = document.getElementsByTagName('script')[0];
+              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+              var onPlayerStateChange = function(event) {
+                console.log("onPlayerStateChange called");
+                switch(event.data) {
+                  case YT.PlayerState.PLAYING:
+                  trackAction("Landing Page Video Playing");
+                  console.log("Landing Page Video Playing");
+                  break;
+                  
+                  case YT.PlayerState.PAUSED:
+                  trackAction("Landing Page Video Paused");
+                  console.log("Landing Page Video Paused");
+                  break;
+                  
+                  case YT.PlayerState.ENDED:
+                  trackAction("Landing Page Video Ended");
+                  console.log("Landing Page Video Ended");
+                  break;
+                  default:
+                  return;
+                }
+              }
+
+              var player;
+              function onYouTubeIframeAPIReady() {
+                player = new YT.Player('appv_player', {
+                  height: '100%',
+                  width: '100%',
+                  videoId: '6F3ceOB75Ws',
+                  playerVars: {
+                    showinfo: 0,
+                    playsinline: 1
+                  },
+                  events: {
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+                window._appv_player = player;
+                console.log(window._appv_player);
+              }
+              </script>
+      </div>
+
+      </div>
+    <div class="action_link_container"><a data-event-category="admin" data-event-action="open builder section video link index" href="https://appv.co/public/appsetup/" class="action_link custom_href"><span class="buttonlinkaction">Create my app</span>&nbsp;<br>Its free and it will take only few seconds&nbsp;</a>
+    </div>
+    </div>
+  </div>
+
   <div class="w-section w-hidden-medium w-hidden-small w-hidden-tiny section press">
     <div data-ix="come-from-right" class="w-container coupon-container">
       <div class="w-row coupon-row">
@@ -273,6 +346,67 @@
     <div class="action_link_container"><a data-event-category="admin" data-event-action="open builder section 1 link index" href="https://appv.co/public/appsetup/" class="action_link custom_href"><span class="buttonlinkaction">Create my app</span>&nbsp;<br>Its free and it will take only few seconds&nbsp;</a>
     </div>
   </div>
+
+<!--   <div class="w-section w-hidden-main section video">
+    <div class="w-container coupon-container">
+      <div class="w-row coupon-row">
+              <h1 style="text-align: center;">It's Really That Easy</h1>
+              <div style="height: 338px; width: 600px; margin: auto;" class="vm-video-player" id="vm-video-player"><div id="appv_player"></div></div>
+
+              <script>
+                window._appv_player = undefined;
+              var tag = document.createElement('script');
+              tag.src = "http://www.youtube.com/iframe_api";
+              var firstScriptTag = document.getElementsByTagName('script')[0];
+              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+              var onPlayerStateChange = function(event) {
+                console.log("onPlayerStateChange called");
+                switch(event.data) {
+                  case YT.PlayerState.PLAYING:
+                  trackAction("Landing Page Video Playing");
+                  console.log("Landing Page Video Playing");
+                  break;
+                  
+                  case YT.PlayerState.PAUSED:
+                  trackAction("Landing Page Video Paused");
+                  console.log("Landing Page Video Paused");
+                  break;
+                  
+                  case YT.PlayerState.ENDED:
+                  trackAction("Landing Page Video Ended");
+                  console.log("Landing Page Video Ended");
+                  break;
+                  default:
+                  return;
+                }
+              }
+
+              var player;
+              function onYouTubeIframeAPIReady() {
+                player = new YT.Player('appv_player', {
+                  height: '100%',
+                  width: '100%',
+                  videoId: '6F3ceOB75Ws',
+                  playerVars: {
+                    showinfo: 0,
+                    playsinline: 1
+                  },
+                  events: {
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+                window._appv_player = player;
+                console.log(window._appv_player);
+              }
+              </script>
+      </div>
+
+    </div>
+    <div class="w-hidden-main action_link_container"><a data-event-category="admin" data-event-action="open builder section video link index" href="https://appv.co/public/appsetup/" class="action_link custom_href"><span class="buttonlinkaction">Create my app</span>&nbsp;<br>Its free and it will take only few seconds&nbsp;</a>
+    </div>
+  </div>
+ -->
   <div class="w-section w-hidden-main section press">
     <div class="w-container coupon-container">
       <div class="w-row coupon-row">
@@ -290,6 +424,7 @@
     <div class="w-hidden-main action_link_container"><a data-event-category="admin" data-event-action="open builder section 1 link index" href="https://appv.co/public/appsetup/" class="action_link custom_href"><span class="buttonlinkaction">Create my app</span>&nbsp;<br>Its free and it will take only few seconds&nbsp;</a>
     </div>
   </div>
+
   <div class="w-section w-hidden-medium w-hidden-small w-hidden-tiny section developer">
     <div data-ix="come-from-left" class="w-container">
       <div class="w-row">
@@ -431,7 +566,7 @@
   </div>
 <!-- <meta itemprop="url" content="http://www.AppsVillage.mobi/">
 </span> -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script type="text/javascript" src="js/webflow.js"></script>
   <script>
   window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -440,7 +575,7 @@
   ga('send', 'pageview');
   ga('send', 'event', 'admin', 'open index.html');
   </script>
-  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script async src='http://www.google-analytics.com/analytics.js'></script>
   <script async src='js/autotrack.js'></script>
 
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
@@ -450,7 +585,7 @@
   <!-- Olark click-to-chat tab -->
   <div id="olark_tab">
       <a href="javascript:void(0);" onclick="changeClass()">
-          <img src="https://static.olark.com/images/livehelp-tab-icon.png" />
+          <img src="http://static.olark.com/images/livehelp-tab-icon.png" />
       </a>
   </div>
   <!-- Empty container for Olark chat box  -->
@@ -485,7 +620,7 @@
         snippet: 'on WEBSITE index.html page'
   });
 
-  olark.identify('4413-525-10-6360');/*]]>*/</script><noscript><a href="https://www.olark.com/site/4413-525-10-6360/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+  olark.identify('4413-525-10-6360');/*]]>*/</script><noscript><a href="http://www.olark.com/site/4413-525-10-6360/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
   
   <script type='text/javascript'>
   // Keep things from polluting the global namespace, except changeClass, which we want accessible
