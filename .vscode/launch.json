@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: Development",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "dev"],
+      "port": 3000,
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "protocol": "inspector",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
+    }
+  ]
+}
