@@ -1,10 +1,12 @@
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
-import Header from "../components/Header";
+import Header from "../components/molecules/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout(props) {
+  const { apiKey, secretKey } = process.env;
+
   const {
     children,
     title = "Create Next App",
@@ -16,7 +18,10 @@ export default function RootLayout(props) {
       <head>
         <Header title={title} description={description} />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} font-calibre-regular`}>
+        {children}
+        <div>apiKey= {apiKey}</div>
+      </body>
     </html>
   );
 }

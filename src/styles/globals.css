@@ -1,6 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+	font-family: 'Calibre Medium';
+	src: url('/fonts/Calibre-Medium.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Calibre Regular';
+	src: url('/fonts/Calibre-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SF Mono Regular';
+	src: url('/fonts/SFMono-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Calibre Semibold';
+	src: url('/fonts/Calibre-Semibold.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -16,8 +40,14 @@
   }
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   color: rgb(var(--foreground-rgb));
+	font-family: 'Calibre Semibold', sans-serif;
   background: linear-gradient(
       to bottom,
       transparent,
