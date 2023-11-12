@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -12,45 +10,37 @@ function AppBar() {
   };
 
   return (
-    <header className="bg-white p-4 h-16 fixed top-0 w-full flex items-center justify-between z-50">
-      <div>
+    <header className="bg-white p-4 h-16 fixed top-0 w-full flex items-center justify-between z-50 shadow-md">
+      <div className="flex items-center">
+        {" "}
         {/* Logo */}
-        <Link href="/" passHref>
-          <span className="text-xl font-bold cursor-pointer">My Website</span>
-        </Link>
+        <svg
+          width="170"
+          height="40"
+          viewBox="0 0 680 160"
+          xmlns="http://www.w3.org/2000/svg"
+          className="mr-2"
+        >
+          <rect
+            width="680"
+            height="160"
+            rx="8"
+            fill="none"
+            stroke="#4B5563"
+            strokeWidth="10"
+          />
+          <text
+            x="10"
+            y="125"
+            fontSize="160"
+            fontFamily="'Calibre Semibold', sans-serif"
+            fill="#4B5563"
+          >
+            Dev Sparx
+          </text>
+        </svg>
       </div>
-      <nav
-        className={`flex items-center space-x-4 ${
-          isMenuOpen ? "block" : "hidden"
-        } sm:flex`}
-      >
-        {/* Links */}
-        <Link href="/about" passHref>
-          <span className="text-[#COLOR] font-semibold cursor-pointer">
-            01. About
-          </span>
-        </Link>
-        <Link href="/experience" passHref>
-          <span className="text-[#COLOR] font-semibold cursor-pointer">
-            02. Experience
-          </span>
-        </Link>
-        <Link href="/projects" passHref>
-          <span className="text-[#COLOR] font-semibold cursor-pointer">
-            03. Projects
-          </span>
-        </Link>
-        <Link href="/contact" passHref>
-          <span className="text-[#COLOR] font-semibold cursor-pointer">
-            04. Contact
-          </span>
-        </Link>
 
-        {/* Resume Button */}
-        <button className="border border-[#COLOR] text-[#COLOR] py-1 px-4 rounded hover:bg-[#COLOR] hover:text-white transition">
-          Resume
-        </button>
-      </nav>
       {/* Hamburger Icon */}
       <div className="sm:hidden">
         <button onClick={toggleMenu} className="text-gray-800">
@@ -60,7 +50,30 @@ function AppBar() {
             <Bars3Icon className="h-6 w-6" />
           )}
         </button>
-      </div>{" "}
+      </div>
+      {/* Mobile Menu */}
+      <div
+        className={`absolute sm:static sm:bg-transparent top-16 right-0 bg-white w-full sm:w-auto transition-all ease-in-out duration-300 ${
+          isMenuOpen ? "block" : "hidden"
+        } sm:block`}
+      >
+        <nav className="flex flex-col sm:flex-row items-center sm:space-x-4 p-4 sm:p-0">
+          {/* Links */}
+          {["/about", "/experience", "/now", "/contact"].map((path, index) => (
+            <Link key={path} href={path} passHref>
+              <span className="text-gray-700 font-semibold cursor-pointer hover:text-gray-900 py-1 sm:py-0">
+                {`0${index + 1}. ${
+                  path.slice(1).charAt(0).toUpperCase() + path.slice(2)
+                }`}
+              </span>
+            </Link>
+          ))}
+          {/* Resume Button */}
+          <button className="border border-gray-700 text-gray-700 py-1 px-4 rounded hover:bg-gray-700 hover:text-white transition mt-4 sm:mt-0">
+            Resume
+          </button>
+        </nav>
+      </div>
     </header>
   );
 }
