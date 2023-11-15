@@ -1,5 +1,8 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
+import { client as sanityClient } from "../../sanity/lib/client";
 import AppBar from "@components/components/molecules/AppBar";
 import Footer from "@components/components/molecules/Footer";
 import Sidebar from "@components/components/Sidebar";
@@ -24,6 +27,52 @@ import {
 import RootLayout from "./layout";
 
 function Home() {
+  const [heroData, setHeroData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const cachedData = localStorage.getItem("heroData");
+    const cachedTimestamp = localStorage.getItem("heroTimestamp");
+    const isDataValid =
+      cachedTimestamp && new Date() - new Date(cachedTimestamp) < 86400000; // 1 day in milliseconds
+
+    if (cachedData && isDataValid) {
+      setHeroData(JSON.parse(cachedData));
+      setIsLoading(false);
+    } else {
+      fetchHeroData();
+    }
+  }, []);
+
+  const fetchDataFromSanity = async () => {
+    try {
+      console.log("Fetching data from Sanity...");
+      const data = await sanityClient.fetch(`*[_type == "hero"][0]`);
+      console.log("Data fetched from Sanity: ", data);
+      return data; // Return the fetched data
+    } catch (error) {
+      console.error("Error fetching data from Sanity: ", error);
+      return null; // Return null in case of an error
+    }
+  };
+
+  const fetchHeroData = async () => {
+    setIsLoading(true);
+    console.log("Starting to fetch hero data...");
+    const newData = await fetchDataFromSanity();
+    if (newData) {
+      // Check if newData is not null
+      console.log("New data retrieved, updating localStorage and state...");
+      localStorage.setItem("heroData", JSON.stringify(newData));
+      localStorage.setItem("heroTimestamp", new Date().toISOString());
+      setHeroData(newData);
+    } else {
+      console.log("No data retrieved from Sanity.");
+    }
+    setIsLoading(false);
+    console.log("Fetching hero data complete.");
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <AppBar />
@@ -34,26 +83,41 @@ function Home() {
           <section className="grid grid-cols-1 sm:grid-cols-12 min-h-screen">
             <div className="col-span-1 sm:col-span-1 "></div>
             <div className="col-span-1 sm:col-span-10 p-4 sm:p-4 flex flex-col items-start justify-center">
-              <H3 className="text-gray-900 mb-0 text-xl sm:text-2xl">
-                Shalom! My name is
-              </H3>
-              <H1 className="text-gray-500 mb-1">Nadav Daniel</H1>
-              <H1 className="mb-0">I love making new things on the web!</H1>
-              <Paragraph className="max-w-md">
-                I&apos;m passionate about crafting exceptional digital
-                experiences for SaaS companies. My journey began as a mobile
-                developer and entrepreneur, breathing life into multiple mobile
-                apps from the ground up. My approach is all about thinking
-                outside the box and infusing a creative mindset into every
-                project, driven by a relentless passion for innovation.
-              </Paragraph>
-              <Button
-                icon="ArrowDownTray"
-                variant="outline"
-                onClick={() => alert("Button was clicked!")}
-              >
-                Contact Me
-              </Button>
+              {isLoading ? (
+                <H1>Loading ... </H1>
+              ) : (
+                <H3 className="text-gray-900 !mb-0 text-xl sm:text-2xl">
+                  {heroData?.welcomeSentence}
+                </H3>
+              )}
+              <H1 className="text-gray-500 !mb-1">
+                {isLoading ? <Skeleton /> : heroData?.welcomeFullName}
+              </H1>
+              <H1 className="!mb-0">
+                {isLoading ? <Skeleton /> : heroData?.welcomeSlogan}
+              </H1>
+              {isLoading ? (
+                <Skeleton count={5} />
+              ) : (
+                heroData?.welcomeBody?.map((paragraph, index) => (
+                  <Paragraph key={index} className="max-w-md">
+                    {paragraph.children.map((child) => child.text).join("")}
+                  </Paragraph>
+                ))
+              )}
+              {isLoading ? (
+                <Skeleton />
+              ) : (
+                heroData?.welcomeCTA && (
+                  <Button
+                    icon="ArrowDownTray"
+                    variant="outline"
+                    onClick={() => alert("Button was clicked!")}
+                  >
+                    {heroData.welcomeCTA.title}
+                  </Button>
+                )
+              )}
             </div>
             <div className="col-span-1 sm:col-span-1 "></div>
           </section>
