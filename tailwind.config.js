@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        screens: {
+          lg: "1024px",
+          xl: "1024px",
+          "2xl": "1024px",
+        },
+      },
       fontFamily: {
         "calibre-medium": ["Calibre Medium", "sans-serif"],
         "calibre-regular": ["Calibre Regular", "sans-serif"],
@@ -46,6 +54,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        background: "#ffffff",
+      },
       fontFamily: {
         "calibre-medium": ["Calibre Medium", "sans-serif"],
         "calibre-regular": ["Calibre Regular", "sans-serif"],
@@ -53,9 +64,21 @@ module.exports = {
         "calibre-semibold": ["Calibre Semibold", "sans-serif"],
       },
       textColor: {
-        customBlue: "rgb(0, 0, 218)",
-        customGrey1: "rgb(204,214,246)",
-        customGrey2: "rgb(136,146,176)",
+        DEFAULT: "#ffffff",
+      },
+      colors: {
+        gray: {
+          50: "#f9fafb",
+          100: "#f3f4f6",
+          200: "#e5e7eb",
+          300: "#d1d5db",
+          400: "#9ca3af",
+          500: "#6b7280",
+          600: "#4b5563",
+          700: "#374151",
+          800: "#1f2937",
+          900: "#111827",
+        },
       },
       fontSize: {
         xs: "0.75rem",

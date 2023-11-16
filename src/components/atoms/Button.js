@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Icon from "./Icon";
 
 function Button({
-  variant,
+  variant = "normal",
   onClick,
   className = "",
   children,
@@ -59,13 +59,6 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   icon: PropTypes.string,
   fullWidth: PropTypes.bool,
-};
-
-Button.defaultProps = {
-  variant: "normal",
-  className: "",
-  disabled: false,
-  fullWidth: false,
 };
 
 export default React.memo(Button);
