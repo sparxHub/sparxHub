@@ -2,6 +2,9 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+
+import { useTheme } from "./ThemeContext";
+
 import Icon from "./Icon";
 
 function Button({
@@ -12,12 +15,19 @@ function Button({
   disabled = false,
   icon = null,
   fullWidth = false,
+  colorSet,
 }) {
+  const theme = useTheme();
+
+  // Determine the color set to use
+  const selectedColorSet =
+    theme?.colorSets[colorSet] || theme?.colorSets.primary;
+
   let buttonStyles =
     "inline-flex items-center px-4 py-2 rounded font-semibold transition-colors duration-200 transform focus:outline-none focus:ring-2 focus:ring-offset-2";
 
   if (fullWidth) {
-    buttonStyles += " w-full justify-center"; // adding justify-center if it's full width to center content
+    buttonStyles += " w-full justify-center";
   }
 
   if (disabled) {
@@ -26,19 +36,22 @@ function Button({
 
   switch (variant) {
     case "outline":
-      buttonStyles +=
-        " border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white focus:ring-blue-500";
+      buttonStyles += ` border ${selectedColorSet.border} ${selectedColorSet.text} hover:${selectedColorSet.hoverBg} focus:${selectedColorSet.focusRing}`;
       break;
     case "text":
-      buttonStyles += " text-blue-500 hover:bg-blue-100 focus:ring-blue-500";
+      buttonStyles += ` ${selectedColorSet.text} hover:${selectedColorSet.hoverBg} focus:${selectedColorSet.focusRing}`;
       break;
     case "normal":
     default:
-      buttonStyles +=
-        " bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500";
+      // buttonStyles += " bg-blue-500 text-white hover:bg-blue-600";
+      buttonStyles += ` ${selectedColorSet.bg} hover:${selectedColorSet.hoverBg} focus:${selectedColorSet.focusRing} ${selectedColorSet.onBackground.text}`;
       break;
   }
 
+  console.log(JSON.stringify(`>> buttonStyles : ${buttonStyles}`));
+
+  // buttonStyles =
+  //   "inline-flex items-center px-4 py-2 rounded font-semibold transition-colors duration-200 transform focus:outline-none focus:ring-2 focus:ring-offset-2 w-full justify-center bg-greeny-500 hover:bg-greeny-600 focus:ring-blue-500 text-white";
   return (
     <button
       onClick={onClick}
@@ -50,15 +63,5 @@ function Button({
     </button>
   );
 }
-
-Button.propTypes = {
-  variant: PropTypes.oneOf(["outline", "text", "normal"]),
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  disabled: PropTypes.bool,
-  icon: PropTypes.string,
-  fullWidth: PropTypes.bool,
-};
 
 export default React.memo(Button);

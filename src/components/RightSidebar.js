@@ -4,7 +4,7 @@ function RightSidebar() {
       {/* Email with specific styles */}
       <div className="h-[250px] w-full flex items-center justify-center">
         <div className="font-mono text-sm tracking-wider transform rotate-90">
-          daniel.nadav@gmail.com
+          nadavdaniel@hotmail.com
         </div>
       </div>
 

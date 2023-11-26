@@ -1,10 +1,12 @@
+"use client";
+
 import "../styles/globals.css";
-import { Inter } from "next/font/google";
+import { ThemeProvider, useTheme } from "../components/atoms/ThemeContext";
+
 import Header from "../components/molecules/Header";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function RootLayout(props) {
+  const theme = useTheme();
   const { apiKey, secretKey } = process.env;
 
   const {
@@ -18,10 +20,13 @@ export default function RootLayout(props) {
       <head>
         <Header title={title} description={description} />
       </head>
-      <body className={`${inter.className} font-calibre-regular`}>
-        {children}
-        <div>apiKey= {apiKey}</div>
-      </body>
+      <ThemeProvider>
+        <body
+          className={`${theme?.textTheme?.bodyFont} ${theme?.colorSets?.primary?.text}`}
+        >
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

@@ -31,10 +31,15 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    debugger;
     const cachedData = localStorage.getItem("heroData");
     const cachedTimestamp = localStorage.getItem("heroTimestamp");
     const isDataValid =
       cachedTimestamp && new Date() - new Date(cachedTimestamp) < 86400000; // 1 day in milliseconds
+
+    console.log("cachedData:", cachedData);
+    console.log("cachedTimestamp:", cachedTimestamp);
+    console.log("isDataValid:", isDataValid);
 
     if (cachedData && isDataValid) {
       setHeroData(JSON.parse(cachedData));
@@ -74,33 +79,34 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-white">
       <AppBar />
       <div className="flex flex-1 justify-center">
         <Sidebar />
-        <main className="container  text-gray-600">
+        <main className="container">
           {/* Hero | Section */}
-          <section className="grid grid-cols-1 sm:grid-cols-12 min-h-screen">
-            <div className="col-span-1 sm:col-span-1 "></div>
-            <div className="col-span-1 sm:col-span-10 p-4 sm:p-4 flex flex-col items-start justify-center">
+          <section className="flex flex-col items-center justify-center min-h-screen">
+            <div className="w-full  items-center justify-center sm:w-4/6 lg:w-3/6 p-4 sm:p-4">
               {isLoading ? (
-                <H1>Loading ... </H1>
+                <H3>Loading ... </H3>
               ) : (
-                <H3 className="text-gray-900 !mb-0 text-xl sm:text-2xl">
-                  {heroData?.welcomeSentence}
+                <H3>
+                  {heroData?.welcomeSentence}{" "}
+                  <span className="font-bold text-2xl sm:text-3xl">
+                    {heroData?.welcomeFullName}
+                  </span>
                 </H3>
               )}
-              <H1 className="text-gray-500 !mb-1">
-                {isLoading ? <Skeleton /> : heroData?.welcomeFullName}
-              </H1>
-              <H1 className="!mb-0">
-                {isLoading ? <Skeleton /> : heroData?.welcomeSlogan}
-              </H1>
+              <div className="!mb-3">
+                <H1 className="line-height-1 text-center">
+                  {isLoading ? <Skeleton /> : heroData?.welcomeSlogan}
+                </H1>
+              </div>{" "}
               {isLoading ? (
                 <Skeleton count={5} />
               ) : (
                 heroData?.welcomeBody?.map((paragraph, index) => (
-                  <Paragraph key={index} className="max-w-md">
+                  <Paragraph key={index} className="text-justify">
                     {paragraph.children.map((child) => child.text).join("")}
                   </Paragraph>
                 ))
@@ -111,7 +117,7 @@ function Home() {
                 heroData?.welcomeCTA && (
                   <Button
                     icon="ArrowDownTray"
-                    variant="outline"
+                    fullWidth
                     onClick={() => alert("Button was clicked!")}
                   >
                     {heroData.welcomeCTA.title}
@@ -119,7 +125,6 @@ function Home() {
                 )
               )}
             </div>
-            <div className="col-span-1 sm:col-span-1 "></div>
           </section>
 
           {/* 01. About | Section */}

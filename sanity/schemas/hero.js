@@ -20,7 +20,19 @@ export default {
     {
       name: "welcomeSlogan",
       title: "Welcome Slogan",
-      type: "string",
+      type: "text",
+      marks: {
+        // Allow for formatting marks like "strong", "em", and "code"
+        decorators: [
+          { title: "Strong", value: "strong" },
+          { title: "Emphasis", value: "em" },
+          { title: "Code", value: "code" },
+        ],
+        // Allow for line breaks
+        annotations: [
+          { title: "Line Break", name: "lineBreak", type: "object" },
+        ],
+      },
       initialValue: "I love making new things on the web!",
     },
     {

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -17,26 +19,29 @@ function AppBar() {
         <svg
           width="170"
           height="40"
-          viewBox="0 0 680 160"
+          viewBox="0 0 880 160"
           xmlns="http://www.w3.org/2000/svg"
           className="mr-2"
         >
           <rect
-            width="680"
+            width="880"
             height="160"
             rx="8"
             fill="none"
-            stroke="#4B5563"
-            strokeWidth="10"
+            stroke="#264653"
+            strokeWidth="15"
           />
           <text
             x="10"
             y="125"
             fontSize="160"
-            fontFamily="'Calibre Semibold', sans-serif"
-            fill="#4B5563"
+            fontFamily="'Poppins SemiBold', sans-serif"
+            fill="#2a9d8f"
           >
-            Dev Sparx
+            DEV{"*"}
+            <tspan fill="#264653" fontFamily="'Poppins', sans-serif">
+              sparx
+            </tspan>
           </text>
         </svg>
       </div>
