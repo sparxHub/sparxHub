@@ -147,16 +147,16 @@ module.exports = {
       },
       colors: {
         greeny: {
-          50: "#eaf5f4",
-          100: "#d4ebe9",
-          200: "#95cec7",
-          300: "#55b1a5",
-          400: "#2a9d8f",
-          500: "#227e72", //default
-          600: "#1d6e64",
-          700: "#195e56",
-          800: "#154f48",
-          900: "#264653",
+          50: "var(--color-greeny-50)",
+          100: "var(--color-greeny-100)",
+          200: "var(--color-greeny-200)",
+          300: "var(--color-greeny-300)",
+          400: "var(--color-greeny-400)",
+          500: "var(--color-greeny-500)",
+          600: "var(--color-greeny-600)",
+          700: "var(--color-greeny-700)",
+          800: "var(--color-greeny-800)",
+          900: "var(--color-greeny-900)",
         },
         yellow: {
           50: "#fbf3e1",

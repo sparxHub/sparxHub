@@ -24,7 +24,7 @@ function ListGrid({
 
   return (
     <ul className={`grid ${gridClasses} gap-x-4 gap-y-2 mt-5 list-none pl-5`}>
-      {items.map((item, idx) => (
+      {items?.map((item, idx) => (
         <li
           key={idx}
           className={`relative mb-2.5 pl-5 text-xs font-mono text-${color}`}

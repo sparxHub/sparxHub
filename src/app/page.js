@@ -28,12 +28,13 @@ import RootLayout from "./layout";
 
 function Home() {
   const [heroData, setHeroData] = useState(null);
+  const [aboutData, setAboutData] = useState(null);
+  const [nowData, setNowData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    debugger;
-    const cachedData = localStorage.getItem("heroData");
-    const cachedTimestamp = localStorage.getItem("heroTimestamp");
+    const cachedData = localStorage.getItem("mainPageData");
+    const cachedTimestamp = localStorage.getItem("mainPageTimestamp");
     const isDataValid =
       cachedTimestamp && new Date() - new Date(cachedTimestamp) < 86400000; // 1 day in milliseconds
 
@@ -42,17 +43,24 @@ function Home() {
     console.log("isDataValid:", isDataValid);
 
     if (cachedData && isDataValid) {
-      setHeroData(JSON.parse(cachedData));
+      const parsedCachedData = JSON.parse(cachedData);
+      setHeroData(parsedCachedData["hero"]);
+      setAboutData(parsedCachedData["about"]);
+      setNowData(parsedCachedData["now"]);
       setIsLoading(false);
     } else {
-      fetchHeroData();
+      fetchMainPageData();
     }
   }, []);
 
   const fetchDataFromSanity = async () => {
     try {
       console.log("Fetching data from Sanity...");
-      const data = await sanityClient.fetch(`*[_type == "hero"][0]`);
+      const hero = await sanityClient.fetch(`*[_type == "hero"][0]`);
+      const about = await sanityClient.fetch(`*[_type == "about"][0]`);
+      const now = await sanityClient.fetch(`*[_type == "now"][0]`);
+
+      const data = { hero, about, now };
       console.log("Data fetched from Sanity: ", data);
       return data; // Return the fetched data
     } catch (error) {
@@ -61,16 +69,18 @@ function Home() {
     }
   };
 
-  const fetchHeroData = async () => {
+  const fetchMainPageData = async () => {
     setIsLoading(true);
     console.log("Starting to fetch hero data...");
     const newData = await fetchDataFromSanity();
     if (newData) {
       // Check if newData is not null
       console.log("New data retrieved, updating localStorage and state...");
-      localStorage.setItem("heroData", JSON.stringify(newData));
-      localStorage.setItem("heroTimestamp", new Date().toISOString());
-      setHeroData(newData);
+      localStorage.setItem("mainPageData", JSON.stringify(newData));
+      localStorage.setItem("mainPageTimestamp", new Date().toISOString());
+      setHeroData(newData["hero"]);
+      setAboutData(newData["about"]);
+      setNowData(newData["now"]);
     } else {
       console.log("No data retrieved from Sanity.");
     }
@@ -86,16 +96,16 @@ function Home() {
         <main className="container">
           {/* Hero | Section */}
           <section className="flex flex-col items-center justify-center min-h-screen">
-            <div className="w-full  items-center justify-center sm:w-4/6 lg:w-3/6 p-4 sm:p-4">
+            <div className="w-full items-center justify-center sm:w-4/6 lg:w-3/6 p-4 sm:p-4">
               {isLoading ? (
                 <H3>Loading ... </H3>
               ) : (
-                <H3>
+                <Paragraph>
                   {heroData?.welcomeSentence}{" "}
-                  <span className="font-bold text-2xl sm:text-3xl">
+                  <span className="font-poppins-semi-bold text-yellow-500 text-xl sm:text-2xl">
                     {heroData?.welcomeFullName}
                   </span>
-                </H3>
+                </Paragraph>
               )}
               <div className="!mb-3">
                 <H1 className="line-height-1 text-center">
@@ -106,8 +116,12 @@ function Home() {
                 <Skeleton count={5} />
               ) : (
                 heroData?.welcomeBody?.map((paragraph, index) => (
-                  <Paragraph key={index} className="text-justify">
-                    {paragraph.children.map((child) => child.text).join("")}
+                  <Paragraph
+                    key={index}
+                    className="text-justify"
+                    boldClassName="text-yellow-500"
+                  >
+                    {paragraph.children}
                   </Paragraph>
                 ))
               )}
@@ -115,13 +129,17 @@ function Home() {
                 <Skeleton />
               ) : (
                 heroData?.welcomeCTA && (
-                  <Button
-                    icon="ArrowDownTray"
-                    fullWidth
-                    onClick={() => alert("Button was clicked!")}
-                  >
-                    {heroData.welcomeCTA.title}
-                  </Button>
+                  <div className="flex items-center justify-center">
+                    <div className="w-[250px]">
+                      <Button
+                        icon="ArrowDownTray"
+                        fullWidth
+                        onClick={() => alert("Button was clicked!")}
+                      >
+                        {heroData.welcomeCTA.title}
+                      </Button>
+                    </div>
+                  </div>
                 )
               )}
             </div>
@@ -135,47 +153,29 @@ function Home() {
             {/* Main content div, takes full width on mobile */}
             <div className="flex flex-col items-start justify-start p-4 md:col-span-6">
               <SectionTitle number={1} title="About" />
-
               {/* Image div, shown below the content on mobile */}
               <div className="pt-4 md:hidden flex items-center justify-center">
                 {/* Placeholder Image */}
                 <img src="https://via.placeholder.com/150" alt="Placeholder" />
               </div>
-
               {/* Content paragraphs */}
-              <Paragraph>
-                But my journey is more than just lines of code and software
-                development. It&apos;s a life filled with adventure, shared with
-                my family. We embarked on an exciting chapter in Hong Kong,
-                where we called home from 2010 to 2013. Those years were a
-                captivating exploration of the vibrant culture of this bustling
-                metropolis. Later, my path led me to Plano, Texas, nestled near
-                the lively city of Dallas. From 2015 to 2021, it was a period of
-                remarkable growth, both in my professional career and my
-                personal life. Today, I&apos;m back in my beautiful homeland,
-                Israel, where I find endless inspiration in its breathtaking
-                landscapes. Hiking through these awe-inspiring terrains and
-                conquering challenging off-road trails with my trusty 4x4 are my
-                ways of connecting with the natural beauty that surrounds me.
-                The beach, with its infinite horizons, serves as a constant
-                muse, igniting my creativity. In my pursuit of balance,
-                you&apos;ll often find me at the gym, dedicating four days a
-                week to rigorous functional workouts. Life is about crafting not
-                only digital marvels but also creating unforgettable moments in
-                the great outdoors. Together, let&apos;s embark on this journey
-                of creation and exploration! 🚀🌄🏖️💪
-              </Paragraph>
-
+              {isLoading ? (
+                <Skeleton count={5} />
+              ) : (
+                <div>
+                  {aboutData?.content.map((paragraph, index) => (
+                    <Paragraph key={index} boldClassName="text-yellow-500">
+                      {paragraph.children}
+                    </Paragraph>
+                  ))}
+                </div>
+              )}
               {/* Skills list grid */}
-              <ListGrid
-                items={[
-                  "Java Enterprise",
-                  "Spring MVC & Maven",
-                  "Jenkins (CI/CD)",
-                  // Add more items as needed
-                ]}
-                columns={2}
-              />
+              {isLoading ? (
+                <Skeleton />
+              ) : (
+                <ListGrid items={aboutData?.skills} columns={2} />
+              )}
             </div>
 
             {/* Right content div with image, hidden on mobile */}
@@ -279,7 +279,20 @@ function Home() {
             <div className="flex flex-col items-start justify-start p-4 md:col-span-6">
               <SectionTitle number={3} title="Now" />
 
-              <Paragraph>
+              {/* Content paragraphs */}
+              {isLoading ? (
+                <Skeleton count={5} />
+              ) : (
+                <div>
+                  {nowData?.content.map((paragraph, index) => (
+                    <Paragraph markDefs={paragraph?.markDefs} key={index}>
+                      {paragraph.children}
+                    </Paragraph>
+                  ))}
+                </div>
+              )}
+
+              {/* <Paragraph>
                 <strong>
                   <i>What I&apos;m Up To</i>
                 </strong>{" "}
@@ -324,7 +337,7 @@ function Home() {
 
               <Paragraph className="text-gray-500">
                 (Last updated: Oct 2023)
-              </Paragraph>
+              </Paragraph> */}
             </div>
 
             {/* Image div, shown below the content on mobile */}

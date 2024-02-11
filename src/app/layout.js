@@ -21,11 +21,7 @@ export default function RootLayout(props) {
         <Header title={title} description={description} />
       </head>
       <ThemeProvider>
-        <body
-          className={`${theme?.textTheme?.bodyFont} ${theme?.colorSets?.primary?.text}`}
-        >
-          {children}
-        </body>
+        <body>{children}</body>
       </ThemeProvider>
     </html>
   );

@@ -153,9 +153,19 @@
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+	--color-greeny-50: #eaf5f4;
+	--color-greeny-100: #d4ebe9;
+	--color-greeny-200: #95cec7;
+	--color-greeny-300: #55b1a5;
+	--color-greeny-400: #2a9d8f;
+	--color-greeny-500: #227e72;
+	--color-greeny-600: #1d6e64;
+	--color-greeny-700: #195e56;
+	--color-greeny-800: #154f48;
+	--color-greeny-900: #264653;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -173,7 +183,7 @@
 
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--color-greeny-900));
 	font-family: "Poppins Regular", "Helvetica", "Arial", "Lucida", "sans-serif";
   background: linear-gradient(
       to bottom,
