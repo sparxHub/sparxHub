@@ -44,7 +44,6 @@ export default function Paragraph({
 
   // Function to extract and style linked text
   const extractLinkText = (text, marks, markDefs) => {
-    debugger;
 
     if (marks && marks.length > 0) {
       for (const mark of marks) {

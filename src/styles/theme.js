@@ -13,14 +13,14 @@ const theme = {
   },
   colorSets: {
     primary: {
-      bg: "bg-greeny-500",
-      text: "text-greeny-900",
-      border: "border-greeny-500",
-      hoverBg: "bg-greeny-600",
-      hoverText: "text-white",
-      focusRing: "ring-blue-500",
+      bg: "bg-greeny-900", // Matches the primary tone of the text
+      text: "text-greeny-900", // Text tone
+      border: "border-greeny-500", // Border tone
+      hoverBg: "bg-greeny-700", // Darker shade for hover
+      hoverText: "text-white", // Contrast on hover
+      focusRing: "ring-greeny-400", // Focus ring to match tones
       onBackground: {
-        text: "text-white",
+        text: "text-white", // Text on primary background
       },
     },
     secondary: {

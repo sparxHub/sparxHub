@@ -56,9 +56,9 @@ function Home() {
   const fetchDataFromSanity = async () => {
     try {
       console.log("Fetching data from Sanity...");
-      const hero = await sanityClient.fetch(`*[_type == "hero"][0]`);
-      const about = await sanityClient.fetch(`*[_type == "about"][0]`);
-      const now = await sanityClient.fetch(`*[_type == "now"][0]`);
+      const hero = await sanityClient.fetch('*[_type == "hero"][0]');
+      const about = await sanityClient.fetch('*[_type == "about"][0]');
+      const now = await sanityClient.fetch('*[_type == "now"][0]');
 
       const data = { hero, about, now };
       console.log("Data fetched from Sanity: ", data);

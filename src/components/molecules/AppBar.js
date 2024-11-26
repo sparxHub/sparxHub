@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image"; // Import Image from Next.js
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 function AppBar() {
@@ -13,37 +14,15 @@ function AppBar() {
 
   return (
     <header className="bg-white p-4 h-16 fixed top-0 w-full flex items-center justify-between z-50 shadow-md">
+      {/* Logo */}
       <div className="flex items-center">
-        {" "}
-        {/* Logo */}
-        <svg
-          width="170"
-          height="40"
-          viewBox="0 0 880 160"
-          xmlns="http://www.w3.org/2000/svg"
+        <Image
+          src="/img/dev_sparx_logo.png" // Use the logo from the public folder
+          alt="Dev Sparx Logo"
+          width={200} // Adjust width as needed
+          height={55} // Adjust height as needed
           className="mr-2"
-        >
-          <rect
-            width="880"
-            height="160"
-            rx="8"
-            fill="none"
-            stroke="#264653"
-            strokeWidth="15"
-          />
-          <text
-            x="10"
-            y="125"
-            fontSize="160"
-            fontFamily="'Poppins SemiBold', sans-serif"
-            fill="#2a9d8f"
-          >
-            DEV{"*"}
-            <tspan fill="#264653" fontFamily="'Poppins', sans-serif">
-              sparx
-            </tspan>
-          </text>
-        </svg>
+        />
       </div>
 
       {/* Hamburger Icon */}
@@ -56,6 +35,7 @@ function AppBar() {
           )}
         </button>
       </div>
+
       {/* Mobile Menu */}
       <div
         className={`absolute sm:static sm:bg-transparent top-16 right-0 bg-white w-full sm:w-auto transition-all ease-in-out duration-300 ${
