@@ -2,12 +2,16 @@
 	"name": "nadav-sparx-personal-site",
 	"version": "0.1.0",
 	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
+		"scripts": {
+			"clean": "rm -rf .next",
+		  "fetch-data": "curl -X GET http://localhost:3000/api/fetchStaticData",
+		  "dev": "next dev",
+		  "start": "next start",
+		  "build": "next build",
+		  "export": "npm run clean && NEXT_EXPORT=true next build",
+		  "prebuild": "npm run fetch-data",
+		  "lint": "next lint"
+		},
 	"dependencies": {
 		"@heroicons/react": "^2.0.18",
 		"@sanity/image-url": "^1.0.2",

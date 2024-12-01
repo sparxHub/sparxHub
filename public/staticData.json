@@ -1,0 +1,262 @@
+{
+  "hero": {
+    "welcomeSentence": "Shalom 👋🏽 my name is",
+    "welcomeSlogan": "I love making new things\non the web!",
+    "_id": "784eba1e-43cb-4251-9c1e-90a17295fe2e",
+    "_updatedAt": "2024-02-11T14:09:19Z",
+    "_createdAt": "2023-11-12T11:22:24Z",
+    "_rev": "lGxZgNCQ2Kl6bNjaL4QMlA",
+    "_type": "hero",
+    "welcomeFullName": "Nadav Daniel",
+    "welcomeBody": [
+      {
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "I'm passionate about crafting exceptional digital experiences for SaaS companies. My journey began as a ",
+            "_key": "feecfe0628ad0"
+          },
+          {
+            "text": "mobile developer",
+            "_key": "de3803698445",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ]
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " and ",
+            "_key": "00fe99220fcf"
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "entrepreneur",
+            "_key": "57951bd94dee"
+          },
+          {
+            "_key": "09c9e905e75d",
+            "_type": "span",
+            "marks": [],
+            "text": ", breathing life into multiple mobile apps from the ground up. My approach is all about thinking outside the box and infusing a creative mindset into every project, driven by a relentless "
+          },
+          {
+            "text": "passion for innovation",
+            "_key": "17769d7ae68d",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ]
+          }
+        ],
+        "_type": "block",
+        "style": "normal",
+        "_key": "b9150af44365",
+        "markDefs": []
+      }
+    ],
+    "welcomeCTA": {
+      "title": "Contact Me",
+      "url": "https://google.com"
+    }
+  },
+  "about": {
+    "skills": [
+      "Java Enterprise",
+      "Spring MVC & Maven",
+      "Jenkins (CI/CD)"
+    ],
+    "_createdAt": "2023-12-10T09:11:22Z",
+    "_rev": "Yvrt5QbpFnNxZsotwqOWQD",
+    "_type": "about",
+    "_id": "4105201b-51c2-4362-a597-466c8323cc35",
+    "_updatedAt": "2023-12-10T11:01:51Z",
+    "content": [
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "79eb7669f195",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "bc7d909714f20",
+            "_type": "span",
+            "marks": [],
+            "text": "But my journey is more than just lines of code and software development. It's a life filled with adventure, shared with my family. We embarked on an exciting chapter in Hong Kong, where we called home from 2010 to 2013. Those years were a captivating exploration of the vibrant culture of this bustling metropolis. Later, my path led me to Plano, Texas, nestled near the lively city of Dallas. From 2015 to 2021, it was a period of remarkable growth, both in my professional career and my personal life. Today, I'm back in my beautiful homeland, Israel, where I find endless inspiration in its breathtaking landscapes. "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Hiking",
+            "_key": "a94e5c05e3c7"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " through these awe-inspiring terrains and conquering challenging ",
+            "_key": "118dd76ef93b"
+          },
+          {
+            "marks": [
+              "strong"
+            ],
+            "text": "off-road trails",
+            "_key": "e1262383da47",
+            "_type": "span"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " with my trusty 4x4 are my ways of connecting with the natural beauty that surrounds me. ",
+            "_key": "0bb982c18fb9"
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "The beach",
+            "_key": "fc5fefbc3ee9"
+          },
+          {
+            "marks": [],
+            "text": ", with its infinite horizons, serves as a constant muse, igniting my creativity. In my pursuit of balance, you'll often find me at the gym, dedicating four days a week to rigorous functional workouts. Life is about crafting not only digital marvels but also creating unforgettable moments in the great outdoors. Together, let's embark on this journey of creation and exploration! 🚀🌄🏖️💪",
+            "_key": "0acd959c8101",
+            "_type": "span"
+          }
+        ]
+      }
+    ]
+  },
+  "now": {
+    "_createdAt": "2023-12-10T11:50:32Z",
+    "_rev": "Yvrt5QbpFnNxZsotwqvmU5",
+    "_type": "now",
+    "_id": "d0dc498d-a052-4b25-81d9-be6dd5f6b9c7",
+    "_updatedAt": "2023-12-10T14:02:18Z",
+    "content": [
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "770d39ba33a1",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [
+              "strong",
+              "em"
+            ],
+            "text": "What I'm Up To",
+            "_key": "40a49d8342b30"
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": " - Inspired by a great idea from Derek Sivers",
+            "_key": "40a49d8342b31"
+          }
+        ]
+      },
+      {
+        "markDefs": [],
+        "children": [
+          {
+            "marks": [],
+            "text": "Right now, my main focus is on creating a new Online Scheduling System and reservation software, using the magic of AI to make life easier for business owners and offer the latest digital experiences. We're starting with small fitness studios, but we have big plans to expand to other industries in the future.",
+            "_key": "e7d392ad779d0",
+            "_type": "span"
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "cf4eb03798c1"
+      },
+      {
+        "_key": "6d888d47487d",
+        "markDefs": [
+          {
+            "_type": "link",
+            "href": "nadavdaniel@hotmail.com",
+            "_key": "63c5ee903e2e"
+          }
+        ],
+        "children": [
+          {
+            "_key": "68365d08cc5b0",
+            "_type": "span",
+            "marks": [],
+            "text": "I'm also busy with web development projects for some fantastic clients. If you need something built, just drop me an email at "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "63c5ee903e2e"
+            ],
+            "text": "nadavdaniel@hotmail.com",
+            "_key": "d896a5c8ba7c"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ".",
+            "_key": "50845cc463d2"
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal"
+      },
+      {
+        "children": [
+          {
+            "_key": "1c7f5571e8030",
+            "_type": "span",
+            "marks": [],
+            "text": "I'm always eager to learn, especially when it comes to new technologies. I like to get my hands dirty and take notes using tools like Trello and Notion. Currently, I'm working on improving my skills in both frontend and backend web development. I have over 20 years of experience developing internal business applications."
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "72d31f7e5ee0",
+        "markDefs": []
+      },
+      {
+        "_key": "94a914561db3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Lastly, I'm an enthusiastic reader, and I highly recommend the book \"Anything You Want\" by Derek Sivers for some great insights.",
+            "_key": "8274710625530"
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal"
+      },
+      {
+        "_key": "0c235f77c2fc",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "(Last updated: Oct 2023)",
+            "_key": "a9d700f4791e0"
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal"
+      }
+    ]
+  }
+}
