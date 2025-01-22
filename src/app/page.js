@@ -68,13 +68,20 @@ function Home() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      <AppBar />
+    <div className="flex flex-col min-h-screen bg-white pt-16">
+      <AppBar
+        sections={[
+          { id: "about", title: "About" },
+          { id: "experience", title: "Experience" },
+          { id: "now", title: "Now" },
+          { id: "contact", title: "Contact" },
+        ]}
+      />
       <div className="flex flex-1 justify-center">
         <Sidebar />
         <main className="container">
           {/* Hero Section */}
-          <section className="flex flex-col items-start justify-center min-h-screen px-6 sm:px-20 bg-gradient-to-b">
+          <section id="hero"  className="flex flex-col items-start justify-center min-h-screen px-6 sm:px-20 bg-gradient-to-b">
             <p className="text-greeny-900">{heroData.greeting}</p>
             <h1 className="font-poppins-semi-bold text-yellow-500 text-6xl mt-1">{heroData.fullName}</h1>
             <h2 className="font-poppins-semi-bold text-greeny-900 mt-1 text-6xl whitespace-pre-line">
@@ -93,7 +100,7 @@ function Home() {
           </section>
 
           {/* About Section */}
-          <section className="grid grid-cols-1 md:grid-cols-12 gap-4 justify-center min-h-[75vh] px-6 sm:px-20">
+          <section id="about"  className="grid grid-cols-1 md:grid-cols-12 gap-4 justify-center min-h-[75vh] px-6 sm:px-20 scroll-mt-16">
             <div className="hidden md:block md:col-span-1"></div>
             <div className="flex flex-col items-start justify-start md:col-span-6">
               <SectionTitle number={1} title="About" />
@@ -118,7 +125,7 @@ function Home() {
           </section>
 
           {/* Experience Section */}
-          <section className="grid grid-cols-1 sm:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20">
+          <section id="experience" className="grid grid-cols-1 sm:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20 scroll-mt-16">
             <div className="hidden sm:block sm:col-span-3"></div>
             <div className="items-start justify-start sm:col-span-6">
               <SectionTitle number={2} title="Experience" />
@@ -147,7 +154,7 @@ function Home() {
           </section>
 
           {/* Now Section */}
-          <section className="grid grid-cols-1 md:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20">
+          <section id="now" className="grid grid-cols-1 md:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20 scroll-mt-16">
             <div className="hidden md:block md:col-span-1"></div>
             <div className="flex flex-col items-start justify-start md:col-span-6">
               <SectionTitle number={3} title="Now" />
