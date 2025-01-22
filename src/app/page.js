@@ -6,18 +6,18 @@ import AppBar from "@components/components/molecules/AppBar";
 import Footer from "@components/components/molecules/Footer";
 import Sidebar from "@components/components/Sidebar";
 import RightSidebar from "@components/components/RightSidebar";
-import { H1, H3, Button, Paragraph, ListGrid } from "@components/components/atoms";
+import { H1, Button, Paragraph, ListGrid } from "@components/components/atoms";
 import SectionTitle from "@components/components/molecules/SectionTitle";
 import { Accordion, ContentPanel } from "@components/components/molecules/Accordion";
 
-
-let sanityClient; // Declare sanityClient
-
-// Conditionally import sanityClient
-if (process.env.NEXT_PUBLIC_EXPORT_MODE !== "true") {
-  sanityClient = require("../../sanity/lib/client").client;
+function LoadingGauge() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+      <img src="/logo.png" alt="Loading Logo" className="w-24 h-24 animate-bounce mb-4" />
+      <p className="text-2xl font-semibold">Loading your experience...</p>
+    </div>
+  );
 }
-
 
 function Home() {
   const [heroData, setHeroData] = useState(null);
@@ -28,42 +28,44 @@ function Home() {
   const isExportMode = process.env.NEXT_PUBLIC_EXPORT_MODE === "true";
 
   useEffect(() => {
-    const fetchStaticData = async () => {
+    const fetchData = async () => {
       try {
+        let fetchedData = null;
+
         const response = await fetch("/staticData.json");
-        if (!response.ok) {
-          throw new Error("Static data not found. Falling back to dynamic fetch.");
+        if (response.ok) {
+          fetchedData = await response.json();
+          console.log("Static data fetched:", fetchedData);
+        } else {
+          console.warn("Static data not found, attempting dynamic fetch...");
+          if (!isExportMode) {
+            fetchedData = {
+              hero: await sanityClient.fetch('*[_type == "hero"][0]'),
+              about: await sanityClient.fetch('*[_type == "about"][0]'),
+              now: await sanityClient.fetch('*[_type == "now"][0]'),
+            };
+            console.log("Dynamic data fetched:", fetchedData);
+          } else {
+            throw new Error("Data could not be fetched in export mode.");
+          }
         }
-        const data = await response.json();
-        setHeroData(data.hero);
-        setAboutData(data.about);
-        setNowData(data.now);
+
+        setHeroData(fetchedData.hero);
+        setAboutData(fetchedData.about);
+        setNowData(fetchedData.now);
+        setIsLoading(false);
       } catch (error) {
-        console.error(error.message);
-        if (!isExportMode) {
-          fetchDynamicData(); // Only fetch dynamically if not in export mode
-        }
-      } finally {
+        console.error("Error fetching data:", error.message);
         setIsLoading(false);
       }
     };
 
-    const fetchDynamicData = async () => {
-      try {
-        console.log("Fetching data dynamically from Sanity...");
-        const hero = await sanityClient.fetch('*[_type == "hero"][0]');
-        const about = await sanityClient.fetch('*[_type == "about"][0]');
-        const now = await sanityClient.fetch('*[_type == "now"][0]');
-        setHeroData(hero);
-        setAboutData(about);
-        setNowData(now);
-      } catch (error) {
-        console.error("Error fetching data dynamically:", error);
-      }
-    };
-
-    fetchStaticData(); // Static fetch with fallback
+    fetchData();
   }, [isExportMode]);
+
+  if (isLoading || !heroData) {
+    return <LoadingGauge />;
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -72,52 +74,28 @@ function Home() {
         <Sidebar />
         <main className="container">
           {/* Hero Section */}
-          <section className="flex flex-col items-center justify-center min-h-screen">
-            <div className="w-full items-center justify-center sm:w-4/6 lg:w-3/6 p-4 sm:p-4">
-              {isLoading ? (
-                <H3>Loading ... </H3>
-              ) : (
-                <Paragraph>
-                  {heroData?.welcomeSentence}{" "}
-                  <span className="font-poppins-semi-bold text-yellow-500 text-xl sm:text-2xl">
-                    {heroData?.welcomeFullName}
-                  </span>
-                </Paragraph>
-              )}
-              <div className="!mb-3">
-                <H1 className="line-height-1 text-center">
-                  {heroData?.welcomeSlogan || <Skeleton />}
-                </H1>
-              </div>
-              {isLoading ? (
-                <Skeleton count={5} />
-              ) : (
-                heroData?.welcomeBody?.map((paragraph, index) => (
-                  <Paragraph key={index} className="text-justify" boldClassName="text-yellow-500">
-                    {paragraph.children}
-                  </Paragraph>
-                ))
-              )}
-              {heroData?.welcomeCTA && (
-                <div className="flex items-center justify-center">
-                  <div className="w-[250px]">
-                    <Button
-                      icon="ArrowDownTray"
-                      fullWidth
-                      onClick={() => alert("Button was clicked!")}
-                    >
-                      {heroData.welcomeCTA.title}
-                    </Button>
-                  </div>
-                </div>
-              )}
+          <section className="flex flex-col items-start justify-center min-h-screen px-6 sm:px-20 bg-gradient-to-b">
+            <p className="text-greeny-900">{heroData.greeting}</p>
+            <h1 className="font-poppins-semi-bold text-yellow-500 text-6xl mt-1">{heroData.fullName}</h1>
+            <h2 className="font-poppins-semi-bold text-greeny-900 mt-1 text-6xl whitespace-pre-line">
+              {heroData.headline}
+            </h2>
+            <div className="mt-6 sm:w-4/6 lg:w-3/6">
+              <Paragraph markDefs={heroData.description.markDefs} boldClassName="font-poppins-semi-bold text-yellow-500">
+                {heroData.description.children}
+              </Paragraph>
+            </div>
+            <div className="mt-6">
+              <Button href={heroData.cta.url} className="text-white bg-blue-500">
+                {heroData.cta.title}
+              </Button>
             </div>
           </section>
 
           {/* About Section */}
-          <section className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          <section className="grid grid-cols-1 md:grid-cols-12 gap-4 justify-center min-h-[75vh] px-6 sm:px-20">
             <div className="hidden md:block md:col-span-1"></div>
-            <div className="flex flex-col items-start justify-start p-4 md:col-span-6">
+            <div className="flex flex-col items-start justify-start md:col-span-6">
               <SectionTitle number={1} title="About" />
               <div className="pt-4 md:hidden flex items-center justify-center">
                 <img src="https://via.placeholder.com/150" alt="Placeholder" />
@@ -133,16 +111,16 @@ function Home() {
               )}
               {isLoading ? <Skeleton /> : <ListGrid items={aboutData?.skills} columns={2} />}
             </div>
-            <div className="hidden md:flex md:col-span-5 p-4 items-center justify-center">
+            <div className="hidden md:flex md:col-span-5 items-center justify-center">
               <img src="https://via.placeholder.com/150" alt="Placeholder" />
             </div>
             <div className="hidden md:block md:col-span-1"></div>
           </section>
 
           {/* Experience Section */}
-          <section className="grid grid-cols-1 sm:grid-cols-12 gap-4">
+          <section className="grid grid-cols-1 sm:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20">
             <div className="hidden sm:block sm:col-span-3"></div>
-            <div className="items-start justify-start p-4 sm:col-span-6">
+            <div className="items-start justify-start sm:col-span-6">
               <SectionTitle number={2} title="Experience" />
               <Accordion
                 tabs={[
@@ -169,9 +147,9 @@ function Home() {
           </section>
 
           {/* Now Section */}
-          <section className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          <section className="grid grid-cols-1 md:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20">
             <div className="hidden md:block md:col-span-1"></div>
-            <div className="flex flex-col items-start justify-start p-4 md:col-span-6">
+            <div className="flex flex-col items-start justify-start md:col-span-6">
               <SectionTitle number={3} title="Now" />
               {isLoading ? (
                 <Skeleton count={5} />

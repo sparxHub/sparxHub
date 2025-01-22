@@ -1,70 +1,56 @@
 {
-  "hero": {
-    "welcomeSentence": "Shalom 👋🏽 my name is",
-    "welcomeSlogan": "I love making new things\non the web!",
-    "_id": "784eba1e-43cb-4251-9c1e-90a17295fe2e",
-    "_updatedAt": "2024-02-11T14:09:19Z",
-    "_createdAt": "2023-11-12T11:22:24Z",
-    "_rev": "lGxZgNCQ2Kl6bNjaL4QMlA",
-    "_type": "hero",
-    "welcomeFullName": "Nadav Daniel",
-    "welcomeBody": [
+"hero": {
+  "greeting": "Shalom 👋🏽 my name is",
+  "headline": "I build things for the web.",
+  "fullName": "Nadav Daniel.",
+  "description": {
+    "_key": "dec0628ad0",
+    "children": [
       {
-        "children": [
-          {
-            "_type": "span",
-            "marks": [],
-            "text": "I'm passionate about crafting exceptional digital experiences for SaaS companies. My journey began as a ",
-            "_key": "feecfe0628ad0"
-          },
-          {
-            "text": "mobile developer",
-            "_key": "de3803698445",
-            "_type": "span",
-            "marks": [
-              "strong"
-            ]
-          },
-          {
-            "_type": "span",
-            "marks": [],
-            "text": " and ",
-            "_key": "00fe99220fcf"
-          },
-          {
-            "_type": "span",
-            "marks": [
-              "strong"
-            ],
-            "text": "entrepreneur",
-            "_key": "57951bd94dee"
-          },
-          {
-            "_key": "09c9e905e75d",
-            "_type": "span",
-            "marks": [],
-            "text": ", breathing life into multiple mobile apps from the ground up. My approach is all about thinking outside the box and infusing a creative mindset into every project, driven by a relentless "
-          },
-          {
-            "text": "passion for innovation",
-            "_key": "17769d7ae68d",
-            "_type": "span",
-            "marks": [
-              "strong"
-            ]
-          }
-        ],
-        "_type": "block",
-        "style": "normal",
-        "_key": "b9150af44365",
-        "markDefs": []
+        "_type": "span",
+        "marks": [],
+        "text": "I'm passionate about crafting exceptional digital experiences for SaaS companies. My journey began as a ",
+        "_key": "feecfe0628ad0"
+      },
+      {
+        "text": "mobile developer",
+        "_key": "de3803698445",
+        "_type": "span",
+        "marks": ["strong"]
+      },
+      {
+        "_type": "span",
+        "marks": [],
+        "text": " and ",
+        "_key": "00fe99220fcf"
+      },
+      {
+        "_type": "span",
+        "marks": ["strong"],
+        "text": "entrepreneur",
+        "_key": "57951bd94dee"
+      },
+      {
+        "_key": "09c9e905e75d",
+        "_type": "span",
+        "marks": [],
+        "text": ", breathing life into multiple mobile apps from the ground up. My approach is all about thinking outside the box and infusing a creative mindset into every project, driven by a relentless "
+      },
+      {
+        "text": "passion for innovation",
+        "_key": "17769d7ae68d",
+        "_type": "span",
+        "marks": ["strong"]
       }
     ],
-    "welcomeCTA": {
-      "title": "Contact Me",
-      "url": "https://google.com"
-    }
+    "markDefs": []
   },
+  "cta": {
+    "title": "Contact Me",
+    "url": "https://google.com"
+  }
+}
+,
   "about": {
     "skills": [
       "Java Enterprise",
