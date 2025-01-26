@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
+import { motion } from "framer-motion";
 import AppBar from "@components/components/molecules/AppBar";
 import Footer from "@components/components/molecules/Footer";
 import Sidebar from "@components/components/Sidebar";
@@ -19,6 +20,38 @@ function LoadingGauge() {
   );
 }
 
+function splitHeadlineWithEffect(headline) {
+  if (!headline.includes("\\")) {
+    return headline; // Return as-is if no special marker
+  }
+
+  const parts = headline.split("\\"); // Split at the marker
+  return (
+    <>
+      {parts[0]}
+      <span className="relative inline-block">
+        <span className="relative z-10">{parts[1]}</span>
+        <svg
+          className="absolute -bottom-1 left-1/2 sm:left-0 transform -translate-x-1/2 sm:translate-x-0 w-4/5 sm:w-full h-6 z-0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 10"
+        >
+          <path
+            d="M10 5 H90"
+            stroke="#FFD700"
+            strokeWidth="10"
+            fill="none"
+            strokeDasharray="80"
+            strokeDashoffset="80"
+            className="doodle-path"
+          />
+        </svg>
+      </span>
+    </>
+  );
+}
+
+
 function Home() {
   const [heroData, setHeroData] = useState(null);
   const [aboutData, setAboutData] = useState(null);
@@ -26,6 +59,11 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   const isExportMode = process.env.NEXT_PUBLIC_EXPORT_MODE === "true";
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -81,26 +119,54 @@ function Home() {
         <Sidebar />
         <main className="container">
           {/* Hero Section */}
-          <section id="hero"  className="flex flex-col items-start justify-center min-h-screen px-6 sm:px-20 bg-gradient-to-b">
-            <p className="text-greeny-900">{heroData.greeting}</p>
-            <h1 className="font-poppins-semi-bold text-yellow-500 text-6xl mt-1">{heroData.fullName}</h1>
-            <h2 className="font-poppins-semi-bold text-greeny-900 mt-1 text-6xl whitespace-pre-line">
-              {heroData.headline}
-            </h2>
-            <div className="mt-6 sm:w-4/6 lg:w-3/6">
-              <Paragraph markDefs={heroData.description.markDefs} boldClassName="font-poppins-semi-bold text-yellow-500">
-                {heroData.description.children}
-              </Paragraph>
-            </div>
-            <div className="mt-6">
-              <Button href={heroData.cta.url} className="text-white bg-blue-500">
-                {heroData.cta.title}
-              </Button>
-            </div>
-          </section>
+          <motion.section
+  id="hero"
+  className="flex flex-col items-center sm:items-start justify-center min-h-screen px-6 sm:px-20 bg-gradient-to-b"
+  initial="hidden"
+  animate="visible"
+  variants={sectionVariants}
+>
+  {/* Greeting */}
+  <p className="text-greeny-900 text-center sm:text-left">{heroData.greeting}</p>
+
+  {/* Full Name */}
+  <h1 className="font-poppins-semi-bold text-yellow-500 text-4xl sm:text-6xl mt-2 text-center sm:text-left">
+    {heroData.fullName}
+  </h1>
+
+  {/* Headline with Effect */}
+  <h2 className="font-poppins-semi-bold text-greeny-900 text-3xl sm:text-6xl mt-2 whitespace-pre-line text-center sm:text-left relative">
+    {splitHeadlineWithEffect(heroData.headline)}
+  </h2>
+
+  {/* Description */}
+  <div className="mt-6 sm:w-4/6 lg:w-3/6 mx-auto sm:mx-0">
+    <Paragraph
+      markDefs={heroData.description.markDefs}
+      boldClassName="font-poppins-semi-bold text-yellow-500"
+      className="text-center sm:text-left"
+    >
+      {heroData.description.children}
+    </Paragraph>
+  </div>
+
+  {/* Call-to-Action */}
+  <div className="mt-6 flex justify-center sm:justify-start">
+    <Button href={heroData.cta.url} className="text-white bg-blue-500">
+      {heroData.cta.title}
+    </Button>
+  </div>
+</motion.section>
 
           {/* About Section */}
-          <section id="about"  className="grid grid-cols-1 md:grid-cols-12 gap-4 justify-center min-h-[75vh] px-6 sm:px-20 scroll-mt-16">
+          <motion.section
+            id="about"
+            className="grid grid-cols-1 md:grid-cols-12 gap-4 justify-center min-h-[75vh] px-6 sm:px-20 scroll-mt-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+          >
             <div className="hidden md:block md:col-span-1"></div>
             <div className="flex flex-col items-start justify-start md:col-span-6">
               <SectionTitle number={1} title="About" />
@@ -122,10 +188,17 @@ function Home() {
               <img src="https://via.placeholder.com/150" alt="Placeholder" />
             </div>
             <div className="hidden md:block md:col-span-1"></div>
-          </section>
+          </motion.section>
 
           {/* Experience Section */}
-          <section id="experience" className="grid grid-cols-1 sm:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20 scroll-mt-16">
+          <motion.section
+            id="experience"
+            className="grid grid-cols-1 sm:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20 scroll-mt-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+          >
             <div className="hidden sm:block sm:col-span-3"></div>
             <div className="items-start justify-start sm:col-span-6">
               <SectionTitle number={2} title="Experience" />
@@ -151,10 +224,17 @@ function Home() {
               />
             </div>
             <div className="hidden sm:block sm:col-span-3"></div>
-          </section>
+          </motion.section>
 
           {/* Now Section */}
-          <section id="now" className="grid grid-cols-1 md:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20 scroll-mt-16">
+          <motion.section
+            id="now"
+            className="grid grid-cols-1 md:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20 scroll-mt-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+          >
             <div className="hidden md:block md:col-span-1"></div>
             <div className="flex flex-col items-start justify-start md:col-span-6">
               <SectionTitle number={3} title="Now" />
@@ -169,7 +249,7 @@ function Home() {
               )}
             </div>
             <div className="hidden md:block md:col-span-1"></div>
-          </section>
+          </motion.section>
         </main>
         <RightSidebar />
       </div>

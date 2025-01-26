@@ -192,3 +192,18 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* Keyframe for the stroke animation */
+@keyframes drawLine {
+  0% {
+    stroke-dashoffset: 80; /* Start with the line hidden */
+  }
+  100% {
+    stroke-dashoffset: 0; /* Fully reveal the line */
+  }
+}
+
+/* Apply animation to the doodle path */
+.doodle-path {
+  animation: drawLine 1.5s ease-in-out forwards; /* Runs once and stays visible */
+}
