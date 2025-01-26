@@ -120,43 +120,43 @@ function Home() {
         <main className="container">
           {/* Hero Section */}
           <motion.section
-  id="hero"
-  className="flex flex-col items-center sm:items-start justify-center min-h-screen px-6 sm:px-20 bg-gradient-to-b"
-  initial="hidden"
-  animate="visible"
-  variants={sectionVariants}
->
-  {/* Greeting */}
-  <p className="text-greeny-900 text-center sm:text-left">{heroData.greeting}</p>
+            id="hero"
+            className="flex flex-col items-center sm:items-start justify-center min-h-screen px-6 sm:px-20 bg-gradient-to-b"
+            initial="hidden"
+            animate="visible"
+            variants={sectionVariants}
+          >
+            {/* Greeting */}
+            <p className="text-greeny-900 text-center sm:text-left">{heroData.greeting}</p>
 
-  {/* Full Name */}
-  <h1 className="font-poppins-semi-bold text-yellow-500 text-4xl sm:text-6xl mt-2 text-center sm:text-left">
-    {heroData.fullName}
-  </h1>
+            {/* Full Name */}
+            <h1 className="font-poppins-semi-bold text-yellow-500 text-4xl sm:text-6xl mt-2 text-center sm:text-left">
+              {heroData.fullName}
+            </h1>
 
-  {/* Headline with Effect */}
-  <h2 className="font-poppins-semi-bold text-greeny-900 text-3xl sm:text-6xl mt-2 whitespace-pre-line text-center sm:text-left relative">
-    {splitHeadlineWithEffect(heroData.headline)}
-  </h2>
+            {/* Headline with Effect */}
+            <h2 className="font-poppins-semi-bold text-greeny-900 text-3xl sm:text-6xl mt-2 whitespace-pre-line text-center sm:text-left relative">
+              {splitHeadlineWithEffect(heroData.headline)}
+            </h2>
 
-  {/* Description */}
-  <div className="mt-6 sm:w-4/6 lg:w-3/6 mx-auto sm:mx-0">
-    <Paragraph
-      markDefs={heroData.description.markDefs}
-      boldClassName="font-poppins-semi-bold text-yellow-500"
-      className="text-center sm:text-left"
-    >
-      {heroData.description.children}
-    </Paragraph>
-  </div>
+            {/* Description */}
+            <div className="mt-6 sm:w-4/6 lg:w-3/6 mx-auto sm:mx-0">
+              <Paragraph
+                markDefs={heroData.description.markDefs}
+                boldClassName="font-poppins-semi-bold text-yellow-500"
+                className="text-center sm:text-left"
+              >
+                {heroData.description.children}
+              </Paragraph>
+            </div>
 
-  {/* Call-to-Action */}
-  <div className="mt-6 flex justify-center sm:justify-start">
-    <Button href={heroData.cta.url} className="text-white bg-blue-500">
-      {heroData.cta.title}
-    </Button>
-  </div>
-</motion.section>
+            {/* Call-to-Action */}
+            <div className="mt-6 flex justify-center sm:justify-start">
+              <Button href={heroData.cta.url} className="text-white bg-blue-500">
+                {heroData.cta.title}
+              </Button>
+            </div>
+          </motion.section>
 
           {/* About Section */}
           <motion.section

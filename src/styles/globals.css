@@ -207,3 +207,9 @@ body {
 .doodle-path {
   animation: drawLine 1.5s ease-in-out forwards; /* Runs once and stays visible */
 }
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
