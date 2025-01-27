@@ -57,71 +57,201 @@
     }
   },
   "about": {
-    "skills": [
-      "Java Enterprise",
-      "Spring MVC & Maven",
-      "Jenkins (CI/CD)"
-    ],
-    "_createdAt": "2023-12-10T09:11:22Z",
-    "_rev": "Yvrt5QbpFnNxZsotwqOWQD",
-    "_type": "about",
-    "_id": "4105201b-51c2-4362-a597-466c8323cc35",
-    "_updatedAt": "2023-12-10T11:01:51Z",
     "content": [
       {
         "_type": "paragraph",
         "style": "normal",
-        "_key": "79eb7669f195",
-        "markDefs": [],
+        "_key": "about1",
         "children": [
           {
-            "_key": "bc7d909714f20",
             "_type": "span",
             "marks": [],
-            "text": "But my journey is more than just lines of code and software development. It's a life filled with adventure, shared with my family. We embarked on an exciting chapter in Hong Kong, where we called home from 2010 to 2013. Those years were a captivating exploration of the vibrant culture of this bustling metropolis. Later, my path led me to Plano, Texas, nestled near the lively city of Dallas. From 2015 to 2021, it was a period of remarkable growth, both in my professional career and my personal life. Today, I'm back in my beautiful homeland, Israel, where I find endless inspiration in its breathtaking landscapes. "
+            "text": "Hi! My name is Nadav, and I’m a "
           },
           {
             "_type": "span",
             "marks": [
               "strong"
             ],
-            "text": "Hiking",
-            "_key": "a94e5c05e3c7"
+            "text": "software engineer"
           },
           {
             "_type": "span",
             "marks": [],
-            "text": " through these awe-inspiring terrains and conquering challenging ",
-            "_key": "118dd76ef93b"
-          },
-          {
-            "marks": [
-              "strong"
-            ],
-            "text": "off-road trails",
-            "_key": "e1262383da47",
-            "_type": "span"
-          },
-          {
-            "_type": "span",
-            "marks": [],
-            "text": " with my trusty 4x4 are my ways of connecting with the natural beauty that surrounds me. ",
-            "_key": "0bb982c18fb9"
+            "text": " who loves crafting solutions for the web. My journey started with building "
           },
           {
             "_type": "span",
             "marks": [
               "strong"
             ],
-            "text": "The beach",
-            "_key": "fc5fefbc3ee9"
+            "text": "mobile applications"
           },
           {
+            "_type": "span",
             "marks": [],
-            "text": ", with its infinite horizons, serves as a constant muse, igniting my creativity. In my pursuit of balance, you'll often find me at the gym, dedicating four days a week to rigorous functional workouts. Life is about crafting not only digital marvels but also creating unforgettable moments in the great outdoors. Together, let's embark on this journey of creation and exploration! 🚀🌄🏖️💪",
-            "_key": "0acd959c8101",
-            "_type": "span"
+            "text": " and gradually evolved into leading "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "full-stack projects"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " for SaaS companies and startups."
           }
+        ]
+      },
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "about2",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Throughout my career, I’ve had the privilege of working with "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "diverse teams"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ", building products from "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "scratch"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ", and scaling applications to serve "
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "global audiences. Whether at startups or established enterprises, my focus has always been on delivering "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "impactful and efficient solutions."
+          }
+        ]
+      },
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "about3",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "When I’m not coding, you’ll often find me exploring the great outdoors. I love "
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "hiking through challenging terrains, off-roading with my 4x4, and finding inspiration on the shores of the "
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "beach. These adventures fuel my creativity and keep my mind sharp."
+          }
+        ]
+      },
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "about4",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Here are a few technologies I’ve been working with recently:"
+          }
+        ]
+      }
+    ],
+    "skills": [
+      "JavaScript (ES6+)",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "AWS",
+      "Docker",
+      "MongoDB",
+      "Flutter"
+    ]
+  },
+  "experience": {
+    "content": [
+      {
+        "company": "SimplyStud.io",
+        "title": "SimplyStud.io (2023 – Present)",
+        "jobTitle": "Product Developer and Maker",
+        "achievements": [
+          "Developed a SaaS platform for fitness studios with booking, payments, and AI-powered features.",
+          "Built scalable backend using Node.js with Hexagonal architecture.",
+          "Implemented mobile solutions with Flutter for cross-platform compatibility.",
+          "Engaged over 200 beta users and rapidly modernized outdated systems."
+        ]
+      },
+      {
+        "company": "AdRabbit",
+        "title": "AdRabbit (2015 – Present)",
+        "jobTitle": "Senior Developer & Team Leader",
+        "achievements": [
+          "Led SaaS platform development for SMBs enabling app creation, marketing tools, and customer engagement.",
+          "Integrated payment gateways like Stripe, PayPal, and Braintree.",
+          "Deployed scalable cloud-based apps using AWS, Docker, and Ansible.",
+          "Built custom tools for role assignment and administration."
+        ]
+      },
+      {
+        "company": "Silent Communication",
+        "title": "Silent Communication (2004 – 2013)",
+        "jobTitle": "Co-Founder & R&D Manager",
+        "achievements": [
+          "Designed and developed mobile integrations for tier-1 telecoms like T-Mobile and Nokia.",
+          "Pioneered smartphone features for advanced call handling and IVR systems.",
+          "Delivered innovative solutions across Symbian, Android, and J2ME platforms."
+        ]
+      },
+      {
+        "company": "Retalix",
+        "title": "Retalix (2013 – 2015)",
+        "jobTitle": "iOS Developer",
+        "achievements": [
+          "Built a native POS mobile application for enterprise clients.",
+          "Delivered robust mobile functionality for leading retail systems.",
+          "Worked on the core mobile team to drive innovation in retail ecosystems."
+        ]
+      },
+      {
+        "company": "SoftWatch",
+        "title": "SoftWatch (2000 – 2004)",
+        "jobTitle": "Automated Testing Engineer",
+        "achievements": [
+          "Created performance testing scripts for web applications.",
+          "Developed automated testing tools using Mercury tools.",
+          "Improved web app testing processes and usability."
         ]
       }
     ]

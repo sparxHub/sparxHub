@@ -10,12 +10,41 @@ import RightSidebar from "@components/components/RightSidebar";
 import { H1, Button, Paragraph, ListGrid } from "@components/components/atoms";
 import SectionTitle from "@components/components/molecules/SectionTitle";
 import { Accordion, ContentPanel } from "@components/components/molecules/Accordion";
+import { FaSmileBeam, FaLaughWink } from "react-icons/fa";
+
+import Image from "next/image";
 
 function LoadingGauge() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white">
       <img src="/logo.png" alt="Loading Logo" className="w-24 h-24 animate-bounce mb-4" />
       <p className="text-2xl font-semibold">Loading your experience...</p>
+    </div>
+  );
+}
+
+function ProfileImage() {
+  return (
+    <div className="flex flex-col items-center justify-start lg:items-start h-full">
+      {/* Profile Image Container */}
+      <div className="relative group w-48 h-48 sm:w-60 sm:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg overflow-hidden">
+        {/* Profile Image */}
+        <Image
+          src="/img/Nadav_Photo_For_Site.png"
+          alt="Nadav Daniel"
+          layout="fill"
+          objectFit="cover"
+          className="transition-transform duration-300 ease-in-out transform group-hover:scale-110 group-hover:rotate-2"
+        />
+        {/* Yellow Color Overlay */}
+        <div className="absolute inset-0 bg-yellow-500 opacity-40 transition-opacity duration-300 ease-in-out group-hover:opacity-0"></div>
+      </div>
+
+      {/* Icon and Caption */}
+      <div className="mt-4 sm:mt-6 flex flex-col items-center lg:items-start space-y-2">
+        <p className="text-gray-700 font-semibold text-xl">Always Curious</p>
+        <p className="text-gray-500 text-sm">Developer</p>
+      </div>
     </div>
   );
 }
@@ -55,8 +84,10 @@ function splitHeadlineWithEffect(headline) {
 function Home() {
   const [heroData, setHeroData] = useState(null);
   const [aboutData, setAboutData] = useState(null);
+  const [experienceData, setExperienceData] = useState(null);
   const [nowData, setNowData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState(0);
 
   const isExportMode = process.env.NEXT_PUBLIC_EXPORT_MODE === "true";
 
@@ -76,20 +107,23 @@ function Home() {
           console.log("Static data fetched:", fetchedData);
         } else {
           console.warn("Static data not found, attempting dynamic fetch...");
-          if (!isExportMode) {
-            fetchedData = {
-              hero: await sanityClient.fetch('*[_type == "hero"][0]'),
-              about: await sanityClient.fetch('*[_type == "about"][0]'),
-              now: await sanityClient.fetch('*[_type == "now"][0]'),
-            };
-            console.log("Dynamic data fetched:", fetchedData);
-          } else {
-            throw new Error("Data could not be fetched in export mode.");
-          }
+          throw new Error("Static data not found, attempting dynamic fetch...");
+          // if (!isExportMode) {
+          //   fetchedData = {
+          //     hero: await sanityClient.fetch('*[_type == "hero"][0]'),
+          //     about: await sanityClient.fetch('*[_type == "about"][0]'),
+
+          //     now: await sanityClient.fetch('*[_type == "now"][0]'),
+          //   };
+          //   console.log("Dynamic data fetched:", fetchedData);
+          // } else {
+          //   throw new Error("Data could not be fetched in export mode.");
+          // }
         }
 
         setHeroData(fetchedData.hero);
         setAboutData(fetchedData.about);
+        setExperienceData(fetchedData.experience)
         setNowData(fetchedData.now);
         setIsLoading(false);
       } catch (error) {
@@ -156,75 +190,137 @@ function Home() {
                 {heroData.cta.title}
               </Button>
             </div>
+
+            {/* Spacer */}
+            <div className="md:col-span-12 min-h-[5rem]"></div>
           </motion.section>
 
           {/* About Section */}
           <motion.section
             id="about"
-            className="grid grid-cols-1 md:grid-cols-12 gap-4 justify-center min-h-[75vh] px-6 sm:px-20 scroll-mt-16"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-4 justify-center min-h-[100vh] lg:min-h-[70vh] px-6 sm:px-20 scroll-mt-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={sectionVariants}
           >
-            <div className="hidden md:block md:col-span-1"></div>
-            <div className="flex flex-col items-start justify-start md:col-span-6">
-              <SectionTitle number={1} title="About" />
-              <div className="pt-4 md:hidden flex items-center justify-center">
-                <img src="https://via.placeholder.com/150" alt="Placeholder" />
+            <div className="hidden lg:block lg:col-span-1"></div>
+            <div className="flex flex-col items-start justify-start lg:col-span-6">
+              <SectionTitle number={1} title="About Me" />
+              <div className="pt-4 space-y-6">
+                {aboutData.content.map((paragraph, index) => (
+                  <div key={index} className="text-gray-800">
+                    {paragraph.children.map((child) => {
+                      if (child.marks?.includes("strong")) {
+                        return (
+                          <strong key={child._key} className="text-yellow-500">
+                            {child.text}
+                          </strong>
+                        );
+                      }
+                      return child.text;
+                    })}
+                  </div>
+                ))}
               </div>
-              {isLoading ? (
-                <Skeleton count={5} />
-              ) : (
-                aboutData?.content?.map((paragraph, index) => (
-                  <Paragraph key={index} boldClassName="text-yellow-500">
-                    {paragraph.children}
-                  </Paragraph>
-                ))
-              )}
-              {isLoading ? <Skeleton /> : <ListGrid items={aboutData?.skills} columns={2} />}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">Technologies:</h3>
+                <ul className="grid grid-cols-2 gap-4 list-disc list-inside">
+                  {aboutData.skills.map((skill, index) => (
+                    <li key={index} className="text-gray-600">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="hidden md:flex md:col-span-5 items-center justify-center">
-              <img src="https://via.placeholder.com/150" alt="Placeholder" />
+            {/* ProfileImage Container */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end items-start">
+              <ProfileImage />
             </div>
-            <div className="hidden md:block md:col-span-1"></div>
+            {/* Spacer */}
+            <div className="md:col-span-12 flex-grow min-h-[5rem]"></div>
           </motion.section>
+
 
           {/* Experience Section */}
           <motion.section
             id="experience"
-            className="grid grid-cols-1 sm:grid-cols-12 gap-4 min-h-[75vh] px-6 sm:px-20 scroll-mt-16"
+            className="grid grid-cols-1 md:grid-cols-12 gap-4 min-h-[100vh] lg:min-h-[60vh] px-6 sm:px-20 scroll-mt-16 content-start"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={sectionVariants}
           >
-            <div className="hidden sm:block sm:col-span-3"></div>
-            <div className="items-start justify-start sm:col-span-6">
+            {/* Section Title */}
+            <div className="hidden md:block md:col-span-3"></div>
+            <div className="sm:col-span-9">
               <SectionTitle number={2} title="Experience" />
-              <Accordion
-                tabs={[
-                  {
-                    title: "Tab 1",
-                    jobTitle: "Tab 1 - Freelance Developer",
-                    jobDetails: "July 2021 - Present",
-                    content: (
-                      <ContentPanel
-                        title="Software Developer"
-                        subtitle="TEST"
-                        contentLinks="https://www.Test.com/"
-                        list={[
-                          "Responsible for Spring MVC & Maven development.",
-                          "Enhanced API design.",
-                        ]}
-                      />
-                    ),
-                  },
-                ]}
-              />
             </div>
-            <div className="hidden sm:block sm:col-span-3"></div>
+
+            {/* Side Tab Picker */}
+            <div className="hidden md:block md:col-span-3"></div>
+            <div className="hidden sm:block sm:col-span-3">
+              <div className="space-y-6">
+                {experienceData.content.map((job, index) => (
+                  <button
+                    key={index}
+                    className={`w-full text-left py-4 pl-4 pr-2 font-semibold text-primary-800 transition-all duration-300 ${activeTab === index
+                        ? "border-l-4 border-yellow-500 text-yellow-500"
+                        : "hover:text-yellow-500"
+                      }`}
+                    onClick={() => setActiveTab(index)}
+                  >
+                    {job.company}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Experience Content */}
+            <div className="md:col-span-6">
+              {experienceData.content.map((job, index) => (
+                <div
+                  key={index}
+                  className={`transition-opacity duration-300 ${activeTab === index ? "block opacity-100" : "hidden opacity-0"
+                    }`}
+                >
+                  {/* Company Name and Years */}
+                  <div className="mb-4">
+                    <h3 className="text-lg font-bold text-primary-900">{job.title}</h3>
+                    {/* Job Title */}
+                    <p className="text-xl font-semibold text-yellow-500">{job.jobTitle}</p>
+                  </div>
+
+                  {/* Responsibilities */}
+                  <ul className="space-y-4">
+                    {job.achievements.map((achievement, idx) => (
+                      <li key={idx} className="flex items-start space-x-2">
+                        {/* Triangle Icon - Rotated */}
+                        <div className="text-yellow-500 mt-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-4 h-4 rotate-90"
+                          >
+                            <polygon points="12,2 2,22 22,22" />
+                          </svg>
+                        </div>
+                        <span className="text-primary-900 leading-relaxed">
+                          {achievement}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* Spacer */}
+            <div className="md:col-span-12 flex-grow min-h-[5rem]"></div>
           </motion.section>
+
 
           {/* Now Section */}
           <motion.section
@@ -236,7 +332,7 @@ function Home() {
             variants={sectionVariants}
           >
             <div className="hidden md:block md:col-span-1"></div>
-            <div className="flex flex-col items-start justify-start md:col-span-6">
+            <div className="flex flex-col items-start justify-start md:col-span-9">
               <SectionTitle number={3} title="Now" />
               {isLoading ? (
                 <Skeleton count={5} />
@@ -249,6 +345,10 @@ function Home() {
               )}
             </div>
             <div className="hidden md:block md:col-span-1"></div>
+
+            {/* Spacer */}
+            <div className="md:col-span-12 flex-grow min-h-[5rem]"></div>
+
           </motion.section>
         </main>
         <RightSidebar />
