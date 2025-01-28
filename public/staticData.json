@@ -114,6 +114,78 @@
           {
             "_type": "span",
             "marks": [],
+            "text": "In 2010, I had the privilege of taking the phenomenal "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "JavaScript Master Class"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " by "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Amy Hoy"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " and "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Thomas Fuchs"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ", which introduced me to the foundations of vanilla JavaScript in a framework-agnostic approach. In 2017, I began exploring "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "React"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ", drawing inspiration from the work of "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Dan Abramov"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ". These milestones have been pivotal in shaping my journey as a web developer."
+          }
+        ]
+      },
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "about3",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
             "text": "Throughout my career, I’ve had the privilege of working with "
           },
           {
@@ -138,12 +210,7 @@
           {
             "_type": "span",
             "marks": [],
-            "text": ", and scaling applications to serve "
-          },
-          {
-            "_type": "span",
-            "marks": [],
-            "text": "global audiences. Whether at startups or established enterprises, my focus has always been on delivering "
+            "text": ", and scaling applications to serve global audiences. Whether at startups or established enterprises, my focus has always been on delivering "
           },
           {
             "_type": "span",
@@ -157,29 +224,19 @@
       {
         "_type": "paragraph",
         "style": "normal",
-        "_key": "about3",
+        "_key": "about4",
         "children": [
           {
             "_type": "span",
             "marks": [],
-            "text": "When I’m not coding, you’ll often find me exploring the great outdoors. I love "
-          },
-          {
-            "_type": "span",
-            "marks": [],
-            "text": "hiking through challenging terrains, off-roading with my 4x4, and finding inspiration on the shores of the "
-          },
-          {
-            "_type": "span",
-            "marks": [],
-            "text": "beach. These adventures fuel my creativity and keep my mind sharp."
+            "text": "When I’m not coding, you’ll often find me exploring the great outdoors. I love hiking through challenging terrains, off-roading with my 4x4, and finding inspiration on the shores of the beach. These adventures fuel my creativity and keep my mind sharp."
           }
         ]
       },
       {
         "_type": "paragraph",
         "style": "normal",
-        "_key": "about4",
+        "_key": "about5",
         "children": [
           {
             "_type": "span",
@@ -221,7 +278,17 @@
           "Led SaaS platform development for SMBs enabling app creation, marketing tools, and customer engagement.",
           "Integrated payment gateways like Stripe, PayPal, and Braintree.",
           "Deployed scalable cloud-based apps using AWS, Docker, and Ansible.",
-          "Built custom tools for role assignment and administration."
+          "Built tools for role review, reporting, and intuitive role assignment and administration."
+        ]
+      },
+      {
+        "company": "Retalix",
+        "title": "Retalix (2013 – 2015)",
+        "jobTitle": "iOS Developer",
+        "achievements": [
+          "Built a native POS mobile application for enterprise clients.",
+          "Developed robust mobile functionality for retail systems.",
+          "Contributed to innovation in the core mobile team for retail ecosystems."
         ]
       },
       {
@@ -231,17 +298,8 @@
         "achievements": [
           "Designed and developed mobile integrations for tier-1 telecoms like T-Mobile and Nokia.",
           "Pioneered smartphone features for advanced call handling and IVR systems.",
-          "Delivered innovative solutions across Symbian, Android, and J2ME platforms."
-        ]
-      },
-      {
-        "company": "Retalix",
-        "title": "Retalix (2013 – 2015)",
-        "jobTitle": "iOS Developer",
-        "achievements": [
-          "Built a native POS mobile application for enterprise clients.",
-          "Delivered robust mobile functionality for leading retail systems.",
-          "Worked on the core mobile team to drive innovation in retail ecosystems."
+          "Delivered innovative solutions across Symbian, Android, and J2ME platforms.",
+          "Built a native mobile application for adding smart answer machine features during calls."
         ]
       },
       {
@@ -253,15 +311,22 @@
           "Developed automated testing tools using Mercury tools.",
           "Improved web app testing processes and usability."
         ]
+      },
+      {
+        "company": "Other Projects",
+        "title": "Various Freelance & Personal Projects",
+        "jobTitle": "Freelance Developer",
+        "achievements": [
+          "Designed and built custom business management tools using Node.js and React.",
+          "Developed educational apps for students focusing on interactivity and gamification.",
+          "Collaborated on small team projects to create innovative PWA solutions."
+        ]
       }
     ]
   },
   "now": {
-    "_createdAt": "2023-12-10T11:50:32Z",
-    "_rev": "Yvrt5QbpFnNxZsotwqvmU5",
     "_type": "now",
     "_id": "d0dc498d-a052-4b25-81d9-be6dd5f6b9c7",
-    "_updatedAt": "2023-12-10T14:02:18Z",
     "content": [
       {
         "_type": "paragraph",
@@ -307,7 +372,7 @@
         "markDefs": [
           {
             "_type": "link",
-            "href": "nadavdaniel@hotmail.com",
+            "href": "mailto:nadavdaniel@hotmail.com",
             "_key": "63c5ee903e2e"
           }
         ],
@@ -337,28 +402,42 @@
         "style": "normal"
       },
       {
+        "_key": "new-paragraph-1",
+        "markDefs": [],
         "children": [
           {
             "_key": "1c7f5571e8030",
             "_type": "span",
             "marks": [],
-            "text": "I'm always eager to learn, especially when it comes to new technologies. I like to get my hands dirty and take notes using tools like Trello and Notion. Currently, I'm working on improving my skills in both frontend and backend web development. I have over 20 years of experience developing internal business applications."
+            "text": "I'm currently investigating how to merge AI assistance (agents) into existing digital workflows to revolutionize future user experiences. By integrating AI into legacy systems, I'm exploring innovative ways to enhance automation and interactivity."
           }
         ],
         "_type": "paragraph",
-        "style": "normal",
-        "_key": "72d31f7e5ee0",
-        "markDefs": []
+        "style": "normal"
       },
       {
-        "_key": "94a914561db3",
+        "_key": "kabbalah-paragraph",
         "markDefs": [],
         "children": [
           {
+            "_key": "7d29ba33a3e1",
             "_type": "span",
             "marks": [],
-            "text": "Lastly, I'm an enthusiastic reader, and I highly recommend the book \"Anything You Want\" by Derek Sivers for some great insights.",
-            "_key": "8274710625530"
+            "text": "I've also recently begun learning and exploring the depths of "
+          },
+          {
+            "_key": "8c7f5532f712",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Kabbalah"
+          },
+          {
+            "_key": "5ee0cc713299",
+            "_type": "span",
+            "marks": [],
+            "text": " with Rabbi Yuval HaCohen Asherov. His inspiring perspective blends spirituality with science, shedding light on the mysteries of personal growth and connection."
           }
         ],
         "_type": "paragraph",
@@ -371,12 +450,34 @@
           {
             "_type": "span",
             "marks": [],
-            "text": "(Last updated: Oct 2023)",
+            "text": "(Last updated: Jan 2025)",
             "_key": "a9d700f4791e0"
           }
         ],
         "_type": "paragraph",
         "style": "normal"
+      },
+      {
+        "_key": "reading-grid",
+        "_type": "grid",
+        "style": "book-grid",
+        "items": [
+          {
+            "title": "Zero to One: Notes on Startups, or How to Build the Future",
+            "author": "Peter Thiel",
+            "image": "/img/book_zero_to_one.png"
+          },
+          {
+            "title": "The Science of Getting Rich",
+            "author": "W. D. Wattles",
+            "image": "/img/book_the_sience_of_getting_rich.jpg"
+          },
+          {
+            "title": "The Most Important Thing",
+            "author": "Howard Marks",
+            "image": "/img/book_the_most_important_thing.jpg"
+          }
+        ]
       }
     ]
   }

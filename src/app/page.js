@@ -23,6 +23,30 @@ function LoadingGauge() {
   );
 }
 
+function BookGrid({ items }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+      {items.map((book, index) => (
+        <div key={index} className="flex flex-col items-center">
+          <div className="relative w-32 h-48 md:w-40 md:h-60">
+            <Image
+              src={book.image}
+              alt={book.title}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <h4 className="mt-4 text-center text-lg font-semibold text-primary-900">
+            {book.title}
+          </h4>
+          <p className="text-center text-sm text-gray-600">{book.author}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ProfileImage() {
   return (
     <div className="flex flex-col items-center justify-start lg:items-start h-full">
@@ -266,8 +290,8 @@ function Home() {
                   <button
                     key={index}
                     className={`w-full text-left py-4 pl-4 pr-2 font-semibold text-primary-800 transition-all duration-300 ${activeTab === index
-                        ? "border-l-4 border-yellow-500 text-yellow-500"
-                        : "hover:text-yellow-500"
+                      ? "border-l-4 border-yellow-500 text-yellow-500"
+                      : "hover:text-yellow-500"
                       }`}
                     onClick={() => setActiveTab(index)}
                   >
@@ -334,21 +358,23 @@ function Home() {
             <div className="hidden md:block md:col-span-1"></div>
             <div className="flex flex-col items-start justify-start md:col-span-9">
               <SectionTitle number={3} title="Now" />
-              {isLoading ? (
-                <Skeleton count={5} />
-              ) : (
-                nowData?.content?.map((paragraph, index) => (
-                  <Paragraph key={index} markDefs={paragraph?.markDefs}>
-                    {paragraph.children}
-                  </Paragraph>
-                ))
-              )}
+              {nowData?.content.map((item, index) => {
+                if (item._type === "paragraph") {
+                  return (
+                    <Paragraph key={index} markDefs={item?.markDefs}>
+                      {item.children}
+                    </Paragraph>
+                  );
+                } else if (item._type === "grid") {
+                  return <BookGrid key={index} items={item.items} />;
+                }
+                return null;
+              })}
             </div>
             <div className="hidden md:block md:col-span-1"></div>
 
             {/* Spacer */}
             <div className="md:col-span-12 flex-grow min-h-[5rem]"></div>
-
           </motion.section>
         </main>
         <RightSidebar />
