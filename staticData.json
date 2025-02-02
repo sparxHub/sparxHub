@@ -1,0 +1,498 @@
+{
+  "hero": {
+    "greeting": "Shalom 👋🏽 my name is",
+    "headline": "I craft solutions for the \\web.",
+    "fullName": "Nadav Daniel.",
+    "description": {
+      "_key": "dec0628ad0",
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "I'm passionate about crafting exceptional digital experiences for SaaS companies. My journey began as a ",
+          "_key": "feecfe0628ad0"
+        },
+        {
+          "text": "mobile developer",
+          "_key": "de3803698445",
+          "_type": "span",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "marks": [],
+          "text": " and ",
+          "_key": "00fe99220fcf"
+        },
+        {
+          "_type": "span",
+          "marks": [
+            "strong"
+          ],
+          "text": "entrepreneur",
+          "_key": "57951bd94dee"
+        },
+        {
+          "_key": "09c9e905e75d",
+          "_type": "span",
+          "marks": [],
+          "text": ", breathing life into multiple mobile apps from the ground up. My approach is all about thinking outside the box and infusing a creative mindset into every project, driven by a relentless "
+        },
+        {
+          "text": "passion for innovation",
+          "_key": "17769d7ae68d",
+          "_type": "span",
+          "marks": [
+            "strong"
+          ]
+        }
+      ],
+      "markDefs": []
+    },
+    "cta": {
+      "title": "Contact Me",
+      "url": "https://google.com"
+    }
+  },
+  "about": {
+    "content": [
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "about1",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Hi! My name is Nadav, and I’m a "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "software engineer"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " who loves crafting solutions for the web. My journey started with building "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "mobile applications"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " and gradually evolved into leading "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "full-stack projects"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " for SaaS companies and startups."
+          }
+        ]
+      },
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "about2",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "In 2010, I had the privilege of taking the phenomenal "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "JavaScript Master Class"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " by "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Amy Hoy"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": " and "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Thomas Fuchs"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ", which introduced me to the foundations of vanilla JavaScript in a framework-agnostic approach. In 2017, I began exploring "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "React"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ", drawing inspiration from the work of "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Dan Abramov"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ". These milestones have been pivotal in shaping my journey as a web developer."
+          }
+        ]
+      },
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "about3",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Throughout my career, I’ve had the privilege of working with "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "diverse teams"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ", building products from "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "scratch"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ", and scaling applications to serve global audiences. Whether at startups or established enterprises, my focus has always been on delivering "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "impactful and efficient solutions."
+          }
+        ]
+      },
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "about4",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "When I’m not coding, you’ll often find me exploring the great outdoors. I love hiking through challenging terrains, off-roading with my 4x4, and finding inspiration on the shores of the beach. These adventures fuel my creativity and keep my mind sharp."
+          }
+        ]
+      },
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "about5",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Here are a few technologies I’ve been working with recently:"
+          }
+        ]
+      }
+    ],
+    "skills": [
+      "JavaScript (ES6+)",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "AWS",
+      "Docker",
+      "MongoDB",
+      "Flutter"
+    ]
+  },
+  "experience": {
+    "content": [
+      {
+        "company": "SimplyStud.io",
+        "title": "SimplyStud.io (2023 – Present)",
+        "jobTitle": "Product Developer and Maker",
+        "achievements": [
+          "Developed a SaaS platform for fitness studios with booking, payments, and AI-powered features.",
+          "Built scalable backend using Node.js with Hexagonal architecture.",
+          "Implemented mobile solutions with Flutter for cross-platform compatibility.",
+          "Engaged over 200 beta users and rapidly modernized outdated systems."
+        ]
+      },
+      {
+        "company": "AdRabbit",
+        "title": "AdRabbit (2015 – Present)",
+        "jobTitle": "Senior Developer & Team Leader",
+        "achievements": [
+          "Led SaaS platform development for SMBs enabling app creation, marketing tools, and customer engagement.",
+          "Integrated payment gateways like Stripe, PayPal, and Braintree.",
+          "Deployed scalable cloud-based apps using AWS, Docker, and Ansible.",
+          "Built tools for role review, reporting, and intuitive role assignment and administration."
+        ]
+      },
+      {
+        "company": "Retalix",
+        "title": "Retalix (2013 – 2015)",
+        "jobTitle": "iOS Developer",
+        "achievements": [
+          "Built a native POS mobile application for enterprise clients.",
+          "Developed robust mobile functionality for retail systems.",
+          "Contributed to innovation in the core mobile team for retail ecosystems."
+        ]
+      },
+      {
+        "company": "Silent Communication",
+        "title": "Silent Communication (2004 – 2013)",
+        "jobTitle": "Co-Founder & R&D Manager",
+        "achievements": [
+          "Designed and developed mobile integrations for tier-1 telecoms like T-Mobile and Nokia.",
+          "Pioneered smartphone features for advanced call handling and IVR systems.",
+          "Delivered innovative solutions across Symbian, Android, and J2ME platforms.",
+          "Built a native mobile application for adding smart answer machine features during calls."
+        ]
+      },
+      {
+        "company": "SoftWatch",
+        "title": "SoftWatch (2000 – 2004)",
+        "jobTitle": "Automated Testing Engineer",
+        "achievements": [
+          "Created performance testing scripts for web applications.",
+          "Developed automated testing tools using Mercury tools.",
+          "Improved web app testing processes and usability."
+        ]
+      },
+      {
+        "company": "Other Projects",
+        "title": "Various Freelance & Personal Projects",
+        "jobTitle": "Freelance Developer",
+        "achievements": [
+          "Designed and built custom business management tools using Node.js and React.",
+          "Developed educational apps for students focusing on interactivity and gamification.",
+          "Collaborated on small team projects to create innovative PWA solutions."
+        ]
+      }
+    ]
+  },
+  "now": {
+    "_type": "now",
+    "_id": "d0dc498d-a052-4b25-81d9-be6dd5f6b9c7",
+    "content": [
+      {
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "770d39ba33a1",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [
+              "strong",
+              "em"
+            ],
+            "text": "What I'm Up To",
+            "_key": "40a49d8342b30"
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": " - Inspired by a great idea from Derek Sivers",
+            "_key": "40a49d8342b31"
+          }
+        ]
+      },
+      {
+        "markDefs": [],
+        "children": [
+          {
+            "marks": [],
+            "text": "Right now, my main focus is on creating a new Online Scheduling System and reservation software, using the magic of AI to make life easier for business owners and offer the latest digital experiences. We're starting with small fitness studios, but we have big plans to expand to other industries in the future.",
+            "_key": "e7d392ad779d0",
+            "_type": "span"
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal",
+        "_key": "cf4eb03798c1"
+      },
+      {
+        "_key": "6d888d47487d",
+        "markDefs": [
+          {
+            "_type": "link",
+            "href": "mailto:nadavdaniel@hotmail.com",
+            "_key": "63c5ee903e2e"
+          }
+        ],
+        "children": [
+          {
+            "_key": "68365d08cc5b0",
+            "_type": "span",
+            "marks": [],
+            "text": "I'm also busy with web development projects for some fantastic clients. If you need something built, just drop me an email at "
+          },
+          {
+            "_type": "span",
+            "marks": [
+              "63c5ee903e2e"
+            ],
+            "text": "nadavdaniel@hotmail.com",
+            "_key": "d896a5c8ba7c"
+          },
+          {
+            "_type": "span",
+            "marks": [],
+            "text": ".",
+            "_key": "50845cc463d2"
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal"
+      },
+      {
+        "_key": "new-paragraph-1",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "1c7f5571e8030",
+            "_type": "span",
+            "marks": [],
+            "text": "I'm currently investigating how to merge AI assistance (agents) into existing digital workflows to revolutionize future user experiences. By integrating AI into legacy systems, I'm exploring innovative ways to enhance automation and interactivity."
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal"
+      },
+      {
+        "_key": "kabbalah-paragraph",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "7d29ba33a3e1",
+            "_type": "span",
+            "marks": [],
+            "text": "I've also recently begun learning and exploring the depths of "
+          },
+          {
+            "_key": "8c7f5532f712",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Kabbalah"
+          },
+          {
+            "_key": "5ee0cc713299",
+            "_type": "span",
+            "marks": [],
+            "text": " with Rabbi Yuval HaCohen Asherov. His inspiring perspective blends spirituality with science, shedding light on the mysteries of personal growth and connection."
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal"
+      },
+      {
+        "_key": "0c235f77c2fc",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "(Last updated: Jan 2025)",
+            "_key": "a9d700f4791e0"
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal"
+      },
+      {
+        "_key": "books-intro",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "These are some of the books I’ve been reading recently:",
+            "_key": "intro-books"
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal"
+      },
+      {
+        "_key": "reading-grid",
+        "_type": "grid",
+        "style": "book-grid",
+        "items": [
+          {
+            "title": "Zero to One: Notes on Startups, or How to Build the Future",
+            "author": "Peter Thiel",
+            "image": "/img/book_zero_to_one.png"
+          },
+          {
+            "title": "The Science of Getting Rich",
+            "author": "W. D. Wattles",
+            "image": "/img/book_the_sience_of_getting_rich.jpg"
+          },
+          {
+            "title": "The Most Important Thing",
+            "author": "Howard Marks",
+            "image": "/img/book_the_most_important_thing.jpg"
+          }
+        ]
+      }
+    ]
+  }
+}
