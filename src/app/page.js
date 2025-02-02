@@ -159,7 +159,7 @@ function Home() {
       try {
         let fetchedData = null;
 
-        const response = await fetch("/staticData.json");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_ASSET_PREFIX || ""}/staticData.json`);
         if (response.ok) {
           fetchedData = await response.json();
           console.log("Static data fetched:", fetchedData);

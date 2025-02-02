@@ -1,34 +1,42 @@
 {
-	"name": "nadav-sparx-personal-site",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"clean": "rm -rf .next",
-		"dev": "next dev",
-		"start": "next start",
-		"build": "next build",
-		"export": "npm run clean && NEXT_EXPORT=true next build",
-		"lint": "next lint"
-	},
-	"dependencies": {
-		"@heroicons/react": "^2.0.18",
-		"@sanity/image-url": "^1.0.2",
-		"@sanity/vision": "^3.19.2",
-		"autoprefixer": "10.4.15",
-		"dotenv": "^16.3.1",
-		"eslint": "8.49.0",
-		"eslint-config-next": "13.4.19",
-		"framer-motion": "^12.0.1",
-		"next": "^13.5.6",
-		"next-sanity": "^5.5.10",
-		"postcss": "^8.4.35",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"react-icons": "^5.4.0",
-		"react-loading-skeleton": "^3.3.1",
-		"sanity": "^3.19.2",
-		"styled-components": "^6.1.1",
-		"tailwind-safelist-generator": "^1.0.0",
-		"tailwindcss": "3.3.3"
-	}
+  "name": "nadav-sparx-personal-site",
+  "version": "0.1.0",
+  "private": true,
+  "config": {
+    "basePath": "sparxHub"
+  },
+  "scripts": {
+    "clean": "rm -rf .next",
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build",
+    "export": "npm run clean && NEXT_EXPORT=true next build",
+    "deploy": "bash deploy.sh",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.19.2",
+    "autoprefixer": "10.4.15",
+    "dotenv": "^16.3.1",
+    "eslint": "8.49.0",
+    "eslint-config-next": "13.4.19",
+    "framer-motion": "^12.0.1",
+    "next": "^13.5.6",
+    "next-sanity": "^5.5.10",
+    "postcss": "^8.4.35",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^5.4.0",
+    "react-loading-skeleton": "^3.3.1",
+    "sanity": "^3.19.2",
+    "styled-components": "^6.1.1",
+    "tailwind-safelist-generator": "^1.0.0",
+    "tailwindcss": "3.3.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "postcss-url": "^10.1.3"
+  }
 }
