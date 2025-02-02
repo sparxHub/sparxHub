@@ -5,4 +5,3 @@ export { default as Button } from "./Button";
 export { default as Paragraph } from "./Paragraph";
 export { default as Icon } from "./Icon";
 export { default as ListGrid } from "./ListGrid";
-export { default as ImageComponent } from "./ImageComponent";

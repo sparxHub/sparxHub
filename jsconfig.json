@@ -4,7 +4,8 @@
 		"jsx": "react",
 		"jsx": "react",
     "paths": {
-      "@components/*": ["./src/*"]
+      "@components/*": ["./src/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   }
 }

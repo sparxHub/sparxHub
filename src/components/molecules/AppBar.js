@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import { ImageComponent } from "@components/components/atoms";
+
+
+// images
+import Image from "next/image";
+import { getImageSrc, customLoader, isExportMode } from "@utils/imageUtils";
+import logoImg from "@/../public/img/dev_sparx_logo.png";
+
+
+
 
 const AppBar = ({ sections }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,12 +23,15 @@ const AppBar = ({ sections }) => {
     setIsMenuOpen(false); // Close menu after clicking an item
   };
 
+  const logoImageSrc = getImageSrc(logoImg, "/img/dev_sparx_logo.png");
+
   return (
     <header className="bg-white px-6 sm:px-20 h-16 fixed top-0 w-full flex items-center justify-between z-50 shadow-md">
       {/* Logo */}
       <div className="flex items-center">
-        <ImageComponent
-          src="/img/dev_sparx_logo.png"
+        <Image
+          src={logoImageSrc}
+          loader={isExportMode ? customLoader : undefined}
           priority
           alt="Dev Sparx Logo"
           width={150} // Adjusted size for smaller logo

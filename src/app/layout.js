@@ -1,10 +1,10 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "../components/atoms/ThemeContext";
 import Header from "../components/molecules/Header";
+import { isExportMode } from "@utils/imageUtils";
 
 // This is the server-rendered part
 export default function RootLayout({ children }) {
-  const isExportMode = process.env.NEXT_PUBLIC_EXPORT_MODE === "true";
 
   return (
     <html lang="en">

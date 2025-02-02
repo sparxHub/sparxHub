@@ -458,6 +458,20 @@
         "style": "normal"
       },
       {
+        "_key": "books-intro",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "These are some of the books I’ve been reading recently:",
+            "_key": "intro-books"
+          }
+        ],
+        "_type": "paragraph",
+        "style": "normal"
+      },
+      {
         "_key": "reading-grid",
         "_type": "grid",
         "style": "book-grid",

@@ -12,12 +12,36 @@ import SectionTitle from "@components/components/molecules/SectionTitle";
 import { Accordion, ContentPanel } from "@components/components/molecules/Accordion";
 import { FaSmileBeam, FaLaughWink } from "react-icons/fa";
 
+// images
+import profileImg from "@/../public/img/Nadav_Photo_For_Site.png";
+import logoImg from "@/../public/img/dev_sparx_logo.png";
+import { getImageSrc, customLoader, isExportMode } from "@utils/imageUtils";
+
 import Image from "next/image";
 
 function LoadingGauge() {
+  const logoImageSrc = getImageSrc(logoImg, "/img/dev_sparx_logo.png");
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setVisible(false), 5000); // Wait for 3 seconds before disappearing
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (!visible) return null;
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white">
-      <img src="/logo.png" alt="Loading Logo" className="w-24 h-24 animate-bounce mb-4" />
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white text-gray-900">
+      <div className="relative w-32 h-32 mb-4">
+        <Image
+          src={logoImageSrc}
+          loader={isExportMode ? customLoader : undefined}
+          alt="Loading Logo"
+          layout="fill"
+          objectFit="contain"
+          className="animate-bounce"
+        />
+      </div>
       <p className="text-2xl font-semibold">Loading your experience...</p>
     </div>
   );
@@ -26,35 +50,45 @@ function LoadingGauge() {
 function BookGrid({ items }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-      {items.map((book, index) => (
-        <div key={index} className="flex flex-col items-center">
-          <div className="relative w-32 h-48 md:w-40 md:h-60">
-            <Image
-              src={book.image}
-              alt={book.title}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg shadow-lg"
-            />
+      {items.map((book, index) => {
+        const imageSrc = getImageSrc(null, book.image);
+        return (
+          <div key={index} className="flex flex-col items-center">
+            <div className="relative w-32 h-48 md:w-40 md:h-60">
+              <Image
+                src={imageSrc}
+                loader={isExportMode ? customLoader : undefined}
+                alt={book.title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <h4 className="mt-4 text-center text-lg font-semibold text-primary-900">
+              {book.title}
+            </h4>
+            <p className="text-center text-sm text-gray-600">{book.author}</p>
           </div>
-          <h4 className="mt-4 text-center text-lg font-semibold text-primary-900">
-            {book.title}
-          </h4>
-          <p className="text-center text-sm text-gray-600">{book.author}</p>
-        </div>
-      ))}
+        )
+      }
+
+      )}
     </div>
   );
 }
 
 function ProfileImage() {
+  const imageSrc = getImageSrc(profileImg, "/img/Nadav_Photo_For_Site.png");
+
+
   return (
     <div className="flex flex-col items-center justify-start lg:items-start h-full">
       {/* Profile Image Container */}
       <div className="relative group w-48 h-48 sm:w-60 sm:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg overflow-hidden">
         {/* Profile Image */}
         <Image
-          src="/img/Nadav_Photo_For_Site.png"
+          src={imageSrc}
+          loader={isExportMode ? customLoader : undefined}
           alt="Nadav Daniel"
           layout="fill"
           objectFit="cover"
@@ -132,17 +166,6 @@ function Home() {
         } else {
           console.warn("Static data not found, attempting dynamic fetch...");
           throw new Error("Static data not found, attempting dynamic fetch...");
-          // if (!isExportMode) {
-          //   fetchedData = {
-          //     hero: await sanityClient.fetch('*[_type == "hero"][0]'),
-          //     about: await sanityClient.fetch('*[_type == "about"][0]'),
-
-          //     now: await sanityClient.fetch('*[_type == "now"][0]'),
-          //   };
-          //   console.log("Dynamic data fetched:", fetchedData);
-          // } else {
-          //   throw new Error("Data could not be fetched in export mode.");
-          // }
         }
 
         setHeroData(fetchedData.hero);
