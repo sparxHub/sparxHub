@@ -10,7 +10,7 @@ echo "🧹 Cleaning previous builds..."
 rm -rf .next out
 
 # Step 2: Set Environment Variable for PostCSS
-export NEXT_PUBLIC_ASSET_PREFIX="/sparxHub"
+export NEXT_PUBLIC_ASSET_PREFIX=""
 
 # Step 3: Build & Export in One Step
 echo "🔨 Building and exporting project with ASSET_PREFIX=${NEXT_PUBLIC_ASSET_PREFIX}..."
@@ -19,6 +19,7 @@ NEXT_EXPORT=true npm run export
 # Step 4: Add .nojekyll to prevent GitHub Pages issues
 echo "🛑 Adding .nojekyll..."
 touch out/.nojekyll
+echo "nadav-daniel.com" > out/CNAME
 
 # Step 5: Deploy using gh-pages
 echo "📡 Deploying to GitHub Pages..."
