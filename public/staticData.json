@@ -479,17 +479,17 @@
           {
             "title": "Zero to One: Notes on Startups, or How to Build the Future",
             "author": "Peter Thiel",
-            "image": "img/book_zero_to_one.png"
+            "image": "/img/book_zero_to_one.png"
           },
           {
             "title": "The Science of Getting Rich",
             "author": "W. D. Wattles",
-            "image": "img/book_the_sience_of_getting_rich.jpg"
+            "image": "/img/book_the_sience_of_getting_rich.jpg"
           },
           {
             "title": "The Most Important Thing",
             "author": "Howard Marks",
-            "image": "img/book_the_most_important_thing.jpg"
+            "image": "/img/book_the_most_important_thing.jpg"
           }
         ]
       }

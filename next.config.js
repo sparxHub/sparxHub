@@ -2,8 +2,8 @@ const { config } = require("./package.json");
 
 const nextConfig = (phase, { defaultConfig }) => {
   const isExport = process.env.NEXT_EXPORT === "true";
-  const basePath = isExport ? `/${config.basePath}` : ""; // Set basePath only in export mode
-  const assetPrefix = isExport ? `${basePath}/` : ""; // Apply asset prefix only in export
+  const basePath = isExport && config.basePath != "" ? `/${config.basePath}` : ""; // Set basePath only in export mode
+  const assetPrefix = isExport && basePath != "" ? `${basePath}/` : ""; // Apply asset prefix only in export
 
   // Debugging output
   console.log("Next.js Config Phase:", phase);
