@@ -71,7 +71,7 @@ const AppBar = ({ sections }) => {
 
           {/* Resume Button */}
           <a
-            href="Nadav_CV_2025_Dev.pdf"
+            href="Nadav_CV_2025_Dev_and_Ent.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-gray-700 font-poppins-semi-bold text-gray-700 py-1 px-4 rounded hover:bg-gray-700 hover:text-white transition mt-4 sm:mt-0"
