@@ -2,15 +2,16 @@
 
 function Header(props) {
   const {
-    title = "Nadav Daniel - Full Stack Developer",
-    description = "Welcome to the personal website of Nadav Daniel, a seasoned full-stack developer specializing in modern web and mobile applications.",
-    keywords = "Full Stack Developer, Web Development, React, Next.js, JavaScript, Software Engineer, Portfolio, Nadav Daniel",
+    title = "Nadav Daniel - Entrepreneur & Full Stack Developer",
+    description = "Explore the entrepreneurial journey of Nadav Daniel, a visionary full-stack developer and tech entrepreneur specializing in creating impactful digital solutions.",
+    keywords = "Entrepreneur, Full Stack Developer, Business Solutions, Web Development, React, Next.js, Software Engineer, Nadav Daniel",
     author = "Nadav Daniel",
-    siteName = "Nadav Daniel Portfolio",
+    siteName = "Nadav Daniel - Entrepreneur & Full Stack Developer Portfolio",
     url = "https://nadav-daniel.com",
     favicon = "/favicon.ico",
     ogType = "website",
-    ogImage = "/og-image.png",
+    ogImage = "/og-image.jpg",
+    ogImageLarge = "/og-image-summary.jpg",
     twitterCard = "summary_large_image",
   } = props;
 
@@ -35,7 +36,7 @@ function Header(props) {
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={ogImageLarge} />
 
       {/* Favicon */}
       <link rel="icon" href={favicon} />
@@ -52,14 +53,14 @@ function Header(props) {
           "@context": "https://schema.org",
           "@type": "Person",
           "name": "Nadav Daniel",
-          "jobTitle": "Full Stack Developer",
+          "jobTitle": "Entrepreneur & Full Stack Developer",
           "url": "https://nadav-daniel.com",
           "sameAs": [
             "https://www.linkedin.com/in/nadav-daniel-0a309150/",
             "https://github.com/sparxHub",
           ],
           "description":
-            "A full-stack developer specializing in modern web technologies like React, Next.js, and Node.js.",
+            "A tech entrepreneur specializing in full-stack development and creating business-driven digital solutions.",
         })}
       </script>
     </>
