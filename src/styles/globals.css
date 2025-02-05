@@ -193,6 +193,11 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+input[type="email"], textarea {
+	background-color: #f0f4f8; /* Lighter shade of primary color */
+	border: 1px solid #cbd5e1; /* Matching border */
+}
+
 /* Keyframe for the stroke animation */
 @keyframes drawLine {
   0% {

@@ -10,7 +10,9 @@ import RightSidebar from "@components/components/RightSidebar";
 import { H1, Button, Paragraph, ListGrid } from "@components/components/atoms";
 import SectionTitle from "@components/components/molecules/SectionTitle";
 import { Accordion, ContentPanel } from "@components/components/molecules/Accordion";
+import Modal from "@components/components/molecules/Modal";
 import { FaSmileBeam, FaLaughWink } from "react-icons/fa";
+
 
 // images
 import profileImg from "@/../public/img/Nadav_Photo_For_Site.png";
@@ -146,12 +148,50 @@ function Home() {
   const [nowData, setNowData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState(0);
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [notification, setNotification] = useState('');
+  const [isLoadingModal, setIsLoadingModal] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const isExportMode = process.env.NEXT_PUBLIC_EXPORT_MODE === "true";
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!email || !message) {
+      setNotification("Please fill in all fields.");
+      return;
+    }
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, message })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        handleSuccessNotification('Message sent successfully. Thank you!');
+      } else {
+        throw new Error(data.message || 'Failed to send the message');
+      }
+    } catch (error) {
+      setNotification(error.toString());
+    }
+  };
+
+  const handleSuccessNotification = (message) => {
+    setNotification(message);
+    setTimeout(() => {
+      setNotification('');
+      setModalOpen(false);
+      setEmail('');
+      setMessage('');
+    }, 5000);
   };
 
   useEffect(() => {
@@ -233,9 +273,39 @@ function Home() {
 
             {/* Call-to-Action */}
             <div className="mt-6 flex justify-center sm:justify-start">
-              <Button href={heroData.cta.url} className="text-white bg-blue-500">
+              <Button onClick={() => setModalOpen(true)} className="text-white bg-blue-500">
                 {heroData.cta.title}
               </Button>
+              <Modal
+                isOpen={isModalOpen}
+                onClose={() => setModalOpen(false)}
+                title="Contact Form"
+                onPrimaryAction={handleSubmit}
+                primaryActionText="Send"
+                secondaryActionText="Cancel"
+              >
+                <form onSubmit={(e) => e.preventDefault()}>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
+                  <input
+                    className="block w-full px-3 py-2 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    id="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mt-4">Your Message</label>
+                  <textarea
+                    id="message"
+                    className="block w-full px-3 py-2 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    rows="4"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
+                  />
+                </form>
+              {notification && <div className="notification">{notification}</div>}
+              </Modal>
             </div>
 
             {/* Spacer */}
