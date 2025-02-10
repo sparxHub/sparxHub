@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Nadav Sparx Personal Site
+
+This is a personal website built with **Next.js**, **React**, and **TailwindCSS**, designed to showcase updates, blog posts, and more. The project is compiled into a static site for optimal performance and hosted on **GitHub Pages**.
+
+## Features
+
+- **Stack**: Next.js + React + TailwindCSS.
+- **Performance**: Compiled to a static site for fast and lean performance.
+- **Hosting**: Deployed on GitHub Pages.
+- **Clean and Simple**: Focused on a minimal and elegant design for personal updates and blogging.
 
 ## Getting Started
 
-First, run the development server:
+### Installation
+
+First, clone the repository and install the dependencies:
+
+```bash
+git clone <repository-url>
+cd nadav-sparx-personal-site
+npm install
+```
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site in your browser. The site supports hot-reloading, so changes will automatically reflect as you edit files.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To build the project for production:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Export
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To export the project to static files:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+ npm run export
+```
+The exported files will be located in the `/out` directory.
 
-## Deploy on Vercel
+### Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy the site to GitHub Pages using the provided `deploy.sh` script:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm run deploy
+```
+
+Ensure your `deploy.sh` script is configured properly for your GitHub repository.
+
+## Commands
+
+Here are the key scripts available in the `package.json`:
+
+- `npm run dev`: Start the development server.
+- `npm run build`: Build the project for production.
+- `npm run export`: Clean and export the project as static files.
+- `npm run deploy`: Deploy the site to GitHub Pages.
+- `npm run clean`: Clean up build artifacts.
+- `npm run lint`: Run linting checks.
+
+## Terms
+
+This project is distributed under the ISC license.
+
+---
+
+Enjoy building and updating your personal website with ease! 🎉
