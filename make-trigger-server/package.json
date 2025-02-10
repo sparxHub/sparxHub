@@ -1,5 +1,5 @@
 {
-  "name": "email-server",
+  "name": "make-trigger-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,10 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "nodemailer": "^6.10.0"
+    "node-fetch": "^3.3.2"
   },
-  "devDependencies": {
-    "@vercel/node": "^5.1.0"
-  }
+  "engines": {
+    "node": ">=18.10.0"
+}
 }

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "config": {
-    "basePath": ""
+    "basePath": "",
+    "publicApiUrl": "https://make-trigger-server.vercel.app"
   },
   "scripts": {
     "clean": "rm -rf .next",

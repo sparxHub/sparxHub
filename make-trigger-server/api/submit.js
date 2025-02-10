@@ -1,5 +1,6 @@
-const { VercelRequest, VercelResponse } = require('@vercel/node');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
+// CORS Middleware
 const allowCors = (fn) => async (req, res) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -17,6 +18,7 @@ const allowCors = (fn) => async (req, res) => {
   return await fn(req, res);
 };
 
+// Main handler function
 const handler = async (req, res) => {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method Not Supported' });
@@ -30,9 +32,6 @@ const handler = async (req, res) => {
   }
 
   const { email, message } = req.body;
-
-  // Use dynamic import for node-fetch
-  const fetch = (await import('node-fetch')).default;
 
   try {
     const response = await fetch(webhookUrl, {

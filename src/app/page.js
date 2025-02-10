@@ -161,12 +161,12 @@ function Home() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async () => {
     if (!email || !message) {
-      setNotification("Please fill in all fields.");
+      setNotification({ type: 'error', message: "Please fill in all fields." });
       return;
     }
+    setIsLoadingModal(true);  // Indicate loading process
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/submit`, {
         method: 'POST',
@@ -180,14 +180,16 @@ function Home() {
         throw new Error(data.message || 'Failed to send the message');
       }
     } catch (error) {
-      setNotification(error.toString());
+      setNotification({ type: 'error', message: error.toString() });
+    } finally {
+      setIsLoadingModal(false);  // Turn off loading indication
     }
   };
 
   const handleSuccessNotification = (message) => {
-    setNotification(message);
+    setNotification({ type: 'success', message });
     setTimeout(() => {
-      setNotification('');
+      setNotification(null);
       setModalOpen(false);
       setEmail('');
       setMessage('');
@@ -278,35 +280,49 @@ function Home() {
               </Button>
               <Modal
                 isOpen={isModalOpen}
-                onClose={() => setModalOpen(false)}
+                onClose={() => {
+                  setModalOpen(false);
+                  setNotification(null);
+                }}
                 title="Contact Form"
                 onPrimaryAction={handleSubmit}
                 primaryActionText="Send"
                 secondaryActionText="Cancel"
+                isLoading={isLoadingModal}
               >
-                <form onSubmit={(e) => e.preventDefault()}>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-                  <input
-                    className="block w-full px-3 py-2 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mt-4">Your Message</label>
-                  <textarea
-                    id="message"
-                    className="block w-full px-3 py-2 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                    rows="4"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    required
-                  />
-                </form>
-              {notification && <div className="notification">{notification}</div>}
+                {notification && notification.type === 'success' ? (
+                  <div className="flex flex-col items-center justify-center p-6 text-center">
+                    <FaSmileBeam className="text-primary-500 text-6xl mb-3" /> 
+                    <p className="text-xl font-semibold px-4">{notification.message}</p>
+                  </div>
+                ) : (
+                  <form className="space-y-4">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input
+                      className="block w-full px-3 py-2 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      id="email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mt-4">Your Message</label>
+                    <textarea
+                      id="message"
+                      className="block w-full px-3 py-2 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      rows="4"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      required
+                    />
+                    {notification && notification.type === 'error' && (
+                      <p className="text-red-500 text-sm mt-2">{notification.message}</p>
+                    )}
+                  </form>
+                )}
               </Modal>
             </div>
+
 
             {/* Spacer */}
             <div className="md:col-span-12 min-h-[5rem]"></div>
