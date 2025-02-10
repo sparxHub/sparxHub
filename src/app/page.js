@@ -44,7 +44,7 @@ function LoadingGauge() {
           className="animate-bounce"
         />
       </div>
-      <p className="text-2xl font-semibold">Loading your experience...</p>
+      <p className="text-2xl font-semibold">Loading ...</p>
     </div>
   );
 }
@@ -400,7 +400,7 @@ function Home() {
                   onChange={(e) => setActiveTab(parseInt(e.target.value, 10))}
                 >
                   {experienceData.content.map((job, index) => (
-                    <option key={index} value={index}>
+                    <option key={job.id || `sml_p_${job.company}-${index}`} value={index}>
                       {job.company}
                     </option>
                   ))}
@@ -426,7 +426,7 @@ function Home() {
               <div className="space-y-6">
                 {experienceData.content.map((job, index) => (
                   <button
-                    key={index}
+                    key={job.id || `lrg_p_${job.company}-${index}`}
                     className={`w-full text-left py-4 pl-4 pr-2 font-semibold text-primary-800 transition-all duration-300 ${activeTab === index
                       ? "border-l-4 border-yellow-500 text-yellow-500"
                       : "hover:text-yellow-500"
@@ -443,7 +443,7 @@ function Home() {
             <div className="md:col-span-6">
               {experienceData.content.map((job, index) => (
                 <div
-                  key={index}
+                  key={job.id || `exp_c_${job.company}-${index}`}
                   className={`transition-opacity duration-300 ${activeTab === index ? "block opacity-100" : "hidden opacity-0"
                     }`}
                 >
@@ -457,7 +457,7 @@ function Home() {
                   {/* Responsibilities */}
                   <ul className="space-y-4">
                     {job.achievements.map((achievement, idx) => (
-                      <li key={idx} className="flex items-start space-x-2">
+                      <li key={`${job.company}-achievement-${idx}`} className="flex items-start space-x-2">
                         {/* Triangle Icon - Rotated */}
                         <div className="text-yellow-500 mt-1">
                           <svg
@@ -475,6 +475,7 @@ function Home() {
                       </li>
                     ))}
                   </ul>
+
                 </div>
               ))}
             </div>
