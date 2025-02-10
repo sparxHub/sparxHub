@@ -292,7 +292,7 @@ function Home() {
               >
                 {notification && notification.type === 'success' ? (
                   <div className="flex flex-col items-center justify-center p-6 text-center">
-                    <FaSmileBeam className="text-primary-500 text-6xl mb-3" /> 
+                    <FaSmileBeam className="text-primary-500 text-6xl mb-3" />
                     <p className="text-xl font-semibold px-4">{notification.message}</p>
                   </div>
                 ) : (
@@ -391,7 +391,36 @@ function Home() {
               <SectionTitle number={2} title="Experience" />
             </div>
 
-            {/* Side Tab Picker */}
+            {/* Mobile Dropdown Picker */}
+            <div className="block sm:hidden w-full my-4">
+              <div className="relative">
+                <select
+                  className="w-full p-2 pr-12 text-lg font-semibold text-primary-900 border-2 border-gray-300 rounded-lg shadow-md appearance-none"
+                  value={activeTab}
+                  onChange={(e) => setActiveTab(parseInt(e.target.value, 10))}
+                >
+                  {experienceData.content.map((job, index) => (
+                    <option key={index} value={index}>
+                      {job.company}
+                    </option>
+                  ))}
+                </select>
+                {/* Custom Dropdown Arrow */}
+                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    className="w-6 h-6 text-primary-900"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M7 10l5 5 5-5z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+
+            {/* Side Tab Picker for larger screens */}
             <div className="hidden md:block md:col-span-3"></div>
             <div className="hidden sm:block sm:col-span-3">
               <div className="space-y-6">
