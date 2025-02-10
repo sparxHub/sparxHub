@@ -46,30 +46,30 @@ dist
 #vscode
 .vscode
 
-#email-server
+#make-trigger-server
 # Node modules and package lock (consider including package-lock.json if you want exact dependency resolution)
-/email-server/node_modules/
-/email-server/package-lock.json
+/make-trigger-server/node_modules/
+/make-trigger-server/package-lock.json
 
 # Deployment artifacts
-/email-server/.vercel/
-/email-server/.next/
-/email-server/out/
-/email-server/build/
+/make-trigger-server/.vercel/
+/make-trigger-server/.next/
+/make-trigger-server/out/
+/make-trigger-server/build/
 
 # Environment configuration files (if they contain sensitive information)
-/email-server/.env*
-/email-server/.env.local
+/make-trigger-server/.env*
+/make-trigger-server/.env.local
 
 # Miscellaneous and OS generated files
-/email-server/.DS_Store
+/make-trigger-server/.DS_Store
 
 # Logs and temporary files
-/email-server/npm-debug.log*
-/email-server/yarn-debug.log*
-/email-server/yarn-error.log*
+/make-trigger-server/npm-debug.log*
+/make-trigger-server/yarn-debug.log*
+/make-trigger-server/yarn-error.log*
 
 # Vercel platform specific
-/email-server/.vercelignore
+/make-trigger-server/.vercelignore
 
 deploy.sh

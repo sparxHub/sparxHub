@@ -4,6 +4,7 @@ const nextConfig = (phase, { defaultConfig }) => {
   const isExport = process.env.NEXT_EXPORT === "true";
   const basePath = isExport && config.basePath != "" ? `/${config.basePath}` : ""; // Set basePath only in export mode
   const assetPrefix = isExport && basePath != "" ? `${basePath}/` : ""; // Apply asset prefix only in export
+  const publicApiUrl = config.publicApiUrl || "";
 
   // Debugging output
   console.log("Next.js Config Phase:", phase);
@@ -25,6 +26,7 @@ const nextConfig = (phase, { defaultConfig }) => {
     env: {
       NEXT_PUBLIC_EXPORT_MODE: isExport.toString(),
       NEXT_PUBLIC_ASSET_PREFIX: assetPrefix, // Ensure asset prefix is available globally
+      NEXT_PUBLIC_API_URL: publicApiUrl
     },
   };
 };
