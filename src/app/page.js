@@ -11,6 +11,9 @@ import { H1, Button, Paragraph, ListGrid } from "@components/components/atoms";
 import SectionTitle from "@components/components/molecules/SectionTitle";
 import { Accordion, ContentPanel } from "@components/components/molecules/Accordion";
 import Modal from "@components/components/molecules/Modal";
+import BookGrid from "@components/components/molecules/BookGrid";
+import ProfileImage from "@components/components/molecules/ProfileImage";
+import LoadingGauge from "@components/components/molecules/LoadingGauge";
 import { FaSmileBeam, FaLaughWink } from "react-icons/fa";
 
 
@@ -19,95 +22,8 @@ import profileImg from "@/../public/img/Nadav_Photo_For_Site.png";
 import logoImg from "@/../public/img/dev_sparx_logo.png";
 import { getImageSrc, customLoader, isExportMode } from "@utils/imageUtils";
 
-import Image from "next/image";
-
-function LoadingGauge() {
-  const logoImageSrc = getImageSrc(logoImg, "/img/dev_sparx_logo.png");
-  const [visible, setVisible] = useState(true);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setVisible(false), 5000); // Wait for 3 seconds before disappearing
-    return () => clearTimeout(timeout);
-  }, []);
-
-  if (!visible) return null;
-
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white text-gray-900">
-      <div className="relative w-32 h-32 mb-4">
-        <Image
-          src={logoImageSrc}
-          loader={isExportMode ? customLoader : undefined}
-          alt="Loading Logo"
-          layout="fill"
-          objectFit="contain"
-          className="animate-bounce"
-        />
-      </div>
-      <p className="text-2xl font-semibold">Loading ...</p>
-    </div>
-  );
-}
-
-function BookGrid({ items }) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-      {items.map((book, index) => {
-        const imageSrc = getImageSrc(null, book.image);
-        return (
-          <div key={index} className="flex flex-col items-center">
-            <div className="relative w-32 h-48 md:w-40 md:h-60">
-              <Image
-                src={imageSrc}
-                loader={isExportMode ? customLoader : undefined}
-                alt={book.title}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <h4 className="mt-4 text-center text-lg font-semibold text-primary-900">
-              {book.title}
-            </h4>
-            <p className="text-center text-sm text-gray-600">{book.author}</p>
-          </div>
-        )
-      }
-
-      )}
-    </div>
-  );
-}
-
-function ProfileImage() {
-  const imageSrc = getImageSrc(profileImg, "/img/Nadav_Photo_For_Site.png");
 
 
-  return (
-    <div className="flex flex-col items-center justify-start lg:items-start h-full">
-      {/* Profile Image Container */}
-      <div className="relative group w-48 h-48 sm:w-60 sm:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg overflow-hidden">
-        {/* Profile Image */}
-        <Image
-          src={imageSrc}
-          loader={isExportMode ? customLoader : undefined}
-          alt="Nadav Daniel"
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-300 ease-in-out transform group-hover:scale-110 group-hover:rotate-2"
-        />
-        {/* Yellow Color Overlay */}
-        <div className="absolute inset-0 bg-yellow-500 opacity-40 transition-opacity duration-300 ease-in-out group-hover:opacity-0"></div>
-      </div>
-
-      {/* Icon and Caption */}
-      <div className="mt-4 sm:mt-6 flex flex-col items-center lg:items-start space-y-2">
-        <p className="text-gray-700 font-semibold text-xl">Always Curious</p>
-        <p className="text-gray-500 text-sm">Developer</p>
-      </div>
-    </div>
-  );
-}
 
 function splitHeadlineWithEffect(headline) {
   if (!headline.includes("\\")) {
