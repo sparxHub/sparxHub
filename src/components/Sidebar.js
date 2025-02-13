@@ -6,7 +6,7 @@ function Sidebar() {
     <aside className="hidden md:flex fixed bottom-0 left-0 h-auto w-10 bg-white flex-col items-center space-y-4 p-4">
       {/* GitHub */}
       <a
-        href="https://github.com/sparxHub?tab=repositories"
+        href="https://github.com/sparxHub"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-700 hover:text-yellow-500 transition"

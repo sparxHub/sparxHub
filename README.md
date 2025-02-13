@@ -7,6 +7,8 @@ I'm a **Fullstack Developer** with over 20 years of experience in software engin
 
 🌐 I'm also an **Entrepreneur and Consultant**, having advised and executed innovative projects for leading organizations.
 
+Visit my [personal website](https://nadav-daniel.com) to learn more!
+
 ## 🛠 Skills
 - **Languages & Frameworks**: Node.js, React, Flutter, TypeScript, Java, C++, Python, Bash
 - **Cloud**: AWS
@@ -23,6 +25,5 @@ I'm a **Fullstack Developer** with over 20 years of experience in software engin
 <br/>
 
 ## ⚡ Fun Fact
-- I love tinkering with gadgets and coming up with innovative solutions that integrate AI into daily tasks, making life simpler and more exciting!
-
+- Learned Prolog back when AI needed hand-holding; today's AI can drive on Mars but still can't match socks!
 ---

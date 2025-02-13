@@ -14,7 +14,7 @@ import Modal from "@components/components/molecules/Modal";
 import BookGrid from "@components/components/molecules/BookGrid";
 import ProfileImage from "@components/components/molecules/ProfileImage";
 import LoadingGauge from "@components/components/molecules/LoadingGauge";
-import { FaSmileBeam, FaLaughWink } from "react-icons/fa";
+import { FaGithub, FaSmileBeam, FaLaughWink } from "react-icons/fa";
 
 
 // images
@@ -272,6 +272,22 @@ function Home() {
                   </div>
                 ))}
               </div>
+              {/* Social Links Section */}
+              <div className="mt-8 flex items-center space-x-6">
+                {aboutData.socialLinks?.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center space-x-2 text-gray-700 hover:text-yellow-500 transition-all duration-300"
+                  >
+                    <FaGithub size={24} className="group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="font-medium">My GitHub</span>
+                  </a>
+                ))}
+              </div>
+              {/* Technologies Section */}
               <div className="mt-6">
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">Technologies:</h3>
                 <ul className="grid grid-cols-2 gap-4 list-disc list-inside">
