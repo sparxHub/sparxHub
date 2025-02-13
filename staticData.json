@@ -255,6 +255,13 @@
       "Docker",
       "MongoDB",
       "Flutter"
+    ],
+    "socialLinks": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/sparxHub",
+        "icon": "github"
+      }
     ]
   },
   "experience": {
