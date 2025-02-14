@@ -15,13 +15,13 @@ import BookGrid from "@components/components/molecules/BookGrid";
 import ProfileImage from "@components/components/molecules/ProfileImage";
 import LoadingGauge from "@components/components/molecules/LoadingGauge";
 import { FaGithub, FaSmileBeam, FaLaughWink } from "react-icons/fa";
+import { trackPageView, trackEvent } from '@utils/analytics';
 
 
 // images
 import profileImg from "@/../public/img/Nadav_Photo_For_Site.png";
 import logoImg from "@/../public/img/dev_sparx_logo.png";
 import { getImageSrc, customLoader, isExportMode } from "@utils/imageUtils";
-
 
 
 
@@ -120,7 +120,6 @@ function Home() {
         const response = await fetch(`${process.env.NEXT_PUBLIC_ASSET_PREFIX || ""}/staticData.json`);
         if (response.ok) {
           fetchedData = await response.json();
-          console.log("Static data fetched:", fetchedData);
         } else {
           console.warn("Static data not found, attempting dynamic fetch...");
           throw new Error("Static data not found, attempting dynamic fetch...");
@@ -139,6 +138,23 @@ function Home() {
 
     fetchData();
   }, [isExportMode]);
+
+  useEffect(() => {
+    trackPageView("/");
+
+    const handleScroll = () => {
+      const sections = ["hero", "about", "experience", "now"];
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element && isElementInViewport(element)) {
+          trackEvent("scroll", "section_view", section);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (isLoading || !heroData) {
     return <LoadingGauge />;
