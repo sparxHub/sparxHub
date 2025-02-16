@@ -2,17 +2,30 @@
   "name": "nadav-sparx-personal-site",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.18.3"
+  },
   "config": {
     "basePath": "",
     "publicApiUrl": "https://make-trigger-server.vercel.app"
   },
   "scripts": {
-    "clean": "rm -rf .next",
-    "dev": "next dev",
+    "clean": "rm -rf .next out", 
+
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:astro\"",
+    "dev:next": "next dev",
+    "dev:astro": "cd blog && ASTRO_PORT=4322 npm run dev",
+
     "start": "next start",
-    "build": "next build",
-    "export": "npm run clean && NEXT_EXPORT=true next build",
-    "deploy": "bash deploy.sh",
+
+    "build": "npm run clean && npm run build:astro && npm run build:next",
+    "build:next": "next build",
+    "build:astro": "cd blog && npm run build && mv dist ../out/blog",
+
+    "export": "npm run clean && NEXT_EXPORT=true npm run build",
+    
+    "deploy": "npm run export && bash deploy.sh",
+
     "lint": "next lint"
   },
   "dependencies": {
