@@ -1,36 +1,33 @@
-"use client";
+'use client'
 
-import React, { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
-import { motion } from "framer-motion";
-import AppBar from "@components/components/molecules/AppBar";
-import Footer from "@components/components/molecules/Footer";
-import Sidebar from "@components/components/Sidebar";
-import RightSidebar from "@components/components/RightSidebar";
-import { H1, Button, Paragraph, ListGrid } from "@components/components/atoms";
-import SectionTitle from "@components/components/molecules/SectionTitle";
-import { Accordion, ContentPanel } from "@components/components/molecules/Accordion";
-import Modal from "@components/components/molecules/Modal";
-import BookGrid from "@components/components/molecules/BookGrid";
-import ProfileImage from "@components/components/molecules/ProfileImage";
-import LoadingGauge from "@components/components/molecules/LoadingGauge";
-import { FaGithub, FaSmileBeam, FaLaughWink } from "react-icons/fa";
-import { trackPageView, trackEvent } from '@utils/analytics';
-
+import React, { useEffect, useState } from 'react'
+import Skeleton from 'react-loading-skeleton'
+import { motion } from 'framer-motion'
+import AppBar from '@components/components/molecules/AppBar'
+import Footer from '@components/components/molecules/Footer'
+import Sidebar from '@components/components/Sidebar'
+import RightSidebar from '@components/components/RightSidebar'
+import { H1, Button, Paragraph, ListGrid } from '@components/components/atoms'
+import SectionTitle from '@components/components/molecules/SectionTitle'
+import { Accordion, ContentPanel } from '@components/components/molecules/Accordion'
+import Modal from '@components/components/molecules/Modal'
+import BookGrid from '@components/components/molecules/BookGrid'
+import ProfileImage from '@components/components/molecules/ProfileImage'
+import LoadingGauge from '@components/components/molecules/LoadingGauge'
+import { FaGithub, FaSmileBeam, FaLaughWink } from 'react-icons/fa'
+import { trackPageView, trackEvent } from '@utils/analytics'
 
 // images
-import profileImg from "@/../public/img/Nadav_Photo_For_Site.png";
-import logoImg from "@/../public/img/dev_sparx_logo.png";
-import { getImageSrc, customLoader, isExportMode } from "@utils/imageUtils";
-
-
+import profileImg from '@/../public/img/Nadav_Photo_For_Site.png'
+import logoImg from '@/../public/img/dev_sparx_logo.png'
+import { getImageSrc, customLoader, isExportMode } from '@utils/imageUtils'
 
 function splitHeadlineWithEffect(headline) {
-  if (!headline.includes("\\")) {
-    return headline; // Return as-is if no special marker
+  if (!headline.includes('\\')) {
+    return headline // Return as-is if no special marker
   }
 
-  const parts = headline.split("\\"); // Split at the marker
+  const parts = headline.split('\\') // Split at the marker
   return (
     <>
       {parts[0]}
@@ -53,132 +50,133 @@ function splitHeadlineWithEffect(headline) {
         </svg>
       </span>
     </>
-  );
+  )
 }
 
-
 function Home() {
-  const [heroData, setHeroData] = useState(null);
-  const [aboutData, setAboutData] = useState(null);
-  const [experienceData, setExperienceData] = useState(null);
-  const [nowData, setNowData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState(0);
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [notification, setNotification] = useState('');
-  const [isLoadingModal, setIsLoadingModal] = useState(false);
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [heroData, setHeroData] = useState(null)
+  const [aboutData, setAboutData] = useState(null)
+  const [experienceData, setExperienceData] = useState(null)
+  const [nowData, setNowData] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [activeTab, setActiveTab] = useState(0)
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [notification, setNotification] = useState('')
+  const [isLoadingModal, setIsLoadingModal] = useState(false)
+  const [isModalOpen, setModalOpen] = useState(false)
 
-  const isExportMode = process.env.NEXT_PUBLIC_EXPORT_MODE === "true";
+  const isExportMode = process.env.NEXT_PUBLIC_EXPORT_MODE === 'true'
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+  }
 
   const handleSubmit = async () => {
     if (!email || !message) {
-      setNotification({ type: 'error', message: "Please fill in all fields." });
-      return;
+      setNotification({ type: 'error', message: 'Please fill in all fields.' })
+      return
     }
-    setIsLoadingModal(true);  // Indicate loading process
+    setIsLoadingModal(true) // Indicate loading process
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, message })
-      });
-      const data = await response.json();
+        body: JSON.stringify({ email, message }),
+      })
+      const data = await response.json()
       if (response.ok) {
-        handleSuccessNotification('Message sent successfully. Thank you!');
+        handleSuccessNotification('Message sent successfully. Thank you!')
       } else {
-        throw new Error(data.message || 'Failed to send the message');
+        throw new Error(data.message || 'Failed to send the message')
       }
     } catch (error) {
-      setNotification({ type: 'error', message: error.toString() });
+      setNotification({ type: 'error', message: error.toString() })
     } finally {
-      setIsLoadingModal(false);  // Turn off loading indication
+      setIsLoadingModal(false) // Turn off loading indication
     }
-  };
+  }
 
   const handleSuccessNotification = (message) => {
-    setNotification({ type: 'success', message });
+    setNotification({ type: 'success', message })
     setTimeout(() => {
-      setNotification(null);
-      setModalOpen(false);
-      setEmail('');
-      setMessage('');
-    }, 5000);
-  };
+      setNotification(null)
+      setModalOpen(false)
+      setEmail('')
+      setMessage('')
+    }, 5000)
+  }
 
   const isElementInViewport = (element) => {
-    if (!element) return false;
-    const rect = element.getBoundingClientRect();
+    if (!element) return false
+    const rect = element.getBoundingClientRect()
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  };
+    )
+  }
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let fetchedData = null;
+        let fetchedData = null
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_ASSET_PREFIX || ""}/staticData.json`);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_ASSET_PREFIX || ''}/staticData.json`
+        )
         if (response.ok) {
-          fetchedData = await response.json();
+          fetchedData = await response.json()
         } else {
-          console.warn("Static data not found, attempting dynamic fetch...");
-          throw new Error("Static data not found, attempting dynamic fetch...");
+          console.warn('Static data not found, attempting dynamic fetch...')
+          throw new Error('Static data not found, attempting dynamic fetch...')
         }
 
-        setHeroData(fetchedData.hero);
-        setAboutData(fetchedData.about);
+        setHeroData(fetchedData.hero)
+        setAboutData(fetchedData.about)
         setExperienceData(fetchedData.experience)
-        setNowData(fetchedData.now);
-        setIsLoading(false);
+        setNowData(fetchedData.now)
+        setIsLoading(false)
       } catch (error) {
-        console.error("Error fetching data:", error.message);
-        setIsLoading(false);
+        console.error('Error fetching data:', error.message)
+        setIsLoading(false)
       }
-    };
+    }
 
-    fetchData();
-  }, [isExportMode]);
+    fetchData()
+  }, [isExportMode])
 
   useEffect(() => {
-    trackPageView("/");
+    trackPageView('/')
 
     const handleScroll = () => {
-      const sections = ["hero", "about", "experience", "now"];
+      const sections = ['hero', 'about', 'experience', 'now']
       sections.forEach((section) => {
-        const element = document.getElementById(section);
+        const element = document.getElementById(section)
         if (element && isElementInViewport(element)) {
-          trackEvent("scroll", "section_view", section);
+          trackEvent('scroll', 'section_view', section)
         }
-      });
-    };
+      })
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   if (isLoading || !heroData) {
-    return <LoadingGauge />;
+    return <LoadingGauge />
   }
 
   return (
     <div className="flex flex-col min-h-screen bg-white pt-16">
       <AppBar
         sections={[
-          { id: "about", title: "About" },
-          { id: "experience", title: "Experience" },
-          { id: "now", title: "Now" },
-          { id: "contact", title: "Contact" },
+          { id: 'about', title: 'About' },
+          { id: 'experience', title: 'Experience' },
+          { id: 'now', title: 'Now' },
+          { id: 'contact', title: 'Contact' },
         ]}
       />
       <div className="flex flex-1 justify-center">
@@ -224,8 +222,8 @@ function Home() {
               <Modal
                 isOpen={isModalOpen}
                 onClose={() => {
-                  setModalOpen(false);
-                  setNotification(null);
+                  setModalOpen(false)
+                  setNotification(null)
                 }}
                 title="Contact Form"
                 onPrimaryAction={handleSubmit}
@@ -240,7 +238,9 @@ function Home() {
                   </div>
                 ) : (
                   <form className="space-y-4">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                      Email Address
+                    </label>
                     <input
                       className="block w-full px-3 py-2 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       id="email"
@@ -249,7 +249,12 @@ function Home() {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                     />
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mt-4">Your Message</label>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mt-4"
+                    >
+                      Your Message
+                    </label>
                     <textarea
                       id="message"
                       className="block w-full px-3 py-2 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -265,7 +270,6 @@ function Home() {
                 )}
               </Modal>
             </div>
-
 
             {/* Spacer */}
             <div className="md:col-span-12 min-h-[5rem]"></div>
@@ -287,14 +291,14 @@ function Home() {
                 {aboutData.content.map((paragraph, index) => (
                   <div key={index} className="text-gray-800">
                     {paragraph.children.map((child) => {
-                      if (child.marks?.includes("strong")) {
+                      if (child.marks?.includes('strong')) {
                         return (
                           <strong key={child._key} className="text-yellow-500">
                             {child.text}
                           </strong>
-                        );
+                        )
                       }
-                      return child.text;
+                      return child.text
                     })}
                   </div>
                 ))}
@@ -309,7 +313,10 @@ function Home() {
                     rel="noopener noreferrer"
                     className="group flex items-center space-x-2 text-gray-700 hover:text-yellow-500 transition-all duration-300"
                   >
-                    <FaGithub size={24} className="group-hover:rotate-12 transition-transform duration-300" />
+                    <FaGithub
+                      size={24}
+                      className="group-hover:rotate-12 transition-transform duration-300"
+                    />
                     <span className="font-medium">My GitHub</span>
                   </a>
                 ))}
@@ -333,7 +340,6 @@ function Home() {
             {/* Spacer */}
             <div className="md:col-span-12 flex-grow min-h-[5rem]"></div>
           </motion.section>
-
 
           {/* Experience Section */}
           <motion.section
@@ -378,7 +384,6 @@ function Home() {
               </div>
             </div>
 
-
             {/* Side Tab Picker for larger screens */}
             <div className="hidden md:block md:col-span-3"></div>
             <div className="hidden sm:block sm:col-span-3">
@@ -386,10 +391,11 @@ function Home() {
                 {experienceData.content.map((job, index) => (
                   <button
                     key={job.id || `lrg_p_${job.company}-${index}`}
-                    className={`w-full text-left py-4 pl-4 pr-2 font-semibold text-primary-800 transition-all duration-300 ${activeTab === index
-                      ? "border-l-4 border-yellow-500 text-yellow-500"
-                      : "hover:text-yellow-500"
-                      }`}
+                    className={`w-full text-left py-4 pl-4 pr-2 font-semibold text-primary-800 transition-all duration-300 ${
+                      activeTab === index
+                        ? 'border-l-4 border-yellow-500 text-yellow-500'
+                        : 'hover:text-yellow-500'
+                    }`}
                     onClick={() => setActiveTab(index)}
                   >
                     {job.company}
@@ -403,8 +409,9 @@ function Home() {
               {experienceData.content.map((job, index) => (
                 <div
                   key={job.id || `exp_c_${job.company}-${index}`}
-                  className={`transition-opacity duration-300 ${activeTab === index ? "block opacity-100" : "hidden opacity-0"
-                    }`}
+                  className={`transition-opacity duration-300 ${
+                    activeTab === index ? 'block opacity-100' : 'hidden opacity-0'
+                  }`}
                 >
                   {/* Company Name and Years */}
                   <div className="mb-4">
@@ -416,7 +423,10 @@ function Home() {
                   {/* Responsibilities */}
                   <ul className="space-y-4">
                     {job.achievements.map((achievement, idx) => (
-                      <li key={`${job.company}-achievement-${idx}`} className="flex items-start space-x-2">
+                      <li
+                        key={`${job.company}-achievement-${idx}`}
+                        className="flex items-start space-x-2"
+                      >
                         {/* Triangle Icon - Rotated */}
                         <div className="text-yellow-500 mt-1">
                           <svg
@@ -428,13 +438,10 @@ function Home() {
                             <polygon points="12,2 2,22 22,22" />
                           </svg>
                         </div>
-                        <span className="text-primary-900 leading-relaxed">
-                          {achievement}
-                        </span>
+                        <span className="text-primary-900 leading-relaxed">{achievement}</span>
                       </li>
                     ))}
                   </ul>
-
                 </div>
               ))}
             </div>
@@ -442,7 +449,6 @@ function Home() {
             {/* Spacer */}
             <div className="md:col-span-12 flex-grow min-h-[5rem]"></div>
           </motion.section>
-
 
           {/* Now Section */}
           <motion.section
@@ -457,16 +463,16 @@ function Home() {
             <div className="flex flex-col items-start justify-start md:col-span-9">
               <SectionTitle number={3} title="Now" />
               {nowData?.content.map((item, index) => {
-                if (item._type === "paragraph") {
+                if (item._type === 'paragraph') {
                   return (
                     <Paragraph key={index} markDefs={item?.markDefs}>
                       {item.children}
                     </Paragraph>
-                  );
-                } else if (item._type === "grid") {
-                  return <BookGrid key={index} items={item.items} />;
+                  )
+                } else if (item._type === 'grid') {
+                  return <BookGrid key={index} items={item.items} />
                 }
-                return null;
+                return null
               })}
             </div>
             <div className="hidden md:block md:col-span-1"></div>
@@ -479,7 +485,7 @@ function Home() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

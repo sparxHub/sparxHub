@@ -1,5 +1,5 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import React from 'react'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 function Sidebar() {
   return (
@@ -37,7 +37,7 @@ function Sidebar() {
       {/* Line */}
       <div className="h-24 w-px bg-[#A8B2D1]"></div>
     </aside>
-  );
+  )
 }
 
-export default Sidebar;
+export default Sidebar

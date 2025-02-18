@@ -1,25 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
-function ListGrid({
-  items,
-  columns = 1,
-  prefixSymbol = "▹",
-  color = "rgb(0,0,218)",
-}) {
-  let gridClasses = "";
+function ListGrid({ items, columns = 1, prefixSymbol = '▹', color = 'rgb(0,0,218)' }) {
+  let gridClasses = ''
 
   switch (columns) {
     case 3:
-      gridClasses = "grid-cols-3";
-      break;
+      gridClasses = 'grid-cols-3'
+      break
     case 2:
-      gridClasses = "grid-cols-2";
-      break;
+      gridClasses = 'grid-cols-2'
+      break
     case 1:
     default:
-      gridClasses = "grid-cols-1";
-      break;
+      gridClasses = 'grid-cols-1'
+      break
   }
 
   return (
@@ -28,11 +23,11 @@ function ListGrid({
         <li
           key={idx}
           className={`relative mb-2.5 pl-5 text-xs font-mono text-${color}`}
-          style={{ lineHeight: "1.5" }}
+          style={{ lineHeight: '1.5' }}
         >
           <span
             className={`absolute left-0 text-lg leading-5 text-${color}`}
-            style={{ top: "50%", transform: "translateY(-50%)" }}
+            style={{ top: '50%', transform: 'translateY(-50%)' }}
           >
             {prefixSymbol}
           </span>
@@ -40,7 +35,7 @@ function ListGrid({
         </li>
       ))}
     </ul>
-  );
+  )
 }
 
 ListGrid.propTypes = {
@@ -48,6 +43,6 @@ ListGrid.propTypes = {
   columns: PropTypes.oneOf([1, 2, 3]),
   prefixSymbol: PropTypes.string,
   color: PropTypes.string,
-};
+}
 
-export default ListGrid;
+export default ListGrid

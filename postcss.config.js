@@ -1,15 +1,15 @@
-const { config } = require("./package.json");
+const { config } = require('./package.json')
 
-const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX || ""; // Use correct prefix
+const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX || '' // Use correct prefix
 
 module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
-    "postcss-url": {
+    'postcss-url': {
       url: (asset) => {
-        return `${assetPrefix}${asset.url}`;
+        return `${assetPrefix}${asset.url}`
       },
     },
   },
-};
+}

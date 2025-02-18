@@ -1,34 +1,55 @@
-const { config } = require("./package.json");
+const { config } = require('./package.json')
 
 const nextConfig = (phase, { defaultConfig }) => {
-  const isExport = process.env.NEXT_EXPORT === "true";
-  const basePath = isExport && config.basePath != "" ? `/${config.basePath}` : ""; // Set basePath only in export mode
-  const assetPrefix = isExport && basePath != "" ? `${basePath}/` : ""; // Apply asset prefix only in export
-  const publicApiUrl = config.publicApiUrl || "";
+  const isExport = process.env.NEXT_EXPORT === 'true'
+  const basePath = isExport && config.basePath !== '' ? `/${config.basePath}` : ''
+  const assetPrefix = isExport && basePath !== '' ? `${basePath}/` : ''
+  const publicApiUrl = config.publicApiUrl || ''
+  const astroPort = process.env.ASTRO_PORT || '4322'
 
-  // Debugging output
-  console.log("Next.js Config Phase:", phase);
-  console.log("NEXT_EXPORT Environment Variable:", process.env.NEXT_EXPORT);
-  console.log("isExport Value:", isExport);
-  console.log("Base Path:", basePath);
-  console.log("Asset Prefix:", assetPrefix);
+  console.log('Next.js Config Phase:', phase)
+  console.log('NEXT_EXPORT Environment Variable:', process.env.NEXT_EXPORT)
+  console.log('isExport Value:', isExport)
+  console.log('Base Path:', basePath)
+  console.log('Asset Prefix:', assetPrefix)
+  console.log('Astro Port:', astroPort)
 
-  return {
+  const commonConfig = {
     reactStrictMode: false,
-    output: isExport ? "export" : "standalone",
     basePath,
     assetPrefix,
     images: {
-      loader: isExport ? "custom" : "default",
-      path: isExport ? "/" : undefined,
+      loader: isExport ? 'custom' : 'default',
+      path: isExport ? '/' : undefined,
       unoptimized: isExport,
     },
     env: {
       NEXT_PUBLIC_EXPORT_MODE: isExport.toString(),
-      NEXT_PUBLIC_ASSET_PREFIX: assetPrefix, // Ensure asset prefix is available globally
-      NEXT_PUBLIC_API_URL: publicApiUrl
+      NEXT_PUBLIC_ASSET_PREFIX: assetPrefix,
+      NEXT_PUBLIC_API_URL: publicApiUrl,
+      NEXT_PUBLIC_ASTRO_PORT: astroPort,
     },
-  };
-};
+  }
 
-module.exports = nextConfig;
+  if (isExport) {
+    return {
+      ...commonConfig,
+      output: 'export',
+    }
+  }
+
+  return {
+    ...commonConfig,
+    output: 'standalone',
+    async rewrites() {
+      return [
+        {
+          source: '/blog/:path*',
+          destination: `http://localhost:${astroPort}/:path*`,
+        },
+      ]
+    },
+  }
+}
+
+module.exports = nextConfig
