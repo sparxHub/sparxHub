@@ -2,18 +2,18 @@
 
 function Header(props) {
   const {
-    title = "Nadav Daniel - Entrepreneur & Full Stack Developer",
-    description = "Explore the entrepreneurial journey of Nadav Daniel, a visionary full-stack developer and tech entrepreneur specializing in creating impactful digital solutions.",
-    keywords = "Entrepreneur, Full Stack Developer, Business Solutions, Web Development, React, Next.js, Software Engineer, Nadav Daniel",
-    author = "Nadav Daniel",
-    siteName = "Nadav Daniel - Entrepreneur & Full Stack Developer Portfolio",
-    url = "https://nadav-daniel.com",
-    favicon = "/favicon.ico",
-    ogType = "website",
-    ogImage = "/og-image.jpg",
-    ogImageLarge = "/og-image-summary.jpg",
-    twitterCard = "summary_large_image",
-  } = props;
+    title = 'Nadav Daniel - Entrepreneur & Full Stack Developer',
+    description = 'Explore the entrepreneurial journey of Nadav Daniel, a visionary full-stack developer and tech entrepreneur specializing in creating impactful digital solutions.',
+    keywords = 'Entrepreneur, Full Stack Developer, Business Solutions, Web Development, React, Next.js, Software Engineer, Nadav Daniel',
+    author = 'Nadav Daniel',
+    siteName = 'Nadav Daniel - Entrepreneur & Full Stack Developer Portfolio',
+    url = 'https://nadav-daniel.com',
+    favicon = '/favicon.ico',
+    ogType = 'website',
+    ogImage = '/og-image.jpg',
+    ogImageLarge = '/og-image-summary.jpg',
+    twitterCard = 'summary_large_image',
+  } = props
 
   return (
     <>
@@ -50,21 +50,21 @@ function Header(props) {
       {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Nadav Daniel",
-          "jobTitle": "Entrepreneur & Full Stack Developer",
-          "url": "https://nadav-daniel.com",
-          "sameAs": [
-            "https://www.linkedin.com/in/nadav-daniel-0a309150/",
-            "https://github.com/sparxHub",
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Nadav Daniel',
+          jobTitle: 'Entrepreneur & Full Stack Developer',
+          url: 'https://nadav-daniel.com',
+          sameAs: [
+            'https://www.linkedin.com/in/nadav-daniel-0a309150/',
+            'https://github.com/sparxHub',
           ],
-          "description":
-            "A tech entrepreneur specializing in full-stack development and creating business-driven digital solutions.",
+          description:
+            'A tech entrepreneur specializing in full-stack development and creating business-driven digital solutions.',
         })}
       </script>
     </>
-  );
+  )
 }
 
-export default Header;
+export default Header

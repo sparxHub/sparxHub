@@ -1,20 +1,20 @@
 // Modal.js
-"use client";
+'use client'
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { H3, Button } from "@components/components/atoms";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { motion, AnimatePresence } from 'framer-motion'
+import { H3, Button } from '@components/components/atoms'
 
 const modalVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1 }
-};
+  visible: { opacity: 1 },
+}
 
 const modalContentVariants = {
   hidden: { y: 50, opacity: 0 },
-  visible: { y: 0, opacity: 1 }
-};
+  visible: { y: 0, opacity: 1 },
+}
 
 function Modal({
   isOpen,
@@ -27,9 +27,9 @@ function Modal({
   onSecondaryAction = onClose,
   primaryButtonVariant = 'normal',
   secondaryButtonVariant = 'text',
-  isLoading = false  // Added to control button disabled state
+  isLoading = false, // Added to control button disabled state
 }) {
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   return ReactDOM.createPortal(
     <AnimatePresence>
@@ -49,15 +49,13 @@ function Modal({
             exit="hidden"
           >
             <H3>{title}</H3>
-            <div className="mb-4">
-              {children}
-            </div>
+            <div className="mb-4">{children}</div>
             <div className="flex justify-end space-x-2">
               <Button
                 onClick={onSecondaryAction}
                 variant={secondaryButtonVariant}
                 colorSet="secondary"
-                disabled={isLoading}  // Pass isLoading to disable button
+                disabled={isLoading} // Pass isLoading to disable button
               >
                 {secondaryActionText}
               </Button>
@@ -65,7 +63,7 @@ function Modal({
                 onClick={onPrimaryAction}
                 variant={primaryButtonVariant}
                 colorSet="primary"
-                disabled={isLoading}  // Pass isLoading to disable button
+                disabled={isLoading} // Pass isLoading to disable button
               >
                 {primaryActionText}
               </Button>
@@ -75,7 +73,7 @@ function Modal({
       )}
     </AnimatePresence>,
     document.body
-  );
+  )
 }
 
-export default Modal;
+export default Modal

@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import React from "react";
-import { useTheme } from "./ThemeContext";
+import React from 'react'
+import { useTheme } from './ThemeContext'
 
 export default function H1({ children, className }) {
-  const theme = useTheme();
+  const theme = useTheme()
   // Determine the color set to use
-  const textTheme = theme?.textTheme;
+  const textTheme = theme?.textTheme
 
   return (
     <h1
@@ -14,5 +14,5 @@ export default function H1({ children, className }) {
     >
       {children}
     </h1>
-  );
+  )
 }

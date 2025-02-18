@@ -1,8 +1,8 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import React from 'react'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 function Footer() {
-  const obfuscatedEmail = "nadavdaniel(at)hotmail(dot)com";
+  const obfuscatedEmail = 'nadavdaniel(at)hotmail(dot)com'
 
   return (
     <footer className="flex bg-white p-6 mt-8 relative text-greeny-900 md:hidden">
@@ -51,7 +51,7 @@ function Footer() {
         <p>&copy; {new Date().getFullYear()} DevSparx Website. All rights reserved.</p>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

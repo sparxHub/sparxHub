@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { getImageSrc, customLoader, isExportMode } from "@utils/imageUtils";
-import logoImg from "@/../public/img/dev_sparx_logo.png";
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import { getImageSrc, customLoader, isExportMode } from '@utils/imageUtils'
+import logoImg from '@/../public/img/dev_sparx_logo.png'
 
 function LoadingGauge() {
-  const logoImageSrc = getImageSrc(logoImg, "/img/dev_sparx_logo.png");
-  const [visible, setVisible] = useState(true);
+  const logoImageSrc = getImageSrc(logoImg, '/img/dev_sparx_logo.png')
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
-    const timeout = setTimeout(() => setVisible(false), 5000);
-    return () => clearTimeout(timeout);
-  }, []);
+    const timeout = setTimeout(() => setVisible(false), 5000)
+    return () => clearTimeout(timeout)
+  }, [])
 
-  if (!visible) return null;
+  if (!visible) return null
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white text-gray-900">
@@ -28,7 +28,7 @@ function LoadingGauge() {
       </div>
       <p className="text-2xl font-semibold">Loading ...</p>
     </div>
-  );
+  )
 }
 
-export default LoadingGauge;
+export default LoadingGauge

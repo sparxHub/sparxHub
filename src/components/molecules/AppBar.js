@@ -1,29 +1,25 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-
+import { useState } from 'react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
 // images
-import Image from "next/image";
-import { getImageSrc, customLoader, isExportMode } from "@utils/imageUtils";
-import logoImg from "@/../public/img/dev_sparx_logo.png";
-
-
-
+import Image from 'next/image'
+import { getImageSrc, customLoader, isExportMode } from '@utils/imageUtils'
+import logoImg from '@/../public/img/dev_sparx_logo.png'
 
 const AppBar = ({ sections }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   const handleMenuItemClick = () => {
-    setIsMenuOpen(false); // Close menu after clicking an item
-  };
+    setIsMenuOpen(false) // Close menu after clicking an item
+  }
 
-  const logoImageSrc = getImageSrc(logoImg, "/img/dev_sparx_logo.png");
+  const logoImageSrc = getImageSrc(logoImg, '/img/dev_sparx_logo.png')
 
   return (
     <header className="bg-white px-6 sm:px-20 h-16 fixed top-0 w-full flex items-center justify-between z-50 shadow-md">
@@ -52,8 +48,9 @@ const AppBar = ({ sections }) => {
 
       {/* Mobile Menu */}
       <div
-        className={`absolute sm:static sm:bg-transparent top-16 right-0 bg-white w-full sm:w-auto transition-all ease-in-out duration-300 ${isMenuOpen ? "block" : "hidden"
-          } sm:block`}
+        className={`absolute sm:static sm:bg-transparent top-16 right-0 bg-white w-full sm:w-auto transition-all ease-in-out duration-300 ${
+          isMenuOpen ? 'block' : 'hidden'
+        } sm:block`}
       >
         <nav className="flex flex-col sm:flex-row items-center sm:space-x-6 p-4 sm:p-0">
           {/* Dynamic Links */}
@@ -81,7 +78,7 @@ const AppBar = ({ sections }) => {
         </nav>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default AppBar;
+export default AppBar

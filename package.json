@@ -5,30 +5,37 @@
   "engines": {
     "node": "20.18.3"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,md,astro}": [
+      "prettier --write"
+    ]
+  },
   "config": {
     "basePath": "",
     "publicApiUrl": "https://make-trigger-server.vercel.app"
   },
   "scripts": {
-    "clean": "rm -rf .next out", 
-
+    "clean": "rm -rf .next out",
     "dev": "concurrently \"npm run dev:next\" \"npm run dev:astro\"",
     "dev:next": "next dev",
     "dev:astro": "cd blog && ASTRO_PORT=4322 npm run dev",
-
     "start": "next start",
-
     "build": "npm run clean && npm run build:astro && npm run build:next",
     "build:next": "next build",
     "build:astro": "cd blog && npm run build",
-
     "export": "npm run clean && npm run export:next && npm run export:astro",
     "export:next": "NEXT_EXPORT=true next build",
     "export:astro": "cd blog && npm run build",
-    
     "deploy": "npm run export && bash deploy.sh",
-
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -50,6 +57,9 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
-    "postcss-url": "^10.1.3"
+    "husky": "^8.0.0",
+    "lint-staged": "^15.4.3",
+    "postcss-url": "^10.1.3",
+    "prettier": "^3.5.1"
   }
 }

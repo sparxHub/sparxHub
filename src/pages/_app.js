@@ -1,8 +1,8 @@
-import "../styles/globals.css";
-import Script from "next/script";
-import { ThemeProvider } from "../components/atoms/ThemeContext";
-import Header from "../components/molecules/Header";
-import { isExportMode } from "@utils/imageUtils";
+import '../styles/globals.css'
+import Script from 'next/script'
+import { ThemeProvider } from '../components/atoms/ThemeContext'
+import Header from '../components/molecules/Header'
+import { isExportMode } from '@utils/imageUtils'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-      
+
       {/* ✅ Global Header */}
       <Header />
 
@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
         </div>
       )}
     </ThemeProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

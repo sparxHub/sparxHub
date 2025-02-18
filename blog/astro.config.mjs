@@ -1,13 +1,13 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from 'astro/config'
+import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://blog.nadav-daniel.com',  // Set the correct blog site domain
+  site: 'https://blog.nadav-daniel.com', // Set the correct blog site domain
   // base: '/blog/',  // Ensures all paths start with /blog/
-  outDir: '../out/blog/',  // Ensure Astro outputs to the correct folder
-  output: 'static',  // Generate static site
+  outDir: '../out/blog/', // Ensure Astro outputs to the correct folder
+  output: 'static', // Generate static site
   integrations: [mdx(), sitemap()],
 
   build: {
@@ -25,4 +25,4 @@ export default defineConfig({
   //     },
   //   },
   // },
-});
+})

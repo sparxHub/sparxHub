@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { getImageSrc, customLoader, isExportMode } from "@utils/imageUtils";
+import Image from 'next/image'
+import { getImageSrc, customLoader, isExportMode } from '@utils/imageUtils'
 
 function BookGrid({ items }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
       {items.map((book, index) => {
-        const imageSrc = getImageSrc(null, book.image);
+        const imageSrc = getImageSrc(null, book.image)
         return (
           <div key={index} className="flex flex-col items-center">
             <div className="relative w-32 h-48 md:w-40 md:h-60">
@@ -26,7 +26,7 @@ function BookGrid({ items }) {
         )
       })}
     </div>
-  );
+  )
 }
 
-export default BookGrid;
+export default BookGrid
