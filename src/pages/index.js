@@ -18,8 +18,6 @@ import { FaGithub, FaSmileBeam, FaLaughWink } from 'react-icons/fa'
 import { trackPageView, trackEvent } from '@utils/analytics'
 
 // images
-import profileImg from '@/../public/img/Nadav_Photo_For_Site.png'
-import logoImg from '@/../public/img/dev_sparx_logo.png'
 import { getImageSrc, customLoader, isExportMode } from '@utils/imageUtils'
 
 function splitHeadlineWithEffect(headline) {
@@ -391,11 +389,10 @@ function Home() {
                 {experienceData.content.map((job, index) => (
                   <button
                     key={job.id || `lrg_p_${job.company}-${index}`}
-                    className={`w-full text-left py-4 pl-4 pr-2 font-semibold text-primary-800 transition-all duration-300 ${
-                      activeTab === index
+                    className={`w-full text-left py-4 pl-4 pr-2 font-semibold text-primary-800 transition-all duration-300 ${activeTab === index
                         ? 'border-l-4 border-yellow-500 text-yellow-500'
                         : 'hover:text-yellow-500'
-                    }`}
+                      }`}
                     onClick={() => setActiveTab(index)}
                   >
                     {job.company}
@@ -409,9 +406,8 @@ function Home() {
               {experienceData.content.map((job, index) => (
                 <div
                   key={job.id || `exp_c_${job.company}-${index}`}
-                  className={`transition-opacity duration-300 ${
-                    activeTab === index ? 'block opacity-100' : 'hidden opacity-0'
-                  }`}
+                  className={`transition-opacity duration-300 ${activeTab === index ? 'block opacity-100' : 'hidden opacity-0'
+                    }`}
                 >
                   {/* Company Name and Years */}
                   <div className="mb-4">

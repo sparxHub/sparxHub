@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { getImageSrc, customLoader, isExportMode } from '@utils/imageUtils'
-import logoImg from '@/../public/img/dev_sparx_logo.png'
 
 function LoadingGauge() {
-  const logoImageSrc = getImageSrc(logoImg, '/img/dev_sparx_logo.png')
+  const logoImageSrc = getImageSrc('/img/dev_sparx_logo.png', '/img/dev_sparx_logo.png')
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {

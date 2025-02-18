@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { getImageSrc, customLoader, isExportMode } from '@utils/imageUtils'
-import profileImg from '@/../public/img/Nadav_Photo_For_Site.png'
 
 function ProfileImage() {
-  const imageSrc = getImageSrc(profileImg, '/img/Nadav_Photo_For_Site.png')
+  const imageSrc = getImageSrc('/img/Nadav_Photo_For_Site.png', '/img/Nadav_Photo_For_Site.png')
 
   return (
     <div className="flex flex-col items-center justify-start lg:items-start h-full">
