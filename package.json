@@ -20,9 +20,11 @@
 
     "build": "npm run clean && npm run build:astro && npm run build:next",
     "build:next": "next build",
-    "build:astro": "cd blog && npm run build && mv dist ../out/blog",
+    "build:astro": "cd blog && npm run build",
 
-    "export": "npm run clean && NEXT_EXPORT=true npm run build",
+    "export": "npm run clean && npm run export:next && npm run export:astro",
+    "export:next": "NEXT_EXPORT=true next build",
+    "export:astro": "cd blog && npm run build",
     
     "deploy": "npm run export && bash deploy.sh",
 

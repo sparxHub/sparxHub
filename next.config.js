@@ -5,9 +5,7 @@ const nextConfig = (phase, { defaultConfig }) => {
   const basePath = isExport && config.basePath !== "" ? `/${config.basePath}` : "";
   const assetPrefix = isExport && basePath !== "" ? `${basePath}/` : "";
   const publicApiUrl = config.publicApiUrl || "";
-
-  // Detect if Astro is running and on which port
-  const astroPort = process.env.ASTRO_PORT || "4322"; // Default to 4322 if Astro auto-selected a port
+  const astroPort = process.env.ASTRO_PORT || "4322";
 
   console.log("Next.js Config Phase:", phase);
   console.log("NEXT_EXPORT Environment Variable:", process.env.NEXT_EXPORT);
@@ -16,19 +14,10 @@ const nextConfig = (phase, { defaultConfig }) => {
   console.log("Asset Prefix:", assetPrefix);
   console.log("Astro Port:", astroPort);
 
-  return {
+  const commonConfig = {
     reactStrictMode: false,
-    output: isExport ? "export" : "standalone",
     basePath,
     assetPrefix,
-    async rewrites() {
-      return [
-        {
-          source: "/blog/:path*",
-          destination: `http://localhost:${astroPort}/:path*`,
-        },
-      ];
-    },
     images: {
       loader: isExport ? "custom" : "default",
       path: isExport ? "/" : undefined,
@@ -38,7 +27,27 @@ const nextConfig = (phase, { defaultConfig }) => {
       NEXT_PUBLIC_EXPORT_MODE: isExport.toString(),
       NEXT_PUBLIC_ASSET_PREFIX: assetPrefix,
       NEXT_PUBLIC_API_URL: publicApiUrl,
-      NEXT_PUBLIC_ASTRO_PORT: astroPort, // Make Astro port available in env
+      NEXT_PUBLIC_ASTRO_PORT: astroPort,
+    },
+  };
+
+  if (isExport) {
+    return {
+      ...commonConfig,
+      output: "export",
+    };
+  }
+
+  return {
+    ...commonConfig,
+    output: "standalone",
+    async rewrites() {
+      return [
+        {
+          source: "/blog/:path*",
+          destination: `http://localhost:${astroPort}/:path*`,
+        },
+      ];
     },
   };
 };
