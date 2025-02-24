@@ -286,12 +286,15 @@ function Home() {
             <div className="flex flex-col items-start justify-start lg:col-span-6">
               <SectionTitle number={1} title="About Me" />
               <div className="pt-4 space-y-6">
-                {aboutData.content.map((paragraph, index) => (
-                  <div key={index} className="text-gray-800">
-                    {paragraph.children.map((child) => {
+                {aboutData.content.map((paragraph, paragraphIndex) => (
+                  <div key={`about-paragraph-${paragraphIndex}`} className="text-gray-800">
+                    {paragraph.children.map((child, childIndex) => {
                       if (child.marks?.includes('strong')) {
                         return (
-                          <strong key={child._key} className="text-yellow-500">
+                          <strong
+                            key={`about-paragraph-${paragraphIndex}-strong-${childIndex}`}
+                            className="text-yellow-500"
+                          >
                             {child.text}
                           </strong>
                         )
@@ -305,7 +308,7 @@ function Home() {
               <div className="mt-8 flex items-center space-x-6">
                 {aboutData.socialLinks?.map((link, index) => (
                   <a
-                    key={index}
+                    key={`about-social-link-${index}`}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -324,7 +327,7 @@ function Home() {
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">Technologies:</h3>
                 <ul className="grid grid-cols-2 gap-4 list-disc list-inside">
                   {aboutData.skills.map((skill, index) => (
-                    <li key={index} className="text-gray-600">
+                    <li key={`about-skill-${index}`} className="text-gray-600">
                       {skill}
                     </li>
                   ))}
@@ -390,8 +393,8 @@ function Home() {
                   <button
                     key={job.id || `lrg_p_${job.company}-${index}`}
                     className={`w-full text-left py-4 pl-4 pr-2 font-semibold text-primary-800 transition-all duration-300 ${activeTab === index
-                        ? 'border-l-4 border-yellow-500 text-yellow-500'
-                        : 'hover:text-yellow-500'
+                      ? 'border-l-4 border-yellow-500 text-yellow-500'
+                      : 'hover:text-yellow-500'
                       }`}
                     onClick={() => setActiveTab(index)}
                   >
@@ -461,7 +464,7 @@ function Home() {
               {nowData?.content.map((item, index) => {
                 if (item._type === 'paragraph') {
                   return (
-                    <Paragraph key={index} markDefs={item?.markDefs}>
+                    <Paragraph key={`about-paragraph-${index}`} markDefs={item?.markDefs}>
                       {item.children}
                     </Paragraph>
                   )

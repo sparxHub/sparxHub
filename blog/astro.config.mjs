@@ -9,7 +9,7 @@ export default defineConfig({
   outDir: '../out/blog/', // Ensure Astro outputs to the correct folder
   output: 'static', // Generate static site
   integrations: [mdx(), sitemap()],
-
+  assetsInclude: ['**/*.woff2', '**/*.woff', '**/*.ttf'],
   build: {
     // assets: '/blog/',  // Ensures assets like images and scripts are resolved correctly
   },

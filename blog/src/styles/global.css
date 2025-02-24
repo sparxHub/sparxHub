@@ -1,155 +1,220 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+/* Blog globals.css - Unified with Personal Site */
 
-:root {
-  --accent: #2337ff;
-  --accent-dark: #000d8a;
-  --black: 15, 18, 25;
-  --gray: 96, 115, 159;
-  --gray-light: 229, 233, 240;
-  --gray-dark: 34, 41, 57;
-  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-  --box-shadow:
-    0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-    0 16px 32px rgba(var(--gray), 33%);
-}
+/* ============================= */
+/* 1. Font Definitions */
+/* ============================= */
 @font-face {
-  font-family: 'Atkinson';
-  src: url('/fonts/atkinson-regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'Poppins Regular';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
   font-display: swap;
 }
+
 @font-face {
-  font-family: 'Atkinson';
-  src: url('/fonts/atkinson-bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
+  font-family: 'Poppins Regular';
+  src: url('/fonts/Calibre-Medium.woff2') format('truetype');
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('/fonts/SFMono-Regular.woff2') format('truetype');
+  font-display: swap;
+}
+
 body {
-  font-family: 'Atkinson', sans-serif;
+  font-family: 'Poppins Regular', 'Helvetica', 'Arial', sans-serif;
+  background-color: #fff;
+  color: var(--color-greeny-900);
+  font-size: 18px;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
-  text-align: left;
-  background: linear-gradient(var(--gray-gradient)) no-repeat;
-  background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  color: rgb(var(--gray-dark));
-  font-size: 20px;
-  line-height: 1.7;
 }
+
+/* ============================= */
+/* 2. Color Variables (Greeny Theme) */
+/* ============================= */
+:root {
+  --accent: var(--color-greeny-400);
+  --accent-dark: var(--color-greeny-600);
+  --background-start: #eaf5f4;
+  --background-end: #ffffff;
+  --text-primary: #154f48;
+  --text-secondary: #264653;
+  --gray-light: #f0f4f8;
+  --gray-dark: #6b7280;
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================= */
+/* 3. Layout and Containers */
+/* ============================= */
 main {
-  width: 720px;
-  max-width: calc(100% - 2em);
-  margin: auto;
+  max-width: 820px;
+  margin: 0 auto;
   padding: 3em 1em;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: 12px;
 }
+
+/* ============================= */
+/* 4. Typography */
+/* ============================= */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 0.5rem 0;
-  color: rgb(var(--black));
-  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: 'Calibre Medium', sans-serif;
+  margin: 0 0 1em 0;
 }
+
 h1 {
-  font-size: 3.052em;
+  font-size: 2.8em;
 }
 h2 {
-  font-size: 2.441em;
+  font-size: 2.2em;
 }
 h3 {
-  font-size: 1.953em;
+  font-size: 1.8em;
 }
 h4 {
-  font-size: 1.563em;
+  font-size: 1.4em;
 }
-h5 {
-  font-size: 1.25em;
+
+p {
+  font-size: 1.125em;
+  color: var(--text-secondary);
+  margin-bottom: 1.5em;
+  line-height: 1.8;
 }
-strong,
-b {
-  font-weight: 700;
-}
+
+/* ============================= */
+/* 5. Links and Buttons */
+/* ============================= */
 a {
   color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
 }
+
 a:hover {
-  color: var(--accent);
+  color: var(--accent-dark);
+  text-decoration: underline;
 }
-p {
-  margin-bottom: 1em;
+
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Poppins Regular';
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-.prose p {
-  margin-bottom: 2em;
+
+button:hover {
+  background-color: var(--accent-dark);
 }
-textarea {
-  width: 100%;
-  font-size: 16px;
-}
-input {
-  font-size: 16px;
-}
-table {
-  width: 100%;
-}
+
+/* ============================= */
+/* 6. Images and Media */
+/* ============================= */
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-}
-code {
-  padding: 2px 5px;
-  background-color: rgb(var(--gray-light));
-  border-radius: 2px;
-}
-pre {
-  padding: 1.5em;
-  border-radius: 8px;
-}
-pre > code {
-  all: unset;
-}
-blockquote {
-  border-left: 4px solid var(--accent);
-  padding: 0 0 0 20px;
-  margin: 0px;
-  font-size: 1.333em;
-}
-hr {
-  border: none;
-  border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
-  }
-  main {
-    padding: 1em;
-  }
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
 }
 
-.sr-only {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px 1px 1px 1px);
-  /* maybe deprecated but we need to support legacy browsers */
-  clip: rect(1px, 1px, 1px, 1px);
-  /* modern browsers, clip-path works inwards from each corner */
-  clip-path: inset(50%);
-  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-  white-space: nowrap;
+video {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* ============================= */
+/* 7. Code Blocks and Preformatted */
+/* ============================= */
+code {
+  background-color: var(--gray-light);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: 'SF Mono Regular';
+  color: var(--text-primary);
+}
+
+pre {
+  padding: 1.5em;
+  background-color: #f6f8fa;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+/* ============================= */
+/* 8. Blockquotes */
+/* ============================= */
+blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 10px 20px;
+  margin: 20px 0;
+  background-color: var(--gray-light);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* ============================= */
+/* 9. Forms and Inputs */
+/* ============================= */
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-dark);
+  background-color: var(--gray-light);
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 5px rgba(42, 157, 143, 0.5);
+}
+
+/* ============================= */
+/* 10. Footer */
+/* ============================= */
+footer {
+  text-align: center;
+  padding: 2em 0;
+  color: var(--gray-dark);
+  background-color: var(--background-start);
+  margin-top: 3em;
+}
+
+/* ============================= */
+/* 11. Responsive Adjustments */
+/* ============================= */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  main {
+    padding: 1.5em;
+    box-shadow: none;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
 }
