@@ -16,7 +16,7 @@ export default function Paragraph({ children, markDefs = [], className = '', bol
       if (index % 2 === 0) {
         return (
           <span
-            key={index}
+            key={`paragraph-bold-${index}`}
             className={`text-lg font-poppins-semi-bold ${textTheme.bodyFont} ${textTheme.bodyText} ${boldClass}`}
           >
             {part}
@@ -75,30 +75,30 @@ export default function Paragraph({ children, markDefs = [], className = '', bol
   const renderChildren = (children) => {
     return children && Array.isArray(children)
       ? children.map((child, index) => {
-          if (typeof child === 'string') {
-            // If it's a string, render it as plain text
-            return <React.Fragment key={index}>{child}</React.Fragment>
-          } else if (React.isValidElement(child)) {
-            // If it's a React element, render it as is
-            return <React.Fragment key={index}>{child}</React.Fragment>
-          } else if (Array.isArray(child)) {
-            // If it's an array, recursively render its children
-            return <React.Fragment key={index}>{renderChildren(child)}</React.Fragment>
-          } else if (child != null) {
-            if (child.marks) {
-              // Handle marks (e.g., "strong", "italic", "link")
-              if (child.marks.includes('strong')) {
-                return extractBoldText(child.text, boldClassName)
-              } else if (child.marks.includes('em')) {
-                return extractItalicText(child.text)
-              } else if (child.marks.length > 0 && markDefs && markDefs.length > 0) {
-                // Check for links
-                return extractLinkText(child.text, child.marks, markDefs)
-              }
+        if (typeof child === 'string') {
+          // If it's a string, render it as plain text
+          return <React.Fragment key={index}>{child}</React.Fragment>
+        } else if (React.isValidElement(child)) {
+          // If it's a React element, render it as is
+          return <React.Fragment key={index}>{child}</React.Fragment>
+        } else if (Array.isArray(child)) {
+          // If it's an array, recursively render its children
+          return <React.Fragment key={index}>{renderChildren(child)}</React.Fragment>
+        } else if (child != null) {
+          if (child.marks) {
+            // Handle marks (e.g., "strong", "italic", "link")
+            if (child.marks.includes('strong')) {
+              return extractBoldText(child.text, boldClassName)
+            } else if (child.marks.includes('em')) {
+              return extractItalicText(child.text)
+            } else if (child.marks.length > 0 && markDefs && markDefs.length > 0) {
+              // Check for links
+              return extractLinkText(child.text, child.marks, markDefs)
             }
-            return child.text
           }
-        })
+          return child.text
+        }
+      })
       : children
   }
 

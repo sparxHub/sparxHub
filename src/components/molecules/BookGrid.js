@@ -7,7 +7,7 @@ function BookGrid({ items }) {
       {items.map((book, index) => {
         const imageSrc = getImageSrc(null, book.image)
         return (
-          <div key={index} className="flex flex-col items-center">
+          <div key={`book-grid-item-${index}`} className="flex flex-col items-center">
             <div className="relative w-32 h-48 md:w-40 md:h-60">
               <Image
                 src={imageSrc}
