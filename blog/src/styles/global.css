@@ -23,8 +23,8 @@
 
 body {
   font-family: 'Poppins Regular', 'Helvetica', 'Arial', sans-serif;
-  background-color: #fff;
-  color: var(--color-greeny-900);
+  background-color: #ffffe3; /* Ivory lightest */
+  color: #36313d; /* Onyx for text */
   font-size: 18px;
   line-height: 1.7;
   margin: 0;
@@ -34,30 +34,84 @@ body {
 }
 
 /* ============================= */
-/* 2. Color Variables (Greeny Theme) */
+/* 2. Color Variables */
 /* ============================= */
 :root {
-  --accent: var(--color-greeny-400);
-  --accent-dark: var(--color-greeny-600);
-  --background-start: #eaf5f4;
-  --background-end: #ffffff;
-  --text-primary: #154f48;
-  --text-secondary: #264653;
-  --gray-light: #f0f4f8;
-  --gray-dark: #6b7280;
+  --background-start: #ffffe3; /* Ivory lightest */
+  --background-end: #dbdbc3; /* Ivory lighter */
+  --text-primary: #36313d; /* Onyx for headings */
+  --text-secondary: #4a4a31; /* Ivory darkest for secondary text */
+  --gray-light: #dbdbc3; /* Ivory lighter */
+  --gray-dark: #4a4a31; /* Ivory darkest */
   --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1);
+  --accent: #8a8a7b; /* Ivory medium for accents */
+  --accent-dark: #4a4a31; /* Ivory darkest for hover states */
 }
 
 /* ============================= */
 /* 3. Layout and Containers */
 /* ============================= */
 main {
-  max-width: 820px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3em 1em;
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  border-radius: 12px;
+  padding: 20px;
+  background-color: #ffffe3;
+}
+
+@media (max-width: 1280px) {
+  main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 10px;
+  }
+}
+
+.info-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875em;
+}
+
+.info-line .formatted-date {
+  display: flex;
+  align-items: center;
+}
+
+.info-line .tags {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  padding: 0;
+}
+
+.info-line .tags li {
+  background-color: var(--gray-light);
+  border-radius: 5px;
+  padding: 2px 8px;
+}
+
+.info-line .read-time {
+  font-style: italic;
+}
+
+.description {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.hero-image {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.content {
+  padding: 20px;
 }
 
 /* ============================= */
@@ -72,19 +126,6 @@ h6 {
   color: var(--text-primary);
   font-family: 'Calibre Medium', sans-serif;
   margin: 0 0 1em 0;
-}
-
-h1 {
-  font-size: 2.8em;
-}
-h2 {
-  font-size: 2.2em;
-}
-h3 {
-  font-size: 1.8em;
-}
-h4 {
-  font-size: 1.4em;
 }
 
 p {

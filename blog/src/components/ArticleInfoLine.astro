@@ -1,0 +1,71 @@
+---
+// Import Font Awesome icons
+import { FaRegCalendarAlt, FaRegClock } from 'react-icons/fa';
+import FormattedDate from './FormattedDate.astro';
+---
+<div class="info-line">
+    <span class="date">
+        <FaRegCalendarAlt client:load />
+        <FormattedDate date={Astro.props.pubDate} />
+    </span>
+    <ul class="tags">
+        {Astro.props.tags && Astro.props.tags.slice(0, 5).map((tag: string) => <li>{tag}</li>)}
+    </ul>
+    <span class="read-time">
+        <FaRegClock client:load />
+        {Astro.props.readTime}
+    </span>
+</div>
+
+<style>
+    .info-line {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.875em;
+        margin-bottom: 20px;
+    }
+
+    .info-line .date, .info-line .read-time {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .info-line .tags {
+        list-style: none;
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .info-line .tags li {
+        background-color: var(--background-end);
+        border-radius: 5px 15px 5px 15px;
+        padding: 2px 8px;
+        white-space: nowrap;
+    }
+
+    .info-line .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    @media (max-width: 480px) {
+        .info-line {
+            justify-content: space-between;
+        }
+
+        .info-line .date, .info-line .read-time {
+            flex-basis: 100%;
+            justify-content: center;
+        }
+
+        .info-line .tags {
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+</style>

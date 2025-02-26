@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
+import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,7 +9,7 @@ export default defineConfig({
   // base: '/blog/',  // Ensures all paths start with /blog/
   outDir: '../out/blog/', // Ensure Astro outputs to the correct folder
   output: 'static', // Generate static site
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), react()],
   assetsInclude: ['**/*.woff2', '**/*.woff', '**/*.ttf'],
   build: {
     // assets: '/blog/',  // Ensures assets like images and scripts are resolved correctly
