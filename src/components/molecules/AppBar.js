@@ -55,7 +55,7 @@ const AppBar = ({ sections }) => {
           {/* Dynamic Links */}
           {sections.map((section, index) => (
             <a
-              key={section.id}
+              key={`app-bar-link-${section.id}`}
               href={`#${section.id}`}
               onClick={handleMenuItemClick} // Close menu after clicking
               className="text-gray-700 font-poppins cursor-pointer py-1 sm:py-0 flex items-center hover:text-yellow-500"

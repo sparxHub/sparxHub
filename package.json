@@ -40,6 +40,7 @@
     "test": "echo \"No tests yet\" && exit 0"
   },
   "dependencies": {
+    "@astrojs/react": "^4.2.0",
     "@heroicons/react": "^2.0.18",
     "autoprefixer": "10.4.15",
     "dotenv": "^16.3.1",
@@ -49,9 +50,9 @@
     "next": "^15.1.7",
     "node-fetch": "^3.3.2",
     "postcss": "^8.4.35",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-icons": "^5.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-loading-skeleton": "^3.3.1",
     "styled-components": "^6.1.1",
     "tailwind-safelist-generator": "^1.0.0",

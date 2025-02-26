@@ -1,5 +1,4 @@
 // components/Header.js
-
 function Header(props) {
   const {
     title = 'Nadav Daniel - Entrepreneur & Full Stack Developer',
@@ -14,6 +13,20 @@ function Header(props) {
     ogImageLarge = '/og-image-summary.jpg',
     twitterCard = 'summary_large_image',
   } = props
+
+  // Structured Data (JSON-LD)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nadav Daniel",
+    "jobTitle": "Entrepreneur & Full Stack Developer",
+    "url": url,
+    "sameAs": [
+      "https://www.linkedin.com/in/nadav-daniel-0a309150/",
+      "https://github.com/sparxHub"
+    ],
+    "description": "A tech entrepreneur specializing in full-stack development and creating business-driven digital solutions."
+  };
 
   return (
     <>
@@ -48,23 +61,12 @@ function Header(props) {
       <meta name="apple-mobile-web-app-title" content="Nadav Daniel Portfolio" />
 
       {/* Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Person',
-          name: 'Nadav Daniel',
-          jobTitle: 'Entrepreneur & Full Stack Developer',
-          url: 'https://nadav-daniel.com',
-          sameAs: [
-            'https://www.linkedin.com/in/nadav-daniel-0a309150/',
-            'https://github.com/sparxHub',
-          ],
-          description:
-            'A tech entrepreneur specializing in full-stack development and creating business-driven digital solutions.',
-        })}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   )
 }
 
-export default Header
+export default Header;

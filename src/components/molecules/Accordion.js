@@ -32,12 +32,11 @@ export function Accordion({ tabs }) {
           className="flex overflow-x-auto sm:flex-col sm:overflow-visible w-full sm:w-48 py-4"
         >
           {tabs.map((tab, idx) => (
-            <li key={idx} className={`mb-4 ${isMobile ? 'shrink-0' : ''}`}>
+            <li key={`accordion-nav-${idx}`} className={`mb-4 ${isMobile ? 'shrink-0' : ''}`}>
               <button
                 onClick={() => setActiveTab(idx)}
-                className={`px-4 py-2 ${
-                  isMobile ? 'whitespace-nowrap' : 'w-full text-left'
-                } ${activeTab === idx ? 'bg-blue-200' : ''}`}
+                className={`px-4 py-2 ${isMobile ? 'whitespace-nowrap' : 'w-full text-left'
+                  } ${activeTab === idx ? 'bg-blue-200' : ''}`}
               >
                 {tab.title}
               </button>
@@ -50,10 +49,9 @@ export function Accordion({ tabs }) {
       <div className="flex-1 p-8">
         {tabs.map((tab, idx) => (
           <div
-            key={idx}
-            className={`transition-opacity duration-300 ${
-              activeTab === idx ? 'opacity-100' : 'opacity-0 hidden'
-            }`}
+            key={`accordion-panel-${idx}`}
+            className={`transition-opacity duration-300 ${activeTab === idx ? 'opacity-100' : 'opacity-0 hidden'
+              }`}
           >
             <h4 className="mb-4 font-bold">{tab.jobTitle}</h4>
             <h5 className="mb-4 text-gray-500">{tab.jobDetails}</h5>
