@@ -45,6 +45,18 @@
         "heroImage": {
           "type": "string"
         },
+        "readTime": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "draft": {
+          "type": "boolean"
+        },
         "$schema": {
           "type": "string"
         }
