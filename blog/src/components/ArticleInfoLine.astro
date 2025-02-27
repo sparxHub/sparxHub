@@ -1,18 +1,18 @@
 ---
-// Import Font Awesome icons
-import { FaRegCalendarAlt, FaRegClock } from 'react-icons/fa';
+import { CalendarIcon, ClockIcon } from '../react-components/IconWrapper.jsx';
 import FormattedDate from './FormattedDate.astro';
 ---
+
 <div class="info-line">
     <span class="date">
-        <FaRegCalendarAlt client:load />
+        <CalendarIcon client:load />
         <FormattedDate date={Astro.props.pubDate} />
     </span>
     <ul class="tags">
         {Astro.props.tags && Astro.props.tags.slice(0, 5).map((tag: string) => <li>{tag}</li>)}
     </ul>
     <span class="read-time">
-        <FaRegClock client:load />
+        <ClockIcon client:load />
         {Astro.props.readTime}
     </span>
 </div>
