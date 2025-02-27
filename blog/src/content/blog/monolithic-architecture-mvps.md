@@ -2,7 +2,7 @@
 title: Monolithic Architecture for MVPs
 description: Explore why monolithic architecture is ideal for developing Minimum Viable Products (MVPs) with insights into speed, scalability, and integration with hexagonal architecture.
 pubDate: 'Jan 01 2025'
-heroImage: monolithic-architecture-mvp.jpg
+heroImage: /blog/monolithic-architecture-mvp.jpg
 readTime: '14 minutes read'
 tags: ['architecture', 'monolithic', 'MVP', 'hexagonal', 'microservices', 'ports-and-adapters']
 ---
