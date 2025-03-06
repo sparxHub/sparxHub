@@ -247,14 +247,31 @@
       }
     ],
     "skills": [
-      "JavaScript (ES6+)",
-      "React",
-      "Node.js",
       "TypeScript",
-      "AWS",
+      "JavaScript",
+      "React.js",
+      "Vue.js",
+      "Node.js",
+      "Express.js",
+      "Next.js",
+      "Tailwind CSS",
       "Docker",
+      "AWS",
       "MongoDB",
-      "Flutter"
+      "Redis",
+      "RabbitMQ",
+      "REST APIs",
+      "OAuth",
+      "Microservices",
+      "Flutter",
+      "Swift",
+      "Objective-C",
+      "Python",
+      "MySQL",
+      "GraphQL",
+      "Kubernetes",
+      "GitHub Actions",
+      "WebSockets"
     ],
     "socialLinks": [
       {
