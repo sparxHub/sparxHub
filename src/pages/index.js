@@ -16,6 +16,8 @@ import ProfileImage from '@components/components/molecules/ProfileImage'
 import LoadingGauge from '@components/components/molecules/LoadingGauge'
 import { FaGithub, FaSmileBeam, FaLaughWink } from 'react-icons/fa'
 import { trackPageView, trackEvent } from '@utils/analytics'
+import * as outlineIcons from '@heroicons/react/24/outline'
+import TechItem from '@components/components/atoms/TecItem'
 
 // images
 import { getImageSrc, customLoader, isExportMode } from '@utils/imageUtils'
@@ -283,7 +285,7 @@ function Home() {
             variants={sectionVariants}
           >
             <div className="hidden lg:block lg:col-span-1"></div>
-            <div className="flex flex-col items-start justify-start lg:col-span-6">
+            <div className="flex flex-col items-start justify-start lg:col-span-7">
               <SectionTitle number={1} title="About Me" />
               <div className="pt-4 space-y-6">
                 {aboutData.content.map((paragraph, paragraphIndex) => (
@@ -324,20 +326,20 @@ function Home() {
               </div>
               {/* Technologies Section */}
               <div className="mt-6">
-                <h3 className="text-lg font-semibold text-gray-700 mb-2">Technologies:</h3>
-                <ul className="grid grid-cols-2 gap-4 list-disc list-inside">
-                  {aboutData.skills.map((skill, index) => (
-                    <li key={`about-skill-${index}`} className="text-gray-600">
-                      {skill}
-                    </li>
+                <h3 className="text-lg font-semibold text-gray-700 mb-4">Technologies</h3>
+                <div className="flex flex-wrap gap-2">
+                  {aboutData.skills.map((skill) => (
+                    <TechItem key={skill} skill={skill} />
                   ))}
-                </ul>
+                </div>
               </div>
+
             </div>
             {/* ProfileImage Container */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end items-start">
+            <div className="lg:col-span-4 flex justify-center lg:justify-end items-start">
               <ProfileImage />
             </div>
+
             {/* Spacer */}
             <div className="md:col-span-12 flex-grow min-h-[5rem]"></div>
           </motion.section>

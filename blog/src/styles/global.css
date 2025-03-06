@@ -101,7 +101,9 @@ main {
 }
 
 .description {
-  font-size: 2em;
+  font-size: 2.8em;
+  font-weight: 300;
+  max-width: 900px;
   margin-top: 20px;
 }
 
