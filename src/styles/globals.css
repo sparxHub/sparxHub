@@ -213,3 +213,7 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.clip-trapezoid {
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
