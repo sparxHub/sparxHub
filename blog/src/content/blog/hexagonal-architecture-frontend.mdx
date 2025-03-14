@@ -1,0 +1,236 @@
+---
+title: 'Hexagonal Architecture in the Frontend: A Real Case Study'
+description: 'Explore how hexagonal architecture, decoupling, and dependency injection improve frontend maintainability and flexibility.'
+pubDate: 'Mar 14 2025'
+heroImage: '/blog/hexagonal-frontend.jpg'
+readTime: '14 minutes'
+tags: ['frontend', 'architecture', 'hexagonal', 'dependency injection']
+---
+
+import BlockBold from '/src/components/BlockBold.astro'
+
+Hexagonal architecture is a design pattern that enforces **separation of concerns**, ensuring that the **business logic** (domain) remains **independent of external systems**. By using **ports and adapters**, applications can interact with external dependencies in a structured manner, increasing maintainability and testability.
+
+This approach is not limited to backend development—**frontend applications** also benefit significantly, especially in cases where multiple data sources exist. This article walks through a **real-world use case** where **hexagonal architecture**, **repository patterns**, and **dependency injection** helped solve maintainability issues in a frontend system.
+
+## Understanding Hexagonal Architecture in the Frontend
+
+### Ports and Adapters: The Core Concept
+
+At the heart of **hexagonal architecture** lies the **separation between core business logic and external concerns**:
+
+- **Ports:** Interfaces that define how external components should interact with the core.
+- **Adapters:** Implementations of these interfaces that connect the core to various external systems.
+
+<BlockBold>
+  The key idea is that the **core remains agnostic** to external implementations, enabling easy
+  replacement or modification of adapters without affecting the business logic.
+</BlockBold>
+
+### A Real-World Case: The Initial Context
+
+A company developed a **single-page web application (SPA)** used by multiple clients (tenants). This frontend **relied on a backend API** to fetch menu data, structured as follows:
+
+```json title="Legacy Backend Response"
+{
+  "title": "Main Menu",
+  "id": "main",
+  "is_staff": false,
+  "items": [
+    {
+      "title": "Home",
+      "url": "/",
+      "is_staff": false
+    },
+    {
+      "title": "Dashboards",
+      "id": "dashboards",
+      "items": [
+        {
+          "title": "Config 🚫",
+          "url": "/dashboards-config",
+          "is_staff": true
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Issues with the Initial Architecture
+
+1. **Tightly Coupled Data Structures**
+
+   - The frontend was **directly dependent on backend data structures**.
+   - Any changes in the backend **required modifications in multiple places** in the frontend.
+
+2. **Redundant Business Logic in the UI**
+
+   - The frontend **added logic to determine staff-only items** by checking `is_staff` and modifying UI elements accordingly.
+   - Business rules should reside **in the domain**, not in the UI.
+
+3. **Visual Elements Defined by the Backend**
+   - The backend **dictated UI-specific concerns**, such as which icons to display.
+   - This violated **separation of concerns** since UI decisions should belong **exclusively to the frontend**.
+
+## The Challenge: A New Backend with a Different Structure
+
+The company introduced **a new backend (v2)** that offered **the same menu functionality** but used a **completely different response structure**:
+
+```json title="New Backend Response (v2)"
+[
+  {
+    "menuId": 12,
+    "menuName": "Dashboards",
+    "menuItemId": 9,
+    "menuItemTitle": "Config",
+    "menuItemStateId": 1,
+    "menuItemLink": "/dashboards-config"
+  }
+]
+```
+
+### The Complexity of Supporting Two Backends
+
+- **The new backend wasn’t retro-compatible**.
+- Some clients would continue using the **legacy backend**, while others migrated to **v2**.
+- Maintaining **separate frontend implementations for each backend** would lead to **code duplication and increased maintenance costs**.
+
+## The Solution: Decoupling the Frontend from Backend-Specific Data
+
+### Step 1: Define a Unified Domain Model
+
+Instead of tying frontend components to **backend-specific structures**, a **domain model** was introduced:
+
+```ts title="Menu Entities"
+type State = 'disabled' | 'only_for_staff' | 'open'
+
+class Menu {
+  constructor(values: MenuDto) {
+    this.id = values.id
+    this.title = values.title
+    this.state = values.state
+    this.children = values.children
+  }
+
+  get onlyForStaff(): boolean {
+    return this.state === 'only_for_staff'
+  }
+}
+
+class MenuItem {
+  constructor(values: MenuItemDto) {
+    this.id = values.id
+    this.title = values.title
+    this.url = values.url
+    this.state = values.state
+  }
+
+  get isExternal(): boolean {
+    return this.url.includes('http')
+  }
+}
+```
+
+<BlockBold>
+  By **modeling the menu as a domain entity**, the frontend can remain **agnostic** to backend
+  response structures.
+</BlockBold>
+
+### Step 2: Introduce a Port for Data Fetching
+
+To enforce **separation of concerns**, a **repository interface (port)** was defined:
+
+```ts title="Port Definition"
+interface MenuRepo {
+  getMainMenu(states: State[]): Promise<(MenuItem | Menu)[]>
+}
+```
+
+### Step 3: Implement Adapters for Each Backend
+
+Each backend now had **its own adapter**, responsible for **transforming backend-specific responses into domain models**.
+
+#### Legacy Backend Adapter
+
+```ts title="Legacy Backend Adapter"
+class LegacyMenuRepo implements MenuRepo {
+  async getMainMenu(states: State[]): Promise<(MenuItem | Menu)[]> {
+    const response = await fetch('tenant.company.com/get_menu')
+    const backendMenu = await response.json()
+
+    return backendMenu.items.map((item) => this.responseToEntity(item))
+  }
+
+  private responseToEntity(data: any): Menu | MenuItem {
+    return new MenuItem({ id: data.id, title: data.title, url: data.url })
+  }
+}
+```
+
+#### New Backend (v2) Adapter
+
+```ts title="New Backend Adapter"
+const stateMappings: Record<number, State> = {
+  1: 'only_for_staff',
+  2: 'open',
+}
+
+class V2MenuRepo implements MenuRepo {
+  async getMainMenu(states: State[]): Promise<(MenuItem | Menu)[]> {
+    const response = await fetch('menu.company.com/company/get', {
+      params: { menuItemStateId: states.map((state) => stateMappings[state]) },
+    })
+    const backendMenu = await response.json()
+
+    return backendMenu.map((item) => this.responseToEntity(item))
+  }
+
+  private responseToEntity(data: any): MenuItem {
+    return new MenuItem({
+      id: data.menuItemId,
+      title: data.menuItemTitle,
+      url: data.menuItemLink,
+      state: stateMappings[data.menuItemStateId],
+    })
+  }
+}
+```
+
+## Step 4: Dependency Injection for Backend Selection
+
+Instead of **hardcoding backend implementations**, **dependency injection** was used to determine which adapter should be used dynamically:
+
+```ts title="Dependency Injection for Repositories"
+function createMenuRepo(clientId: string): MenuRepo {
+  return ['client123', 'client34'].includes(clientId) ? new V2MenuRepo() : new LegacyMenuRepo()
+}
+
+const menuRepo = createMenuRepo('client123')
+menuRepo.getMainMenu(['open', 'only_for_staff'])
+```
+
+## Summary: The Power of Hexagonal Architecture in the Frontend
+
+By applying **hexagonal architecture, dependency injection, and the repository pattern**, the frontend was successfully decoupled from backend-specific structures. The benefits included:
+
+✅ **No need to modify UI logic when backend structures change.**
+✅ **A unified interface for fetching menu data, regardless of backend differences.**
+✅ **Easier testing and maintainability with isolated adapters.**
+✅ **Future flexibility: Additional backends can be supported with new adapters.**
+
+<BlockBold>
+  This approach enabled a **smooth transition between multiple backends** without modifying the core
+  frontend components.
+</BlockBold>
+
+By designing frontend applications with **separation of concerns in mind**, teams can achieve **greater maintainability, flexibility, and long-term scalability**.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/4C4MIKYnVNQ"
+  title="YouTube video: Hexagonal Architecture for Frontend Development"
+  frameborder="0"
+  allowfullscreen
+></iframe>

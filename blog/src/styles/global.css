@@ -5,19 +5,19 @@
 /* ============================= */
 @font-face {
   font-family: 'Poppins Regular';
-  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  src: url('/blog/fonts/Poppins-Regular.ttf') format('truetype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins Regular';
-  src: url('/fonts/Calibre-Medium.woff2') format('truetype');
+  src: url('/blog/fonts/Calibre-Medium.woff2') format('truetype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins Regular';
-  src: url('/fonts/SFMono-Regular.woff2') format('truetype');
+  src: url('/blog/fonts/SFMono-Regular.woff2') format('truetype');
   font-display: swap;
 }
 
@@ -260,4 +260,39 @@ footer {
   h1 {
     font-size: 2.2em;
   }
+}
+
+/* Blog globals.css - Unified with Personal Site */
+
+/* Table Styling for MDX content */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--background-end); /* Light ivory background for the table */
+  color: var(--text-primary); /* Onyx text for readability */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+th,
+td {
+  padding: 0.8em; /* Spacious padding for readability */
+  border: 1px solid var(--gray-dark); /* Subtle borders for cell definition */
+  text-align: left;
+  vertical-align: middle; /* Align content in the middle vertically */
+}
+
+th {
+  background-color: var(--accent); /* Accent color for headers */
+  color: white; /* White text for contrast */
+  font-size: 1.1em; /* Slightly larger font for headers */
+}
+
+tr:nth-child(even) {
+  background-color: var(--background-start); /* Alternating row colors for better readability */
+}
+
+tr:hover {
+  background-color: var(--accent-dark); /* Darker accent color on row hover for interactivity */
+  color: white; /* Ensure text contrasts well on hover */
 }

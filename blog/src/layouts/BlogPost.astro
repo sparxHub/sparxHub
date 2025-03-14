@@ -6,6 +6,8 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import ArticleInfoLine from '../components/ArticleInfoLine.astro';
 
+
+
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, tags, readTime } = Astro.props;

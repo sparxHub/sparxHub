@@ -1,0 +1,21 @@
+---
+// No imports or additional props needed here unless you need dynamic data
+---
+<blockquote>
+  <slot></slot>
+</blockquote>
+<style>
+  blockquote {
+    margin: 0 0 1.1em;
+    box-shadow: var(--accent-dark) -7px 0 0 0; /* Adjust primary color in your CSS variables */
+    background-color: var(--gray-light); /* Adjust secondary color in your CSS variables */
+    border-radius: 5px;
+    padding: 15px 20px;
+    color: var(--primary-color); /* Ensure primary color is set in your CSS variables */
+    font-weight: bold;
+  }
+
+  blockquote, q {
+    quotes: none;
+  }
+</style>

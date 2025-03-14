@@ -1,0 +1,33 @@
+---
+const { htmlContent } = Astro.props;
+const renderedHtml = await Astro.slots.render('default', [htmlContent]);
+---
+
+<Fragment set:html={renderedHtml} />
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th, td {
+    border: 1px solid #cccccc;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+  }
+  th {
+    background-color: #005792;
+    color: white;
+    font-weight: bold;
+  }
+  tr:nth-child(odd) td {
+    background-color: #f4f4f4;
+  }
+  tr:hover {
+    background-color: #f1f7ff;
+  }
+</style>
