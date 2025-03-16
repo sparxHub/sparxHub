@@ -1,236 +1,242 @@
 ---
-title: 'Hexagonal Architecture in the Frontend: A Real Case Study'
-description: 'Explore how hexagonal architecture, decoupling, and dependency injection improve frontend maintainability and flexibility.'
-pubDate: 'Mar 14 2025'
-heroImage: '/blog/hexagonal-frontend.jpg'
-readTime: '14 minutes'
-tags: ['frontend', 'architecture', 'hexagonal', 'dependency injection']
+title: 'Hexagonal Architecture: A Backend Approach for Scalable Systems'
+description: 'How Hexagonal Architecture enables backend decoupling, flexibility, and maintainability—with a payment system as an example.'
+pubDate: 'Mar 02 2024'
+heroImage: '/blog/images/hive_hero.jpg'
+readTime: '12 minutes'
+tags: ['hexagonal architecture', 'Node.js', 'TypeScript', 'backend', 'design patterns']
 ---
 
 import BlockBold from '/src/components/BlockBold.astro'
 
-Hexagonal architecture is a design pattern that enforces **separation of concerns**, ensuring that the **business logic** (domain) remains **independent of external systems**. By using **ports and adapters**, applications can interact with external dependencies in a structured manner, increasing maintainability and testability.
+Modern backend systems need to be **scalable, maintainable, and adaptable**. Whether handling **payments, user authentication, or database access**, a well-structured architecture **separates business logic from infrastructure**, making the system **flexible** and **easy to evolve**.
 
-This approach is not limited to backend development—**frontend applications** also benefit significantly, especially in cases where multiple data sources exist. This article walks through a **real-world use case** where **hexagonal architecture**, **repository patterns**, and **dependency injection** helped solve maintainability issues in a frontend system.
-
-## Understanding Hexagonal Architecture in the Frontend
-
-### Ports and Adapters: The Core Concept
-
-At the heart of **hexagonal architecture** lies the **separation between core business logic and external concerns**:
-
-- **Ports:** Interfaces that define how external components should interact with the core.
-- **Adapters:** Implementations of these interfaces that connect the core to various external systems.
+One of the best approaches to achieve this is **Hexagonal Architecture**, also known as **Ports and Adapters**.
 
 <BlockBold>
-  The key idea is that the **core remains agnostic** to external implementations, enabling easy
-  replacement or modification of adapters without affecting the business logic.
+  Hexagonal Architecture ensures that your core business logic is independent of databases, APIs, or
+  external services, making your system future-proof.
 </BlockBold>
 
-### A Real-World Case: The Initial Context
+---
 
-A company developed a **single-page web application (SPA)** used by multiple clients (tenants). This frontend **relied on a backend API** to fetch menu data, structured as follows:
+## 🚀 The Problem: Rigid and Fragile Backend Systems
 
-```json title="Legacy Backend Response"
-{
-  "title": "Main Menu",
-  "id": "main",
-  "is_staff": false,
-  "items": [
-    {
-      "title": "Home",
-      "url": "/",
-      "is_staff": false
-    },
-    {
-      "title": "Dashboards",
-      "id": "dashboards",
-      "items": [
-        {
-          "title": "Config 🚫",
-          "url": "/dashboards-config",
-          "is_staff": true
-        }
-      ]
-    }
-  ]
+Imagine a backend system that processes **payments**. Initially, it only supports **Stripe**. Over time, new requirements emerge:
+
+- A client requests **PayPal** integration.
+- A different region requires **local bank payments**.
+- Future expansion demands **Apple Pay or cryptocurrency** support.
+
+If the system is **tightly coupled** to Stripe, these changes require **major refactoring**, increasing costs and complexity.
+
+This problem isn't limited to payments—it happens with **databases**, **messaging systems**, and **third-party APIs**.
+
+---
+
+## 🛠️ What is Hexagonal Architecture?
+
+Hexagonal Architecture **decouples business logic** from external dependencies using **Ports and Adapters**.
+
+### 🏗️ The Key Components:
+
+1️⃣ **Core Domain (Business Logic)** – The heart of the application.  
+2️⃣ **Ports (Interfaces)** – Define how external services interact with the core.  
+3️⃣ **Adapters (Implementations)** – Handle actual integration with external services.
+
+Think of **a power outlet** (port) that accepts **different chargers** (adapters) without changing the electrical system (core).
+
+---
+
+## 🎯 Applying Hexagonal Architecture (Using Payments as an Example)
+
+Let’s see how Hexagonal Architecture applies in a **backend system** with **payments as an example**.
+
+### 1️⃣ Business Logic Stays Independent
+
+The **core domain** doesn't care **how** a payment is processed. It only defines **what** a payment provider must do.
+
+```ts title="ports/PaymentProvider.ts"
+export interface PaymentProvider {
+  charge(amount: number, currency: string): Promise<string>
 }
 ```
 
-### Issues with the Initial Architecture
+This is a **Port**—it defines a contract for any **payment provider**.
 
-1. **Tightly Coupled Data Structures**
+---
 
-   - The frontend was **directly dependent on backend data structures**.
-   - Any changes in the backend **required modifications in multiple places** in the frontend.
+### 2️⃣ External Services are Plugged in Using Adapters
 
-2. **Redundant Business Logic in the UI**
+Each **adapter** implements the `PaymentProvider` interface.
 
-   - The frontend **added logic to determine staff-only items** by checking `is_staff` and modifying UI elements accordingly.
-   - Business rules should reside **in the domain**, not in the UI.
+#### ✅ Stripe Adapter:
 
-3. **Visual Elements Defined by the Backend**
-   - The backend **dictated UI-specific concerns**, such as which icons to display.
-   - This violated **separation of concerns** since UI decisions should belong **exclusively to the frontend**.
+```ts title="adapters/StripeAdapter.ts"
+import { PaymentProvider } from '../ports/PaymentProvider'
 
-## The Challenge: A New Backend with a Different Structure
-
-The company introduced **a new backend (v2)** that offered **the same menu functionality** but used a **completely different response structure**:
-
-```json title="New Backend Response (v2)"
-[
-  {
-    "menuId": 12,
-    "menuName": "Dashboards",
-    "menuItemId": 9,
-    "menuItemTitle": "Config",
-    "menuItemStateId": 1,
-    "menuItemLink": "/dashboards-config"
-  }
-]
-```
-
-### The Complexity of Supporting Two Backends
-
-- **The new backend wasn’t retro-compatible**.
-- Some clients would continue using the **legacy backend**, while others migrated to **v2**.
-- Maintaining **separate frontend implementations for each backend** would lead to **code duplication and increased maintenance costs**.
-
-## The Solution: Decoupling the Frontend from Backend-Specific Data
-
-### Step 1: Define a Unified Domain Model
-
-Instead of tying frontend components to **backend-specific structures**, a **domain model** was introduced:
-
-```ts title="Menu Entities"
-type State = 'disabled' | 'only_for_staff' | 'open'
-
-class Menu {
-  constructor(values: MenuDto) {
-    this.id = values.id
-    this.title = values.title
-    this.state = values.state
-    this.children = values.children
-  }
-
-  get onlyForStaff(): boolean {
-    return this.state === 'only_for_staff'
-  }
-}
-
-class MenuItem {
-  constructor(values: MenuItemDto) {
-    this.id = values.id
-    this.title = values.title
-    this.url = values.url
-    this.state = values.state
-  }
-
-  get isExternal(): boolean {
-    return this.url.includes('http')
+export class StripeAdapter implements PaymentProvider {
+  async charge(amount: number, currency: string): Promise<string> {
+    return `Charged $${amount} ${currency} via Stripe`
   }
 }
 ```
+
+#### ✅ PayPal Adapter:
+
+```ts title="adapters/PayPalAdapter.ts"
+import { PaymentProvider } from '../ports/PaymentProvider'
+
+export class PayPalAdapter implements PaymentProvider {
+  async charge(amount: number, currency: string): Promise<string> {
+    return `Charged $${amount} ${currency} via PayPal`
+  }
+}
+```
+
+These **Adapters** handle communication with external services, keeping **the core system untouched**.
+
+---
+
+### 3️⃣ The Service Layer Bridges Everything
+
+The **business logic** only interacts with the `PaymentProvider` interface.
+
+```ts title="services/PaymentService.ts"
+import { PaymentProvider } from '../ports/PaymentProvider'
+
+export class PaymentService {
+  constructor(private provider: PaymentProvider) {}
+
+  async processPayment(amount: number, currency: string) {
+    return this.provider.charge(amount, currency)
+  }
+}
+```
+
+**Notice:** The `PaymentService` doesn’t care which provider is used—it just calls `charge()`.
 
 <BlockBold>
-  By **modeling the menu as a domain entity**, the frontend can remain **agnostic** to backend
-  response structures.
+  This is the core idea of Hexagonal Architecture: The business logic stays **clean**, while
+  external dependencies are handled separately.
 </BlockBold>
 
-### Step 2: Introduce a Port for Data Fetching
+---
 
-To enforce **separation of concerns**, a **repository interface (port)** was defined:
+### 4️⃣ The API Simply Selects the Payment Provider
 
-```ts title="Port Definition"
-interface MenuRepo {
-  getMainMenu(states: State[]): Promise<(MenuItem | Menu)[]>
-}
-```
+The **API layer** picks the correct **adapter** dynamically.
 
-### Step 3: Implement Adapters for Each Backend
+```ts title="controllers/PaymentController.ts"
+import { Request, Response } from 'express'
+import { PaymentService } from '../services/PaymentService'
+import { StripeAdapter } from '../adapters/StripeAdapter'
+import { PayPalAdapter } from '../adapters/PayPalAdapter'
 
-Each backend now had **its own adapter**, responsible for **transforming backend-specific responses into domain models**.
+export class PaymentController {
+  static async pay(req: Request, res: Response) {
+    const { amount, currency, provider } = req.body
+    const paymentProvider = provider === 'paypal' ? new PayPalAdapter() : new StripeAdapter()
 
-#### Legacy Backend Adapter
+    const paymentService = new PaymentService(paymentProvider)
+    const result = await paymentService.processPayment(amount, currency)
 
-```ts title="Legacy Backend Adapter"
-class LegacyMenuRepo implements MenuRepo {
-  async getMainMenu(states: State[]): Promise<(MenuItem | Menu)[]> {
-    const response = await fetch('tenant.company.com/get_menu')
-    const backendMenu = await response.json()
-
-    return backendMenu.items.map((item) => this.responseToEntity(item))
-  }
-
-  private responseToEntity(data: any): Menu | MenuItem {
-    return new MenuItem({ id: data.id, title: data.title, url: data.url })
+    res.json({ message: result })
   }
 }
 ```
 
-#### New Backend (v2) Adapter
+This means **new payment providers** can be added **without touching the business logic**.
 
-```ts title="New Backend Adapter"
-const stateMappings: Record<number, State> = {
-  1: 'only_for_staff',
-  2: 'open',
-}
+---
 
-class V2MenuRepo implements MenuRepo {
-  async getMainMenu(states: State[]): Promise<(MenuItem | Menu)[]> {
-    const response = await fetch('menu.company.com/company/get', {
-      params: { menuItemStateId: states.map((state) => stateMappings[state]) },
-    })
-    const backendMenu = await response.json()
+## 🔄 Beyond Payments: Other Use Cases
 
-    return backendMenu.map((item) => this.responseToEntity(item))
-  }
+Hexagonal Architecture is **not just for payments**—it applies to **any backend system** that interacts with external dependencies.
 
-  private responseToEntity(data: any): MenuItem {
-    return new MenuItem({
-      id: data.menuItemId,
-      title: data.menuItemTitle,
-      url: data.menuItemLink,
-      state: stateMappings[data.menuItemStateId],
-    })
-  }
-}
-```
+### 🔹 Database Access
 
-## Step 4: Dependency Injection for Backend Selection
+- Instead of hardcoding **MongoDB**, use a **Repository Pattern** to switch to **PostgreSQL** or **DynamoDB** easily.
 
-Instead of **hardcoding backend implementations**, **dependency injection** was used to determine which adapter should be used dynamically:
+### 🔹 Messaging & Event Streaming
 
-```ts title="Dependency Injection for Repositories"
-function createMenuRepo(clientId: string): MenuRepo {
-  return ['client123', 'client34'].includes(clientId) ? new V2MenuRepo() : new LegacyMenuRepo()
-}
+- Define a **MessageQueuePort** so you can swap **Kafka, RabbitMQ, or AWS SQS** seamlessly.
 
-const menuRepo = createMenuRepo('client123')
-menuRepo.getMainMenu(['open', 'only_for_staff'])
-```
+### 🔹 Authentication
 
-## Summary: The Power of Hexagonal Architecture in the Frontend
-
-By applying **hexagonal architecture, dependency injection, and the repository pattern**, the frontend was successfully decoupled from backend-specific structures. The benefits included:
-
-✅ **No need to modify UI logic when backend structures change.**
-✅ **A unified interface for fetching menu data, regardless of backend differences.**
-✅ **Easier testing and maintainability with isolated adapters.**
-✅ **Future flexibility: Additional backends can be supported with new adapters.**
+- Implement an **AuthProviderPort** to support **JWT, OAuth, Firebase, or custom authentication** without modifying business logic.
 
 <BlockBold>
-  This approach enabled a **smooth transition between multiple backends** without modifying the core
-  frontend components.
+  Hexagonal Architecture applies to **any system that interacts with external services**, making
+  backend applications flexible and future-proof.
 </BlockBold>
 
-By designing frontend applications with **separation of concerns in mind**, teams can achieve **greater maintainability, flexibility, and long-term scalability**.
+---
+
+## 🧪 Testing with Mock Adapters
+
+Hexagonal Architecture also makes **unit testing** easier. Instead of calling **real payment APIs**, we inject **mock adapters**.
+
+```ts title="tests/PaymentService.test.ts"
+import { PaymentService } from '../services/PaymentService'
+import { PaymentProvider } from '../ports/PaymentProvider'
+
+class MockPaymentProvider implements PaymentProvider {
+  async charge(amount: number, currency: string) {
+    return `Test payment of $${amount} ${currency}`
+  }
+}
+
+describe('PaymentService', () => {
+  it('should process payments using a mock provider', async () => {
+    const service = new PaymentService(new MockPaymentProvider())
+    const result = await service.processPayment(50, 'USD')
+
+    expect(result).toBe('Test payment of $50 USD')
+  })
+})
+```
+
+**Benefit?**  
+✅ No real API calls during tests.  
+✅ Faster, more reliable unit testing.  
+✅ Ensures business logic is tested **independently** of external services.
+
+---
+
+## 🚀 The Benefits of Hexagonal Architecture
+
+By structuring our **backend system** with Hexagonal Architecture, we gain:
+
+✅ **Scalability** – Easily switch databases, APIs, or third-party services.  
+✅ **Maintainability** – Business logic stays **clean and testable**.  
+✅ **Vendor Independence** – Swap Stripe for PayPal without major changes.  
+✅ **Better Testing** – Use **mock adapters** for unit tests.
+
+<BlockBold>
+  Whether it's a **payment system, database, or event-driven architecture**, Hexagonal Architecture
+  makes backends **future-proof**.
+</BlockBold>
+
+---
+
+## 🔥 Conclusion
+
+Hexagonal Architecture is a **powerful pattern** that keeps backend systems **flexible, maintainable, and testable**.
+
+We demonstrated this **using payments as an example**, but the same principles **apply to databases, messaging queues, authentication, and any external service**.
+
+Next time you build a backend system, **consider Hexagonal Architecture**—your future self will thank you! 🚀
 
 <iframe
   width="560"
   height="315"
-  src="https://www.youtube.com/embed/4C4MIKYnVNQ"
-  title="YouTube video: Hexagonal Architecture for Frontend Development"
+  src="https://www.youtube.com/embed/k_GkYMd8Ouc?si=oX9lGM12M2P3JKIR"
+  title="YouTube video: Monolithic MVP Architecture"
   frameborder="0"
   allowfullscreen
 ></iframe>
+
+---
+
+Would you apply Hexagonal Architecture to your next backend project? Share your thoughts in the comments! 🎯

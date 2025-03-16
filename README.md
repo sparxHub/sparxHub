@@ -19,7 +19,7 @@ Visit my [personal website](https://nadav-daniel.com) to learn more!
 
 ## 📫 How to Reach Me
 
-- **Email**: [daniel.nadav@gmail.com](mailto:daniel.nadav@gmail.com)
+- **Email**: [nadavdaniel@hotmail.com](mailto:nadavdaniel@hotmail.com)
 
 ## 🌐 Social Links
 

@@ -107,9 +107,39 @@ main {
   margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+  .description {
+    font-size: 1.8em;
+    max-width: 90%;
+    margin: 15px auto;
+    line-height: 1.4;
+  }
+}
+
+/* ============================= */
+/* 4. Hero Image (Updated for Mobile) */
+/* ============================= */
 .hero-image {
   width: 100%;
   margin-top: 20px;
+  border-radius: 10px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .hero-image img {
+    width: 100%;
+    height: 50vw; /* Maintain 800:600 aspect ratio dynamically */
+    object-fit: cover; /* Crop the sides to keep the center focused */
+    object-position: center; /* Ensure it focuses on the center */
+    border-radius: 0; /* Edge-to-edge full-width effect */
+  }
 }
 
 .content {
@@ -117,9 +147,8 @@ main {
 }
 
 /* ============================= */
-/* 4. Typography */
+/* 5. Typography */
 /* ============================= */
-
 h1,
 h2,
 h3,
@@ -143,7 +172,7 @@ p {
 }
 
 /* ============================= */
-/* 5. Links and Buttons */
+/* 6. Links and Buttons */
 /* ============================= */
 a {
   color: var(--accent);
@@ -172,7 +201,7 @@ button:hover {
 }
 
 /* ============================= */
-/* 6. Images and Media */
+/* 7. Images and Media */
 /* ============================= */
 img {
   max-width: 100%;
@@ -187,7 +216,24 @@ video {
 }
 
 /* ============================= */
-/* 7. Code Blocks and Preformatted */
+/* 8. Iframe (Updated for Mobile) */
+/* ============================= */
+iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  iframe {
+    height: 300px;
+    border-radius: 0;
+  }
+}
+
+/* ============================= */
+/* 9. Code Blocks and Preformatted */
 /* ============================= */
 code {
   background-color: var(--gray-light);
@@ -205,7 +251,7 @@ pre {
 }
 
 /* ============================= */
-/* 8. Blockquotes */
+/* 10. Blockquotes */
 /* ============================= */
 blockquote {
   border-left: 4px solid var(--accent);
@@ -217,29 +263,58 @@ blockquote {
 }
 
 /* ============================= */
-/* 9. Forms and Inputs */
+/* 11. Tables (Updated for Mobile) */
 /* ============================= */
-input[type='text'],
-input[type='email'],
-textarea {
+table {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid var(--gray-dark);
-  background-color: var(--gray-light);
-  font-size: 16px;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--background-end);
   color: var(--text-primary);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 5px rgba(42, 157, 143, 0.5);
+th,
+td {
+  padding: 0.8em;
+  border: 1px solid var(--gray-dark);
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background-color: var(--accent);
+  color: white;
+  font-size: 1.1em;
+}
+
+tr:nth-child(even) {
+  background-color: var(--background-start);
+}
+
+tr:hover {
+  background-color: var(--accent-dark);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 0; /* Remove side margins */
+  }
+
+  th,
+  td {
+    padding: 10px;
+    font-size: 0.875em;
+  }
 }
 
 /* ============================= */
-/* 10. Footer */
+/* 12. Footer */
 /* ============================= */
 footer {
   text-align: center;
@@ -250,7 +325,7 @@ footer {
 }
 
 /* ============================= */
-/* 11. Responsive Adjustments */
+/* 13. Responsive Adjustments */
 /* ============================= */
 @media (max-width: 768px) {
   body {
@@ -265,39 +340,4 @@ footer {
   h1 {
     font-size: 2.2em;
   }
-}
-
-/* Blog globals.css - Unified with Personal Site */
-
-/* Table Styling for MDX content */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  background-color: var(--background-end); /* Light ivory background for the table */
-  color: var(--text-primary); /* Onyx text for readability */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-th,
-td {
-  padding: 0.8em; /* Spacious padding for readability */
-  border: 1px solid var(--gray-dark); /* Subtle borders for cell definition */
-  text-align: left;
-  vertical-align: middle; /* Align content in the middle vertically */
-}
-
-th {
-  background-color: var(--accent); /* Accent color for headers */
-  color: white; /* White text for contrast */
-  font-size: 1.1em; /* Slightly larger font for headers */
-}
-
-tr:nth-child(even) {
-  background-color: var(--background-start); /* Alternating row colors for better readability */
-}
-
-tr:hover {
-  background-color: var(--accent-dark); /* Darker accent color on row hover for interactivity */
-  color: white; /* Ensure text contrasts well on hover */
 }

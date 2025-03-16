@@ -1,39 +1,112 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
 import ArticleInfoLine from '../components/ArticleInfoLine.astro';
-
-
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, tags, readTime } = Astro.props;
 ---
 
-	<html lang="en">
+<html lang="en">
+<head>
+	<BaseHead title={title} description={description} />
+	<style>
+		/* Back Button */
+		.back-button {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			margin-top: 20px;
+			margin-left: 10px;
+			padding: 10px 18px;
+			font-size: 16px;
+			font-weight: 600;
+			color: var(--text-primary);
+			background-color: var(--accent);
+			border-radius: 6px;
+			text-decoration: none;
+			transition: all 0.3s ease-in-out;
+			box-shadow: var(--box-shadow);
+		}
 
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
+		.back-button:hover {
+			background-color: var(--accent-dark);
+			color: white;
+		}
 
-	<body>
-		<main>
-			<article>
-				<ArticleInfoLine pubDate={pubDate} tags={tags} readTime={readTime} />
-				<h1 class="description">{description}</h1>
-				<div class="hero-image">
-					{heroImage && <img width={1200} height={600} src={heroImage} alt="" />}
-				</div>
+		.arrow {
+			font-size: 18px;
+			font-weight: bold;
+		}
 
-				<div class="content">
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
+		/* Post Styling */
+		.page-header h1 {
+			font-size: 2.5rem;
+			color: var(--text-primary);
+			margin-bottom: 0.5em;
+		}
 
-	</html>
+		.page-header p {
+			color: var(--text-secondary);
+			font-size: 1.2rem;
+			max-width: 700px;
+		}
+
+		.hero-image img {
+			width: 100%;
+			border-radius: 8px;
+			box-shadow: var(--box-shadow);
+		}
+
+		.content {
+			color: var(--text-primary);
+			font-size: 1.1rem;
+			line-height: 1.7;
+		}
+
+		@media (max-width: 720px) {
+			.back-button {
+				font-size: 0.9rem;
+				padding: 8px 12px;
+			}
+
+			.page-header h1 {
+				font-size: 2rem;
+			}
+
+			.page-header p {
+				font-size: 1rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<!-- Back to Blog Hub Button -->
+		<a href="/blog/" class="back-button">
+			<span class="arrow">←</span> Back
+		</a>
+
+		<article>
+			<ArticleInfoLine pubDate={pubDate} tags={tags} readTime={readTime} />
+			<h1 class="description">{description}</h1>
+
+			<!-- Hero Image -->
+			<div class="hero-image">
+				{heroImage && (
+					<img src={heroImage} alt="" width="1200" height="600" class="responsive-hero" />
+				)}
+			</div>
+
+			<!-- Content -->
+			<div class="content">
+				<slot />
+			</div>
+		</article>
+	</main>
+	<Footer />
+</body>
+</html>
