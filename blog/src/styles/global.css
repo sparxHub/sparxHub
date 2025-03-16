@@ -23,7 +23,7 @@
 
 body {
   font-family: 'Poppins Regular', 'Helvetica', 'Arial', sans-serif;
-  background-color: #ffffe3; /* Ivory lightest */
+  background-color: #dbdbc3; /* Ivory lightest */
   color: #36313d; /* Onyx for text */
   font-size: 18px;
   line-height: 1.7;
@@ -44,8 +44,8 @@ body {
   --gray-light: #dbdbc3; /* Ivory lighter */
   --gray-dark: #4a4a31; /* Ivory darkest */
   --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1);
-  --accent: #8a8a7b; /* Ivory medium for accents */
-  --accent-dark: #4a4a31; /* Ivory darkest for hover states */
+  --accent: #eb7f00; /* Ivory medium for accents */
+  --accent-dark: #225378; /* Ivory darkest for hover states */
 }
 
 /* ============================= */
@@ -102,7 +102,7 @@ main {
 
 .description {
   font-size: 2.8em;
-  font-weight: 300;
+  font-weight: 400;
   max-width: 900px;
   margin-top: 20px;
 }
@@ -119,15 +119,20 @@ main {
 /* ============================= */
 /* 4. Typography */
 /* ============================= */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  padding: 0;
   color: var(--text-primary);
   font-family: 'Calibre Medium', sans-serif;
+  vertical-align: baseline;
+  letter-spacing: 0.01em;
   margin: 0 0 1em 0;
+  line-height: 1.4; /* Add this to reduce space between lines */
 }
 
 p {
