@@ -175,46 +175,32 @@ function Home() {
       <AppBar>
         <AppBar.Logo imgSrc="/img/dev_sparx_logo.png" />
 
-        {/* Desktop Menu */}
-        <div className="hidden sm:block">
-          <AppBar.Menu>
-            <AppBar.MenuItem href="#about">About Desktop</AppBar.MenuItem>
-            <AppBar.MenuItem href="#experience">Experience Desktop</AppBar.MenuItem>
-            <AppBar.MenuItem href="#now">Now Desktop</AppBar.MenuItem>
-            <AppBar.MenuItem href="/blog/">Blog Desktop</AppBar.MenuItem>
-            <AppBar.MenuItem>
-              <a
-                href="Nadav_CV_2025_Dev_and_Ent.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-gray-700 font-poppins-semi-bold text-gray-700 py-1 px-4 rounded hover:bg-gray-700 hover:text-white transition"
-              >
-                Resume
-              </a>
-            </AppBar.MenuItem>
-          </AppBar.Menu>
-        </div>
-
-        {/* Mobile Toggle */}
-        <div className="sm:hidden">
-          <AppBar.MenuToggle>
-            <AppBar.MenuToggle.MenuItem href="#about">About</AppBar.MenuToggle.MenuItem>
-            <AppBar.MenuToggle.MenuItem href="#experience">Experience</AppBar.MenuToggle.MenuItem>
-            <AppBar.MenuToggle.MenuItem href="#now">Now</AppBar.MenuToggle.MenuItem>
-            <AppBar.MenuToggle.MenuItem href="/blog">Blog</AppBar.MenuToggle.MenuItem>
-            <AppBar.MenuToggle.MenuItem>
-              <a
-                href="Nadav_CV_2025_Dev_and_Ent.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-gray-700 font-poppins-semi-bold text-gray-700 py-1 px-4 rounded hover:bg-gray-700 hover:text-white transition"
-              >
-                Resume
-              </a>
-            </AppBar.MenuToggle.MenuItem>
-          </AppBar.MenuToggle>
-        </div>
+        <AppBar.Menu>
+          <AppBar.MenuItem href="#about">
+            <span className="text-yellow-500 font-poppins-semi-bold mr-1">01.</span> <span className="font-poppins-semi-bold">About</span>
+          </AppBar.MenuItem>
+          <AppBar.MenuItem href="#experience">
+            <span className="text-yellow-500 font-poppins-semi-bold mr-1">02.</span> <span className="font-poppins-semi-bold">Experience</span>
+          </AppBar.MenuItem>
+          <AppBar.MenuItem href="#now">
+            <span className="text-yellow-500 font-poppins-semi-bold mr-1">03.</span> <span className="font-poppins-semi-bold">Now</span>
+          </AppBar.MenuItem>
+          <AppBar.MenuItem href="/blog/">
+            <span className="text-yellow-500 font-poppins-semi-bold mr-1">04.</span> <span className="font-poppins-semi-bold">Blog</span>
+          </AppBar.MenuItem>
+          <AppBar.MenuItem>
+            <a
+              href="Nadav_CV_2025_Dev_and_Ent.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-gray-700 font-poppins-semi-bold text-gray-700 py-1 px-4 rounded hover:bg-gray-700 hover:text-white transition"
+            >
+              Resume
+            </a>
+          </AppBar.MenuItem>
+        </AppBar.Menu>
       </AppBar>
+
       <div className="flex flex-1 justify-center">
         <Sidebar />
         <main className="container">
