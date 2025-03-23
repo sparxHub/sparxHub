@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { motion } from 'framer-motion'
+
 import AppBar from '@components/components/molecules/AppBar'
 import Footer from '@components/components/molecules/Footer'
 import Sidebar from '@components/components/Sidebar'
@@ -171,18 +172,52 @@ function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white pt-16">
-      <AppBar
-        sections={[
-          { id: 'about', title: 'About' },
-          { id: 'experience', title: 'Experience' },
-          { id: 'now', title: 'Now' },
-          { id: 'contact', title: 'Contact' },
-        ]}
-      />
+      <AppBar>
+        <AppBar.Logo imgSrc="/img/dev_sparx_logo.png" />
+
+        {/* Desktop Menu */}
+        <div className="hidden sm:block">
+          <AppBar.Menu>
+            <AppBar.MenuItem href="#about">About Desktop</AppBar.MenuItem>
+            <AppBar.MenuItem href="#experience">Experience Desktop</AppBar.MenuItem>
+            <AppBar.MenuItem href="#now">Now Desktop</AppBar.MenuItem>
+            <AppBar.MenuItem href="/blog/">Blog Desktop</AppBar.MenuItem>
+            <AppBar.MenuItem>
+              <a
+                href="Nadav_CV_2025_Dev_and_Ent.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-gray-700 font-poppins-semi-bold text-gray-700 py-1 px-4 rounded hover:bg-gray-700 hover:text-white transition"
+              >
+                Resume
+              </a>
+            </AppBar.MenuItem>
+          </AppBar.Menu>
+        </div>
+
+        {/* Mobile Toggle */}
+        <div className="sm:hidden">
+          <AppBar.MenuToggle>
+            <AppBar.MenuToggle.MenuItem href="#about">About</AppBar.MenuToggle.MenuItem>
+            <AppBar.MenuToggle.MenuItem href="#experience">Experience</AppBar.MenuToggle.MenuItem>
+            <AppBar.MenuToggle.MenuItem href="#now">Now</AppBar.MenuToggle.MenuItem>
+            <AppBar.MenuToggle.MenuItem href="/blog">Blog</AppBar.MenuToggle.MenuItem>
+            <AppBar.MenuToggle.MenuItem>
+              <a
+                href="Nadav_CV_2025_Dev_and_Ent.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-gray-700 font-poppins-semi-bold text-gray-700 py-1 px-4 rounded hover:bg-gray-700 hover:text-white transition"
+              >
+                Resume
+              </a>
+            </AppBar.MenuToggle.MenuItem>
+          </AppBar.MenuToggle>
+        </div>
+      </AppBar>
       <div className="flex flex-1 justify-center">
         <Sidebar />
         <main className="container">
-          {/* Hero Section */}
           <motion.section
             id="hero"
             className="flex flex-col items-center sm:items-start justify-center min-h-screen px-6 sm:px-20 bg-gradient-to-b"
@@ -485,7 +520,7 @@ function Home() {
         <RightSidebar />
       </div>
       <Footer />
-    </div>
+    </div >
   )
 }
 

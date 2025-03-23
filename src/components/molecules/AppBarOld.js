@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 import { getImageSrc, customLoader, isExportMode } from '@utils/imageUtils'
 
-const AppBar = ({ sections }) => {
+const AppBarOld = ({ sections }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -80,4 +80,4 @@ const AppBar = ({ sections }) => {
   )
 }
 
-export default AppBar
+export default AppBarOld
