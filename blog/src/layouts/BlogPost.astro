@@ -13,74 +13,114 @@ const { title, description, pubDate, updatedDate, heroImage, tags, readTime } = 
 <head>
 	<BaseHead title={title} description={description} />
 	<style>
-		/* Back Button */
-		.back-button {
-			display: inline-flex;
-			align-items: center;
-			gap: 8px;
-			margin-top: 20px;
-			margin-left: 10px;
-			padding: 10px 18px;
-			font-size: 16px;
-			font-weight: 600;
-			color: var(--text-primary);
-			background-color: var(--accent);
-			border-radius: 6px;
-			text-decoration: none;
-			transition: all 0.3s ease-in-out;
-			box-shadow: var(--box-shadow);
-		}
+  main {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--background-start);
+  }
 
-		.back-button:hover {
-			background-color: var(--accent-dark);
-			color: white;
-		}
+  /* Back Button */
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    background-color: var(--accent);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: var(--box-shadow);
+  }
 
-		.arrow {
-			font-size: 18px;
-			font-weight: bold;
-		}
+  .back-button:hover {
+    background-color: var(--accent-dark);
+    color: white;
+  }
 
-		/* Post Styling */
-		.page-header h1 {
-			font-size: 2.5rem;
-			color: var(--text-primary);
-			margin-bottom: 0.5em;
-		}
+  .arrow {
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-		.page-header p {
-			color: var(--text-secondary);
-			font-size: 1.2rem;
-			max-width: 700px;
-		}
+  /* Header */
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5em;
+  }
 
-		.hero-image img {
-			width: 100%;
-			border-radius: 8px;
-			box-shadow: var(--box-shadow);
-		}
+  .page-header p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    max-width: 700px;
+  }
 
-		.content {
-			color: var(--text-primary);
-			font-size: 1.1rem;
-			line-height: 1.7;
-		}
+  /* Hero Image */
+  .hero-image {
+    margin: 20px 0;
+  }
 
-		@media (max-width: 720px) {
-			.back-button {
-				font-size: 0.9rem;
-				padding: 8px 12px;
-			}
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+  }
 
-			.page-header h1 {
-				font-size: 2rem;
-			}
+  /* Description */
+  .description {
+    font-size: 1.8em;
+    max-width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    line-height: 1.5;
+  }
 
-			.page-header p {
-				font-size: 1rem;
-			}
-		}
-	</style>
+  /* Content */
+  .content {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    padding-bottom: 3em;
+  }
+
+  /* Mobile Styling */
+  @media (max-width: 768px) {
+    main {
+      padding: 16px;
+    }
+
+    .back-button {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+      margin-left: 0;
+    }
+
+    .page-header h1 {
+      font-size: 1.8rem;
+    }
+
+    .description {
+      font-size: 1.5em;
+      margin-top: 0.75em;
+      margin-bottom: 1.25em;
+    }
+
+    .content {
+      font-size: 1rem;
+    }
+  }
+</style>
+
 </head>
 
 <body>

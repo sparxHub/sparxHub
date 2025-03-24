@@ -21,6 +21,13 @@
   font-display: swap;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* ✅ Prevent horizontal scroll */
+}
+
 body {
   font-family: 'Poppins Regular', 'Helvetica', 'Arial', sans-serif;
   background-color: #dbdbc3; /* Ivory lightest */
@@ -54,9 +61,14 @@ body {
 main {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #ffffe3;
+  box-sizing: border-box; /* ✅ Prevents overflow due to padding */
 }
 
 @media (max-width: 1280px) {
@@ -67,7 +79,8 @@ main {
 
 @media (max-width: 768px) {
   main {
-    padding: 10px;
+    padding: 16px;
+    box-sizing: border-box;
   }
 }
 
